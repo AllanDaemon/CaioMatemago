@@ -1,0 +1,7 @@
+[gd_scene format=1]
+
+[node name="game" type="Node2D"]
+
+transform/pos = Vector2( 1, 0 )
+
+
