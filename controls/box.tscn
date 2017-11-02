@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://controls/box.gd" type="Script" id=1]
 [ext_resource path="res://images/arcade_platformer.nobg.png" type="Texture" id=2]
@@ -9,6 +9,23 @@ custom_solver_bias = 0.0
 extents = Vector2( 8, 8 )
 
 [sub_resource type="Animation" id=2]
+
+resource/name = "hit"
+length = 1.1
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:region_rect")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 1,
+"values": [ Rect2( 0, 0, 0, 0 ), Rect2( 0, 0, 16, 16 ) ]
+}
+
+[sub_resource type="Animation" id=3]
 
 resource/name = "hit"
 length = 0.1
@@ -25,9 +42,8 @@ tracks/0/keys = {
 "values": [ Rect2( 16, 0, 16, 16 ), Rect2( 0, 0, 16, 16 ) ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 
-resource/name = "normal"
 length = 0.1
 loop = false
 step = 0.1
@@ -42,7 +58,7 @@ tracks/0/keys = {
 "values": [ Rect2( 0, 0, 16, 16 ) ]
 }
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
 extents = Vector2( 8, 1 )
@@ -51,19 +67,19 @@ extents = Vector2( 8, 1 )
 
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 95, 80 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
 script/script = ExtResource( 1 )
 increment = 1
-_texture = null
-_region = null
+texture = null
+region_default = null
+region_hit = null
 
 [node name="sprite" type="Sprite" parent="."]
 
-transform/pos = Vector2( 95, 80 )
 texture = ExtResource( 2 )
 region = true
 region_rect = Rect2( 0, 0, 16, 16 )
@@ -74,7 +90,8 @@ playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
 anims/hit = SubResource( 2 )
-anims/normal = SubResource( 3 )
+"anims/hit (copy)" = SubResource( 3 )
+anims/normal = SubResource( 4 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -82,7 +99,7 @@ autoplay = "normal"
 
 [node name="colison" type="CollisionShape2D" parent="."]
 
-transform/pos = Vector2( 95, 80 )
+visibility/visible = false
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
@@ -90,8 +107,8 @@ _update_shape_index = 0
 [node name="area" type="Area2D" parent="."]
 
 input/pickable = true
-shapes/0/shape = SubResource( 4 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 95, 88 )
+shapes/0/shape = SubResource( 5 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 8 )
 shapes/0/trigger = false
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -100,8 +117,8 @@ angular_damp = 1.0
 
 [node name="hitbox" type="CollisionShape2D" parent="area"]
 
-transform/pos = Vector2( 95, 88 )
-shape = SubResource( 4 )
+transform/pos = Vector2( 0, 8 )
+shape = SubResource( 5 )
 trigger = false
 _update_shape_index = 0
 
