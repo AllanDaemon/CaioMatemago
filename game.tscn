@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=9 format=1]
 
 [ext_resource path="res://game.gd" type="Script" id=1]
 [ext_resource path="res://tileset.tres" type="TileSet" id=2]
@@ -8,6 +8,12 @@
 [ext_resource path="res://images/arcade_platformer.nobg.png" type="Texture" id=6]
 
 [sub_resource type="AtlasTexture" id=1]
+
+atlas = ExtResource( 6 )
+region = Rect2( 16, 0, 16, 16 )
+margin = Rect2( 0, 0, 0, 0 )
+
+[sub_resource type="AtlasTexture" id=2]
 
 atlas = ExtResource( 6 )
 region = Rect2( 128, 0, 16, 16 )
@@ -67,13 +73,13 @@ transform/pos = Vector2( 43, 119 )
 [node name="box+1" parent="boxes" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 95, 80 )
-increment = 10
+texture = SubResource( 1 )
 
 [node name="box-1" parent="boxes" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 159, 80 )
 increment = -5
-texture = SubResource( 1 )
+texture = SubResource( 2 )
 
 [node name="box" parent="boxes" instance=ExtResource( 5 )]
 
@@ -81,6 +87,7 @@ transform/pos = Vector2( 47, 80 )
 
 [node name="test" type="Sprite" parent="."]
 
+visibility/visible = false
 visibility/opacity = 0.5
 transform/pos = Vector2( 159, 48 )
 texture = ExtResource( 6 )

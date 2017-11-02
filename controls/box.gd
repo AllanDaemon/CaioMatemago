@@ -1,3 +1,4 @@
+tool
 extends KinematicBody2D
 
 onready var sprite = get_node("sprite")
@@ -6,32 +7,31 @@ onready var anim = get_node("anim")
 signal value_change
 
 export (int) var increment = 1
-export (AtlasTexture) var tex
 export (Texture) var texture
-export (Rect2) var region_default
-export (Rect2) var region_hit
 
 func _ready():
+	get_node("hit_value").set_text(str(increment))
+
 	print("Box ", self.get_name())
 	print("\ttexture: ", texture)
-	print("\tregion_default: ", region_default)
-	print("\tregion_hit: ", region_hit)
 
 	if texture and texture != null:
-		sprite.set_texture(texture)
-		print("\ttexture setted")
-	if region_default != null:
-		sprite.set_region_rect(region_default)
-		print("\tdefault region setted")
-		
-		var hit = anim.get_animation("hit")
-		hit.track_set_key_value(0, 1, region_default)
-		
-	if region_hit != null:
-		var hit = anim.get_animation("hit")
-		hit.track_set_key_value(0, 0, region_hit)
-		print("\thitregion setted")
+		_set_default_texture(texture)
 
+#	if region_default != null:
+#		sprite.set_region_rect(region_default)
+#		print("\tdefault region setted")		
+#		var hit = anim.get_animation("hit")
+#		hit.track_set_key_value(0, 1, region_default)
+		
+#	if region_hit != null:
+#		var hit = anim.get_animation("hit")
+#		hit.track_set_key_value(0, 0, region_hit)
+#		print("\thitregion setted")
+
+func _set_default_texture(texture):
+	sprite.set_texture(texture)
+	print("\ttexture setted")
 
 func _on_area_body_enter( body ):
 	if body.is_in_group("player"):
@@ -39,7 +39,8 @@ func _on_area_body_enter( body ):
 
 func hit(body):
 	emit_signal("value_change", increment)
-	get_node("anim").play("hit")
+	#get_node("anim").play("hit")
+	get_node("anim_label").play("hit")
 	print(body)
 
 func _xp():
