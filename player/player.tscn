@@ -27,22 +27,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=3]
 
-length = 1.0
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("sprite:frame")
-tracks/0/interp = 1
-tracks/0/imported = false
-tracks/0/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
-"update": 1,
-"values": [ 3 ]
-}
-
-[sub_resource type="Animation" id=4]
-
+resource/name = "idle"
 length = 9.88
 loop = true
 step = 0.1
@@ -55,6 +40,22 @@ tracks/0/keys = {
 "transitions": FloatArray( 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 5, 6, 5, 6, 5 ]
+}
+
+[sub_resource type="Animation" id=4]
+
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:frame")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ 3 ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -97,18 +98,26 @@ shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
-[node name="animation" type="AnimationPlayer" parent="."]
+[node name="ground_ray" type="RayCast2D" parent="."]
+
+transform/pos = Vector2( 1, 13 )
+enabled = true
+cast_to = Vector2( 0, 2 )
+layer_mask = 1
+type_mask = 15
+
+[node name="anim" type="AnimationPlayer" parent="."]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
 anims/falling = SubResource( 2 )
-anims/jumping = SubResource( 3 )
-anims/stopped = SubResource( 4 )
+anims/idle = SubResource( 3 )
+anims/jumping = SubResource( 4 )
 anims/walking = SubResource( 5 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
-autoplay = "stopped"
+autoplay = "idle"
 
 
