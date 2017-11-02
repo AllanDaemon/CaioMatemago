@@ -1,17 +1,19 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=5 format=1]
 
-[ext_resource path="res://tileset.tres" type="TileSet" id=1]
-[ext_resource path="res://fonts/ka1.fnt" type="BitmapFont" id=2]
-[ext_resource path="res://player/player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://game.gd" type="Script" id=1]
+[ext_resource path="res://tileset.tres" type="TileSet" id=2]
+[ext_resource path="res://fonts/ka1.fnt" type="BitmapFont" id=3]
+[ext_resource path="res://player/player.tscn" type="PackedScene" id=4]
 
 [node name="game" type="Node2D"]
 
 transform/pos = Vector2( 1, 0 )
+script/script = ExtResource( 1 )
 
 [node name="TileMap" type="TileMap" parent="."]
 
 mode = 0
-tile_set = ExtResource( 1 )
+tile_set = ExtResource( 2 )
 cell/size = Vector2( 16, 16 )
 cell/quadrant_size = 16
 cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -24,7 +26,10 @@ collision/bounce = 0.0
 collision/layers = 1
 collision/mask = 1
 occluder/light_mask = 1
-tile_data = IntArray( 65535, 10, 20, 10, 131071, 10, 65556, 10, 196607, 10, 131092, 10, 262143, 10, 196628, 10, 327679, 10, 262164, 10, 393215, 10, 327685, 23, 327691, 29, 327700, 10, 458751, 10, 393236, 10, 524287, 10, 458772, 10, 589823, 10, 524289, 8, 524299, 8, 524306, 8, 524308, 10, 655359, 10, 589824, 6, 589825, 6, 589826, 6, 589827, 6, 589828, 6, 589829, 6, 589830, 6, 589831, 6, 589832, 6, 589833, 6, 589834, 6, 589835, 6, 589836, 6, 589837, 6, 589838, 6, 589839, 6, 589840, 6, 589841, 6, 589842, 6, 589843, 6, 589844, 10, 720895, 10, 655360, 10, 655361, 10, 655362, 10, 655363, 10, 655364, 10, 655365, 10, 655366, 10, 655367, 10, 655368, 10, 655369, 10, 655370, 10, 655371, 10, 655372, 10, 655373, 10, 655374, 10, 655375, 10, 655376, 10, 655377, 10, 655378, 10, 655379, 10, 655380, 10, 786431, 10, 720896, 10, 720897, 10, 720898, 10, 720899, 10, 720900, 10, 720901, 10, 720902, 10, 720903, 10, 720904, 10, 720905, 10, 720906, 10, 720907, 10, 720908, 10, 720909, 10, 720910, 10, 720911, 10, 720912, 10, 720913, 10, 720914, 10, 720915, 10, 720916, 10 )
+tile_data = IntArray( 65535, 10, 20, 10, 131071, 10, 65556, 10, 196607, 10, 131092, 10, 262143, 10, 196628, 10, 327679, 10, 262164, 10, 393215, 10, 327700, 10, 458751, 10, 393236, 10, 524287, 10, 458772, 10, 589823, 10, 524289, 8, 524299, 8, 524306, 8, 524308, 10, 655359, 10, 589824, 6, 589825, 6, 589826, 6, 589827, 6, 589828, 6, 589829, 6, 589830, 6, 589831, 6, 589832, 6, 589833, 6, 589834, 6, 589835, 6, 589836, 6, 589837, 6, 589838, 6, 589839, 6, 589840, 6, 589841, 6, 589842, 6, 589843, 6, 589844, 10, 720895, 10, 655360, 10, 655361, 10, 655362, 10, 655363, 10, 655364, 10, 655365, 10, 655366, 10, 655367, 10, 655368, 10, 655369, 10, 655370, 10, 655371, 10, 655372, 10, 655373, 10, 655374, 10, 655375, 10, 655376, 10, 655377, 10, 655378, 10, 655379, 10, 655380, 10, 786431, 10, 720896, 10, 720897, 10, 720898, 10, 720899, 10, 720900, 10, 720901, 10, 720902, 10, 720903, 10, 720904, 10, 720905, 10, 720906, 10, 720907, 10, 720908, 10, 720909, 10, 720910, 10, 720911, 10, 720912, 10, 720913, 10, 720914, 10, 720915, 10, 720916, 10 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="result" type="Label" parent="."]
 
@@ -37,15 +42,17 @@ margin/left = 248.0
 margin/top = 63.0
 margin/right = 322.0
 margin/bottom = 104.0
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 3 )
 text = "42"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="player" parent="." instance=ExtResource( 3 )]
+[node name="player" parent="." groups=[
+"player",
+] instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 53.0683, 51.8274 )
+transform/pos = Vector2( 43, 119 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -65,7 +72,7 @@ margin/left = 222.0
 margin/top = 7.0
 margin/right = 419.0
 margin/bottom = 48.0
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 3 )
 text = "SCORE:"
 percent_visible = 1.0
 lines_skipped = 0
@@ -82,7 +89,7 @@ margin/left = 274.0
 margin/top = 7.0
 margin/right = 422.0
 margin/bottom = 48.0
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 3 )
 text = "2300"
 align = 2
 percent_visible = 1.0

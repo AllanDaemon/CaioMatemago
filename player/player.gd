@@ -24,7 +24,7 @@ func _ready():
 	set_process_input(true)
 
 func _input(event):
-	print(ground_ray.is_colliding())
+
 	if event.is_action_pressed("jump") and ground_ray.is_colliding():
 		vel.y = JUMP_SPEED
 	if event.is_action_released("jump"):
