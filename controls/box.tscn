@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=1]
 
-[ext_resource path="res://controls/button.gd" type="Script" id=1]
+[ext_resource path="res://controls/box.gd" type="Script" id=1]
 [ext_resource path="res://images/arcade_platformer.nobg.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -89,7 +89,6 @@ _update_shape_index = 0
 
 [node name="area" type="Area2D" parent="."]
 
-editor/display_folded = true
 input/pickable = true
 shapes/0/shape = SubResource( 4 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 95, 88 )

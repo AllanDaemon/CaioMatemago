@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://game.gd" type="Script" id=1]
 [ext_resource path="res://tileset.tres" type="TileSet" id=2]
 [ext_resource path="res://fonts/ka1.fnt" type="BitmapFont" id=3]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://controls/box.tscn" type="PackedScene" id=5]
 
 [node name="game" type="Node2D"]
 
@@ -54,6 +55,10 @@ max_lines_visible = -1
 
 transform/pos = Vector2( 43, 119 )
 
+[node name="boxes" type="Node2D" parent="."]
+
+[node name="box1" parent="boxes" instance=ExtResource( 5 )]
+
 [node name="HUD" type="CanvasLayer" parent="."]
 
 layer = 5
@@ -95,5 +100,7 @@ align = 2
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+
+[connection signal="value_change" from="boxes/box1" to="." method="_on_value_change"]
 
 

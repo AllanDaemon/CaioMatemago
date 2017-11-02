@@ -1,13 +1,16 @@
 extends Node2D
 
-onready var plus_btn = get_node("+1")
+onready var boxes = get_node("boxes")
 
 var result = 0
 
 
 func _ready():
+	print("Boxes: ", boxes)
+	for box in boxes.get_children():
+		print("box: ", box)
+		box.connect("value_change", self, "_on_value_change")
 	pass
-	#plus_btn.connect("value_change", self, "_on_value_change")
 
 func _on_value_change(value):
 	print("Change: ", value)
