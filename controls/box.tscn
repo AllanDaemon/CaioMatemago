@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=9 format=1]
 
 [ext_resource path="res://controls/box.gd" type="Script" id=1]
 [ext_resource path="res://images/arcade_platformer.nobg.png" type="Texture" id=2]
@@ -7,6 +7,12 @@
 
 custom_solver_bias = 0.0
 extents = Vector2( 8, 8 )
+
+[sub_resource type="AtlasTexture" id=6]
+
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 16, 16 )
+margin = Rect2( 0, 0, 0, 0 )
 
 [sub_resource type="Animation" id=2]
 
@@ -81,8 +87,7 @@ region_hit = null
 
 [node name="sprite" type="Sprite" parent="."]
 
-texture = ExtResource( 2 )
-region = true
+texture = SubResource( 6 )
 region_rect = Rect2( 0, 0, 16, 16 )
 
 [node name="anim" type="AnimationPlayer" parent="."]
