@@ -12,7 +12,7 @@ const ACCEL = 1200
 const MAX_SPEED = 100
 const FRICTION = -500
 const GRAVITY = 1000
-const JUMP_SPEED = -450
+const JUMP_SPEED = -420
 const MIN_JUMP = -100
 
 var acc = Vector2()
@@ -24,14 +24,15 @@ func _ready():
 	set_process_input(true)
 
 func _input(event):
-	if event.is_action_pressed("ui_up") and ground_ray.is_colliding():
+	print(ground_ray.is_colliding())
+	if event.is_action_pressed("jump") and ground_ray.is_colliding():
 		vel.y = JUMP_SPEED
-	if event.is_action_released("ui_up"):
+	if event.is_action_released("jump"):
 		vel.y = clamp(vel.y, MIN_JUMP, vel.y)
 
 func _fixed_process(delta):
 	acc.y = GRAVITY
-	acc.x = Input.is_action_pressed("ui_right") - Input.is_action_pressed("ui_left")
+	acc.x = Input.is_action_pressed("move_right") - Input.is_action_pressed("move_left")
 	acc.x *= ACCEL
 	if acc.x == 0:
 		acc.x = vel.x * FRICTION * delta
