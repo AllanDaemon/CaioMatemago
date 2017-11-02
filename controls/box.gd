@@ -6,6 +6,7 @@ onready var anim = get_node("anim")
 signal value_change
 
 export (int) var increment = 1
+export (AtlasTexture) var tex
 export (Texture) var texture
 export (Rect2) var region_default
 export (Rect2) var region_hit
@@ -34,10 +35,12 @@ func _ready():
 
 func _on_area_body_enter( body ):
 	if body.is_in_group("player"):
-		emit_signal("value_change", increment)
-		get_node("anim").play("hit")
-		print(body)
+		hit(body)
 
+func hit(body):
+	emit_signal("value_change", increment)
+	get_node("anim").play("hit")
+	print(body)
 
 func _xp():
 	var anim = get_node("anim")

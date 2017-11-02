@@ -74,6 +74,7 @@ collision/mask = 1
 collision/margin = 0.08
 script/script = ExtResource( 1 )
 increment = 1
+tex = null
 texture = null
 region_default = null
 region_hit = null
