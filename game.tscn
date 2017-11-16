@@ -132,7 +132,7 @@ margin/top = 63.0
 margin/right = 327.0
 margin/bottom = 104.0
 custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color = Color( 0.752941, 1, 0.752941, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "42"
 align = 2
 percent_visible = 1.0
@@ -217,7 +217,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="HUD"]
+[node name="result_anim" type="AnimationPlayer" parent="HUD"]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
@@ -258,5 +258,7 @@ margin/left = -31.0
 margin/top = 10.0
 margin/right = 9.0
 margin/bottom = 50.0
+
+[connection signal="result" from="boxes/result_box" to="." method="_on_result"]
 
 

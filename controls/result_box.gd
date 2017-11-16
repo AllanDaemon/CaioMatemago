@@ -55,7 +55,7 @@ func _notification(what):
 func hit(body):
 	emit_signal("result")
 	get_node("anim_label").play("hit")
-	print(body)
+	print("Result hit: ", body)
 
 
 ##################################################################################
