@@ -406,6 +406,7 @@ shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
+one_way_collision/direction = Vector2( 0, 1 )
 constant_linear_velocity = Vector2( 0, 0 )
 constant_angular_velocity = 0.0
 friction = 1.0
@@ -474,7 +475,6 @@ _update_shape_index = 0
 
 [node name="tile18" type="Sprite" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 40, 72 )
 texture = ExtResource( 1 )
 region = true
