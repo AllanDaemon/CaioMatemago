@@ -158,17 +158,17 @@ texture = null
 [node name="hit_value" type="Label" parent="."]
 
 visibility/visible = false
-rect/scale = Vector2( 0.2, 0.2 )
+rect/scale = Vector2( 0.005, 0.005 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = -16.0
-margin/top = -17.0
-margin/right = 144.0
-margin/bottom = 24.0
+margin/left = -0.5
+margin/top = -32.0
+margin/right = 159.5
+margin/bottom = 9.0
 custom_fonts/font = ExtResource( 2 )
-text = "-10"
+text = "1"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
