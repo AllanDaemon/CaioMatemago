@@ -1,27 +1,52 @@
-[gd_scene load_steps=16 format=1]
+[gd_scene load_steps=21 format=1]
 
 [ext_resource path="res://game.gd" type="Script" id=1]
 [ext_resource path="res://tileset.tres" type="TileSet" id=2]
-[ext_resource path="res://fonts/ka1.fnt" type="BitmapFont" id=3]
-[ext_resource path="res://player/player.tscn" type="PackedScene" id=4]
-[ext_resource path="res://controls/box.tscn" type="PackedScene" id=5]
-[ext_resource path="res://images/arcade_platformer.nobg.png" type="Texture" id=6]
-[ext_resource path="res://controls/result_box.tscn" type="PackedScene" id=7]
-[ext_resource path="res://audio/acertou.ogg" type="AudioStream" id=8]
-[ext_resource path="res://audio/errou.ogg" type="AudioStream" id=9]
-[ext_resource path="res://controls/question.tscn" type="PackedScene" id=10]
+[ext_resource path="res://controls/box.tscn" type="PackedScene" id=3]
+[ext_resource path="res://images/arcade_platformer.nobg.png" type="Texture" id=4]
+[ext_resource path="res://controls/result_box.tscn" type="PackedScene" id=5]
+[ext_resource path="res://fonts/ka1.fnt" type="BitmapFont" id=6]
+[ext_resource path="res://audio/acertou.ogg" type="AudioStream" id=7]
+[ext_resource path="res://audio/errou.ogg" type="AudioStream" id=8]
+[ext_resource path="res://controls/question.tscn" type="PackedScene" id=9]
+[ext_resource path="res://player/player.tscn" type="PackedScene" id=10]
 
 [sub_resource type="AtlasTexture" id=1]
 
-atlas = ExtResource( 6 )
+atlas = ExtResource( 4 )
 region = Rect2( 16, 0, 16, 16 )
 margin = Rect2( 0, 0, 0, 0 )
 
 [sub_resource type="AtlasTexture" id=2]
 
-atlas = ExtResource( 6 )
+atlas = ExtResource( 4 )
 region = Rect2( 128, 0, 16, 16 )
 margin = Rect2( 0, 0, 0, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 1130, 220, 1280, 90, 1350, 220 )
+
+[sub_resource type="ConvexPolygonShape2D" id=7]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 920, 140, 1030, 100, 1130, 220 )
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 650, 170, 770, 90, 920, 140, 1130, 220 )
+
+[sub_resource type="ConvexPolygonShape2D" id=9]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 530, 220, 650, 170, 1130, 220 )
+
+[sub_resource type="ConvexPolygonShape2D" id=10]
+
+custom_solver_bias = 0.0
+points = Vector2Array( 530, 220, 1130, 220, 1350, 220 )
 
 [sub_resource type="Animation" id=3]
 
@@ -30,7 +55,7 @@ length = 0.1
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("../result:custom_colors/font_color")
+tracks/0/path = NodePath("result:custom_colors/font_color")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
@@ -47,7 +72,7 @@ length = 0.5
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("../result:custom_colors/font_color")
+tracks/0/path = NodePath("result:custom_colors/font_color")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
@@ -74,7 +99,7 @@ length = 0.5
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("../result:custom_colors/font_color")
+tracks/0/path = NodePath("result:custom_colors/font_color")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
@@ -99,7 +124,9 @@ tracks/1/keys = {
 transform/pos = Vector2( 1, 0 )
 script/script = ExtResource( 1 )
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="Scenario" type="Node2D" parent="."]
+
+[node name="TileMap" type="TileMap" parent="Scenario"]
 
 mode = 0
 tile_set = ExtResource( 2 )
@@ -115,68 +142,68 @@ collision/bounce = 0.0
 collision/layers = 1
 collision/mask = 1
 occluder/light_mask = 1
-tile_data = IntArray( 65535, 10, 20, 10, 131071, 10, 65556, 10, 196607, 10, 131092, 10, 262143, 10, 196628, 10, 327679, 10, 262164, 10, 393215, 10, 327700, 10, 458751, 10, 393236, 10, 524287, 10, 458772, 10, 589823, 10, 524289, 8, 524295, 4, 524299, 8, 524306, 8, 524308, 10, 655359, 10, 589824, 6, 589825, 6, 589826, 6, 589827, 6, 589828, 6, 589829, 6, 589830, 6, 589831, 6, 589832, 6, 589833, 6, 589834, 6, 589835, 6, 589836, 6, 589837, 6, 589838, 6, 589839, 6, 589840, 6, 589841, 6, 589842, 6, 589843, 6, 589844, 10, 720895, 10, 655360, 10, 655361, 10, 655362, 10, 655363, 10, 655364, 10, 655365, 10, 655366, 10, 655367, 10, 655368, 10, 655369, 10, 655370, 10, 655371, 10, 655372, 10, 655373, 10, 655374, 10, 655375, 10, 655376, 10, 655377, 10, 655378, 10, 655379, 10, 655380, 10, 786431, 10, 720896, 10, 720897, 10, 720898, 10, 720899, 10, 720900, 10, 720901, 10, 720902, 10, 720903, 10, 720904, 10, 720905, 10, 720906, 10, 720907, 10, 720908, 10, 720909, 10, 720910, 10, 720911, 10, 720912, 10, 720913, 10, 720914, 10, 720915, 10, 720916, 10 )
+tile_data = IntArray( 65535, 22, 20, 10, 131071, 22, 196607, 22, 262143, 22, 327679, 22, 393215, 22, 327709, 6, 327710, 6, 327711, 6, 327712, 6, 458751, 22, 393244, 6, 393245, 10, 393246, 10, 393247, 10, 393248, 10, 393249, 6, 393350, 22, 524287, 22, 458779, 6, 458780, 10, 458781, 10, 458782, 10, 458783, 10, 458784, 10, 458785, 10, 458786, 6, 458886, 22, 589823, 22, 524289, 8, 524295, 4, 524299, 8, 524306, 8, 524314, 6, 524315, 10, 524316, 10, 524317, 10, 524318, 10, 524319, 10, 524320, 10, 524321, 10, 524322, 10, 524323, 6, 524422, 22, 655359, 22, 589824, 6, 589825, 6, 589826, 6, 589827, 6, 589828, 6, 589829, 6, 589830, 6, 589831, 6, 589832, 6, 589833, 6, 589834, 6, 589835, 6, 589836, 6, 589837, 6, 589838, 6, 589839, 6, 589840, 6, 589841, 6, 589842, 6, 589843, 6, 589844, 6, 589845, 6, 589846, 6, 589847, 6, 589848, 6, 589849, 6, 589850, 10, 589851, 10, 589852, 10, 589853, 10, 589854, 10, 589855, 10, 589856, 10, 589857, 10, 589858, 10, 589859, 10, 589860, 6, 589868, 5, 589869, 5, 589870, 6, 589871, 6, 589872, 6, 589873, 6, 589874, 6, 589875, 6, 589876, 6, 589958, 22, 720895, 22, 655360, 10, 655361, 10, 655362, 10, 655363, 10, 655364, 10, 655365, 10, 655366, 10, 655367, 10, 655368, 10, 655369, 10, 655370, 10, 655371, 10, 655372, 10, 655373, 10, 655374, 10, 655375, 10, 655376, 10, 655377, 10, 655378, 10, 655379, 10, 655380, 10, 655381, 10, 655382, 10, 655383, 10, 655384, 10, 655385, 10, 655386, 10, 655387, 10, 655388, 10, 655389, 10, 655390, 10, 655391, 10, 655392, 10, 655393, 10, 655394, 10, 655395, 10, 655396, 10, 655397, 6, 655413, 6, 655494, 22, 786431, 22, 720896, 10, 720897, 10, 720898, 10, 720899, 10, 720900, 10, 720901, 10, 720902, 10, 720903, 10, 720904, 10, 720905, 10, 720906, 10, 720907, 10, 720908, 10, 720909, 10, 720910, 10, 720911, 10, 720912, 10, 720913, 10, 720914, 10, 720915, 10, 720916, 10, 720917, 10, 720918, 10, 720919, 10, 720920, 10, 720921, 10, 720922, 10, 720923, 10, 720924, 10, 720925, 10, 720926, 10, 720927, 10, 720928, 10, 720929, 10, 720930, 10, 720931, 10, 720932, 10, 720933, 10, 720934, 6, 720950, 6, 721030, 22, 851967, 22, 786432, 22, 786433, 22, 786434, 22, 786435, 22, 786436, 22, 786437, 22, 786438, 22, 786439, 22, 786440, 22, 786441, 22, 786442, 22, 786443, 22, 786444, 22, 786445, 22, 786446, 22, 786447, 22, 786448, 22, 786449, 22, 786450, 22, 786451, 22, 786452, 22, 786453, 22, 786454, 10, 786455, 10, 786456, 10, 786457, 10, 786458, 10, 786459, 10, 786460, 10, 786461, 10, 786462, 10, 786463, 10, 786464, 10, 786465, 10, 786466, 10, 786467, 10, 786468, 10, 786469, 10, 786470, 10, 786471, 6, 786487, 6, 786566, 22, 851989, 22, 851990, 10, 851991, 10, 851992, 10, 851993, 10, 851994, 10, 851995, 10, 851996, 10, 851997, 10, 851998, 10, 851999, 10, 852000, 10, 852001, 10, 852002, 10, 852003, 10, 852004, 10, 852005, 10, 852006, 10, 852007, 10, 852008, 6, 852102, 22, 917525, 22, 917526, 10, 917527, 10, 917528, 10, 917529, 10, 917530, 10, 917531, 10, 917532, 10, 917533, 10, 917534, 10, 917535, 10, 917536, 10, 917537, 10, 917538, 10, 917539, 10, 917540, 10, 917541, 10, 917542, 10, 917543, 10, 917544, 10, 917545, 6, 917638, 22, 983061, 22, 983062, 10, 983063, 10, 983064, 10, 983065, 10, 983066, 10, 983067, 10, 983068, 10, 983069, 10, 983070, 10, 983071, 10, 983072, 10, 983073, 10, 983074, 10, 983075, 10, 983076, 10, 983077, 10, 983078, 10, 983079, 10, 983080, 10, 983081, 10, 983082, 6, 983174, 22, 1048597, 22, 1048598, 10, 1048599, 10, 1048600, 10, 1048601, 10, 1048602, 10, 1048603, 10, 1048604, 10, 1048605, 10, 1048606, 10, 1048607, 10, 1048608, 10, 1048609, 10, 1048610, 10, 1048611, 10, 1048612, 10, 1048613, 10, 1048614, 10, 1048615, 10, 1048616, 10, 1048617, 10, 1048618, 10, 1048619, 6, 1048710, 22, 1114133, 22, 1114134, 10, 1114135, 10, 1114136, 10, 1114137, 10, 1114138, 10, 1114139, 10, 1114140, 10, 1114141, 10, 1114142, 10, 1114143, 10, 1114144, 10, 1114145, 10, 1114146, 10, 1114147, 10, 1114148, 10, 1114149, 10, 1114150, 10, 1114151, 10, 1114152, 10, 1114153, 10, 1114154, 10, 1114155, 10, 1114156, 7, 1114246, 22, 1179669, 22, 1179670, 22, 1179671, 22, 1179672, 22, 1179673, 22, 1179674, 22, 1179675, 22, 1179676, 22, 1179677, 22, 1179678, 22, 1179679, 22, 1179680, 22, 1179681, 22, 1179682, 22, 1179683, 22, 1179684, 22, 1179685, 22, 1179686, 22, 1179687, 22, 1179688, 22, 1179689, 22, 1179690, 22, 1179691, 22, 1179692, 22, 1179693, 22, 1179694, 22, 1179695, 22, 1179696, 22, 1179697, 22, 1179698, 22, 1179699, 22, 1179700, 22, 1179701, 22, 1179702, 22, 1179703, 22, 1179704, 22, 1179705, 22, 1179706, 22, 1179707, 22, 1179708, 22, 1179709, 22, 1179710, 22, 1179711, 22, 1179712, 22, 1179713, 22, 1179714, 22, 1179715, 22, 1179716, 22, 1179717, 22, 1179718, 22, 1179719, 22, 1179720, 22, 1179721, 22, 1179722, 22, 1179723, 22, 1179724, 22, 1179725, 22, 1179726, 22, 1179727, 22, 1179728, 22, 1179729, 22, 1179730, 22, 1179731, 22, 1179732, 22, 1179733, 22, 1179734, 22, 1179735, 22, 1179736, 22, 1179737, 22, 1179738, 22, 1179739, 22, 1179740, 22, 1179741, 22, 1179742, 22, 1179743, 22, 1179744, 22, 1179745, 22, 1179746, 22, 1179747, 22, 1179748, 22, 1179749, 22, 1179750, 22, 1179751, 22, 1179752, 22, 1179753, 22, 1179754, 22, 1179755, 22, 1179756, 22, 1179757, 22, 1179758, 22, 1179759, 22, 1179760, 22, 1179761, 22, 1179762, 22, 1179763, 22, 1179764, 22, 1179765, 22, 1179766, 22, 1179767, 22, 1179768, 22, 1179769, 22, 1179770, 22, 1179771, 22, 1179772, 22, 1179773, 22, 1179774, 22, 1179775, 22, 1179776, 22, 1179777, 22, 1179778, 22, 1179779, 22, 1179780, 22, 1179781, 22, 1179782, 22 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="result" type="Label" parent="."]
+[node name="boxes" type="Node2D" parent="Scenario"]
 
-rect/scale = Vector2( 0.8, 0.8 )
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 207.0
-margin/top = 63.0
-margin/right = 327.0
-margin/bottom = 104.0
-custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "42"
-align = 2
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="player" parent="." groups=[
-"player",
-] instance=ExtResource( 4 )]
-
-transform/pos = Vector2( 43, 119 )
-
-[node name="boxes" type="Node2D" parent="."]
-
-[node name="box+1" parent="boxes" instance=ExtResource( 5 )]
+[node name="box+1" parent="Scenario/boxes" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 49, 80 )
 texture = SubResource( 1 )
 
-[node name="box-1" parent="boxes" instance=ExtResource( 5 )]
+[node name="box-1" parent="Scenario/boxes" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 99, 80 )
 increment = -5
 texture = SubResource( 2 )
 
-[node name="box" parent="boxes" instance=ExtResource( 5 )]
+[node name="box" parent="Scenario/boxes" instance=ExtResource( 3 )]
 
 transform/pos = Vector2( 29, 80 )
 
-[node name="result_box" parent="boxes" instance=ExtResource( 7 )]
+[node name="result_box" parent="Scenario/boxes" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 129, 80 )
 
-[node name="test" type="Sprite" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="Scenario"]
 
-visibility/visible = false
-visibility/opacity = 0.5
-transform/pos = Vector2( 159, 48 )
-texture = ExtResource( 6 )
-region = true
-region_rect = Rect2( 128, 0, 16, 16 )
+input/pickable = false
+shapes/0/shape = SubResource( 6 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 419, 70 )
+shapes/0/trigger = false
+shapes/1/shape = SubResource( 7 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 419, 70 )
+shapes/1/trigger = false
+shapes/2/shape = SubResource( 8 )
+shapes/2/transform = Matrix32( 1, 0, 0, 1, 419, 70 )
+shapes/2/trigger = false
+shapes/3/shape = SubResource( 9 )
+shapes/3/transform = Matrix32( 1, 0, 0, 1, 419, 70 )
+shapes/3/trigger = false
+shapes/4/shape = SubResource( 10 )
+shapes/4/transform = Matrix32( 1, 0, 0, 1, 419, 70 )
+shapes/4/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Scenario/StaticBody2D"]
+
+transform/pos = Vector2( 419, 70 )
+build_mode = 0
+polygon = Vector2Array( 650, 170, 770, 90, 920, 140, 1030, 100, 1130, 220, 1280, 90, 1350, 220, 530, 220 )
+shape_range = Vector2( 0, 4 )
+trigger = false
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
+editor/display_folded = true
 layer = 5
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -193,7 +220,7 @@ margin/left = 222.0
 margin/top = 7.0
 margin/right = 419.0
 margin/bottom = 48.0
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 6 )
 text = "SCORE:"
 percent_visible = 1.0
 lines_skipped = 0
@@ -210,7 +237,7 @@ margin/left = 274.0
 margin/top = 7.0
 margin/right = 422.0
 margin/bottom = 48.0
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 6 )
 text = "2300"
 align = 2
 percent_visible = 1.0
@@ -232,7 +259,7 @@ autoplay = "default"
 
 [node name="acertou" type="StreamPlayer" parent="HUD"]
 
-stream/stream = ExtResource( 8 )
+stream/stream = ExtResource( 7 )
 stream/play = true
 stream/loop = false
 stream/volume_db = 0.0
@@ -243,7 +270,7 @@ stream/buffering_ms = 500
 
 [node name="errou" type="StreamPlayer" parent="HUD"]
 
-stream/stream = ExtResource( 9 )
+stream/stream = ExtResource( 8 )
 stream/play = true
 stream/loop = false
 stream/volume_db = 0.0
@@ -252,13 +279,57 @@ stream/paused = false
 stream/loop_restart_time = 0.0
 stream/buffering_ms = 500
 
-[node name="question" parent="." instance=ExtResource( 10 )]
+[node name="question" parent="HUD" instance=ExtResource( 9 )]
 
-margin/left = -31.0
+margin/left = -30.0
 margin/top = 10.0
-margin/right = 9.0
+margin/right = 10.0
 margin/bottom = 50.0
 
-[connection signal="result" from="boxes/result_box" to="." method="_on_result"]
+[node name="result" type="Label" parent="HUD"]
+
+rect/scale = Vector2( 0.8, 0.8 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 208.0
+margin/top = 63.0
+margin/right = 328.0
+margin/bottom = 104.0
+custom_fonts/font = ExtResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "42"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="player" parent="." groups=[
+"player",
+] instance=ExtResource( 10 )]
+
+transform/pos = Vector2( 329, 60 )
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit/left = -10000000
+limit/top = -10000000
+limit/right = 10000000
+limit/bottom = 10000000
+drag_margin/h_enabled = true
+drag_margin/v_enabled = true
+smoothing/enable = true
+smoothing/speed = 5.0
+drag_margin/left = 0.2
+drag_margin/top = 0.2
+drag_margin/right = 0.2
+drag_margin/bottom = 0.2
+
+[connection signal="result" from="Scenario/boxes/result_box" to="." method="_on_result"]
 
 
