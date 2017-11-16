@@ -1,8 +1,15 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://controls/question.gd" type="Script" id=1]
 [ext_resource path="res://images/TILESET SEM FUNDO VERSÃO 2.png" type="Texture" id=2]
-[ext_resource path="res://fonts/ka1.fnt" type="BitmapFont" id=3]
+[ext_resource path="res://fonts/Geo/Geo-Regular.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+
+font/size = 30
+font/use_mipmaps = false
+font/use_filter = false
+font/font = ExtResource( 3 )
 
 [node name="Question" type="Control"]
 
@@ -33,16 +40,15 @@ region_rect = Rect2( 80, 48, 24, 16 )
 
 [node name="Label" type="Label" parent="Patch9Frame"]
 
-rect/scale = Vector2( 0.4, 0.4 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 20.0
-margin/top = 10.0
-margin/right = 295.0
-margin/bottom = 60.0
-custom_fonts/font = ExtResource( 3 )
+margin/top = 0.0
+margin/right = 132.0
+margin/bottom = 40.0
+custom_fonts/font = SubResource( 1 )
 text = "001 - 100"
 align = 1
 valign = 1

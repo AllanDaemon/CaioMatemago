@@ -1,15 +1,23 @@
-[gd_scene load_steps=16 format=1]
+[gd_scene load_steps=18 format=1]
 
 [ext_resource path="res://game.gd" type="Script" id=1]
 [ext_resource path="res://tileset.tres" type="TileSet" id=2]
-[ext_resource path="res://fonts/ka1.fnt" type="BitmapFont" id=3]
+[ext_resource path="res://fonts/Geo/Geo-Regular.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://controls/box.tscn" type="PackedScene" id=5]
 [ext_resource path="res://images/arcade_platformer.nobg.png" type="Texture" id=6]
 [ext_resource path="res://controls/result_box.tscn" type="PackedScene" id=7]
-[ext_resource path="res://audio/acertou.ogg" type="AudioStream" id=8]
-[ext_resource path="res://audio/errou.ogg" type="AudioStream" id=9]
-[ext_resource path="res://controls/question.tscn" type="PackedScene" id=10]
+[ext_resource path="res://fonts/ka1.fnt" type="BitmapFont" id=8]
+[ext_resource path="res://audio/acertou.ogg" type="AudioStream" id=9]
+[ext_resource path="res://audio/errou.ogg" type="AudioStream" id=10]
+[ext_resource path="res://controls/question.tscn" type="PackedScene" id=11]
+
+[sub_resource type="DynamicFont" id=6]
+
+font/size = 60
+font/use_mipmaps = false
+font/use_filter = false
+font/font = ExtResource( 3 )
 
 [sub_resource type="AtlasTexture" id=1]
 
@@ -122,19 +130,19 @@ __meta__ = {
 
 [node name="result" type="Label" parent="."]
 
-rect/scale = Vector2( 0.8, 0.8 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 207.0
-margin/top = 63.0
-margin/right = 327.0
-margin/bottom = 104.0
-custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color = Color( 0.752941, 1, 0.752941, 1 )
+margin/left = 189.0
+margin/top = 40.0
+margin/right = 309.0
+margin/bottom = 114.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "42"
 align = 2
+valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -193,7 +201,7 @@ margin/left = 222.0
 margin/top = 7.0
 margin/right = 419.0
 margin/bottom = 48.0
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 8 )
 text = "SCORE:"
 percent_visible = 1.0
 lines_skipped = 0
@@ -210,7 +218,7 @@ margin/left = 274.0
 margin/top = 7.0
 margin/right = 422.0
 margin/bottom = 48.0
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 8 )
 text = "2300"
 align = 2
 percent_visible = 1.0
@@ -232,7 +240,7 @@ autoplay = "default"
 
 [node name="acertou" type="StreamPlayer" parent="HUD"]
 
-stream/stream = ExtResource( 8 )
+stream/stream = ExtResource( 9 )
 stream/play = true
 stream/loop = false
 stream/volume_db = 0.0
@@ -243,7 +251,7 @@ stream/buffering_ms = 500
 
 [node name="errou" type="StreamPlayer" parent="HUD"]
 
-stream/stream = ExtResource( 9 )
+stream/stream = ExtResource( 10 )
 stream/play = true
 stream/loop = false
 stream/volume_db = 0.0
@@ -252,7 +260,7 @@ stream/paused = false
 stream/loop_restart_time = 0.0
 stream/buffering_ms = 500
 
-[node name="question" parent="." instance=ExtResource( 10 )]
+[node name="question" parent="." instance=ExtResource( 11 )]
 
 margin/left = -31.0
 margin/top = 10.0
