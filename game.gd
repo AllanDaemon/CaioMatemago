@@ -3,8 +3,8 @@ extends Node2D
 signal right
 signal wrong
 
-onready var boxes = get_node("boxes")
-onready var question = get_node("question")
+onready var boxes = get_node("scenario/boxes")
+onready var question = get_node("HUD/question")
 onready var result_anim = get_node("HUD/result_anim")
 
 var result = 0
@@ -24,7 +24,7 @@ func _on_value_change(value):
 	_update_label()
 	
 func _update_label():
-	get_node("result").set_text(str(result))
+	get_node("HUD/result").set_text(str(result))
 	
 func _on_result():
 	print("Calculatin result")
