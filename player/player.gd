@@ -6,6 +6,7 @@ extends KinematicBody2D
 
 onready var ground_ray = get_node("ground_rays/ray_2")
 onready var ground_rays = get_node("ground_rays")
+onready var ground_detector = get_node("ground_detector")
 onready var sprite = get_node("sprite")
 onready var animation = get_node("anim")
 
@@ -25,7 +26,7 @@ func _ready():
 		ray.add_exception(self)
 
 	set_fixed_process(true)
-	set_process_input(true)
+#	set_process_input(true)
 
 func _input(event):
 

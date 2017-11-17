@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=1]
+[gd_scene load_steps=11 format=1]
 
 [ext_resource path="res://player/player.gd" type="Script" id=1]
 [ext_resource path="res://player/Caio.png" type="Texture" id=2]
@@ -8,15 +8,21 @@
 custom_solver_bias = 0.0
 extents = Vector2( 7, 13.5 )
 
-[sub_resource type="GDScript" id=6]
+[sub_resource type="SegmentShape2D" id=7]
 
-script/source = "extends RayCast2D
+custom_solver_bias = 0.0
+a = Vector2( 0, 0 )
+b = Vector2( 13, 0 )
+
+[sub_resource type="GDScript" id=8]
+
+script/source = "extends Area2D
 
 export (bool) var dbg = true   setget set_dbg
 export (Color) var color = Color(1,1,1)
 
 var dot = preload(\"res://controls/dot.tscn\").instance()
-onready var dbg_node = get_node(\"../../dbg\")
+onready var dbg_node = get_node(\"../dbg\")
 
 func set_dbg(value):
 	dbg = value
@@ -46,7 +52,71 @@ func _draw():
 		dot.set_pos(collision_point)
 		dot.show()
 	else:
-		dot.hide()"
+		dot.hide()
+		
+func is_colliding():
+	var bodies = get_overlapping_bodies()
+	var over = bool(bodies.size())
+	return over
+
+func get_collision_points():
+	return []
+	# get bodies colliding
+		# get it shape and test colision point or raycast"
+
+[sub_resource type="GDScript" id=6]
+
+script/source = "extends RayCast2D
+
+export (bool) var dbg = true   setget set_dbg
+export (Color) var color = Color(1,1,1)
+
+var dot = preload(\"res://controls/dot.tscn\").instance()
+var dot2 = preload(\"res://controls/dot.tscn\").instance()
+onready var dbg_node = get_node(\"../../dbg\")
+
+func set_dbg(value):
+	dbg = value
+	if dbg:
+		set_fixed_process(true)
+		if dbg_node: dbg_node.show()
+	else:
+		set_fixed_process(false)
+		dot.hide()
+		dot2.hide()
+		if dbg_node: dbg_node.hide()
+
+func _ready():
+	dot.radius = .5
+	dot.color = color.inverted()
+	dot2.radius = .5
+	dot2.color = color
+	get_tree().get_root().call_deferred(\"add_child\", dot)
+	get_tree().get_root().call_deferred(\"add_child\", dot2)
+	set_dbg(dbg)
+
+func _fixed_process(delta):
+	update()
+
+func _draw():
+	if is_colliding():
+		draw_circle(get_pos(), 1, color)
+		var collision_point = get_collision_point()
+		var space_state = get_world_2d().get_direct_space_state()
+		var from = collision_point + Vector2(0, 0)
+		var   to = collision_point + Vector2(0, 3)
+		var ray_collisions = space_state.intersect_ray(from, to)
+		
+		if ray_collisions.size():	#Is really on the floor?
+			#var collider = get_collider()
+			dot.set_pos(from)
+			dot.show()
+			dot2.set_pos(to)
+			dot2.show()
+		#print(\"Pos: %s\\tCol: %s\\tNew: %s\" % [get_pos(), collision_point, new_point])
+	else:
+		dot.hide()
+		dot2.hide()"
 
 [sub_resource type="Animation" id=2]
 
@@ -132,16 +202,47 @@ script/script = ExtResource( 1 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="sprite" type="Sprite" parent="."]
 
 texture = ExtResource( 2 )
 hframes = 9
 frame = 5
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="ground_rays" type="Node2D" parent="."]
+[node name="ground_detector" type="Area2D" parent="."]
 
-[node name="ray_1" type="RayCast2D" parent="ground_rays"]
+visibility/visible = false
+input/pickable = true
+shapes/0/shape = SubResource( 7 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, -6.5, 14 )
+shapes/0/trigger = false
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+script/script = SubResource( 8 )
+dbg = true
+color = Color( 1, 1, 1, 1 )
+
+[node name="ground_line" type="CollisionShape2D" parent="ground_detector"]
+
+transform/pos = Vector2( -6.5, 14 )
+shape = SubResource( 7 )
+trigger = false
+_update_shape_index = 0
+
+[node name="ground_raysx" type="Node2D" parent="."]
+
+editor/display_folded = true
+visibility/visible = false
+
+[node name="ray_1" type="RayCast2D" parent="ground_raysx"]
 
 transform/pos = Vector2( -6, 14 )
 enabled = true
@@ -152,7 +253,7 @@ script/script = SubResource( 6 )
 dbg = true
 color = Color( 1, 0, 0, 1 )
 
-[node name="ray_2" type="RayCast2D" parent="ground_rays"]
+[node name="ray_2" type="RayCast2D" parent="ground_raysx"]
 
 transform/pos = Vector2( 0, 14 )
 enabled = true
@@ -163,7 +264,7 @@ script/script = SubResource( 6 )
 dbg = true
 color = Color( 0, 1, 0, 1 )
 
-[node name="ray_3" type="RayCast2D" parent="ground_rays"]
+[node name="ray_3" type="RayCast2D" parent="ground_raysx"]
 
 transform/pos = Vector2( 6, 14 )
 enabled = true
@@ -173,6 +274,30 @@ type_mask = 15
 script/script = SubResource( 6 )
 dbg = true
 color = Color( 0, 0, 1, 1 )
+
+[node name="ground_rays" type="Node2D" parent="."]
+
+[node name="ray_left" type="RayCast2D" parent="ground_rays"]
+
+transform/pos = Vector2( -6, 14 )
+enabled = true
+cast_to = Vector2( 13, 0 )
+layer_mask = 1
+type_mask = 15
+script/script = SubResource( 6 )
+dbg = true
+color = Color( 1, 0, 0, 1 )
+
+[node name="ray_right" type="RayCast2D" parent="ground_rays"]
+
+transform/pos = Vector2( 5, 14 )
+enabled = true
+cast_to = Vector2( -13, 0 )
+layer_mask = 1
+type_mask = 15
+script/script = SubResource( 6 )
+dbg = true
+color = Color( 0, 1, 0, 1 )
 
 [node name="anim" type="AnimationPlayer" parent="."]
 
@@ -189,6 +314,11 @@ blend_times = [  ]
 autoplay = "idle"
 
 [node name="dbg" type="Node2D" parent="."]
+
+editor/display_folded = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="status" type="Label" parent="dbg"]
 

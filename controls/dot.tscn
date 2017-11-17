@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=1]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Control
+
+export (float, 0, 10, .5) var radius = 2
+export (Color) var color = Color(1, 1, 1)
+
+func _ready():
+	pass
+	
+func _draw():
+	draw_circle(Vector2(), radius, color)"
+
+[node name="dot" type="Control"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 40.0
+script/script = SubResource( 1 )
+radius = 2
+color = Color( 1, 1, 1, 1 )
+
+
