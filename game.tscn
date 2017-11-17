@@ -343,14 +343,14 @@ max_lines_visible = -1
 "player",
 ] instance=ExtResource( 10 )]
 
-transform/pos = Vector2( 969, 210 )
+transform/pos = Vector2( 949, 260 )
 
 [node name="camera" type="Camera2D" parent="player"]
 
 anchor_mode = 1
 rotating = false
 current = true
-zoom = Vector2( 2, 2 )
+zoom = Vector2( 0.6, 0.6 )
 limit/left = -10000000
 limit/top = -10000000
 limit/right = 10000000

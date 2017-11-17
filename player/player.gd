@@ -4,11 +4,12 @@ extends KinematicBody2D
 # https://github.com/kidscancode/godot_tutorials/blob/master/Godot101/Part%2012/player.gd
 
 
-onready var ground_ray = get_node("ground_ray")
+onready var ground_ray = get_node("ground_rays/ray_2")
+onready var ground_rays = get_node("ground_rays")
 onready var sprite = get_node("sprite")
 onready var animation = get_node("anim")
 
-const ACCEL = 1200
+const ACCEL = 600
 const MAX_SPEED = 100
 const FRICTION = -500
 const GRAVITY = 1000
@@ -20,6 +21,9 @@ var vel = Vector2()
 var anim = "idle"
 
 func _ready():
+	for ray in ground_rays.get_children():
+		ray.add_exception(self)
+
 	set_fixed_process(true)
 	set_process_input(true)
 
@@ -30,7 +34,13 @@ func _input(event):
 	if event.is_action_released("jump"):
 		vel.y = clamp(vel.y, MIN_JUMP, vel.y)
 
+
 func _fixed_process(delta):
+	move( Vector2(
+		Input.is_action_pressed("ui_right") - Input.is_action_pressed("ui_left"),
+		Input.is_action_pressed("ui_down") - Input.is_action_pressed("ui_up")) * 0.2)
+
+func _fixed_process2(delta):
 	acc.y = GRAVITY
 	acc.x = Input.is_action_pressed("move_right") - Input.is_action_pressed("move_left")
 	acc.x *= ACCEL
@@ -53,7 +63,7 @@ func _fixed_process(delta):
 	if vel.x == 0:
 		anim = "idle"
 	else:
-		anim = "running"
+		anim = "walking"
 	if vel.x > 0:
 		sprite.set_flip_h(false)
 	elif vel.x < 0:
