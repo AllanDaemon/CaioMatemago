@@ -14,6 +14,7 @@ const FRICTION = -500
 const GRAVITY = 1000
 const JUMP_SPEED = -420
 const MIN_JUMP = -100
+const VEL_EPSILON = 1
 
 var acc = Vector2()
 var vel = Vector2()
@@ -24,7 +25,6 @@ func _ready():
 	set_process_input(true)
 
 func _input(event):
-
 	if event.is_action_pressed("jump") and ground_ray.is_colliding():
 		vel.y = JUMP_SPEED
 	if event.is_action_released("jump"):
@@ -39,6 +39,8 @@ func _fixed_process(delta):
 
 	vel += acc * delta
 	vel.x = clamp(vel.x, -MAX_SPEED, MAX_SPEED)
+#	if vel.y > -VEL_EPSILON:
+#		vel.y = 0
 
 	var motion = move(vel * delta)
 	if is_colliding():
@@ -53,9 +55,16 @@ func _fixed_process(delta):
 	if vel.x == 0:
 		anim = "idle"
 	else:
-		anim = "running"
-	if vel.x > 0:
+		anim = "walking"
+	if vel.x >= 0:
 		sprite.set_flip_h(false)
 	elif vel.x < 0:
 		sprite.set_flip_h(true)
+	
+	
+#		if vel.y < 0:
+#			anim = "jumping"
+#		elif vel.y > 0:
+#			anim = "falling"
+
 	animation.play(anim)
