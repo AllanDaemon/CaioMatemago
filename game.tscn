@@ -2,7 +2,7 @@
 
 [ext_resource path="res://game.gd" type="Script" id=1]
 [ext_resource path="res://tileset.tres" type="TileSet" id=2]
-[ext_resource path="res://fonts/ka1.fnt" type="BitmapFont" id=3]
+[ext_resource path="res://fonts/averia.tres" type="DynamicFont" id=3]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://controls/box.tscn" type="PackedScene" id=5]
 [ext_resource path="res://images/arcade_platformer.nobg.png" type="Texture" id=6]
@@ -25,7 +25,6 @@ margin = Rect2( 0, 0, 0, 0 )
 
 [sub_resource type="Animation" id=3]
 
-resource/name = "default"
 length = 0.1
 loop = false
 step = 0.1
@@ -42,7 +41,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=4]
 
-resource/name = "right"
 length = 0.5
 loop = false
 step = 0.1
@@ -69,7 +67,6 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=5]
 
-resource/name = "wrong"
 length = 0.5
 loop = false
 step = 0.1
@@ -130,7 +127,7 @@ size_flags/vertical = 0
 margin/left = 207.0
 margin/top = 63.0
 margin/right = 327.0
-margin/bottom = 104.0
+margin/bottom = 126.0
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "42"
@@ -192,7 +189,7 @@ size_flags/vertical = 0
 margin/left = 222.0
 margin/top = 7.0
 margin/right = 419.0
-margin/bottom = 48.0
+margin/bottom = 70.0
 custom_fonts/font = ExtResource( 3 )
 text = "SCORE:"
 percent_visible = 1.0
@@ -209,7 +206,7 @@ size_flags/vertical = 0
 margin/left = 274.0
 margin/top = 7.0
 margin/right = 422.0
-margin/bottom = 48.0
+margin/bottom = 70.0
 custom_fonts/font = ExtResource( 3 )
 text = "2300"
 align = 2

@@ -2,7 +2,7 @@
 
 [ext_resource path="res://controls/question.gd" type="Script" id=1]
 [ext_resource path="res://images/TILESET SEM FUNDO VERSÃO 2.png" type="Texture" id=2]
-[ext_resource path="res://fonts/ka1.fnt" type="BitmapFont" id=3]
+[ext_resource path="res://fonts/averia.tres" type="DynamicFont" id=3]
 
 [node name="Question" type="Control"]
 
@@ -39,9 +39,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 20.0
-margin/top = 10.0
+margin/top = 7.0
 margin/right = 295.0
-margin/bottom = 60.0
+margin/bottom = 70.0
 custom_fonts/font = ExtResource( 3 )
 text = "001 - 100"
 align = 1
