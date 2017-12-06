@@ -7,8 +7,8 @@
 [ext_resource path="res://controls/box.tscn" type="PackedScene" id=5]
 [ext_resource path="res://images/arcade_platformer.nobg.png" type="Texture" id=6]
 [ext_resource path="res://controls/result_box.tscn" type="PackedScene" id=7]
-[ext_resource path="res://audio/acertou.ogg" type="AudioStream" id=8]
-[ext_resource path="res://audio/errou.ogg" type="AudioStream" id=9]
+[ext_resource path="res://audio/Acerto.ogg" type="AudioStream" id=8]
+[ext_resource path="res://audio/Erro.ogg" type="AudioStream" id=9]
 [ext_resource path="res://controls/question.tscn" type="PackedScene" id=10]
 
 [sub_resource type="AtlasTexture" id=1]
