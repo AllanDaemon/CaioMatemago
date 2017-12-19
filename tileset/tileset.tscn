@@ -14,20 +14,6 @@ centered = false
 region = true
 region_rect = Rect2( 0, 0, 16, 16 )
 
-[node name="Area2D" type="Area2D" parent="boxes/+1"]
-
-editor/display_folded = true
-input/pickable = true
-shapes/0/shape = ExtResource( 2 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="boxes/+1/Area2D"]
-
-transform/pos = Vector2( 8, 8 )
-shape = ExtResource( 2 )
-trigger = false
-_update_shape_index = 0
-
 [node name="+1_hit" type="Sprite" parent="boxes"]
 
 transform/pos = Vector2( 0, 16 )
