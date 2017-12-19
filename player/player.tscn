@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 8, 13 )
+extents = Vector2( 8, 13.5 )
 
 [sub_resource type="Animation" id=2]
 
@@ -76,7 +76,6 @@ tracks/0/keys = {
 
 [node name="player" type="KinematicBody2D"]
 
-transform/pos = Vector2( 4, 24 )
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -94,15 +93,13 @@ frame = 5
 
 [node name="colision" type="CollisionShape2D" parent="."]
 
-visibility/visible = false
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
 [node name="ground_ray" type="RayCast2D" parent="."]
 
-visibility/visible = false
-transform/pos = Vector2( 1, 14 )
+transform/pos = Vector2( 0, 13 )
 enabled = true
 cast_to = Vector2( 0, 1 )
 layer_mask = 1
