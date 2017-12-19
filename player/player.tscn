@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 8, 13.5 )
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=6]
 
 resource/name = "falling"
 length = 1.0
@@ -110,7 +110,7 @@ type_mask = 15
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/falling = SubResource( 2 )
+anims/falling = SubResource( 6 )
 anims/idle = SubResource( 3 )
 anims/jumping = SubResource( 4 )
 anims/walking = SubResource( 5 )
