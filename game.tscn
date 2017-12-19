@@ -119,6 +119,7 @@ scroll/ignore_camera_zoom = false
 [node name="background" type="ParallaxLayer" parent="background"]
 
 editor/display_folded = true
+visibility/visible = false
 motion/scale = Vector2( 1, 1 )
 motion/offset = Vector2( 0, 0 )
 motion/mirroring = Vector2( 0, 0 )
@@ -150,14 +151,13 @@ collision/bounce = 0.0
 collision/layers = 1
 collision/mask = 1
 occluder/light_mask = 1
-tile_data = IntArray( 655360, 13, 655361, 13, 655362, 13, 655363, 13, 655364, 13, 655365, 13, 655366, 13, 655367, 13, 655368, 13, 655369, 13, 655370, 13, 655371, 13, 655372, 13, 655373, 13, 655374, 13, 655375, 13, 655376, 13, 655377, 13, 655378, 13 )
+tile_data = IntArray( 262143, 36, 327679, 36, 393215, 36, 458751, 36, 524287, 36, 458771, 15, 458772, 16, 458773, 17, 589823, 36, 524303, 37, 524304, 37, 524305, 37, 524306, 15, 524307, 536870931, 524308, 536870931, 524309, 536870931, 524310, 17, 655359, 36, 589824, 36, 589825, 36, 589826, 36, 589827, 36, 589828, 36, 589829, 36, 589830, 36, 589831, 36, 589832, 36, 589833, 36, 589834, 36, 589835, 36, 589836, 36, 589837, 36, 589838, 36, 589839, 36, 589840, 36, 589841, 36, 589842, 36, 589843, 36, 589844, 36, 589845, 36, 589846, 36, 589847, 36, 589848, 36, 589849, 36, 589850, 36, 589851, 36, 589852, 36, 589853, 36, 589854, 36, 589855, 36, 589856, 36, 589857, 36, 589858, 36, 589859, 36, 589860, 36, 589861, 36, 589862, 36, 589863, 36 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="result" type="Label" parent="."]
 
-visibility/visible = false
 rect/scale = Vector2( 0.8, 0.8 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -184,7 +184,6 @@ transform/pos = Vector2( 43, 119 )
 [node name="boxes" type="Node2D" parent="."]
 
 editor/display_folded = true
-visibility/visible = false
 
 [node name="box+1" parent="boxes" instance=ExtResource( 6 )]
 
@@ -204,15 +203,6 @@ transform/pos = Vector2( 29, 80 )
 [node name="result_box" parent="boxes" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 129, 80 )
-
-[node name="test" type="Sprite" parent="."]
-
-visibility/visible = false
-visibility/opacity = 0.5
-transform/pos = Vector2( 159, 48 )
-texture = ExtResource( 7 )
-region = true
-region_rect = Rect2( 128, 0, 16, 16 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
