@@ -14,6 +14,20 @@ centered = false
 region = true
 region_rect = Rect2( 0, 0, 16, 16 )
 
+[node name="Area2D" type="Area2D" parent="boxes/+1"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = ExtResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boxes/+1/Area2D"]
+
+transform/pos = Vector2( 8, 8 )
+shape = ExtResource( 2 )
+trigger = false
+_update_shape_index = 0
+
 [node name="+1_hit" type="Sprite" parent="boxes"]
 
 transform/pos = Vector2( 0, 16 )
@@ -21,6 +35,20 @@ texture = ExtResource( 1 )
 centered = false
 region = true
 region_rect = Rect2( 16, 0, 16, 16 )
+
+[node name="Area2D" type="Area2D" parent="boxes/+1_hit"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = ExtResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boxes/+1_hit/Area2D"]
+
+transform/pos = Vector2( 8, 8 )
+shape = ExtResource( 2 )
+trigger = false
+_update_shape_index = 0
 
 [node name="-1" type="Sprite" parent="boxes"]
 
@@ -30,6 +58,20 @@ centered = false
 region = true
 region_rect = Rect2( 128, 0, 16, 16 )
 
+[node name="Area2D" type="Area2D" parent="boxes/-1"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = ExtResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boxes/-1/Area2D"]
+
+transform/pos = Vector2( 8, 8 )
+shape = ExtResource( 2 )
+trigger = false
+_update_shape_index = 0
+
 [node name="-1_hit" type="Sprite" parent="boxes"]
 
 transform/pos = Vector2( 0, 48 )
@@ -37,6 +79,20 @@ texture = ExtResource( 1 )
 centered = false
 region = true
 region_rect = Rect2( 144, 0, 16, 16 )
+
+[node name="Area2D" type="Area2D" parent="boxes/-1_hit"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = ExtResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boxes/-1_hit/Area2D"]
+
+transform/pos = Vector2( 8, 8 )
+shape = ExtResource( 2 )
+trigger = false
+_update_shape_index = 0
 
 [node name="equal" type="Sprite" parent="boxes"]
 
@@ -46,6 +102,20 @@ centered = false
 region = true
 region_rect = Rect2( 0, 16, 16, 16 )
 
+[node name="Area2D" type="Area2D" parent="boxes/equal"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = ExtResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boxes/equal/Area2D"]
+
+transform/pos = Vector2( 8, 8 )
+shape = ExtResource( 2 )
+trigger = false
+_update_shape_index = 0
+
 [node name="equal_hit" type="Sprite" parent="boxes"]
 
 transform/pos = Vector2( 0, 80 )
@@ -53,6 +123,20 @@ texture = ExtResource( 1 )
 centered = false
 region = true
 region_rect = Rect2( 16, 16, 16, 16 )
+
+[node name="Area2D" type="Area2D" parent="boxes/equal_hit"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = ExtResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boxes/equal_hit/Area2D"]
+
+transform/pos = Vector2( 8, 8 )
+shape = ExtResource( 2 )
+trigger = false
+_update_shape_index = 0
 
 [node name="scenario" type="Node" parent="."]
 
@@ -122,6 +206,20 @@ centered = false
 region = true
 region_rect = Rect2( 256, 128, 16, 16 )
 
+[node name="Area2D" type="Area2D" parent="floor/floor_A"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = ExtResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_A/Area2D"]
+
+transform/pos = Vector2( 8, 8 )
+shape = ExtResource( 2 )
+trigger = false
+_update_shape_index = 0
+
 [node name="floor_B" type="Sprite" parent="floor"]
 
 transform/pos = Vector2( 48, 16 )
@@ -129,6 +227,20 @@ texture = ExtResource( 1 )
 centered = false
 region = true
 region_rect = Rect2( 256, 144, 16, 16 )
+
+[node name="Area2D" type="Area2D" parent="floor/floor_B"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = ExtResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_B/Area2D"]
+
+transform/pos = Vector2( 8, 8 )
+shape = ExtResource( 2 )
+trigger = false
+_update_shape_index = 0
 
 [node name="floor_11" type="Sprite" parent="floor"]
 
@@ -138,6 +250,20 @@ centered = false
 region = true
 region_rect = Rect2( 208, 112, 16, 16 )
 
+[node name="Area2D" type="Area2D" parent="floor/floor_11"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = ExtResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_11/Area2D"]
+
+transform/pos = Vector2( 8, 8 )
+shape = ExtResource( 2 )
+trigger = false
+_update_shape_index = 0
+
 [node name="floor_12" type="Sprite" parent="floor"]
 
 transform/pos = Vector2( 96, 0 )
@@ -145,6 +271,20 @@ texture = ExtResource( 1 )
 centered = false
 region = true
 region_rect = Rect2( 224, 112, 16, 16 )
+
+[node name="Area2D" type="Area2D" parent="floor/floor_12"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = ExtResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_12/Area2D"]
+
+transform/pos = Vector2( 8, 8 )
+shape = ExtResource( 2 )
+trigger = false
+_update_shape_index = 0
 
 [node name="floor_13" type="Sprite" parent="floor"]
 
@@ -154,6 +294,20 @@ centered = false
 region = true
 region_rect = Rect2( 240, 112, 16, 16 )
 
+[node name="Area2D" type="Area2D" parent="floor/floor_13"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = ExtResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_13/Area2D"]
+
+transform/pos = Vector2( 8, 8 )
+shape = ExtResource( 2 )
+trigger = false
+_update_shape_index = 0
+
 [node name="floor_21" type="Sprite" parent="floor"]
 
 transform/pos = Vector2( 80, 16 )
@@ -161,6 +315,20 @@ texture = ExtResource( 1 )
 centered = false
 region = true
 region_rect = Rect2( 208, 128, 16, 16 )
+
+[node name="Area2D" type="Area2D" parent="floor/floor_21"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = ExtResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_21/Area2D"]
+
+transform/pos = Vector2( 8, 8 )
+shape = ExtResource( 2 )
+trigger = false
+_update_shape_index = 0
 
 [node name="floor_22" type="Sprite" parent="floor"]
 
@@ -170,6 +338,20 @@ centered = false
 region = true
 region_rect = Rect2( 224, 128, 16, 16 )
 
+[node name="Area2D" type="Area2D" parent="floor/floor_22"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = ExtResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_22/Area2D"]
+
+transform/pos = Vector2( 8, 8 )
+shape = ExtResource( 2 )
+trigger = false
+_update_shape_index = 0
+
 [node name="floor_23" type="Sprite" parent="floor"]
 
 transform/pos = Vector2( 112, 16 )
@@ -177,6 +359,20 @@ texture = ExtResource( 1 )
 centered = false
 region = true
 region_rect = Rect2( 240, 128, 16, 16 )
+
+[node name="Area2D" type="Area2D" parent="floor/floor_23"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = ExtResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_23/Area2D"]
+
+transform/pos = Vector2( 8, 8 )
+shape = ExtResource( 2 )
+trigger = false
+_update_shape_index = 0
 
 [node name="example" type="Sprite" parent="."]
 
@@ -217,6 +413,20 @@ centered = false
 region = true
 region_rect = Rect2( 256, 80, 16, 16 )
 
+[node name="Area2D" type="Area2D" parent="floor_dark/floor_dark"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = ExtResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark/Area2D"]
+
+transform/pos = Vector2( 8, 8 )
+shape = ExtResource( 2 )
+trigger = false
+_update_shape_index = 0
+
 [node name="floor_dark_A" type="Sprite" parent="floor_dark"]
 
 transform/pos = Vector2( 144, 32 )
@@ -224,6 +434,20 @@ texture = ExtResource( 1 )
 centered = false
 region = true
 region_rect = Rect2( 256, 96, 16, 16 )
+
+[node name="Area2D" type="Area2D" parent="floor_dark/floor_dark_A"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = ExtResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_A/Area2D"]
+
+transform/pos = Vector2( 8, 8 )
+shape = ExtResource( 2 )
+trigger = false
+_update_shape_index = 0
 
 [node name="floor_dark_B" type="Sprite" parent="floor_dark"]
 
@@ -233,6 +457,20 @@ centered = false
 region = true
 region_rect = Rect2( 256, 112, 16, 16 )
 
+[node name="Area2D" type="Area2D" parent="floor_dark/floor_dark_B"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = ExtResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_B/Area2D"]
+
+transform/pos = Vector2( 8, 8 )
+shape = ExtResource( 2 )
+trigger = false
+_update_shape_index = 0
+
 [node name="floor_dark_1" type="Sprite" parent="floor_dark"]
 
 transform/pos = Vector2( 176, 0 )
@@ -240,6 +478,20 @@ texture = ExtResource( 1 )
 centered = false
 region = true
 region_rect = Rect2( 208, 48, 16, 16 )
+
+[node name="Area2D" type="Area2D" parent="floor_dark/floor_dark_1"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = ExtResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_1/Area2D"]
+
+transform/pos = Vector2( 8, 8 )
+shape = ExtResource( 2 )
+trigger = false
+_update_shape_index = 0
 
 [node name="floor_dark_2" type="Sprite" parent="floor_dark"]
 
@@ -249,6 +501,20 @@ centered = false
 region = true
 region_rect = Rect2( 224, 48, 16, 16 )
 
+[node name="Area2D" type="Area2D" parent="floor_dark/floor_dark_2"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = ExtResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_2/Area2D"]
+
+transform/pos = Vector2( 8, 8 )
+shape = ExtResource( 2 )
+trigger = false
+_update_shape_index = 0
+
 [node name="floor_dark_3" type="Sprite" parent="floor_dark"]
 
 transform/pos = Vector2( 208, 0 )
@@ -256,6 +522,20 @@ texture = ExtResource( 1 )
 centered = false
 region = true
 region_rect = Rect2( 240, 48, 16, 16 )
+
+[node name="Area2D" type="Area2D" parent="floor_dark/floor_dark_3"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = ExtResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_3/Area2D"]
+
+transform/pos = Vector2( 8, 8 )
+shape = ExtResource( 2 )
+trigger = false
+_update_shape_index = 0
 
 [node name="floor_dark_11" type="Sprite" parent="floor_dark"]
 
@@ -265,6 +545,20 @@ centered = false
 region = true
 region_rect = Rect2( 208, 64, 16, 16 )
 
+[node name="Area2D" type="Area2D" parent="floor_dark/floor_dark_11"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = ExtResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_11/Area2D"]
+
+transform/pos = Vector2( 8, 8 )
+shape = ExtResource( 2 )
+trigger = false
+_update_shape_index = 0
+
 [node name="floor_dark_12" type="Sprite" parent="floor_dark"]
 
 transform/pos = Vector2( 192, 32 )
@@ -272,6 +566,20 @@ texture = ExtResource( 1 )
 centered = false
 region = true
 region_rect = Rect2( 224, 64, 16, 16 )
+
+[node name="Area2D" type="Area2D" parent="floor_dark/floor_dark_12"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = ExtResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_12/Area2D"]
+
+transform/pos = Vector2( 8, 8 )
+shape = ExtResource( 2 )
+trigger = false
+_update_shape_index = 0
 
 [node name="floor_dark_13" type="Sprite" parent="floor_dark"]
 
@@ -281,6 +589,20 @@ centered = false
 region = true
 region_rect = Rect2( 240, 64, 16, 16 )
 
+[node name="Area2D" type="Area2D" parent="floor_dark/floor_dark_13"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = ExtResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_13/Area2D"]
+
+transform/pos = Vector2( 8, 8 )
+shape = ExtResource( 2 )
+trigger = false
+_update_shape_index = 0
+
 [node name="floor_dark_21" type="Sprite" parent="floor_dark"]
 
 transform/pos = Vector2( 176, 48 )
@@ -288,6 +610,20 @@ texture = ExtResource( 1 )
 centered = false
 region = true
 region_rect = Rect2( 208, 80, 16, 16 )
+
+[node name="Area2D" type="Area2D" parent="floor_dark/floor_dark_21"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = ExtResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_21/Area2D"]
+
+transform/pos = Vector2( 8, 8 )
+shape = ExtResource( 2 )
+trigger = false
+_update_shape_index = 0
 
 [node name="floor_dark_22" type="Sprite" parent="floor_dark"]
 
@@ -297,6 +633,20 @@ centered = false
 region = true
 region_rect = Rect2( 224, 80, 16, 16 )
 
+[node name="Area2D" type="Area2D" parent="floor_dark/floor_dark_22"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = ExtResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_22/Area2D"]
+
+transform/pos = Vector2( 8, 8 )
+shape = ExtResource( 2 )
+trigger = false
+_update_shape_index = 0
+
 [node name="floor_dark_23" type="Sprite" parent="floor_dark"]
 
 transform/pos = Vector2( 208, 48 )
@@ -304,6 +654,20 @@ texture = ExtResource( 1 )
 centered = false
 region = true
 region_rect = Rect2( 240, 80, 16, 16 )
+
+[node name="Area2D" type="Area2D" parent="floor_dark/floor_dark_23"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = ExtResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_23/Area2D"]
+
+transform/pos = Vector2( 8, 8 )
+shape = ExtResource( 2 )
+trigger = false
+_update_shape_index = 0
 
 [node name="floor_dark_31" type="Sprite" parent="floor_dark"]
 
@@ -313,6 +677,20 @@ centered = false
 region = true
 region_rect = Rect2( 208, 96, 16, 16 )
 
+[node name="Area2D" type="Area2D" parent="floor_dark/floor_dark_31"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = ExtResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_31/Area2D"]
+
+transform/pos = Vector2( 8, 8 )
+shape = ExtResource( 2 )
+trigger = false
+_update_shape_index = 0
+
 [node name="floor_dark_32" type="Sprite" parent="floor_dark"]
 
 transform/pos = Vector2( 192, 64 )
@@ -320,6 +698,20 @@ texture = ExtResource( 1 )
 centered = false
 region = true
 region_rect = Rect2( 224, 96, 16, 16 )
+
+[node name="Area2D" type="Area2D" parent="floor_dark/floor_dark_32"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = ExtResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_32/Area2D"]
+
+transform/pos = Vector2( 8, 8 )
+shape = ExtResource( 2 )
+trigger = false
+_update_shape_index = 0
 
 [node name="floor_dark_33" type="Sprite" parent="floor_dark"]
 
@@ -329,6 +721,20 @@ centered = false
 region = true
 region_rect = Rect2( 240, 96, 16, 16 )
 
+[node name="Area2D" type="Area2D" parent="floor_dark/floor_dark_33"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = ExtResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_33/Area2D"]
+
+transform/pos = Vector2( 8, 8 )
+shape = ExtResource( 2 )
+trigger = false
+_update_shape_index = 0
+
 [node name="floor_darker" type="Sprite" parent="floor_dark"]
 
 transform/pos = Vector2( 80, 48 )
@@ -336,6 +742,20 @@ texture = ExtResource( 1 )
 centered = false
 region = true
 region_rect = Rect2( 336, 288, 16, 16 )
+
+[node name="Area2D" type="Area2D" parent="floor_dark/floor_darker"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = ExtResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_darker/Area2D"]
+
+transform/pos = Vector2( 8, 8 )
+shape = ExtResource( 2 )
+trigger = false
+_update_shape_index = 0
 
 [node name="floor_darker_half" type="Sprite" parent="floor_dark"]
 
@@ -345,4 +765,18 @@ centered = false
 region = true
 region_rect = Rect2( 320, 304, 16, 16 )
 
+
+[node name="Area2D" type="Area2D" parent="floor_dark/floor_darker_half"]
+
+editor/display_folded = true
+input/pickable = true
+shapes/0/shape = ExtResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_darker_half/Area2D"]
+
+transform/pos = Vector2( 8, 8 )
+shape = ExtResource( 2 )
+trigger = false
+_update_shape_index = 0
 
