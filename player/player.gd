@@ -14,7 +14,8 @@ const FRICTION = -500
 const GRAVITY = 1000
 const JUMP_SPEED = -420
 const MIN_JUMP = -100
-const VEL_EPSILON = 1
+const VEL_X_EPSILON = 20
+const VEL_Y_EPSILON = 0.001
 
 var acc = Vector2()
 var vel = Vector2()
@@ -39,8 +40,6 @@ func _fixed_process(delta):
 
 	vel += acc * delta
 	vel.x = clamp(vel.x, -MAX_SPEED, MAX_SPEED)
-#	if vel.y > -VEL_EPSILON:
-#		vel.y = 0
 
 	var motion = move(vel * delta)
 	if is_colliding():
@@ -48,23 +47,30 @@ func _fixed_process(delta):
 		motion = n.slide(motion)
 		vel = n.slide(vel)
 		move(motion)
-	if abs(vel.x) < 20:
+	if abs(vel.x) < VEL_X_EPSILON:
 		vel.x = 0
+	if abs(vel.y) < VEL_Y_EPSILON:
+		vel.y = 0
 
 	# set animation
-	if vel.x == 0:
-		anim = "idle"
-	else:
-		anim = "walking"
 	if vel.x >= 0:
 		sprite.set_flip_h(false)
 	elif vel.x < 0:
 		sprite.set_flip_h(true)
-	
-	
-#		if vel.y < 0:
-#			anim = "jumping"
-#		elif vel.y > 0:
-#			anim = "falling"
 
-	animation.play(anim)
+	if vel.x == 0:
+		anim = "idle"
+	else:
+		anim = "walking"
+
+	if vel.y < 0:
+		anim = "jumping"
+	elif vel.y > 0:
+		anim = "falling"
+
+	change_anim(anim)
+
+func change_anim(anim):
+	var current = animation.get_current_animation()
+	if anim != current:
+		animation.play(anim)
