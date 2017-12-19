@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 8, 13.5 )
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=2]
 
 resource/name = "falling"
 length = 1.0
@@ -99,7 +99,7 @@ _update_shape_index = 0
 
 [node name="ground_ray" type="RayCast2D" parent="."]
 
-transform/pos = Vector2( 0, 13 )
+transform/pos = Vector2( 0, 14 )
 enabled = true
 cast_to = Vector2( 0, 1 )
 layer_mask = 1
@@ -110,7 +110,7 @@ type_mask = 15
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/falling = SubResource( 6 )
+anims/falling = SubResource( 2 )
 anims/idle = SubResource( 3 )
 anims/jumping = SubResource( 4 )
 anims/walking = SubResource( 5 )
@@ -118,5 +118,56 @@ playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = "idle"
+
+[node name="anim_label" type="Label" parent="."]
+
+rect/scale = Vector2( 0.5, 0.5 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -26.0
+margin/top = -20.0
+margin/right = 78.0
+margin/bottom = -6.0
+text = "anim"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="vel_label" type="Label" parent="."]
+
+rect/scale = Vector2( 0.5, 0.5 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -57.0
+margin/top = -33.0
+margin/right = 171.0
+margin/bottom = -19.0
+text = "vel"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="acc_label" type="Label" parent="."]
+
+rect/scale = Vector2( 0.5, 0.5 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -57.0
+margin/top = -27.0
+margin/right = 171.0
+margin/bottom = -13.0
+text = "acc"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 

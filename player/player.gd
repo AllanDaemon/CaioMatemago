@@ -15,7 +15,7 @@ const GRAVITY = 1000
 const JUMP_SPEED = -420
 const MIN_JUMP = -100
 const VEL_X_EPSILON = 20
-const VEL_Y_EPSILON = 0.001
+const VEL_Y_EPSILON = 0.001 
 
 var acc = Vector2()
 var vel = Vector2()
@@ -69,8 +69,19 @@ func _fixed_process(delta):
 		anim = "falling"
 
 	change_anim(anim)
+	
+	# DBG
+	var raycast_dbg_color
+	if ground_ray.is_colliding():	raycast_dbg_color = Color(.5,1,.5)
+	else: 							raycast_dbg_color = Color(.5,.5,1)
+	get_node("anim_label").add_color_override("font_color", raycast_dbg_color)
+	get_node("anim_label").set_text(anim)
+	get_node("vel_label").set_text(str(vel))
+	get_node("acc_label").set_text(str(acc))
 
 func change_anim(anim):
 	var current = animation.get_current_animation()
 	if anim != current:
+		print("Changing anim: ", current, " -> ", anim)
+		print("Vel: ", vel)
 		animation.play(anim)
