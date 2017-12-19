@@ -25,9 +25,10 @@ region_rect = Rect2( 0, 0, 16, 16 )
 [node name="StaticBody2D" type="StaticBody2D" parent="boxes/+1"]
 
 editor/display_folded = true
+transform/pos = Vector2( 8, 8 )
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -38,7 +39,6 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="boxes/+1/StaticBody2D"]
 
-transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
 trigger = false
 _update_shape_index = 0
@@ -55,9 +55,10 @@ region_rect = Rect2( 16, 0, 16, 16 )
 [node name="StaticBody2D" type="StaticBody2D" parent="boxes/+1_hit"]
 
 editor/display_folded = true
+transform/pos = Vector2( 8, 8 )
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -68,7 +69,6 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="boxes/+1_hit/StaticBody2D"]
 
-transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
 trigger = false
 _update_shape_index = 0
@@ -85,9 +85,10 @@ region_rect = Rect2( 128, 0, 16, 16 )
 [node name="StaticBody2D" type="StaticBody2D" parent="boxes/-1"]
 
 editor/display_folded = true
+transform/pos = Vector2( 8, 8 )
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -98,7 +99,6 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="boxes/-1/StaticBody2D"]
 
-transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
 trigger = false
 _update_shape_index = 0
@@ -115,9 +115,10 @@ region_rect = Rect2( 144, 0, 16, 16 )
 [node name="StaticBody2D" type="StaticBody2D" parent="boxes/-1_hit"]
 
 editor/display_folded = true
+transform/pos = Vector2( 8, 8 )
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -128,7 +129,6 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="boxes/-1_hit/StaticBody2D"]
 
-transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
 trigger = false
 _update_shape_index = 0
@@ -145,9 +145,10 @@ region_rect = Rect2( 0, 16, 16, 16 )
 [node name="StaticBody2D" type="StaticBody2D" parent="boxes/equal"]
 
 editor/display_folded = true
+transform/pos = Vector2( 8, 8 )
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -158,7 +159,6 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="boxes/equal/StaticBody2D"]
 
-transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
 trigger = false
 _update_shape_index = 0
@@ -175,9 +175,10 @@ region_rect = Rect2( 16, 16, 16, 16 )
 [node name="StaticBody2D" type="StaticBody2D" parent="boxes/equal_hit"]
 
 editor/display_folded = true
+transform/pos = Vector2( 8, 8 )
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -188,7 +189,6 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="boxes/equal_hit/StaticBody2D"]
 
-transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
 trigger = false
 _update_shape_index = 0
@@ -209,10 +209,10 @@ region_rect = Rect2( 144, 16, 16, 16 )
 [node name="StaticBody2D" type="StaticBody2D" parent="scenario/bridge_1"]
 
 editor/display_folded = true
-transform/pos = Vector2( 144, -96 )
+transform/pos = Vector2( 8, 8 )
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -223,7 +223,6 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scenario/bridge_1/StaticBody2D"]
 
-transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
 trigger = false
 _update_shape_index = 0
@@ -240,10 +239,10 @@ region_rect = Rect2( 32, 16, 16, 16 )
 [node name="StaticBody2D" type="StaticBody2D" parent="scenario/bridge_2"]
 
 editor/display_folded = true
-transform/pos = Vector2( 144, -112 )
+transform/pos = Vector2( 8, 8 )
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -254,7 +253,6 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scenario/bridge_2/StaticBody2D"]
 
-transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
 trigger = false
 _update_shape_index = 0
@@ -315,9 +313,10 @@ region_rect = Rect2( 256, 128, 16, 16 )
 [node name="StaticBody2D" type="StaticBody2D" parent="floor/floor_A"]
 
 editor/display_folded = true
+transform/pos = Vector2( 8, 8 )
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -328,7 +327,6 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_A/StaticBody2D"]
 
-transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
 trigger = false
 _update_shape_index = 0
@@ -345,9 +343,10 @@ region_rect = Rect2( 256, 144, 16, 16 )
 [node name="StaticBody2D" type="StaticBody2D" parent="floor/floor_B"]
 
 editor/display_folded = true
+transform/pos = Vector2( 8, 8 )
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -358,7 +357,6 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_B/StaticBody2D"]
 
-transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
 trigger = false
 _update_shape_index = 0
@@ -375,9 +373,10 @@ region_rect = Rect2( 208, 112, 16, 16 )
 [node name="StaticBody2D" type="StaticBody2D" parent="floor/floor_11"]
 
 editor/display_folded = true
+transform/pos = Vector2( 8, 8 )
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -388,7 +387,6 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_11/StaticBody2D"]
 
-transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
 trigger = false
 _update_shape_index = 0
@@ -405,9 +403,10 @@ region_rect = Rect2( 224, 112, 16, 16 )
 [node name="StaticBody2D" type="StaticBody2D" parent="floor/floor_12"]
 
 editor/display_folded = true
+transform/pos = Vector2( 8, 8 )
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -418,7 +417,6 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_12/StaticBody2D"]
 
-transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
 trigger = false
 _update_shape_index = 0
@@ -435,9 +433,10 @@ region_rect = Rect2( 240, 112, 16, 16 )
 [node name="StaticBody2D" type="StaticBody2D" parent="floor/floor_13"]
 
 editor/display_folded = true
+transform/pos = Vector2( 8, 8 )
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -448,7 +447,6 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_13/StaticBody2D"]
 
-transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
 trigger = false
 _update_shape_index = 0
@@ -465,9 +463,10 @@ region_rect = Rect2( 208, 128, 16, 16 )
 [node name="StaticBody2D" type="StaticBody2D" parent="floor/floor_21"]
 
 editor/display_folded = true
+transform/pos = Vector2( 8, 8 )
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -478,7 +477,6 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_21/StaticBody2D"]
 
-transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
 trigger = false
 _update_shape_index = 0
@@ -495,9 +493,10 @@ region_rect = Rect2( 224, 128, 16, 16 )
 [node name="StaticBody2D" type="StaticBody2D" parent="floor/floor_22"]
 
 editor/display_folded = true
+transform/pos = Vector2( 8, 8 )
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -508,7 +507,6 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_22/StaticBody2D"]
 
-transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
 trigger = false
 _update_shape_index = 0
@@ -525,9 +523,10 @@ region_rect = Rect2( 240, 128, 16, 16 )
 [node name="StaticBody2D" type="StaticBody2D" parent="floor/floor_23"]
 
 editor/display_folded = true
+transform/pos = Vector2( 8, 8 )
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -538,17 +537,15 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_23/StaticBody2D"]
 
-transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
 trigger = false
 _update_shape_index = 0
 
 [node name="floor_dark" type="Node" parent="."]
 
-editor/display_folded = true
-
 [node name="floor_dark" type="Sprite" parent="floor_dark"]
 
+editor/display_folded = true
 transform/pos = Vector2( 144, 0 )
 texture = ExtResource( 1 )
 centered = false
@@ -558,9 +555,10 @@ region_rect = Rect2( 256, 80, 16, 16 )
 [node name="StaticBody2D" type="StaticBody2D" parent="floor_dark/floor_dark"]
 
 editor/display_folded = true
+transform/pos = Vector2( 8, 8 )
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -571,7 +569,6 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark/StaticBody2D"]
 
-transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
 trigger = false
 _update_shape_index = 0
@@ -588,9 +585,10 @@ region_rect = Rect2( 256, 96, 16, 16 )
 [node name="StaticBody2D" type="StaticBody2D" parent="floor_dark/floor_dark_A"]
 
 editor/display_folded = true
+transform/pos = Vector2( 8, 8 )
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -601,7 +599,6 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_A/StaticBody2D"]
 
-transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
 trigger = false
 _update_shape_index = 0
@@ -618,9 +615,10 @@ region_rect = Rect2( 256, 112, 16, 16 )
 [node name="StaticBody2D" type="StaticBody2D" parent="floor_dark/floor_dark_B"]
 
 editor/display_folded = true
+transform/pos = Vector2( 8, 8 )
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -631,7 +629,6 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_B/StaticBody2D"]
 
-transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
 trigger = false
 _update_shape_index = 0
@@ -648,9 +645,10 @@ region_rect = Rect2( 208, 48, 16, 16 )
 [node name="StaticBody2D" type="StaticBody2D" parent="floor_dark/floor_dark_1"]
 
 editor/display_folded = true
+transform/pos = Vector2( 8, 8 )
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -661,7 +659,6 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_1/StaticBody2D"]
 
-transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
 trigger = false
 _update_shape_index = 0
@@ -678,9 +675,10 @@ region_rect = Rect2( 224, 48, 16, 16 )
 [node name="StaticBody2D" type="StaticBody2D" parent="floor_dark/floor_dark_2"]
 
 editor/display_folded = true
+transform/pos = Vector2( 8, 8 )
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -691,7 +689,6 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_2/StaticBody2D"]
 
-transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
 trigger = false
 _update_shape_index = 0
@@ -708,9 +705,10 @@ region_rect = Rect2( 240, 48, 16, 16 )
 [node name="StaticBody2D" type="StaticBody2D" parent="floor_dark/floor_dark_3"]
 
 editor/display_folded = true
+transform/pos = Vector2( 8, 8 )
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -721,7 +719,6 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_3/StaticBody2D"]
 
-transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
 trigger = false
 _update_shape_index = 0
@@ -738,9 +735,10 @@ region_rect = Rect2( 208, 64, 16, 16 )
 [node name="StaticBody2D" type="StaticBody2D" parent="floor_dark/floor_dark_11"]
 
 editor/display_folded = true
+transform/pos = Vector2( 8, 8 )
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -751,7 +749,6 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_11/StaticBody2D"]
 
-transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
 trigger = false
 _update_shape_index = 0
@@ -768,9 +765,10 @@ region_rect = Rect2( 224, 64, 16, 16 )
 [node name="StaticBody2D" type="StaticBody2D" parent="floor_dark/floor_dark_12"]
 
 editor/display_folded = true
+transform/pos = Vector2( 8, 8 )
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -781,7 +779,6 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_12/StaticBody2D"]
 
-transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
 trigger = false
 _update_shape_index = 0
@@ -798,9 +795,10 @@ region_rect = Rect2( 240, 64, 16, 16 )
 [node name="StaticBody2D" type="StaticBody2D" parent="floor_dark/floor_dark_13"]
 
 editor/display_folded = true
+transform/pos = Vector2( 8, 8 )
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -811,7 +809,6 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_13/StaticBody2D"]
 
-transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
 trigger = false
 _update_shape_index = 0
@@ -828,9 +825,10 @@ region_rect = Rect2( 208, 80, 16, 16 )
 [node name="StaticBody2D" type="StaticBody2D" parent="floor_dark/floor_dark_21"]
 
 editor/display_folded = true
+transform/pos = Vector2( 8, 8 )
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -841,7 +839,6 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_21/StaticBody2D"]
 
-transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
 trigger = false
 _update_shape_index = 0
@@ -858,9 +855,10 @@ region_rect = Rect2( 224, 80, 16, 16 )
 [node name="StaticBody2D" type="StaticBody2D" parent="floor_dark/floor_dark_22"]
 
 editor/display_folded = true
+transform/pos = Vector2( 8, 8 )
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -871,7 +869,6 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_22/StaticBody2D"]
 
-transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
 trigger = false
 _update_shape_index = 0
@@ -888,9 +885,10 @@ region_rect = Rect2( 240, 80, 16, 16 )
 [node name="StaticBody2D" type="StaticBody2D" parent="floor_dark/floor_dark_23"]
 
 editor/display_folded = true
+transform/pos = Vector2( 8, 8 )
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -901,7 +899,6 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_23/StaticBody2D"]
 
-transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
 trigger = false
 _update_shape_index = 0
@@ -917,9 +914,10 @@ region_rect = Rect2( 208, 96, 16, 16 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="floor_dark/floor_dark_31"]
 
+transform/pos = Vector2( 8, 8 )
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -930,7 +928,6 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_31/StaticBody2D"]
 
-transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
 trigger = false
 _update_shape_index = 0
@@ -947,9 +944,10 @@ region_rect = Rect2( 224, 96, 16, 16 )
 [node name="StaticBody2D" type="StaticBody2D" parent="floor_dark/floor_dark_32"]
 
 editor/display_folded = true
+transform/pos = Vector2( 8, 8 )
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -960,7 +958,6 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_32/StaticBody2D"]
 
-transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
 trigger = false
 _update_shape_index = 0
@@ -977,9 +974,10 @@ region_rect = Rect2( 240, 96, 16, 16 )
 [node name="StaticBody2D" type="StaticBody2D" parent="floor_dark/floor_dark_33"]
 
 editor/display_folded = true
+transform/pos = Vector2( 8, 8 )
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -990,14 +988,12 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_33/StaticBody2D"]
 
-transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
 trigger = false
 _update_shape_index = 0
 
 [node name="floor_darker" type="Sprite" parent="floor_dark"]
 
-editor/display_folded = true
 transform/pos = Vector2( 80, 48 )
 texture = ExtResource( 1 )
 centered = false
@@ -1006,10 +1002,10 @@ region_rect = Rect2( 336, 288, 16, 16 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="floor_dark/floor_darker"]
 
-editor/display_folded = true
+transform/pos = Vector2( 8, 8 )
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -1020,14 +1016,12 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_darker/StaticBody2D"]
 
-transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
 trigger = false
 _update_shape_index = 0
 
 [node name="floor_darker_half" type="Sprite" parent="floor_dark"]
 
-editor/display_folded = true
 transform/pos = Vector2( 48, 48 )
 texture = ExtResource( 1 )
 centered = false
@@ -1036,9 +1030,10 @@ region_rect = Rect2( 320, 304, 16, 16 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="floor_dark/floor_darker_half"]
 
+transform/pos = Vector2( 8, 12 )
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 12 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
@@ -1049,7 +1044,6 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_darker_half/StaticBody2D"]
 
-transform/pos = Vector2( 8, 12 )
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
