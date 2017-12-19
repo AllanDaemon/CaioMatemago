@@ -22,19 +22,21 @@ centered = false
 region = true
 region_rect = Rect2( 0, 0, 16, 16 )
 
-[node name="Area2D" type="Area2D" parent="boxes/+1"]
+[node name="StaticBody2D" type="StaticBody2D" parent="boxes/+1"]
 
 editor/display_folded = true
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
 shapes/0/trigger = false
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="boxes/+1/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boxes/+1/StaticBody2D"]
 
 transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
@@ -50,19 +52,21 @@ centered = false
 region = true
 region_rect = Rect2( 16, 0, 16, 16 )
 
-[node name="Area2D" type="Area2D" parent="boxes/+1_hit"]
+[node name="StaticBody2D" type="StaticBody2D" parent="boxes/+1_hit"]
 
 editor/display_folded = true
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
 shapes/0/trigger = false
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="boxes/+1_hit/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boxes/+1_hit/StaticBody2D"]
 
 transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
@@ -78,19 +82,21 @@ centered = false
 region = true
 region_rect = Rect2( 128, 0, 16, 16 )
 
-[node name="Area2D" type="Area2D" parent="boxes/-1"]
+[node name="StaticBody2D" type="StaticBody2D" parent="boxes/-1"]
 
 editor/display_folded = true
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
 shapes/0/trigger = false
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="boxes/-1/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boxes/-1/StaticBody2D"]
 
 transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
@@ -106,19 +112,21 @@ centered = false
 region = true
 region_rect = Rect2( 144, 0, 16, 16 )
 
-[node name="Area2D" type="Area2D" parent="boxes/-1_hit"]
+[node name="StaticBody2D" type="StaticBody2D" parent="boxes/-1_hit"]
 
 editor/display_folded = true
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
 shapes/0/trigger = false
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="boxes/-1_hit/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boxes/-1_hit/StaticBody2D"]
 
 transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
@@ -134,19 +142,21 @@ centered = false
 region = true
 region_rect = Rect2( 0, 16, 16, 16 )
 
-[node name="Area2D" type="Area2D" parent="boxes/equal"]
+[node name="StaticBody2D" type="StaticBody2D" parent="boxes/equal"]
 
 editor/display_folded = true
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
 shapes/0/trigger = false
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="boxes/equal/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boxes/equal/StaticBody2D"]
 
 transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
@@ -162,19 +172,21 @@ centered = false
 region = true
 region_rect = Rect2( 16, 16, 16, 16 )
 
-[node name="Area2D" type="Area2D" parent="boxes/equal_hit"]
+[node name="StaticBody2D" type="StaticBody2D" parent="boxes/equal_hit"]
 
 editor/display_folded = true
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
 shapes/0/trigger = false
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="boxes/equal_hit/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boxes/equal_hit/StaticBody2D"]
 
 transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
@@ -194,7 +206,7 @@ centered = false
 region = true
 region_rect = Rect2( 144, 16, 16, 16 )
 
-[node name="Area2D" type="Area2D" parent="scenario/bridge_1"]
+[node name="StaticBody2D" type="StaticBody2D" parent="scenario/bridge_1"]
 
 editor/display_folded = true
 transform/pos = Vector2( 144, -96 )
@@ -202,12 +214,14 @@ input/pickable = true
 shapes/0/shape = ExtResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
 shapes/0/trigger = false
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="scenario/bridge_1/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scenario/bridge_1/StaticBody2D"]
 
 transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
@@ -223,7 +237,7 @@ centered = false
 region = true
 region_rect = Rect2( 32, 16, 16, 16 )
 
-[node name="Area2D" type="Area2D" parent="scenario/bridge_2"]
+[node name="StaticBody2D" type="StaticBody2D" parent="scenario/bridge_2"]
 
 editor/display_folded = true
 transform/pos = Vector2( 144, -112 )
@@ -231,12 +245,14 @@ input/pickable = true
 shapes/0/shape = ExtResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
 shapes/0/trigger = false
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="scenario/bridge_2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scenario/bridge_2/StaticBody2D"]
 
 transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
@@ -296,19 +312,21 @@ centered = false
 region = true
 region_rect = Rect2( 256, 128, 16, 16 )
 
-[node name="Area2D" type="Area2D" parent="floor/floor_A"]
+[node name="StaticBody2D" type="StaticBody2D" parent="floor/floor_A"]
 
 editor/display_folded = true
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
 shapes/0/trigger = false
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_A/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_A/StaticBody2D"]
 
 transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
@@ -324,19 +342,21 @@ centered = false
 region = true
 region_rect = Rect2( 256, 144, 16, 16 )
 
-[node name="Area2D" type="Area2D" parent="floor/floor_B"]
+[node name="StaticBody2D" type="StaticBody2D" parent="floor/floor_B"]
 
 editor/display_folded = true
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
 shapes/0/trigger = false
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_B/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_B/StaticBody2D"]
 
 transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
@@ -352,19 +372,21 @@ centered = false
 region = true
 region_rect = Rect2( 208, 112, 16, 16 )
 
-[node name="Area2D" type="Area2D" parent="floor/floor_11"]
+[node name="StaticBody2D" type="StaticBody2D" parent="floor/floor_11"]
 
 editor/display_folded = true
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
 shapes/0/trigger = false
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_11/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_11/StaticBody2D"]
 
 transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
@@ -380,19 +402,21 @@ centered = false
 region = true
 region_rect = Rect2( 224, 112, 16, 16 )
 
-[node name="Area2D" type="Area2D" parent="floor/floor_12"]
+[node name="StaticBody2D" type="StaticBody2D" parent="floor/floor_12"]
 
 editor/display_folded = true
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
 shapes/0/trigger = false
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_12/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_12/StaticBody2D"]
 
 transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
@@ -408,19 +432,21 @@ centered = false
 region = true
 region_rect = Rect2( 240, 112, 16, 16 )
 
-[node name="Area2D" type="Area2D" parent="floor/floor_13"]
+[node name="StaticBody2D" type="StaticBody2D" parent="floor/floor_13"]
 
 editor/display_folded = true
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
 shapes/0/trigger = false
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_13/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_13/StaticBody2D"]
 
 transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
@@ -436,19 +462,21 @@ centered = false
 region = true
 region_rect = Rect2( 208, 128, 16, 16 )
 
-[node name="Area2D" type="Area2D" parent="floor/floor_21"]
+[node name="StaticBody2D" type="StaticBody2D" parent="floor/floor_21"]
 
 editor/display_folded = true
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
 shapes/0/trigger = false
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_21/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_21/StaticBody2D"]
 
 transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
@@ -464,19 +492,21 @@ centered = false
 region = true
 region_rect = Rect2( 224, 128, 16, 16 )
 
-[node name="Area2D" type="Area2D" parent="floor/floor_22"]
+[node name="StaticBody2D" type="StaticBody2D" parent="floor/floor_22"]
 
 editor/display_folded = true
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
 shapes/0/trigger = false
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_22/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_22/StaticBody2D"]
 
 transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
@@ -492,19 +522,21 @@ centered = false
 region = true
 region_rect = Rect2( 240, 128, 16, 16 )
 
-[node name="Area2D" type="Area2D" parent="floor/floor_23"]
+[node name="StaticBody2D" type="StaticBody2D" parent="floor/floor_23"]
 
 editor/display_folded = true
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
 shapes/0/trigger = false
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_23/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor/floor_23/StaticBody2D"]
 
 transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
@@ -523,19 +555,21 @@ centered = false
 region = true
 region_rect = Rect2( 256, 80, 16, 16 )
 
-[node name="Area2D" type="Area2D" parent="floor_dark/floor_dark"]
+[node name="StaticBody2D" type="StaticBody2D" parent="floor_dark/floor_dark"]
 
 editor/display_folded = true
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
 shapes/0/trigger = false
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark/StaticBody2D"]
 
 transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
@@ -551,19 +585,21 @@ centered = false
 region = true
 region_rect = Rect2( 256, 96, 16, 16 )
 
-[node name="Area2D" type="Area2D" parent="floor_dark/floor_dark_A"]
+[node name="StaticBody2D" type="StaticBody2D" parent="floor_dark/floor_dark_A"]
 
 editor/display_folded = true
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
 shapes/0/trigger = false
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_A/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_A/StaticBody2D"]
 
 transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
@@ -579,19 +615,21 @@ centered = false
 region = true
 region_rect = Rect2( 256, 112, 16, 16 )
 
-[node name="Area2D" type="Area2D" parent="floor_dark/floor_dark_B"]
+[node name="StaticBody2D" type="StaticBody2D" parent="floor_dark/floor_dark_B"]
 
 editor/display_folded = true
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
 shapes/0/trigger = false
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_B/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_B/StaticBody2D"]
 
 transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
@@ -607,19 +645,21 @@ centered = false
 region = true
 region_rect = Rect2( 208, 48, 16, 16 )
 
-[node name="Area2D" type="Area2D" parent="floor_dark/floor_dark_1"]
+[node name="StaticBody2D" type="StaticBody2D" parent="floor_dark/floor_dark_1"]
 
 editor/display_folded = true
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
 shapes/0/trigger = false
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_1/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_1/StaticBody2D"]
 
 transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
@@ -635,19 +675,21 @@ centered = false
 region = true
 region_rect = Rect2( 224, 48, 16, 16 )
 
-[node name="Area2D" type="Area2D" parent="floor_dark/floor_dark_2"]
+[node name="StaticBody2D" type="StaticBody2D" parent="floor_dark/floor_dark_2"]
 
 editor/display_folded = true
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
 shapes/0/trigger = false
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_2/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_2/StaticBody2D"]
 
 transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
@@ -663,19 +705,21 @@ centered = false
 region = true
 region_rect = Rect2( 240, 48, 16, 16 )
 
-[node name="Area2D" type="Area2D" parent="floor_dark/floor_dark_3"]
+[node name="StaticBody2D" type="StaticBody2D" parent="floor_dark/floor_dark_3"]
 
 editor/display_folded = true
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
 shapes/0/trigger = false
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_3/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_3/StaticBody2D"]
 
 transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
@@ -691,19 +735,21 @@ centered = false
 region = true
 region_rect = Rect2( 208, 64, 16, 16 )
 
-[node name="Area2D" type="Area2D" parent="floor_dark/floor_dark_11"]
+[node name="StaticBody2D" type="StaticBody2D" parent="floor_dark/floor_dark_11"]
 
 editor/display_folded = true
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
 shapes/0/trigger = false
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_11/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_11/StaticBody2D"]
 
 transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
@@ -719,19 +765,21 @@ centered = false
 region = true
 region_rect = Rect2( 224, 64, 16, 16 )
 
-[node name="Area2D" type="Area2D" parent="floor_dark/floor_dark_12"]
+[node name="StaticBody2D" type="StaticBody2D" parent="floor_dark/floor_dark_12"]
 
 editor/display_folded = true
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
 shapes/0/trigger = false
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_12/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_12/StaticBody2D"]
 
 transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
@@ -747,19 +795,21 @@ centered = false
 region = true
 region_rect = Rect2( 240, 64, 16, 16 )
 
-[node name="Area2D" type="Area2D" parent="floor_dark/floor_dark_13"]
+[node name="StaticBody2D" type="StaticBody2D" parent="floor_dark/floor_dark_13"]
 
 editor/display_folded = true
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
 shapes/0/trigger = false
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_13/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_13/StaticBody2D"]
 
 transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
@@ -775,19 +825,21 @@ centered = false
 region = true
 region_rect = Rect2( 208, 80, 16, 16 )
 
-[node name="Area2D" type="Area2D" parent="floor_dark/floor_dark_21"]
+[node name="StaticBody2D" type="StaticBody2D" parent="floor_dark/floor_dark_21"]
 
 editor/display_folded = true
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
 shapes/0/trigger = false
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_21/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_21/StaticBody2D"]
 
 transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
@@ -803,19 +855,21 @@ centered = false
 region = true
 region_rect = Rect2( 224, 80, 16, 16 )
 
-[node name="Area2D" type="Area2D" parent="floor_dark/floor_dark_22"]
+[node name="StaticBody2D" type="StaticBody2D" parent="floor_dark/floor_dark_22"]
 
 editor/display_folded = true
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
 shapes/0/trigger = false
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_22/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_22/StaticBody2D"]
 
 transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
@@ -831,19 +885,21 @@ centered = false
 region = true
 region_rect = Rect2( 240, 80, 16, 16 )
 
-[node name="Area2D" type="Area2D" parent="floor_dark/floor_dark_23"]
+[node name="StaticBody2D" type="StaticBody2D" parent="floor_dark/floor_dark_23"]
 
 editor/display_folded = true
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
 shapes/0/trigger = false
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_23/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_23/StaticBody2D"]
 
 transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
@@ -859,18 +915,20 @@ centered = false
 region = true
 region_rect = Rect2( 208, 96, 16, 16 )
 
-[node name="Area2D" type="Area2D" parent="floor_dark/floor_dark_31"]
+[node name="StaticBody2D" type="StaticBody2D" parent="floor_dark/floor_dark_31"]
 
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
 shapes/0/trigger = false
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_31/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_31/StaticBody2D"]
 
 transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
@@ -886,19 +944,21 @@ centered = false
 region = true
 region_rect = Rect2( 224, 96, 16, 16 )
 
-[node name="Area2D" type="Area2D" parent="floor_dark/floor_dark_32"]
+[node name="StaticBody2D" type="StaticBody2D" parent="floor_dark/floor_dark_32"]
 
 editor/display_folded = true
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
 shapes/0/trigger = false
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_32/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_32/StaticBody2D"]
 
 transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
@@ -914,19 +974,21 @@ centered = false
 region = true
 region_rect = Rect2( 240, 96, 16, 16 )
 
-[node name="Area2D" type="Area2D" parent="floor_dark/floor_dark_33"]
+[node name="StaticBody2D" type="StaticBody2D" parent="floor_dark/floor_dark_33"]
 
 editor/display_folded = true
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
 shapes/0/trigger = false
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_33/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_dark_33/StaticBody2D"]
 
 transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
@@ -942,19 +1004,21 @@ centered = false
 region = true
 region_rect = Rect2( 336, 288, 16, 16 )
 
-[node name="Area2D" type="Area2D" parent="floor_dark/floor_darker"]
+[node name="StaticBody2D" type="StaticBody2D" parent="floor_dark/floor_darker"]
 
 editor/display_folded = true
 input/pickable = true
 shapes/0/shape = ExtResource( 2 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 8 )
 shapes/0/trigger = false
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_darker/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_darker/StaticBody2D"]
 
 transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
@@ -970,18 +1034,20 @@ centered = false
 region = true
 region_rect = Rect2( 320, 304, 16, 16 )
 
-[node name="Area2D" type="Area2D" parent="floor_dark/floor_darker_half"]
+[node name="StaticBody2D" type="StaticBody2D" parent="floor_dark/floor_darker_half"]
 
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 8, 12 )
 shapes/0/trigger = false
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_darker_half/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_darker_half/StaticBody2D"]
 
 transform/pos = Vector2( 8, 12 )
 shape = SubResource( 1 )
