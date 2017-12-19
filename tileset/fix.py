@@ -31,7 +31,7 @@ fix_nodes = 'boxes', 'floor', 'floor_dark'
 
 ex_add = '[ext_resource path="res://tileset/block_shape.tres" type="Shape2D" id=2]'
 
-template = '''
+template = '''\
 [node name="Area2D" type="Area2D" parent="{parent}"]
 
 editor/display_folded = true
@@ -45,12 +45,15 @@ transform/pos = Vector2( 8, 8 )
 shape = ExtResource( 2 )
 trigger = false
 _update_shape_index = 0
+
 '''
 
 def fix(lines):
 	tag, fields = get_tag_info(lines[0])
 	if tag == 'node' and 'parent'in fields and fields['parent'] in fix_nodes:
-		lines.append(template.format(parent=fields['parent']))
+		parent = fields['parent'] + '/' + fields['name']
+		s = template.format(parent=parent)
+		lines.append(s)
 
 from pprint import pprint as pp
 if __name__ == '__main__':
