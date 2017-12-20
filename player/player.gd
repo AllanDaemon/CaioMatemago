@@ -65,7 +65,7 @@ func _fixed_process(delta):
 
 	if vel.y < 0:
 		anim = "jumping"
-	elif vel.y > 0:
+	elif vel.y > 0 and not ground_ray.is_colliding():
 		anim = "falling"
 
 	change_anim(anim)
