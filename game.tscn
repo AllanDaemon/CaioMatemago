@@ -105,7 +105,6 @@ script/script = ExtResource( 1 )
 
 [node name="background" type="ParallaxBackground" parent="."]
 
-editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -119,19 +118,19 @@ scroll/ignore_camera_zoom = false
 
 [node name="background" type="ParallaxLayer" parent="background"]
 
-editor/display_folded = true
-visibility/visible = false
-motion/scale = Vector2( 1, 1 )
+motion/scale = Vector2( 0.75, 0.75 )
 motion/offset = Vector2( 0, 0 )
-motion/mirroring = Vector2( 0, 0 )
+motion/mirroring = Vector2( 1, 0 )
 
 [node name="bg_sprite_1" type="Sprite" parent="background/background"]
 
+transform/scale = Vector2( 1.5, 1.5 )
 texture = SubResource( 1 )
 centered = false
 
 [node name="bg_sprite_2" type="Sprite" parent="background/background"]
 
+visibility/visible = false
 transform/pos = Vector2( 320, 0 )
 texture = SubResource( 1 )
 centered = false
