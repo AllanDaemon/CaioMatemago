@@ -12,11 +12,8 @@ extents = Vector2( 8, 4 )
 
 [node name="boxes" type="Node" parent="."]
 
-editor/display_folded = true
-
 [node name="+1" type="Sprite" parent="boxes"]
 
-editor/display_folded = true
 texture = ExtResource( 1 )
 centered = false
 region = true
@@ -45,7 +42,6 @@ _update_shape_index = 0
 
 [node name="+1_hit" type="Sprite" parent="boxes"]
 
-editor/display_folded = true
 transform/pos = Vector2( 0, 16 )
 texture = ExtResource( 1 )
 centered = false
@@ -75,7 +71,6 @@ _update_shape_index = 0
 
 [node name="-1" type="Sprite" parent="boxes"]
 
-editor/display_folded = true
 transform/pos = Vector2( 0, 32 )
 texture = ExtResource( 1 )
 centered = false
@@ -193,11 +188,7 @@ shape = ExtResource( 2 )
 trigger = false
 _update_shape_index = 0
 
-[node name="scenario" type="Node" parent="."]
-
-editor/display_folded = true
-
-[node name="bridge_1" type="Sprite" parent="scenario"]
+[node name="bridge_1" type="Sprite" parent="boxes"]
 
 editor/display_folded = true
 transform/pos = Vector2( 0, 96 )
@@ -206,7 +197,7 @@ centered = false
 region = true
 region_rect = Rect2( 144, 16, 16, 16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="scenario/bridge_1"]
+[node name="StaticBody2D" type="StaticBody2D" parent="boxes/bridge_1"]
 
 editor/display_folded = true
 transform/pos = Vector2( 8, 8 )
@@ -221,13 +212,13 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="scenario/bridge_1/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boxes/bridge_1/StaticBody2D"]
 
 shape = ExtResource( 2 )
 trigger = false
 _update_shape_index = 0
 
-[node name="bridge_2" type="Sprite" parent="scenario"]
+[node name="bridge_2" type="Sprite" parent="boxes"]
 
 editor/display_folded = true
 transform/pos = Vector2( 0, 112 )
@@ -236,7 +227,7 @@ centered = false
 region = true
 region_rect = Rect2( 32, 16, 16, 16 )
 
-[node name="StaticBody2D" type="StaticBody2D" parent="scenario/bridge_2"]
+[node name="StaticBody2D" type="StaticBody2D" parent="boxes/bridge_2"]
 
 editor/display_folded = true
 transform/pos = Vector2( 8, 8 )
@@ -251,11 +242,27 @@ constant_angular_velocity = 0.0
 friction = 1.0
 bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="scenario/bridge_2/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boxes/bridge_2/StaticBody2D"]
 
 shape = ExtResource( 2 )
 trigger = false
 _update_shape_index = 0
+
+[node name="blue_boxes" type="Node" parent="boxes"]
+
+[node name="green_boxes" type="Node" parent="boxes"]
+
+[node name="scenario" type="Node" parent="."]
+
+editor/display_folded = true
+
+[node name="gray_bg" type="Sprite" parent="scenario"]
+
+transform/pos = Vector2( -48, 64 )
+texture = ExtResource( 1 )
+centered = false
+region = true
+region_rect = Rect2( 320, 288, 16, 16 )
 
 [node name="plant_1" type="Sprite" parent="scenario"]
 
@@ -297,6 +304,14 @@ centered = false
 region = true
 region_rect = Rect2( 272, 0, 48, 48 )
 
+[node name="sun" type="Sprite" parent="scenario"]
+
+transform/pos = Vector2( -208, 0 )
+texture = ExtResource( 1 )
+centered = false
+region = true
+region_rect = Rect2( 320, 176, 32, 32 )
+
 [node name="floor" type="Node" parent="."]
 
 editor/display_folded = true
@@ -304,7 +319,7 @@ editor/display_folded = true
 [node name="floor_A" type="Sprite" parent="floor"]
 
 editor/display_folded = true
-transform/pos = Vector2( 48, 0 )
+transform/pos = Vector2( 128, 0 )
 texture = ExtResource( 1 )
 centered = false
 region = true
@@ -334,7 +349,7 @@ _update_shape_index = 0
 [node name="floor_B" type="Sprite" parent="floor"]
 
 editor/display_folded = true
-transform/pos = Vector2( 48, 16 )
+transform/pos = Vector2( 128, 16 )
 texture = ExtResource( 1 )
 centered = false
 region = true
@@ -364,7 +379,7 @@ _update_shape_index = 0
 [node name="floor_11" type="Sprite" parent="floor"]
 
 editor/display_folded = true
-transform/pos = Vector2( 80, 0 )
+transform/pos = Vector2( 160, 0 )
 texture = ExtResource( 1 )
 centered = false
 region = true
@@ -394,7 +409,7 @@ _update_shape_index = 0
 [node name="floor_12" type="Sprite" parent="floor"]
 
 editor/display_folded = true
-transform/pos = Vector2( 96, 0 )
+transform/pos = Vector2( 176, 0 )
 texture = ExtResource( 1 )
 centered = false
 region = true
@@ -424,7 +439,7 @@ _update_shape_index = 0
 [node name="floor_13" type="Sprite" parent="floor"]
 
 editor/display_folded = true
-transform/pos = Vector2( 112, 0 )
+transform/pos = Vector2( 192, 0 )
 texture = ExtResource( 1 )
 centered = false
 region = true
@@ -454,7 +469,7 @@ _update_shape_index = 0
 [node name="floor_21" type="Sprite" parent="floor"]
 
 editor/display_folded = true
-transform/pos = Vector2( 80, 16 )
+transform/pos = Vector2( 160, 16 )
 texture = ExtResource( 1 )
 centered = false
 region = true
@@ -484,7 +499,7 @@ _update_shape_index = 0
 [node name="floor_22" type="Sprite" parent="floor"]
 
 editor/display_folded = true
-transform/pos = Vector2( 96, 16 )
+transform/pos = Vector2( 176, 16 )
 texture = ExtResource( 1 )
 centered = false
 region = true
@@ -514,7 +529,7 @@ _update_shape_index = 0
 [node name="floor_23" type="Sprite" parent="floor"]
 
 editor/display_folded = true
-transform/pos = Vector2( 112, 16 )
+transform/pos = Vector2( 192, 16 )
 texture = ExtResource( 1 )
 centered = false
 region = true
@@ -543,12 +558,10 @@ _update_shape_index = 0
 
 [node name="floor_dark" type="Node" parent="."]
 
-editor/display_folded = true
-
 [node name="floor_dark" type="Sprite" parent="floor_dark"]
 
 editor/display_folded = true
-transform/pos = Vector2( 144, 0 )
+transform/pos = Vector2( 224, 0 )
 texture = ExtResource( 1 )
 centered = false
 region = true
@@ -578,7 +591,7 @@ _update_shape_index = 0
 [node name="floor_dark_A" type="Sprite" parent="floor_dark"]
 
 editor/display_folded = true
-transform/pos = Vector2( 144, 32 )
+transform/pos = Vector2( 224, 32 )
 texture = ExtResource( 1 )
 centered = false
 region = true
@@ -608,7 +621,7 @@ _update_shape_index = 0
 [node name="floor_dark_B" type="Sprite" parent="floor_dark"]
 
 editor/display_folded = true
-transform/pos = Vector2( 144, 48 )
+transform/pos = Vector2( 224, 48 )
 texture = ExtResource( 1 )
 centered = false
 region = true
@@ -638,7 +651,7 @@ _update_shape_index = 0
 [node name="floor_dark_1" type="Sprite" parent="floor_dark"]
 
 editor/display_folded = true
-transform/pos = Vector2( 176, 0 )
+transform/pos = Vector2( 256, 0 )
 texture = ExtResource( 1 )
 centered = false
 region = true
@@ -668,7 +681,7 @@ _update_shape_index = 0
 [node name="floor_dark_2" type="Sprite" parent="floor_dark"]
 
 editor/display_folded = true
-transform/pos = Vector2( 192, 0 )
+transform/pos = Vector2( 272, 0 )
 texture = ExtResource( 1 )
 centered = false
 region = true
@@ -698,7 +711,7 @@ _update_shape_index = 0
 [node name="floor_dark_3" type="Sprite" parent="floor_dark"]
 
 editor/display_folded = true
-transform/pos = Vector2( 208, 0 )
+transform/pos = Vector2( 288, 0 )
 texture = ExtResource( 1 )
 centered = false
 region = true
@@ -728,7 +741,7 @@ _update_shape_index = 0
 [node name="floor_dark_11" type="Sprite" parent="floor_dark"]
 
 editor/display_folded = true
-transform/pos = Vector2( 176, 32 )
+transform/pos = Vector2( 256, 32 )
 texture = ExtResource( 1 )
 centered = false
 region = true
@@ -758,7 +771,7 @@ _update_shape_index = 0
 [node name="floor_dark_12" type="Sprite" parent="floor_dark"]
 
 editor/display_folded = true
-transform/pos = Vector2( 192, 32 )
+transform/pos = Vector2( 272, 32 )
 texture = ExtResource( 1 )
 centered = false
 region = true
@@ -787,8 +800,7 @@ _update_shape_index = 0
 
 [node name="floor_dark_13" type="Sprite" parent="floor_dark"]
 
-editor/display_folded = true
-transform/pos = Vector2( 208, 32 )
+transform/pos = Vector2( 288, 32 )
 texture = ExtResource( 1 )
 centered = false
 region = true
@@ -818,7 +830,7 @@ _update_shape_index = 0
 [node name="floor_dark_21" type="Sprite" parent="floor_dark"]
 
 editor/display_folded = true
-transform/pos = Vector2( 176, 48 )
+transform/pos = Vector2( 256, 48 )
 texture = ExtResource( 1 )
 centered = false
 region = true
@@ -848,7 +860,7 @@ _update_shape_index = 0
 [node name="floor_dark_22" type="Sprite" parent="floor_dark"]
 
 editor/display_folded = true
-transform/pos = Vector2( 192, 48 )
+transform/pos = Vector2( 272, 48 )
 texture = ExtResource( 1 )
 centered = false
 region = true
@@ -878,7 +890,7 @@ _update_shape_index = 0
 [node name="floor_dark_23" type="Sprite" parent="floor_dark"]
 
 editor/display_folded = true
-transform/pos = Vector2( 208, 48 )
+transform/pos = Vector2( 288, 48 )
 texture = ExtResource( 1 )
 centered = false
 region = true
@@ -908,7 +920,7 @@ _update_shape_index = 0
 [node name="floor_dark_31" type="Sprite" parent="floor_dark"]
 
 editor/display_folded = true
-transform/pos = Vector2( 176, 64 )
+transform/pos = Vector2( 256, 64 )
 texture = ExtResource( 1 )
 centered = false
 region = true
@@ -937,7 +949,7 @@ _update_shape_index = 0
 [node name="floor_dark_32" type="Sprite" parent="floor_dark"]
 
 editor/display_folded = true
-transform/pos = Vector2( 192, 64 )
+transform/pos = Vector2( 272, 64 )
 texture = ExtResource( 1 )
 centered = false
 region = true
@@ -967,7 +979,7 @@ _update_shape_index = 0
 [node name="floor_dark_33" type="Sprite" parent="floor_dark"]
 
 editor/display_folded = true
-transform/pos = Vector2( 208, 64 )
+transform/pos = Vector2( 288, 64 )
 texture = ExtResource( 1 )
 centered = false
 region = true
@@ -997,7 +1009,7 @@ _update_shape_index = 0
 [node name="floor_darker" type="Sprite" parent="floor_dark"]
 
 editor/display_folded = true
-transform/pos = Vector2( 80, 48 )
+transform/pos = Vector2( 160, 48 )
 texture = ExtResource( 1 )
 centered = false
 region = true
@@ -1025,8 +1037,7 @@ _update_shape_index = 0
 
 [node name="floor_darker_half" type="Sprite" parent="floor_dark"]
 
-editor/display_folded = true
-transform/pos = Vector2( 48, 48 )
+transform/pos = Vector2( 128, 48 )
 texture = ExtResource( 1 )
 centered = false
 region = true
@@ -1049,6 +1060,188 @@ bounce = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor_dark/floor_darker_half/StaticBody2D"]
 
 shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="bricks" type="Node" parent="."]
+
+editor/display_folded = true
+
+[node name="gray_brick_A1" type="Sprite" parent="bricks"]
+
+editor/display_folded = true
+transform/pos = Vector2( 336, 0 )
+texture = ExtResource( 1 )
+centered = false
+region = true
+region_rect = Rect2( 48, 16, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="bricks/gray_brick_A1"]
+
+editor/display_folded = true
+transform/pos = Vector2( 8, 8 )
+input/pickable = true
+shapes/0/shape = ExtResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bricks/gray_brick_A1/StaticBody2D"]
+
+shape = ExtResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="gray_brick_A2" type="Sprite" parent="bricks"]
+
+editor/display_folded = true
+transform/pos = Vector2( 352, 0 )
+texture = ExtResource( 1 )
+centered = false
+region = true
+region_rect = Rect2( 64, 16, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="bricks/gray_brick_A2"]
+
+editor/display_folded = true
+transform/pos = Vector2( 8, 8 )
+input/pickable = true
+shapes/0/shape = ExtResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bricks/gray_brick_A2/StaticBody2D"]
+
+shape = ExtResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="gray_brick_A3" type="Sprite" parent="bricks"]
+
+editor/display_folded = true
+transform/pos = Vector2( 368, 0 )
+texture = ExtResource( 1 )
+centered = false
+region = true
+region_rect = Rect2( 80, 16, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="bricks/gray_brick_A3"]
+
+editor/display_folded = true
+transform/pos = Vector2( 8, 8 )
+input/pickable = true
+shapes/0/shape = ExtResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bricks/gray_brick_A3/StaticBody2D"]
+
+shape = ExtResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="gray_brick_B1" type="Sprite" parent="bricks"]
+
+editor/display_folded = true
+transform/pos = Vector2( 336, 16 )
+texture = ExtResource( 1 )
+centered = false
+region = true
+region_rect = Rect2( 96, 16, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="bricks/gray_brick_B1"]
+
+editor/display_folded = true
+transform/pos = Vector2( 8, 8 )
+input/pickable = true
+shapes/0/shape = ExtResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bricks/gray_brick_B1/StaticBody2D"]
+
+shape = ExtResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="gray_brick_B2" type="Sprite" parent="bricks"]
+
+editor/display_folded = true
+transform/pos = Vector2( 352, 16 )
+texture = ExtResource( 1 )
+centered = false
+region = true
+region_rect = Rect2( 112, 16, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="bricks/gray_brick_B2"]
+
+editor/display_folded = true
+transform/pos = Vector2( 8, 8 )
+input/pickable = true
+shapes/0/shape = ExtResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bricks/gray_brick_B2/StaticBody2D"]
+
+shape = ExtResource( 2 )
+trigger = false
+_update_shape_index = 0
+
+[node name="gray_brick_B3" type="Sprite" parent="bricks"]
+
+transform/pos = Vector2( 368, 16 )
+texture = ExtResource( 1 )
+centered = false
+region = true
+region_rect = Rect2( 128, 16, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="bricks/gray_brick_B3"]
+
+transform/pos = Vector2( 8, 8 )
+input/pickable = true
+shapes/0/shape = ExtResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bricks/gray_brick_B3/StaticBody2D"]
+
+shape = ExtResource( 2 )
 trigger = false
 _update_shape_index = 0
 
