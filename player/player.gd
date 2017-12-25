@@ -24,6 +24,7 @@ var vel = Vector2()
 var anim = "idle"
 
 func _ready():
+	ground_ray.add_exception(self)	# Avoid cast collide with player
 	set_fixed_process(true)
 	set_process_input(true)
 
@@ -53,8 +54,10 @@ func _fixed_process(delta):
 	var motion = move_and_slide(vel, FLOOR_NORMAL, SLOPE_SLIDE_STOP)
 
 	if abs(vel.x) < VEL_X_EPSILON:
+		#print("Still needs it XXX")
 		vel.x = 0
 	if abs(vel.y) < VEL_Y_EPSILON:
+		#print("Still needs it YYY")
 		vel.y = 0
 
 	# set animation
@@ -79,10 +82,20 @@ func _fixed_process(delta):
 	var raycast_dbg_color
 	if ground_ray.is_colliding():	raycast_dbg_color = Color(.5,1,.5)
 	else: 							raycast_dbg_color = Color(.5,.5,1)
-	get_node("anim_label").add_color_override("font_color", raycast_dbg_color)
-	get_node("anim_label").set_text(anim)
-	get_node("vel_label").set_text(str(vel))
-	get_node("acc_label").set_text(str(acc))
+	#get_node("DBG/anim_label").add_color_override("font_color", raycast_dbg_color)
+	get_node("DBG/left_square").set_color(raycast_dbg_color)
+	get_node("DBG/right_square").set_color(
+		Color(.5,1,.5)
+		if is_move_and_slide_on_floor()
+		else Color(.5,.5,1) )
+	get_node("DBG/right_middle_square").set_color(
+		Color(0,0,0,0)
+		if ground_ray.is_colliding() == is_move_and_slide_on_floor()
+		else Color(1,0,0,1) )
+
+	get_node("DBG/anim_label").set_text(anim)
+	get_node("DBG/vel_label").set_text(str(vel))
+	get_node("DBG/acc_label").set_text(str(acc))
 
 func change_anim(anim):
 	var current = animation.get_current_animation()

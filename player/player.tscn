@@ -93,6 +93,7 @@ frame = 5
 
 [node name="colision" type="CollisionShape2D" parent="."]
 
+visibility/visible = false
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
@@ -119,7 +120,18 @@ playback/speed = 1.0
 blend_times = [  ]
 autoplay = "idle"
 
-[node name="anim_label" type="Label" parent="."]
+[node name="DBG" type="Control" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 40.0
+
+[node name="anim_label" type="Label" parent="DBG"]
 
 rect/scale = Vector2( 0.5, 0.5 )
 focus/ignore_mouse = true
@@ -136,7 +148,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="vel_label" type="Label" parent="."]
+[node name="vel_label" type="Label" parent="DBG"]
 
 rect/scale = Vector2( 0.5, 0.5 )
 focus/ignore_mouse = true
@@ -153,7 +165,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="acc_label" type="Label" parent="."]
+[node name="acc_label" type="Label" parent="DBG"]
 
 rect/scale = Vector2( 0.5, 0.5 )
 focus/ignore_mouse = true
@@ -169,5 +181,50 @@ align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+
+[node name="left_square" type="Polygon2D" parent="DBG"]
+
+transform/pos = Vector2( -12, -12 )
+polygon = Vector2Array( -3, -3, -3, 2, 2, 2, 2, -3 )
+uv = Vector2Array(  )
+color = Color( 1, 1, 1, 1 )
+vertex_colors = ColorArray(  )
+offset = Vector2( 0, 0 )
+texture/texture = null
+texture/offset = Vector2( 0, 0 )
+texture/scale = Vector2( 1, 1 )
+texture/rotation = 0.0
+invert/enable = false
+invert/border = 100.0
+
+[node name="right_square" type="Polygon2D" parent="DBG"]
+
+transform/pos = Vector2( 10, -12 )
+polygon = Vector2Array( 0, -3, 0, 2, 5, 2, 5, -3 )
+uv = Vector2Array(  )
+color = Color( 1, 1, 1, 1 )
+vertex_colors = ColorArray(  )
+offset = Vector2( 0, 0 )
+texture/texture = null
+texture/offset = Vector2( 0, 0 )
+texture/scale = Vector2( 1, 1 )
+texture/rotation = 0.0
+invert/enable = false
+invert/border = 100.0
+
+[node name="right_middle_square" type="Polygon2D" parent="DBG"]
+
+transform/pos = Vector2( 10, 3 )
+polygon = Vector2Array( 0, -3, 0, 2, 5, 2, 5, -3 )
+uv = Vector2Array(  )
+color = Color( 1, 1, 1, 1 )
+vertex_colors = ColorArray(  )
+offset = Vector2( 0, 0 )
+texture/texture = null
+texture/offset = Vector2( 0, 0 )
+texture/scale = Vector2( 1, 1 )
+texture/rotation = 0.0
+invert/enable = false
+invert/border = 100.0
 
 
