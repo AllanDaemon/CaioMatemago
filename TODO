@@ -1,2 +1,4 @@
-* Fix animation when player is trying to walk and colliding
 * Fix box hit animation to be centralized
+
+# Minor
+* Clean up and rewrite player.gd to use move_and_slide facilities
