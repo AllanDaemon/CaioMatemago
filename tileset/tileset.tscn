@@ -12,8 +12,11 @@ extents = Vector2( 8, 4 )
 
 [node name="boxes" type="Node" parent="."]
 
+editor/display_folded = true
+
 [node name="+1" type="Sprite" parent="boxes"]
 
+editor/display_folded = true
 texture = ExtResource( 1 )
 centered = false
 region = true
@@ -42,6 +45,7 @@ _update_shape_index = 0
 
 [node name="+1_hit" type="Sprite" parent="boxes"]
 
+editor/display_folded = true
 transform/pos = Vector2( 0, 16 )
 texture = ExtResource( 1 )
 centered = false
@@ -71,6 +75,7 @@ _update_shape_index = 0
 
 [node name="-1" type="Sprite" parent="boxes"]
 
+editor/display_folded = true
 transform/pos = Vector2( 0, 32 )
 texture = ExtResource( 1 )
 centered = false
@@ -254,8 +259,6 @@ _update_shape_index = 0
 
 [node name="scenario" type="Node" parent="."]
 
-editor/display_folded = true
-
 [node name="gray_bg" type="Sprite" parent="scenario"]
 
 transform/pos = Vector2( -48, 64 )
@@ -263,6 +266,14 @@ texture = ExtResource( 1 )
 centered = false
 region = true
 region_rect = Rect2( 320, 288, 16, 16 )
+
+[node name="dark_blue_bg" type="Sprite" parent="scenario"]
+
+transform/pos = Vector2( -48, 96 )
+texture = ExtResource( 1 )
+centered = false
+region = true
+region_rect = Rect2( 336, 304, 16, 16 )
 
 [node name="plant_1" type="Sprite" parent="scenario"]
 
@@ -558,6 +569,8 @@ _update_shape_index = 0
 
 [node name="floor_dark" type="Node" parent="."]
 
+editor/display_folded = true
+
 [node name="floor_dark" type="Sprite" parent="floor_dark"]
 
 editor/display_folded = true
@@ -800,6 +813,7 @@ _update_shape_index = 0
 
 [node name="floor_dark_13" type="Sprite" parent="floor_dark"]
 
+editor/display_folded = true
 transform/pos = Vector2( 288, 32 )
 texture = ExtResource( 1 )
 centered = false
