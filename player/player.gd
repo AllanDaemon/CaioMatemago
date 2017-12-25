@@ -22,6 +22,11 @@ const SLOPE_SLIDE_STOP = 25.0
 var acc = Vector2()
 var vel = Vector2()
 var anim = "idle"
+#@TODO Use enums
+var on_floor = false
+var on_air = true
+var jumping = false
+var falling = true
 
 func _ready():
 	ground_ray.add_exception(self)	# Avoid cast collide with player
@@ -71,9 +76,14 @@ func _fixed_process(delta):
 	else:
 		anim = "walking"
 
+	if abs(vel.y) < VEL_Y_EPSILON:
+		#print("Still needs it YYY")
+		vel.y = 0
+
 	if vel.y < 0:
 		anim = "jumping"
-	elif vel.y > 0 and not ground_ray.is_colliding():
+	#elif vel.y > 0 and not ground_ray.is_colliding():
+	elif vel.y > 0 and not is_move_and_slide_on_floor():
 		anim = "falling"
 
 	change_anim(anim)

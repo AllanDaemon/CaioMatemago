@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=9 format=1]
 
 [ext_resource path="res://player/player.gd" type="Script" id=1]
 [ext_resource path="res://player/Caio.png" type="Texture" id=2]
@@ -6,7 +6,12 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 8, 13.5 )
+extents = Vector2( 6, 13.5 )
+
+[sub_resource type="RectangleShape2D" id=6]
+
+custom_solver_bias = 0.0
+extents = Vector2( 8, 4 )
 
 [sub_resource type="Animation" id=2]
 
@@ -80,6 +85,9 @@ input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
+shapes/1/shape = SubResource( 6 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 4 )
+shapes/1/trigger = true
 collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
@@ -97,6 +105,14 @@ visibility/visible = false
 shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
+
+[node name="colision_hamds" type="CollisionShape2D" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( 0, 4 )
+shape = SubResource( 6 )
+trigger = true
+_update_shape_index = 1
 
 [node name="ground_ray" type="RayCast2D" parent="."]
 
