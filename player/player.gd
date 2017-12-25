@@ -15,7 +15,9 @@ const GRAVITY = 1000
 const JUMP_SPEED = -420
 const MIN_JUMP = -100
 const VEL_X_EPSILON = 20
-const VEL_Y_EPSILON = 0.001 
+const VEL_Y_EPSILON = 0.001
+const FLOOR_NORMAL = Vector2(0,-1)
+const SLOPE_SLIDE_STOP = 25.0
 
 var acc = Vector2()
 var vel = Vector2()
@@ -41,12 +43,15 @@ func _fixed_process(delta):
 	vel += acc * delta
 	vel.x = clamp(vel.x, -MAX_SPEED, MAX_SPEED)
 
-	var motion = move(vel * delta)
-	if is_colliding():
-		var n = get_collision_normal()
-		motion = n.slide(motion)
-		vel = n.slide(vel)
-		move(motion)
+#	var motion = move(vel * delta)
+#	if is_colliding():
+#		var n = get_collision_normal()
+#		motion = n.slide(motion)
+#		vel = n.slide(vel)
+#		move(motion)
+	
+	var motion = move_and_slide(vel, FLOOR_NORMAL, SLOPE_SLIDE_STOP)
+
 	if abs(vel.x) < VEL_X_EPSILON:
 		vel.x = 0
 	if abs(vel.y) < VEL_Y_EPSILON:
