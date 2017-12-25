@@ -118,20 +118,15 @@ scroll/ignore_camera_zoom = false
 
 [node name="background" type="ParallaxLayer" parent="background"]
 
+editor/display_folded = true
 motion/scale = Vector2( 0.75, 0.75 )
 motion/offset = Vector2( 0, 0 )
 motion/mirroring = Vector2( 1, 0 )
 
-[node name="bg_sprite_1" type="Sprite" parent="background/background"]
+[node name="bg_sprite" type="Sprite" parent="background/background"]
 
-transform/scale = Vector2( 1.5, 1.5 )
-texture = SubResource( 1 )
-centered = false
-
-[node name="bg_sprite_2" type="Sprite" parent="background/background"]
-
-visibility/visible = false
-transform/pos = Vector2( 320, 0 )
+transform/pos = Vector2( 0, -70 )
+transform/scale = Vector2( 2, 2 )
 texture = SubResource( 1 )
 centered = false
 
