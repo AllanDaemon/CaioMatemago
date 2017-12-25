@@ -100,7 +100,7 @@ tracks/1/keys = {
 
 [node name="game" type="Node2D"]
 
-transform/pos = Vector2( 1, 0 )
+transform/pos = Vector2( -10, -30 )
 script/script = ExtResource( 1 )
 
 [node name="background" type="ParallaxBackground" parent="."]
@@ -119,6 +119,7 @@ scroll/ignore_camera_zoom = false
 [node name="background" type="ParallaxLayer" parent="background"]
 
 editor/display_folded = true
+visibility/visible = false
 motion/scale = Vector2( 0.75, 0.75 )
 motion/offset = Vector2( 0, 0 )
 motion/mirroring = Vector2( 1, 0 )
@@ -146,7 +147,7 @@ collision/bounce = 0.0
 collision/layers = 1
 collision/mask = 1
 occluder/light_mask = 1
-tile_data = IntArray( 262143, 36, 327679, 36, 393215, 36, 458751, 36, 524287, 36, 458771, 15, 458772, 16, 458773, 17, 589823, 36, 524303, 37, 524304, 37, 524305, 37, 524306, 15, 524307, 536870931, 524308, 536870931, 524309, 536870931, 524310, 17, 655359, 36, 589824, 36, 589825, 36, 589826, 36, 589827, 36, 589828, 36, 589829, 36, 589830, 36, 589831, 36, 589832, 36, 589833, 36, 589834, 36, 589835, 36, 589836, 36, 589837, 36, 589838, 36, 589839, 36, 589840, 36, 589841, 36, 589842, 36, 589843, 36, 589844, 36, 589845, 36, 589846, 36, 589847, 36, 589848, 36, 589849, 36, 589850, 36, 589851, 36, 589852, 36, 589853, 36, 589854, 36, 589855, 36, 589856, 36, 589857, 36, 589858, 36, 589859, 36, 589860, 36, 589861, 36, 589862, 36, 589863, 36 )
+tile_data = IntArray( 196607, 34, 262143, 34, 196654, 31, 327679, 34, 393215, 34, 327722, 30, 327723, 31, 327724, 31, 327725, 32, 458751, 34, 393237, 31, 393238, 31, 393239, 32, 393257, 30, 524287, 34, 458772, 31, 458773, 34, 458774, 34, 458775, 34, 458776, 32, 458792, 30, 589823, 34, 524307, 31, 524308, 34, 524309, 34, 524310, 34, 524311, 34, 524312, 34, 524313, 32, 524327, 30, 655359, 34, 589824, 31, 589825, 31, 589826, 31, 589827, 31, 589828, 31, 589829, 31, 589830, 31, 589831, 31, 589832, 31, 589833, 31, 589834, 31, 589835, 31, 589836, 31, 589837, 31, 589838, 31, 589839, 31, 589840, 31, 589841, 31, 589842, 31, 589843, 34, 589844, 34, 589845, 34, 589846, 34, 589847, 34, 589848, 34, 589849, 34, 589850, 31, 589851, 31, 589852, 31, 589853, 31, 589854, 31, 589855, 31, 589856, 31, 589857, 31, 589858, 31, 589859, 31, 589860, 31, 589861, 31, 589862, 31 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -197,26 +198,24 @@ drag_margin/bottom = 0.2
 
 [node name="boxes" type="Node2D" parent="."]
 
-editor/display_folded = true
-
 [node name="box+1" parent="boxes" instance=ExtResource( 6 )]
 
-transform/pos = Vector2( 49, 80 )
+transform/pos = Vector2( 102, 82 )
 texture = SubResource( 2 )
 
 [node name="box-1" parent="boxes" instance=ExtResource( 6 )]
 
-transform/pos = Vector2( 99, 80 )
+transform/pos = Vector2( 152, 82 )
 increment = -5
 texture = SubResource( 3 )
 
 [node name="box" parent="boxes" instance=ExtResource( 6 )]
 
-transform/pos = Vector2( 29, 80 )
+transform/pos = Vector2( 82, 82 )
 
 [node name="result_box" parent="boxes" instance=ExtResource( 8 )]
 
-transform/pos = Vector2( 129, 80 )
+transform/pos = Vector2( 182, 82 )
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
