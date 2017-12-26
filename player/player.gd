@@ -43,7 +43,7 @@ func _input(event):
 		state = FALLING
 
 func _fixed_process(delta):
-	acc.y = GRAVITY if not on_floor else 0
+	acc.y = GRAVITY #if not on_floor else 0
 	acc.x = Input.is_action_pressed("move_right") - Input.is_action_pressed("move_left")
 	acc.x *= ACCEL
 	if acc.x == 0:
@@ -68,6 +68,7 @@ func _fixed_process(delta):
 	if on_floor:
 		if vel.x == 0:
 			state = IDLE
+			vel.y = 0
 		else:
 			state = WALKING
 	else: # on_air
@@ -104,6 +105,7 @@ func _fixed_process(delta):
 	get_node("DBG/anim_label").set_text(anim + " / " + states_name[state])
 	get_node("DBG/vel_label").set_text("V "+str(vel))
 	get_node("DBG/acc_label").set_text("A "+str(acc))
+	get_node("DBG/graph").add(vel.y)
 
 func change_anim(anim):
 	var current = animation.get_current_animation()

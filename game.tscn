@@ -4,11 +4,11 @@
 [ext_resource path="res://tileset/tileset.png" type="Texture" id=2]
 [ext_resource path="res://tileset/tileset.tres" type="TileSet" id=3]
 [ext_resource path="res://fonts/averia.tres" type="DynamicFont" id=4]
-[ext_resource path="res://player/player.tscn" type="PackedScene" id=5]
-[ext_resource path="res://controls/box.tscn" type="PackedScene" id=6]
-[ext_resource path="res://images/arcade_platformer.nobg.png" type="Texture" id=7]
-[ext_resource path="res://controls/result_box.tscn" type="PackedScene" id=8]
-[ext_resource path="res://controls/question.tscn" type="PackedScene" id=9]
+[ext_resource path="res://controls/box.tscn" type="PackedScene" id=5]
+[ext_resource path="res://images/arcade_platformer.nobg.png" type="Texture" id=6]
+[ext_resource path="res://controls/result_box.tscn" type="PackedScene" id=7]
+[ext_resource path="res://controls/question.tscn" type="PackedScene" id=8]
+[ext_resource path="res://player/player.tscn" type="PackedScene" id=9]
 [ext_resource path="res://audio/Acerto.ogg" type="AudioStream" id=10]
 [ext_resource path="res://audio/Erro.ogg" type="AudioStream" id=11]
 [ext_resource path="res://controls/mobile_control.tscn" type="PackedScene" id=12]
@@ -21,13 +21,13 @@ margin = Rect2( 0, 0, 0, 0 )
 
 [sub_resource type="AtlasTexture" id=2]
 
-atlas = ExtResource( 7 )
+atlas = ExtResource( 6 )
 region = Rect2( 16, 0, 16, 16 )
 margin = Rect2( 0, 0, 0, 0 )
 
 [sub_resource type="AtlasTexture" id=3]
 
-atlas = ExtResource( 7 )
+atlas = ExtResource( 6 )
 region = Rect2( 128, 0, 16, 16 )
 margin = Rect2( 0, 0, 0, 0 )
 
@@ -172,10 +172,42 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
+[node name="boxes" type="Node2D" parent="."]
+
+editor/display_folded = true
+
+[node name="box+1" parent="boxes" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 102, 82 )
+texture = SubResource( 2 )
+
+[node name="box-1" parent="boxes" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 152, 82 )
+increment = -5
+texture = SubResource( 3 )
+
+[node name="box" parent="boxes" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 82, 82 )
+
+[node name="result_box" parent="boxes" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 182, 82 )
+
+[node name="question" parent="." instance=ExtResource( 8 )]
+
+visibility/visible = false
+margin/left = -31.0
+margin/top = 10.0
+margin/right = 9.0
+margin/bottom = 50.0
+
 [node name="player" parent="." groups=[
 "player",
-] instance=ExtResource( 5 )]
+] instance=ExtResource( 9 )]
 
+editor/display_folded = true
 transform/pos = Vector2( 43, 119 )
 
 [node name="Camera2D" type="Camera2D" parent="player"]
@@ -196,35 +228,6 @@ drag_margin/left = 0.2
 drag_margin/top = 0.2
 drag_margin/right = 0.2
 drag_margin/bottom = 0.2
-
-[node name="boxes" type="Node2D" parent="."]
-
-[node name="box+1" parent="boxes" instance=ExtResource( 6 )]
-
-transform/pos = Vector2( 102, 82 )
-texture = SubResource( 2 )
-
-[node name="box-1" parent="boxes" instance=ExtResource( 6 )]
-
-transform/pos = Vector2( 152, 82 )
-increment = -5
-texture = SubResource( 3 )
-
-[node name="box" parent="boxes" instance=ExtResource( 6 )]
-
-transform/pos = Vector2( 82, 82 )
-
-[node name="result_box" parent="boxes" instance=ExtResource( 8 )]
-
-transform/pos = Vector2( 182, 82 )
-
-[node name="question" parent="." instance=ExtResource( 9 )]
-
-visibility/visible = false
-margin/left = -31.0
-margin/top = 10.0
-margin/right = 9.0
-margin/bottom = 50.0
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
