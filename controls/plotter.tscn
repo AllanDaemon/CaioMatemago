@@ -1,0 +1,67 @@
+[gd_scene load_steps=2 format=1]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Control
+
+export (int) var height = 100
+export (int, 0, 100) var number_of_points = 300
+export (float) var initial_maximum = 10.0
+export (bool) var decrease_maximum = true
+export (Color) var line_color = Color(0,1,0,0.3)
+
+var points = FloatArray()
+var maximum = 0
+
+## Test
+#func _ready():
+#	set_process_input(true)
+#func _input(event):
+#	add(event.x)
+
+func update_max():
+	if decrease_maximum:
+		maximum = initial_maximum
+	for p in points:
+		if p > maximum:
+			maximum = p
+	return maximum
+
+func _draw():
+	update_max()
+	var i = 0
+	for p in points:
+		var norm = (1-(p / maximum)) * height
+#		print(\"[\", maximum, \"] \", p, \"\\t\", norm)
+		draw_line(Vector2(i, height), Vector2(i, norm), line_color, 1)
+		i += 1
+
+func display(pos):
+	set_pos(pos)
+	update()
+	show()
+
+func add(value):
+	if points.size() >= number_of_points:
+		points.remove(0)
+	points.append(value)
+	update()"
+
+[node name="graph" type="Control"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 40.0
+script/script = SubResource( 1 )
+height = 100
+number_of_points = 300
+initial_maximum = 10.0
+decrease_maximum = true
+line_color = Color( 0, 1, 0, 0.3 )
+
+
