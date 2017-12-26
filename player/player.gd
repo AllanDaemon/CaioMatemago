@@ -29,15 +29,18 @@ var jumping = false
 var falling = true
 
 func _ready():
-	ground_ray.add_exception(self)	# Avoid cast collide with player
+	ground_ray.add_exception(self)	# Avoid raycast to collide with player
 	set_fixed_process(true)
 	set_process_input(true)
 
 func _input(event):
-	if event.is_action_pressed("jump") and ground_ray.is_colliding():
+	#if event.is_action_pressed("jump") and ground_ray.is_colliding():
+	if event.is_action_pressed("jump") and on_floor:
 		vel.y = JUMP_SPEED
+		jumping = true
 	if event.is_action_released("jump"):
 		vel.y = clamp(vel.y, MIN_JUMP, vel.y)
+		falling = true
 
 func _fixed_process(delta):
 	acc.y = GRAVITY
@@ -57,6 +60,9 @@ func _fixed_process(delta):
 #		move(motion)
 	
 	var motion = move_and_slide(vel, FLOOR_NORMAL, SLOPE_SLIDE_STOP)
+
+	on_floor = is_move_and_slide_on_floor()
+	on_air = not on_floor	# Redundant
 
 	if abs(vel.x) < VEL_X_EPSILON:
 		#print("Still needs it XXX")
@@ -83,7 +89,7 @@ func _fixed_process(delta):
 	if vel.y < 0:
 		anim = "jumping"
 	#elif vel.y > 0 and not ground_ray.is_colliding():
-	elif vel.y > 0 and not is_move_and_slide_on_floor():
+	elif vel.y > 0 and not on_floor:
 		anim = "falling"
 
 	change_anim(anim)
@@ -100,7 +106,7 @@ func _fixed_process(delta):
 		else Color(.5,.5,1) )
 	get_node("DBG/right_middle_square").set_color(
 		Color(0,0,0,0)
-		if ground_ray.is_colliding() == is_move_and_slide_on_floor()
+		if ground_ray.is_colliding() == on_floor
 		else Color(1,0,0,1) )
 
 	get_node("DBG/anim_label").set_text(anim)
