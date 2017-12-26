@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=1]
 
 [ext_resource path="res://controls/question.gd" type="Script" id=1]
-[ext_resource path="res://images/TILESET SEM FUNDO VERSÃO 2.png" type="Texture" id=2]
+[ext_resource path="res://tileset/tileset.png" type="Texture" id=2]
 [ext_resource path="res://fonts/averia.tres" type="DynamicFont" id=3]
 
 [node name="Question" type="Control"]
@@ -29,7 +29,12 @@ margin/top = 0.0
 margin/right = 230.0
 margin/bottom = 40.0
 texture = ExtResource( 2 )
-region_rect = Rect2( 80, 48, 24, 16 )
+draw_center = false
+region_rect = Rect2( 104, 48, 24, 16 )
+patch_margin/left = 22
+patch_margin/top = 14
+patch_margin/right = 22
+patch_margin/bottom = 14
 
 [node name="Label" type="Label" parent="Patch9Frame"]
 
