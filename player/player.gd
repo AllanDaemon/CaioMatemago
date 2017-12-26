@@ -13,11 +13,15 @@ const MAX_SPEED = 100
 const FRICTION = -500
 const GRAVITY = 1000
 const JUMP_SPEED = -420
+const MAX_JUMP = 1000
 const MIN_JUMP = -100
 const VEL_X_EPSILON = 20
 const VEL_Y_EPSILON = 0.001
 const FLOOR_NORMAL = Vector2(0,-1)
 const SLOPE_SLIDE_STOP = 25.0
+
+enum states {JUMPING, FALLING, IDLE, WALKING}
+const states_name = ["jumping", "falling", "idle", "walking"]
 
 var acc = Vector2()
 var vel = Vector2()
@@ -27,6 +31,7 @@ var on_floor = false
 var on_air = true
 var jumping = false
 var falling = true
+var state = FALLING
 
 func _ready():
 	ground_ray.add_exception(self)	# Avoid raycast to collide with player
@@ -38,9 +43,11 @@ func _input(event):
 	if event.is_action_pressed("jump") and on_floor:
 		vel.y = JUMP_SPEED
 		jumping = true
+		state = JUMPING
 	if event.is_action_released("jump"):
-		vel.y = clamp(vel.y, MIN_JUMP, vel.y)
+		vel.y = clamp(vel.y, MIN_JUMP, MAX_JUMP)
 		falling = true
+		state = FALLING
 
 func _fixed_process(delta):
 	acc.y = GRAVITY
@@ -51,6 +58,7 @@ func _fixed_process(delta):
 
 	vel += acc * delta
 	vel.x = clamp(vel.x, -MAX_SPEED, MAX_SPEED)
+	#vel.y = clamp(vel.y, -MAX_JUMP, MAX_JUMP)
 
 #	var motion = move(vel * delta)
 #	if is_colliding():
@@ -59,7 +67,7 @@ func _fixed_process(delta):
 #		vel = n.slide(vel)
 #		move(motion)
 	
-	var motion = move_and_slide(vel, FLOOR_NORMAL, SLOPE_SLIDE_STOP)
+	move_and_slide(vel, FLOOR_NORMAL, SLOPE_SLIDE_STOP)
 
 	on_floor = is_move_and_slide_on_floor()
 	on_air = not on_floor	# Redundant
@@ -70,6 +78,17 @@ func _fixed_process(delta):
 	if abs(vel.y) < VEL_Y_EPSILON:
 		#print("Still needs it YYY")
 		vel.y = 0
+
+	if on_floor:
+		if vel.x == 0:
+			state = IDLE
+		else:
+			state = WALKING
+	else: # on_air
+		if vel.y < 0:
+			state = JUMPING
+		else:
+			state = FALLING
 
 	# set animation
 	if vel.x >= 0:
@@ -88,8 +107,10 @@ func _fixed_process(delta):
 
 	if vel.y < 0:
 		anim = "jumping"
+		print("ASSERT FAIL: JUMPING !=", state)
 	#elif vel.y > 0 and not ground_ray.is_colliding():
 	elif vel.y > 0 and not on_floor:
+		print("ASSERT FAIL: FALLING !=", state)
 		anim = "falling"
 
 	change_anim(anim)
@@ -108,8 +129,14 @@ func _fixed_process(delta):
 		Color(0,0,0,0)
 		if ground_ray.is_colliding() == on_floor
 		else Color(1,0,0,1) )
+	get_node("DBG/left_middle_square").set_color(
+		Color(0,0,0,0)
+		if anim == states_name[state]
+		else Color(1,0,0,1) )
+	
+	assert anim == states_name[state]
 
-	get_node("DBG/anim_label").set_text(anim)
+	get_node("DBG/anim_label").set_text(anim + " / " + states_name[state])
 	get_node("DBG/vel_label").set_text(str(vel))
 	get_node("DBG/acc_label").set_text(str(acc))
 
