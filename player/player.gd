@@ -43,7 +43,7 @@ func _input(event):
 		state = FALLING
 
 func _fixed_process(delta):
-	acc.y = GRAVITY
+	acc.y = GRAVITY if not on_floor else 0
 	acc.x = Input.is_action_pressed("move_right") - Input.is_action_pressed("move_left")
 	acc.x *= ACCEL
 	if acc.x == 0:
@@ -61,6 +61,9 @@ func _fixed_process(delta):
 		vel.x = 0
 	if abs(vel.y) < VEL_Y_EPSILON:
 		vel.y = 0
+
+	if not on_floor and (state==IDLE or state==WALKING):
+		print("FALLING Acc: ", acc, "\tVel: ", vel)
 
 	if on_floor:
 		if vel.x == 0:
