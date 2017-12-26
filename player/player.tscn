@@ -199,7 +199,7 @@ max_lines_visible = -1
 
 [node name="left_square" type="Polygon2D" parent="DBG"]
 
-transform/pos = Vector2( -12, -12 )
+transform/pos = Vector2( -12, -8.99999 )
 polygon = Vector2Array( -3, -3, -3, 2, 2, 2, 2, -3 )
 uv = Vector2Array(  )
 color = Color( 1, 1, 1, 1 )
@@ -214,7 +214,7 @@ invert/border = 100.0
 
 [node name="right_square" type="Polygon2D" parent="DBG"]
 
-transform/pos = Vector2( 10, -12 )
+transform/pos = Vector2( 10, -8.99999 )
 polygon = Vector2Array( 0, -3, 0, 2, 5, 2, 5, -3 )
 uv = Vector2Array(  )
 color = Color( 1, 1, 1, 1 )
@@ -244,7 +244,40 @@ invert/border = 100.0
 
 [node name="left_middle_square" type="Polygon2D" parent="DBG"]
 
+visibility/visible = false
 transform/pos = Vector2( -15, 3 )
+polygon = Vector2Array( 0, -3, 0, 2, 5, 2, 5, -3 )
+uv = Vector2Array(  )
+color = Color( 1, 1, 1, 1 )
+vertex_colors = ColorArray(  )
+offset = Vector2( 0, 0 )
+texture/texture = null
+texture/offset = Vector2( 0, 0 )
+texture/scale = Vector2( 1, 1 )
+texture/rotation = 0.0
+invert/enable = false
+invert/border = 100.0
+
+[node name="right_bottom_square" type="Polygon2D" parent="DBG"]
+
+visibility/visible = false
+transform/pos = Vector2( 10, 13 )
+polygon = Vector2Array( 0, -3, 0, 2, 5, 2, 5, -3 )
+uv = Vector2Array(  )
+color = Color( 1, 1, 1, 1 )
+vertex_colors = ColorArray(  )
+offset = Vector2( 0, 0 )
+texture/texture = null
+texture/offset = Vector2( 0, 0 )
+texture/scale = Vector2( 1, 1 )
+texture/rotation = 0.0
+invert/enable = false
+invert/border = 100.0
+
+[node name="left_bottom_square" type="Polygon2D" parent="DBG"]
+
+visibility/visible = false
+transform/pos = Vector2( -15, 13 )
 polygon = Vector2Array( 0, -3, 0, 2, 5, 2, 5, -3 )
 uv = Vector2Array(  )
 color = Color( 1, 1, 1, 1 )

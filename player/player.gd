@@ -26,11 +26,7 @@ const states_name = ["jumping", "falling", "idle", "walking"]
 var acc = Vector2()
 var vel = Vector2()
 var anim = "idle"
-#@TODO Use enums
 var on_floor = false
-var on_air = true
-var jumping = false
-var falling = true
 var state = FALLING
 
 func _ready():
@@ -39,14 +35,11 @@ func _ready():
 	set_process_input(true)
 
 func _input(event):
-	#if event.is_action_pressed("jump") and ground_ray.is_colliding():
 	if event.is_action_pressed("jump") and on_floor:
 		vel.y = JUMP_SPEED
-		jumping = true
 		state = JUMPING
 	if event.is_action_released("jump"):
 		vel.y = clamp(vel.y, MIN_JUMP, MAX_JUMP)
-		falling = true
 		state = FALLING
 
 func _fixed_process(delta):
@@ -60,23 +53,13 @@ func _fixed_process(delta):
 	vel.x = clamp(vel.x, -MAX_SPEED, MAX_SPEED)
 	#vel.y = clamp(vel.y, -MAX_JUMP, MAX_JUMP)
 
-#	var motion = move(vel * delta)
-#	if is_colliding():
-#		var n = get_collision_normal()
-#		motion = n.slide(motion)
-#		vel = n.slide(vel)
-#		move(motion)
-	
 	move_and_slide(vel, FLOOR_NORMAL, SLOPE_SLIDE_STOP)
 
 	on_floor = is_move_and_slide_on_floor()
-	on_air = not on_floor	# Redundant
 
 	if abs(vel.x) < VEL_X_EPSILON:
-		#print("Still needs it XXX")
 		vel.x = 0
 	if abs(vel.y) < VEL_Y_EPSILON:
-		#print("Still needs it YYY")
 		vel.y = 0
 
 	if on_floor:
@@ -96,25 +79,10 @@ func _fixed_process(delta):
 	elif vel.x < 0:
 		sprite.set_flip_h(true)
 
-	if vel.x == 0:
-		anim = "idle"
-	else:
-		anim = "walking"
-
-	if abs(vel.y) < VEL_Y_EPSILON:
-		#print("Still needs it YYY")
-		vel.y = 0
-
-	if vel.y < 0:
-		anim = "jumping"
-		print("ASSERT FAIL: JUMPING !=", state)
-	#elif vel.y > 0 and not ground_ray.is_colliding():
-	elif vel.y > 0 and not on_floor:
-		print("ASSERT FAIL: FALLING !=", state)
-		anim = "falling"
-
+	anim = states_name[state]
 	change_anim(anim)
 	
+
 	# DBG
 	var raycast_dbg_color
 	if ground_ray.is_colliding():	raycast_dbg_color = Color(.5,1,.5)
@@ -129,16 +97,15 @@ func _fixed_process(delta):
 		Color(0,0,0,0)
 		if ground_ray.is_colliding() == on_floor
 		else Color(1,0,0,1) )
-	get_node("DBG/left_middle_square").set_color(
-		Color(0,0,0,0)
-		if anim == states_name[state]
-		else Color(1,0,0,1) )
-	
-	assert anim == states_name[state]
+	#get_node("DBG/left_middle_square").set_color(
+	#	Color(0,0,0,0)
+	#	if anim == states_name[state]
+	#	else Color(1,0,0,1) )
+	#assert anim == states_name[state]
 
 	get_node("DBG/anim_label").set_text(anim + " / " + states_name[state])
-	get_node("DBG/vel_label").set_text(str(vel))
-	get_node("DBG/acc_label").set_text(str(acc))
+	get_node("DBG/vel_label").set_text("V "+str(vel))
+	get_node("DBG/acc_label").set_text("A "+str(acc))
 
 func change_anim(anim):
 	var current = animation.get_current_animation()
