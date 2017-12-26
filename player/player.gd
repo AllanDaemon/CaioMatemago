@@ -97,11 +97,6 @@ func _fixed_process(delta):
 		Color(0,0,0,0)
 		if ground_ray.is_colliding() == on_floor
 		else Color(1,0,0,1) )
-	#get_node("DBG/left_middle_square").set_color(
-	#	Color(0,0,0,0)
-	#	if anim == states_name[state]
-	#	else Color(1,0,0,1) )
-	#assert anim == states_name[state]
 
 	get_node("DBG/anim_label").set_text(anim + " / " + states_name[state])
 	get_node("DBG/vel_label").set_text("V "+str(vel))
