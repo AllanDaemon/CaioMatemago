@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=1]
+[gd_scene load_steps=19 format=1]
 
 [ext_resource path="res://game.gd" type="Script" id=1]
 [ext_resource path="res://tileset/tileset.png" type="Texture" id=2]
@@ -8,9 +8,10 @@
 [ext_resource path="res://controls/box.tscn" type="PackedScene" id=6]
 [ext_resource path="res://images/arcade_platformer.nobg.png" type="Texture" id=7]
 [ext_resource path="res://controls/result_box.tscn" type="PackedScene" id=8]
-[ext_resource path="res://audio/Acerto.ogg" type="AudioStream" id=9]
-[ext_resource path="res://audio/Erro.ogg" type="AudioStream" id=10]
-[ext_resource path="res://controls/question.tscn" type="PackedScene" id=11]
+[ext_resource path="res://controls/question.tscn" type="PackedScene" id=9]
+[ext_resource path="res://audio/Acerto.ogg" type="AudioStream" id=10]
+[ext_resource path="res://audio/Erro.ogg" type="AudioStream" id=11]
+[ext_resource path="res://controls/mobile_control.tscn" type="PackedScene" id=12]
 
 [sub_resource type="AtlasTexture" id=1]
 
@@ -217,6 +218,14 @@ transform/pos = Vector2( 82, 82 )
 
 transform/pos = Vector2( 182, 82 )
 
+[node name="question" parent="." instance=ExtResource( 9 )]
+
+visibility/visible = false
+margin/left = -31.0
+margin/top = 10.0
+margin/right = 9.0
+margin/bottom = 50.0
+
 [node name="HUD" type="CanvasLayer" parent="."]
 
 editor/display_folded = true
@@ -275,7 +284,7 @@ autoplay = "default"
 
 [node name="acertou" type="StreamPlayer" parent="HUD"]
 
-stream/stream = ExtResource( 9 )
+stream/stream = ExtResource( 10 )
 stream/play = true
 stream/loop = false
 stream/volume_db = 0.0
@@ -286,7 +295,7 @@ stream/buffering_ms = 500
 
 [node name="errou" type="StreamPlayer" parent="HUD"]
 
-stream/stream = ExtResource( 10 )
+stream/stream = ExtResource( 11 )
 stream/play = true
 stream/loop = false
 stream/volume_db = 0.0
@@ -295,13 +304,9 @@ stream/paused = false
 stream/loop_restart_time = 0.0
 stream/buffering_ms = 500
 
-[node name="question" parent="." instance=ExtResource( 11 )]
+[node name="mobile_control" parent="." instance=ExtResource( 12 )]
 
-visibility/visible = false
-margin/left = -31.0
-margin/top = 10.0
-margin/right = 9.0
-margin/bottom = 50.0
+layer = 10
 
 [connection signal="result" from="boxes/result_box" to="." method="_on_result"]
 
