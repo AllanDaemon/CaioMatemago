@@ -1,6 +1,5 @@
 * Gameplay:
 	* Falling speed
-	* Hitting boxes on lateral/up collision
 	* Hitting boxes botton-up jump takes too long to fall
 * Fix box hit animation to be centralized
 
