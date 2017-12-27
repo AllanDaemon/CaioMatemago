@@ -147,18 +147,18 @@ margin/top = 0.0
 margin/right = 40.0
 margin/bottom = 40.0
 
-[node name="anim_label" type="Label" parent="DBG"]
+[node name="rem_label" type="Label" parent="DBG"]
 
 rect/scale = Vector2( 0.5, 0.5 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = -26.0
-margin/top = -20.0
-margin/right = 78.0
-margin/bottom = -6.0
-text = "anim"
+margin/left = -57.0
+margin/top = -39.0
+margin/right = 171.0
+margin/bottom = -25.0
+text = "rem"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
@@ -193,6 +193,23 @@ margin/top = -27.0
 margin/right = 171.0
 margin/bottom = -13.0
 text = "acc"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="anim_label" type="Label" parent="DBG"]
+
+rect/scale = Vector2( 0.5, 0.5 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -26.0
+margin/top = -20.0
+margin/right = 78.0
+margin/bottom = -6.0
+text = "anim"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0

@@ -19,6 +19,7 @@ const VEL_X_EPSILON = 20
 const VEL_Y_EPSILON = 0.001
 const FLOOR_NORMAL = Vector2(0,-1)
 const SLOPE_SLIDE_STOP = 25.0
+const FALLING_ANIM_THRESHOLD = 200
 
 enum states {JUMPING, FALLING, IDLE, WALKING}
 const states_name = ["jumping", "falling", "idle", "walking"]
@@ -28,6 +29,8 @@ var vel = Vector2()
 var anim = "idle"
 var on_floor = false
 var state = FALLING
+
+var dbg_max = -MAX_JUMP * 10
 
 func _ready():
 	ground_ray.add_exception(self)	# Avoid raycast to collide with player
@@ -53,7 +56,7 @@ func _fixed_process(delta):
 	vel.x = clamp(vel.x, -MAX_SPEED, MAX_SPEED)
 	#vel.y = clamp(vel.y, -MAX_JUMP, MAX_JUMP)
 
-	move_and_slide(vel, FLOOR_NORMAL, SLOPE_SLIDE_STOP)
+	var remain = move_and_slide(vel, FLOOR_NORMAL, SLOPE_SLIDE_STOP)
 
 	on_floor = is_move_and_slide_on_floor()
 
@@ -62,8 +65,8 @@ func _fixed_process(delta):
 	if abs(vel.y) < VEL_Y_EPSILON:
 		vel.y = 0
 
-	if not on_floor and (state==IDLE or state==WALKING):
-		print("FALLING Acc: ", acc, "\tVel: ", vel)
+	if on_floor and (state==IDLE or state==WALKING):
+		vel.y = 0
 
 	if on_floor:
 		if vel.x == 0:
@@ -84,6 +87,11 @@ func _fixed_process(delta):
 		sprite.set_flip_h(true)
 
 	anim = states_name[state]
+	if state==FALLING: 
+		if vel.y > FALLING_ANIM_THRESHOLD:
+			anim = "falling"
+		elif vel.x != 0:
+			anim = "walking"
 	change_anim(anim)
 	
 
@@ -103,9 +111,15 @@ func _fixed_process(delta):
 		else Color(1,0,0,1) )
 
 	get_node("DBG/anim_label").set_text(anim + " / " + states_name[state])
+	get_node("DBG/rem_label").set_text("R "+str(remain))
 	get_node("DBG/vel_label").set_text("V "+str(vel))
 	get_node("DBG/acc_label").set_text("A "+str(acc))
 	get_node("DBG/graph").add(vel.y)
+	if vel.y > dbg_max:
+		dbg_max = vel.y
+	if vel.y < dbg_max:
+		print("VEL TURN: ", dbg_max)
+		dbg_max = -MAX_JUMP*10
 
 func change_anim(anim):
 	var current = animation.get_current_animation()
