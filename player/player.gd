@@ -66,7 +66,14 @@ func _fixed_process(delta):
 	if abs(vel.y) < VEL_Y_EPSILON:
 		vel.y = 0
 
+	# Avoid sudden imediate falls when falling from a block due
+	# high speed accumulated on velocity due the integration of acceleration
 	if on_floor and (state==IDLE or state==WALKING):
+		vel.y = 0
+
+	# Avoid when hitting on the block the player stays still for a while
+	# waiting the jump speed to get down
+	if rdiff.y > 0:
 		vel.y = 0
 
 	if on_floor:
