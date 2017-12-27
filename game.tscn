@@ -175,8 +175,6 @@ max_lines_visible = -1
 
 [node name="boxes" type="Node2D" parent="."]
 
-editor/display_folded = true
-
 [node name="box+1" parent="boxes" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 102, 82 )

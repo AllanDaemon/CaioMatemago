@@ -148,25 +148,41 @@ margin/top = 0.0
 margin/right = 40.0
 margin/bottom = 40.0
 
-[node name="rem_label" type="Label" parent="DBG"]
+[node name="up5_label" type="Label" parent="DBG"]
 
-visibility/visible = false
 rect/scale = Vector2( 0.5, 0.5 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = -57.0
-margin/top = -39.0
+margin/top = -46.0
 margin/right = 171.0
-margin/bottom = -25.0
+margin/bottom = -32.0
+text = "diff"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="up4_label" type="Label" parent="DBG"]
+
+rect/scale = Vector2( 0.5, 0.5 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -57.0
+margin/top = -40.0
+margin/right = 171.0
+margin/bottom = -26.0
 text = "rem"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="vel_label" type="Label" parent="DBG"]
+[node name="up3_label" type="Label" parent="DBG"]
 
 rect/scale = Vector2( 0.5, 0.5 )
 focus/ignore_mouse = true
@@ -183,7 +199,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="acc_label" type="Label" parent="DBG"]
+[node name="up2_label" type="Label" parent="DBG"]
 
 rect/scale = Vector2( 0.5, 0.5 )
 focus/ignore_mouse = true
@@ -200,7 +216,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="anim_label" type="Label" parent="DBG"]
+[node name="up1_label" type="Label" parent="DBG"]
 
 rect/scale = Vector2( 0.5, 0.5 )
 focus/ignore_mouse = true
@@ -280,7 +296,6 @@ invert/border = 100.0
 
 [node name="right_bottom_square" type="Polygon2D" parent="DBG"]
 
-visibility/visible = false
 transform/pos = Vector2( 10, 13 )
 polygon = Vector2Array( 0, -3, 0, 2, 5, 2, 5, -3 )
 uv = Vector2Array(  )
@@ -296,7 +311,6 @@ invert/border = 100.0
 
 [node name="left_bottom_square" type="Polygon2D" parent="DBG"]
 
-visibility/visible = false
 transform/pos = Vector2( -15, 13 )
 polygon = Vector2Array( 0, -3, 0, 2, 5, 2, 5, -3 )
 uv = Vector2Array(  )
@@ -312,12 +326,21 @@ invert/border = 100.0
 
 [node name="graph" parent="DBG" instance=ExtResource( 3 )]
 
-margin/left = 16.0
-margin/top = -59.0
-margin/right = 56.0
-margin/bottom = -19.0
+margin/left = 15.0
+margin/top = -60.0
+margin/right = 55.0
+margin/bottom = -20.0
 height = 30
 number_of_points = 100
 decrease_maximum = false
+
+[node name="graph2" parent="DBG" instance=ExtResource( 3 )]
+
+margin/left = 15.0
+margin/right = 55.0
+height = 30
+number_of_points = 100
+decrease_maximum = false
+line_color = Color( 1, 1, 0, 0.3 )
 
 

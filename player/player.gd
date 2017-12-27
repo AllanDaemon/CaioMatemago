@@ -58,7 +58,7 @@ func _fixed_process(delta):
 	#vel.y = clamp(vel.y, -MAX_JUMP, MAX_JUMP)
 
 	var remain = move_and_slide(vel, FLOOR_NORMAL, SLOPE_SLIDE_STOP)
-
+	var rdiff = remain - vel
 	on_floor = is_move_and_slide_on_floor()
 
 	if abs(vel.x) < VEL_X_EPSILON:
@@ -111,12 +111,22 @@ func _fixed_process(delta):
 		Color(0,0,0,0)
 		if ground_ray.is_colliding() == on_floor
 		else Color(1,0,0,1) )
+	get_node("DBG/left_bottom_square").set_color(
+		Color(1,0,0,1)
+		if is_move_and_slide_on_wall()
+		else Color(0,0,0,0) )
+	get_node("DBG/right_bottom_square").set_color(
+		Color(1,0,0,1)
+		if is_move_and_slide_on_ceiling()
+		else Color(0,0,0,0) )
 
-	get_node("DBG/anim_label").set_text(anim + " / " + states_name[state])
-	get_node("DBG/rem_label").set_text("R "+str(remain))
-	get_node("DBG/vel_label").set_text("V "+str(vel))
-	get_node("DBG/acc_label").set_text("A "+str(acc))
+	get_node("DBG/up1_label").set_text(anim + " / " + states_name[state])
+	get_node("DBG/up2_label").set_text("A "+str(acc))
+	get_node("DBG/up3_label").set_text("V "+str(vel))
+	get_node("DBG/up4_label").set_text("R "+str(remain))
+	get_node("DBG/up5_label").set_text("D "+str(rdiff))
 	get_node("DBG/graph").add(vel.y)
+	get_node("DBG/graph2").add(rdiff.y)
 	if vel.y > dbg_max:
 		dbg_max = vel.y
 	if vel.y < dbg_max:
@@ -126,8 +136,9 @@ func _fixed_process(delta):
 func change_anim(anim):
 	var current = animation.get_current_animation()
 	if anim != current:
-		print("Changing anim: ", current, " -> ", anim)
-		print("Vel: ", vel)
+		if DEBUG:
+			print("Changing anim: ", current, " -> ", anim)
+			print("Vel: ", vel)
 		animation.play(anim)
 
 func set_debug(value):
