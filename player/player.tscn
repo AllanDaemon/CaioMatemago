@@ -91,6 +91,7 @@ collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
 script/script = ExtResource( 1 )
+DEBUG = true
 
 [node name="sprite" type="Sprite" parent="."]
 
@@ -149,6 +150,7 @@ margin/bottom = 40.0
 
 [node name="rem_label" type="Label" parent="DBG"]
 
+visibility/visible = false
 rect/scale = Vector2( 0.5, 0.5 )
 focus/ignore_mouse = true
 focus/stop_mouse = true

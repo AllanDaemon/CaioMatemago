@@ -103,6 +103,7 @@ tracks/1/keys = {
 
 transform/pos = Vector2( -10, -30 )
 script/script = ExtResource( 1 )
+DEBUG = true
 
 [node name="background" type="ParallaxBackground" parent="."]
 
@@ -208,6 +209,7 @@ margin/bottom = 50.0
 
 editor/display_folded = true
 transform/pos = Vector2( 50, 70 )
+DEBUG = false
 
 [node name="Camera2D" type="Camera2D" parent="player"]
 

@@ -17,7 +17,7 @@ margin = Rect2( 0, 0, 0, 0 )
 [sub_resource type="AtlasTexture" id=3]
 
 atlas = ExtResource( 1 )
-region = Rect2( 122, 135, 100, 100 )
+region = Rect2( 491, 355, 100, 100 )
 margin = Rect2( 0, 0, 0, 0 )
 
 [node name="mobile_control" type="CanvasLayer"]
@@ -67,6 +67,21 @@ shape_centered = true
 shape_visible = true
 passby_press = false
 action = "jump"
+visibility_mode = 1
+
+[node name="debug_button" type="TouchScreenButton" parent="."]
+
+visibility/opacity = 0.15
+transform/pos = Vector2( 280, 10 )
+transform/scale = Vector2( 0.2, 0.2 )
+normal = SubResource( 3 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = "debug"
 visibility_mode = 1
 
 
