@@ -14,7 +14,7 @@
 [ext_resource path="res://audio/Erro.ogg" type="AudioStream" id=12]
 [ext_resource path="res://controls/mobile_control.tscn" type="PackedScene" id=13]
 
-[sub_resource type="CanvasItemShader" id=7]
+[sub_resource type="CanvasItemShader" id=1]
 
 _code = {
 "fragment": "uniform float dark_factor = .5;
@@ -27,31 +27,31 @@ COLOR = COLOR * dark_factor;",
 "vertex_ofs": 0
 }
 
-[sub_resource type="CanvasItemMaterial" id=8]
+[sub_resource type="CanvasItemMaterial" id=2]
 
-shader/shader = SubResource( 7 )
+shader/shader = SubResource( 1 )
 shader/shading_mode = 0
 shader_param/dark_factor = 0.7
 
-[sub_resource type="AtlasTexture" id=1]
+[sub_resource type="AtlasTexture" id=3]
 
 atlas = ExtResource( 3 )
 region = Rect2( 0, 176, 320, 144 )
 margin = Rect2( 0, 0, 0, 0 )
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=4]
 
 atlas = ExtResource( 7 )
 region = Rect2( 16, 0, 16, 16 )
 margin = Rect2( 0, 0, 0, 0 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=5]
 
 atlas = ExtResource( 7 )
 region = Rect2( 128, 0, 16, 16 )
 margin = Rect2( 0, 0, 0, 0 )
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=6]
 
 length = 0.1
 loop = false
@@ -67,7 +67,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=7]
 
 length = 0.5
 loop = false
@@ -93,7 +93,7 @@ tracks/1/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=8]
 
 length = 0.5
 loop = false
@@ -157,10 +157,10 @@ motion/mirroring = Vector2( 1, 0 )
 
 [node name="bg_sprite" type="Sprite" parent="background/background"]
 
-material/material = SubResource( 8 )
+material/material = SubResource( 2 )
 transform/pos = Vector2( 0, -70 )
 transform/scale = Vector2( 2, 2 )
-texture = SubResource( 1 )
+texture = SubResource( 3 )
 centered = false
 
 [node name="scenario_tilemap" type="TileMap" parent="."]
@@ -210,13 +210,13 @@ editor/display_folded = true
 [node name="box+1" parent="boxes" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 102, 82 )
-texture = SubResource( 2 )
+texture = SubResource( 4 )
 
 [node name="box-1" parent="boxes" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 152, 82 )
 increment = -5
-texture = SubResource( 3 )
+texture = SubResource( 5 )
 
 [node name="box" parent="boxes" instance=ExtResource( 6 )]
 
@@ -308,9 +308,9 @@ max_lines_visible = -1
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/default = SubResource( 4 )
-anims/right = SubResource( 5 )
-anims/wrong = SubResource( 6 )
+anims/default = SubResource( 6 )
+anims/right = SubResource( 7 )
+anims/wrong = SubResource( 8 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
