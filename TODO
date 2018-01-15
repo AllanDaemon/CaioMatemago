@@ -1,1 +1,116 @@
 * Fix box hit animation to be centralized
+
+* Game action button
+
+* Game Level part
+	* Border detection
+	* Level loading mechanics
+		* BG Music
+		* Blackout or Rolling left
+
+* Screens
+	* Options screen
+	* Initial screen
+	* Splash screen
+	* Final credits screen
+
+* Score
+
+* Coins
+	* Scene
+	* Animation
+	* Code
+	* Game interation
+		* Hit interaction
+
+* Coins as +1
+	* Scene
+	* Animation
+	* Code
+	* Game interation
+		* Hit interaction
+
+
+* Prof Candango
+	* Scene
+		* Sprite
+	* Anim
+	* Code
+	* Dialog box integration
+	* Area2D
+
+
+* Dialog box
+	* Scene
+		* Sprite
+	* Anim
+	* Code
+		* Activate
+		* Show line
+		* Interact next line
+
+* Bubble Block
+	* Scene
+		* Sprite
+	* FSM
+		* Active
+		* Inactive
+	* Animation
+		* FMS states
+	* Code
+	* Game play interaction
+
+
+* Brick Block
+	* Scene
+		* Sprite
+	* FSM
+		* Active
+		* Inactive
+	* Animation
+		* FMS states
+	* Code
+	* Game play interaction
+
+* Door
+	* Scene
+		* Sprite
+
+	* FSM
+		* Open
+		* Closed
+	* Anim
+		* FMS States
+
+	* Code
+
+
+* Enemy
+	* Scene
+		* Sprites
+	* Animation
+	* IA interaction code (walking)
+	* Code for interaction
+	* (...)
+
+* Boss
+	* Scene
+		* Sprites
+	* Animation
+		* Talking
+		* Dying
+	* Dialog interation
+	* Code for interaction
+	* (...)
+
+
+* Boss stage
+	* Dialog activation
+	* Enemy spawn
+	* Enemy destruction by +1
+	* Boss states
+		* Lost life point
+		* Destruction
+		* Dialogs
+		* Last door control
+	* Mutiples operations
