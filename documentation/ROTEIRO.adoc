@@ -1,0 +1,224 @@
+*CAIO, O MATEMAGO*
+
+# TELA 0 / CRÉDITOS INICIAIS
+
+♪ JOGO.mp3 ♪
+
+Uma produção
+
+ESTÚDIO FERMENTO
+
+[BLACKOUT]
+
+Produzido com Godot Engine
+
+[BLACKOUT]
+
+#
+
+# TELA 1 / MENU INICIAL
+
+♪ Abertura – (JOGO.MP3) ♪
+
+[Introdução do menu com 3 opções de escolha – Background com o nome do
+jogo e imagem, conforme o arquivo TELA1.png]
+
+INICIAR O JOGO
+
+[Dá início à partida – Segue à TELA 2]
+
+OPÇÕES
+
+[Abre submenu de opções – aumentar/diminuir volume de efeitos sonoros,
+aumentar/diminuir volume da música, ajustar resolução da tela, modo
+janela, créditos]
+
+SAIR
+
+[Abandona o jogo]
+
+#
+
+# TELA 2 / TELA DE CARREGAMENTO
+
+♪ Stage load screen.mp3 ♪
+
+[Splash screen com detalhes da fase 1-1]
+
+VALE DA SOMA
+
+FASE 1-1
+
+X vidas (onde X corresponde ao número de vezes que o jogador morreu, ou
+“vidas vividas”)
+
+#
+
+# TELA 3 / FASE 1-1
+
+♪ PrimeiraFase(com batida).mp3 ♪
+
+[Primeira tela jogável, conforme o arquivo FASE01TELA03-ROTEIRO.png –
+Composta por 3 eventos relevantes identificados pelas letras em
+vermelho. O evento A é uma caixa de texto e ocorre automaticamente
+quando o jogador se aproxima do Professor Candango em sua primeira
+aparição]
+
+P. CANDANGO: Ei, garoto! Cuidado com o buraco. O vale da soma é um lugar
+perigoso, não se esqueça de saltar obstáculos e inimigos se quiser
+sobreviver.
+
+[O evento B é uma caixa de texto e ocorre automaticamente quando o
+jogador se aproxima do Professor Candango]
+
+P. CANDANGO: Procurando uma saída? Essa porta não abrirá enquanto esses
+monstros estiverem vivos. Mas daqui eu não consigo atingi-los!
+
+[O evento C é ativado quando o jogador atinge o bloco +1 pela primeira
+vez, revelando que cada vez que ele acerta o bloco um inimigo é
+derrotado. Após um dos inimigos morrer, a caixa de diálogo é aberta]
+
+P. CANDANGO: Uau! Você consegue derrotá-los! Faça isso mais duas vezes
+para podermos seguir em frente.
+
+[O evento D é ativado quando o jogador atinge o bloco +1 pela terceira
+vez, matando os inimigos restantes e, consequentemente, mudando a
+animação do Professor candango para ALEGRIA e abrindo a porta para a
+tela 4]
+
+#
+
+# TELA 4 / FASE 1-1
+
+♪ PrimeiraFase(com batida).mp3 ♪
+
+[Tela da fase 1-1, conforme o arquivo FASE01TELA04-ROTEIRO.png –
+Composta por 2 eventos relevantes identificados pelas letras A e B em
+vermelho. O evento A é uma caixa de diálogo que ocorre quando o jogador
+interage com o Professor Candango posicionado antes dos blocos +1 e -1]
+
+P. CANDANGO: Estes blocos devem servir para mais coisas do que só
+afugentar nossos inimigos. A ponte está desativada, será que ela pode
+ser reativada se resolvermos essa conta?
+
+[O evento B é ativado quando o jogador resolve corretamente a conta
+utilizando os blocos +1 e -1 para adicionar ou retirar uma unidade e o
+bloco com o sinal = para submeter a resposta. A conta é composta de um
+número randômico inicial (semente) cuja soma com a entrada do jogador
+deve resultar em 7. Ao digitar a resposta correta, 7 blocos (bolha/azul
+claro) surgem para formar a ponte que dá acesso ao fim da tela e a
+animação do Professor candango muda para ALEGRIA ]
+
+#
+
+# TELA 5 / FASE 1-1
+
+♪ PrimeiraFase(com batida).mp3 ♪
+
+[Tela da fase 1-1, conforme o arquivo FASE01TELA05-ROTEIRO.png –
+Composta por 2 eventos de contas pré-definidas. A primeira conta,
+identificada pela letra A (em vermelho) deve ter resultado 11, o número
+de blocos que são obstáculos ao jogador nesse estágio e são retirados
+quando se submete a resposta correta. Enquanto a conta não for resolvida
+corretamente, a cada 5 segundos surgirá um Olivo (Monstro verde) da
+esquerda para a direita para atacar o jogador. A segunda conta,
+identificada pela letra B (em vermelho) deve ter resultado 20, o número
+de blocos que surgem quando se submete a resposta correta para formar
+uma ponte nesse estágio dando acesso ao fim da tela.]
+
+#
+
+# TELA 6 / FASE 1-1
+
+♪ PrimeiraFase(com batida).mp3 ♪
+
+[Tela da fase 1-1, conforme o arquivo FASE01TELA06-ROTEIRO.png –
+Composta por 4 eventos diversos. O primeiro evento, identificado pela
+letra A (em vermelho), é uma caixa de diálogo aberta quando o jogador
+interage com Professor Candango]
+
+P. CANDANGO: Moedas! Muitas moedas! Você pode me ajudar a juntar esses
+trocados? Quantas moedas foram deixadas aqui?
+
+[O segundo evento, identificado pela letra B (em vermelho), é uma conta
+pré-definida que é ativada quando o jogador coleta 40 moedas, o mesmo
+número de blocos que são obstáculos ao jogador nesse estágio e são
+retirados do caminho quando se submete a resposta correta. Enquanto
+todas as moedas não forem coletadas e a conta não for resolvida
+corretamente, a cada 10 segundos surgirá um Beringelante (Monstro roxo)
+da esquerda para a direita da tela.]
+
+[O evento C (em vermelho) é uma conta a ser resolvida com o uso dos
+blocos +1 e -1 para adicionar ou retirar uma unidade e o bloco com o
+sinal = para submeter a resposta. A conta é composta de um número
+randômico inicial (semente) cuja soma com a entrada do jogador deve
+resultar em 23. Ao digitar a resposta correta 23 blocos (bolha/azul
+claro) surgem para possibilitar a passagem até o fim da tela e a porta
+para o chefe da fase se abre]
+
+[Ao pisar na última plataforma de blocos (bolha/azul claro) o evento D
+(em vermelho) é ativado e o Beringelante Rei (Monstro roxo com coroa)
+posicionado em cima do castelo se dá conta da presença do jogador,
+surgindo um ponto de exclamação por 1 segundo acima de sua cabeça e
+então desaparecendo à direita da tela.]
+
+#
+
+# TELA 7 / FASE 1-1
+
+♪ Boss Battle (Big Sensation).mp3 ♪
+
+[Tela da fase 1-1, conforme o arquivo FASE01TELA07-ROTEIRO.png –
+Composta por 3 eventos. O primeiro evento, identificado pela letra A (em
+vermelho), é uma caixa de diálogo aberta quando o jogador entra na TELA
+7 e o Beringelante Rei se manifesta]
+
+B. REI: Você resolveu 5 contas para chegar ao meu castelo? Dúvido que
+seja verdade! Eu sou o rei do vale da soma e só eu sou capaz de
+controlar a matemática! Eu te desafio a resolver ... [delay] 10
+contas!!!.
+
+[O evento B (em vermelho) é uma sequência de 10 contas a serem
+resolvidas com o uso dos blocos +1 e -1 para adicionar ou retirar uma
+unidade e o bloco com o sinal = para submeter a resposta. As contas são
+aleatórias e compostas de números contidos no intervalo entre 0 e 20.
+Enquanto todas as contas não forem resolvidas corretamente, a cada 10
+segundos surgirá um Beringelante (Monstro roxo) da esquerda para a
+direita da tela, acima da porta de entrada e um Olivo cairá do céu na
+frente da porta de saída. Após 10 respostas corretas serem submetidas, o
+Beringelante Rei é destruído e a porta de saída se abre.]
+
+♪ PrimeiraFase.mp3 ♪
+
+[O evento C (em vermelho) é uma caixa de diálogo que se abre quando o
+jogador interage com o Professor Candango]
+
+P. CANDANGO: Parabéns! Você derrotou o Rei Belingerante. Agora o vale da
+soma não está mais na mão desses monstros horríveis. O próximo passo da
+sua jornada é a montanha da subtração. Ouvi falar que as contas de lá
+são mais difíceis, mas acho que é só um boato para assustar crianças.
+Tenho certeza que você triunfará mais uma vez! Boa sorte.
+
+#
+
+# TELA 8 / CRÈDITOS
+
+♪ JOGO.mp3 ♪
+
+CAIO, O MATEMAGO
+
+Músicas, arte e game design por
+
+Lucas de Aquino Melo
+
+Programação por
+
+Reynaldo Allan Fulin
+
+Esta é uma versão de demonstração do jogo Caio, O Matemago.
+
+Obrigado por testarem o nosso jogo. Esperamos que tenham gostado e
+considerem a possibilidade de comprar a versão final do jogo quando for
+lançada.
+
+#
