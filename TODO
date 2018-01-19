@@ -1,5 +1,7 @@
 * Fix box hit animation to be centralized
 
+* Game status singleton
+
 * Game action button
 
 * Game Level part
@@ -10,6 +12,8 @@
 
 * Screens
 	* Options screen
+		volume level
+
 	* Initial screen
 	* Splash screen
 	* Final credits screen
