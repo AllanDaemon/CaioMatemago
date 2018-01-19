@@ -124,7 +124,7 @@ tracks/1/keys = {
 
 transform/pos = Vector2( -10, -30 )
 script/script = ExtResource( 1 )
-DEBUG = true
+DEBUG = false
 
 [node name="bg_music" type="StreamPlayer" parent="."]
 
