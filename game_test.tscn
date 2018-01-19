@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=1]
 
-[ext_resource path="res://game.gd" type="Script" id=1]
+[ext_resource path="res://game_test.gd" type="Script" id=1]
 [ext_resource path="res://audio/PrimeiraFase(com batida).ogg" type="AudioStream" id=2]
 [ext_resource path="res://tileset/tileset.png" type="Texture" id=3]
 [ext_resource path="res://tileset/tileset.tres" type="TileSet" id=4]
