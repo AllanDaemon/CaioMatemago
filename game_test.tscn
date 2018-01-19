@@ -139,6 +139,7 @@ stream/buffering_ms = 500
 
 [node name="background" type="ParallaxBackground" parent="."]
 
+editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -155,6 +156,9 @@ scroll/ignore_camera_zoom = false
 motion/scale = Vector2( 0.75, 0.75 )
 motion/offset = Vector2( 0, 0 )
 motion/mirroring = Vector2( 1, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="bg_sprite" type="Sprite" parent="background/background"]
 
@@ -163,6 +167,9 @@ transform/pos = Vector2( 0, -70 )
 transform/scale = Vector2( 2, 2 )
 texture = SubResource( 3 )
 centered = false
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="scenario_tilemap" type="TileMap" parent="."]
 
@@ -187,40 +194,80 @@ __meta__ = {
 
 [node name="coins" type="Node2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 10, 30 )
 
 [node name="coin" parent="coins" instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 126.909, 91.9765 )
-own_cam = false
+transform/pos = Vector2( 168, 88 )
 
 [node name="coin1" parent="coins" instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 155.111, 91.5793 )
-own_cam = false
+transform/pos = Vector2( 168, 64 )
+
+[node name="coin11 4" parent="coins" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 168, 40 )
 
 [node name="coin2" parent="coins" instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 180.533, 91.9765 )
-own_cam = false
+transform/pos = Vector2( 192, 88 )
 
 [node name="coin3" parent="coins" instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 181.327, 71.7186 )
-own_cam = false
+transform/pos = Vector2( 192, 64 )
+
+[node name="coin11 6" parent="coins" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 192, 40 )
 
 [node name="coin4" parent="coins" instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 155.111, 72.1158 )
-own_cam = false
+transform/pos = Vector2( 216, 88 )
 
 [node name="coin5" parent="coins" instance=ExtResource( 5 )]
 
-transform/pos = Vector2( 129.292, 70.5269 )
-own_cam = false
+transform/pos = Vector2( 216, 64 )
+
+[node name="coin11 5" parent="coins" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 216, 40 )
+
+[node name="coin6" parent="coins" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 240, 88 )
+
+[node name="coin7" parent="coins" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 240, 64 )
+
+[node name="coin11" parent="coins" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 240, 40 )
+
+[node name="coin8" parent="coins" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 264, 88 )
+
+[node name="coin9" parent="coins" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 264, 64 )
+
+[node name="coin11 2" parent="coins" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 264, 40 )
+
+[node name="coin10" parent="coins" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 264, 64 )
+
+[node name="coin11 3" parent="coins" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 264, 40 )
 
 [node name="result" type="Label" parent="."]
 
+visibility/visible = false
 rect/scale = Vector2( 0.8, 0.8 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -240,26 +287,28 @@ max_lines_visible = -1
 
 [node name="boxes" type="Node2D" parent="."]
 
-editor/display_folded = true
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="box+1" parent="boxes" instance=ExtResource( 7 )]
 
-transform/pos = Vector2( 102, 82 )
+transform/pos = Vector2( 90, 78 )
 texture = SubResource( 4 )
 
 [node name="box-1" parent="boxes" instance=ExtResource( 7 )]
 
-transform/pos = Vector2( 152, 82 )
+transform/pos = Vector2( 122, 78 )
 increment = -5
 texture = SubResource( 5 )
 
 [node name="box" parent="boxes" instance=ExtResource( 7 )]
 
-transform/pos = Vector2( 82, 82 )
+transform/pos = Vector2( 66, 78 )
 
 [node name="result_box" parent="boxes" instance=ExtResource( 9 )]
 
-transform/pos = Vector2( 182, 82 )
+transform/pos = Vector2( 144, 78 )
 
 [node name="question" parent="." instance=ExtResource( 10 )]
 

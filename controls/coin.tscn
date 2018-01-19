@@ -9,16 +9,29 @@ radius = 8.0
 
 [sub_resource type="GDScript" id=2]
 
-script/source = "extends Area2D
-export (bool) var own_cam = false
+script/source = "tool
+extends Area2D
+
+signal coin
+
+var testing = false
 
 func _ready():
-	if own_cam:
+	testing = get_tree().get_root() == get_parent()
+	if testing:
 		get_node(\"test_camera\").make_current()
+		get_node(\"test_timer\").start()
+
+func _get_item_rect():
+    return get_node(\"sprite\").get_item_rect()
 	
+func _on_coin_body_enter( body ):
+	if body.is_in_group(\"player\"):
+		hit()
+
 func hit():
 	get_node(\"anim\").play(\"disapear\")
-"
+	emit_signal(\"coin\", 1)"
 
 [sub_resource type="Animation" id=3]
 
@@ -76,7 +89,6 @@ gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
 script/script = SubResource( 2 )
-own_cam = true
 
 [node name="collision" type="CollisionShape2D" parent="."]
 
@@ -105,6 +117,7 @@ autoplay = "rotating"
 
 [node name="test_camera" type="Camera2D" parent="."]
 
+visibility/visible = false
 anchor_mode = 1
 rotating = false
 current = false
@@ -122,13 +135,15 @@ drag_margin/top = 0.2
 drag_margin/right = 0.2
 drag_margin/bottom = 0.2
 
-[node name="Timer" type="Timer" parent="."]
+[node name="test_timer" type="Timer" parent="."]
 
 process_mode = 1
 wait_time = 3.0
 one_shot = true
-autostart = true
+autostart = false
 
-[connection signal="timeout" from="Timer" to="." method="hit"]
+[connection signal="body_enter" from="." to="." method="_on_coin_body_enter"]
+
+[connection signal="timeout" from="test_timer" to="." method="hit"]
 
 
