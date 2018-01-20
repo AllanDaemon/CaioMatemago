@@ -50,5 +50,6 @@ func wrong():
 func set_debug(value):
 	DEBUG = value
 	if player: player.DEBUG = DEBUG
-	if get_node("background/background"):
+	if has_node("background/background") and \
+	   get_node("background/background"):
 		get_node("background/background").set_hidden(DEBUG)
