@@ -5,7 +5,7 @@
 [node name="options_screen" type="CanvasLayer"]
 
 process/pause_mode = 2
-layer = 5
+layer = 10
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
