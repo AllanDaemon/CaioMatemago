@@ -2,7 +2,7 @@
 
 * Use game singleton as scene and put general (mobile gui) handling there ?
 
-* Game status singleton
+* Game status singleton @WIP
 
 * Game action button
 
@@ -14,7 +14,9 @@
 
 * Screens
 	* Options screen
+		menu btns
 		volume level
+		debug option OK
 
 	* Initial screen
 	* Splash screen
@@ -22,12 +24,12 @@
 
 * Score
 
-* Coins
-	* Scene
-	* Animation
-	* Code
-	* Game interation
-		* Hit interaction
+#* Coins OK
+#	* Scene OK
+#	* Animation OK
+#	* code OK
+#	* Game interation OK
+#		* Hit interaction OK
 
 * Coins as +1
 	* Scene
