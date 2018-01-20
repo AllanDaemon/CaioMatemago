@@ -3,6 +3,7 @@ extends Node2D
 signal right
 signal wrong
 
+onready var game = get_node("/root/game")
 onready var boxes = get_node("boxes")
 onready var question = get_node("question")
 onready var result_anim = get_node("HUD/result_anim")
@@ -13,7 +14,8 @@ export (bool) var DEBUG = true setget set_debug
 
 func _ready():
 	set_process_input(true)
-	set_debug(DEBUG)
+#	set_debug(DEBUG)
+	game.DEBUG = DEBUG
 	print("Boxes: ", boxes)
 	connect("right", self, "right")
 	connect("wrong", self, "wrong")
@@ -23,8 +25,12 @@ func _ready():
 	pass
 
 func _input(ev):
-	if ev.is_action_pressed("debug"):
-		set_debug(not DEBUG)
+	if ev.is_action_pressed("menu") and not ev.is_echo():
+#		prints("input from game_test", ev)
+		game.on_menu = not game.on_menu
+	if ev.is_action_pressed("debug") and not ev.is_echo():
+		game.DEBUG = not game.DEBUG
+#		set_debug(not DEBUG)
 
 func _on_value_change(value):
 	print("Change: ", value)
@@ -50,5 +56,6 @@ func wrong():
 func set_debug(value):
 	DEBUG = value
 	if player: player.DEBUG = DEBUG
-	if get_node("background/background"):
+	if has_node("background/background") and \
+	   get_node("background/background"):
 		get_node("background/background").set_hidden(DEBUG)

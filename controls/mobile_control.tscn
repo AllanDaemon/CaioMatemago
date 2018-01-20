@@ -69,10 +69,25 @@ passby_press = false
 action = "jump"
 visibility_mode = 1
 
-[node name="debug_button" type="TouchScreenButton" parent="."]
+[node name="menu_button" type="TouchScreenButton" parent="."]
 
 visibility/opacity = 0.15
 transform/pos = Vector2( 280, 10 )
+transform/scale = Vector2( 0.2, 0.2 )
+normal = SubResource( 3 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = "menu"
+visibility_mode = 1
+
+[node name="debug_button" type="TouchScreenButton" parent="."]
+
+visibility/opacity = 0.15
+transform/pos = Vector2( 240, 10 )
 transform/scale = Vector2( 0.2, 0.2 )
 normal = SubResource( 3 )
 pressed = null

@@ -150,5 +150,5 @@ func change_anim(anim):
 
 func set_debug(value):
 	DEBUG = value
-	if get_node("DBG"):
+	if has_node("DBG") and get_node("DBG"):
 		get_node("DBG").set_hidden(not value)

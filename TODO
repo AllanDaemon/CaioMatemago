@@ -1,5 +1,7 @@
 * Fix box hit animation to be centralized
 
+* Use game singleton as scene and put general (mobile gui) handling there ?
+
 * Game status singleton
 
 * Game action button
