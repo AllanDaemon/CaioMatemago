@@ -120,7 +120,7 @@ tracks/1/keys = {
 "values": [ true ]
 }
 
-[node name="game" type="Node2D"]
+[node name="game_test" type="Node2D"]
 
 transform/pos = Vector2( -10, -30 )
 script/script = ExtResource( 1 )
@@ -321,7 +321,6 @@ margin/bottom = 50.0
 "player",
 ] instance=ExtResource( 11 )]
 
-editor/display_folded = true
 transform/pos = Vector2( 50, 70 )
 DEBUG = false
 

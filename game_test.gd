@@ -3,6 +3,7 @@ extends Node2D
 signal right
 signal wrong
 
+onready var game = get_node("/root/game")
 onready var boxes = get_node("boxes")
 onready var question = get_node("question")
 onready var result_anim = get_node("HUD/result_anim")
@@ -23,7 +24,11 @@ func _ready():
 	pass
 
 func _input(ev):
-	if ev.is_action_pressed("debug"):
+	if ev.is_action_pressed("menu") and not ev.is_echo():
+		prints("input from game_test", ev)
+		game.on_menu = not game.on_menu
+#		game.open_options_menu()
+	if ev.is_action_pressed("debug") and not ev.is_echo():
 		set_debug(not DEBUG)
 
 func _on_value_change(value):
