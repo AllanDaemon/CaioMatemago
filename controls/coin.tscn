@@ -1,37 +1,12 @@
 [gd_scene load_steps=6 format=1]
 
-[ext_resource path="res://tileset/tileset.png" type="Texture" id=1]
+[ext_resource path="res://controls/coin.gd" type="Script" id=1]
+[ext_resource path="res://tileset/tileset.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 8.0
-
-[sub_resource type="GDScript" id=2]
-
-script/source = "tool
-extends Area2D
-
-signal coin
-
-var testing = false
-
-func _ready():
-	testing = get_tree().get_root() == get_parent()
-	if testing:
-		get_node(\"test_camera\").make_current()
-		get_node(\"test_timer\").start()
-
-func _get_item_rect():
-    return get_node(\"sprite\").get_item_rect()
-	
-func _on_coin_body_enter( body ):
-	if body.is_in_group(\"player\"):
-		hit()
-
-func hit():
-	get_node(\"anim\").play(\"disapear\")
-	emit_signal(\"coin\", 1)"
 
 [sub_resource type="Animation" id=3]
 
@@ -88,7 +63,7 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-script/script = SubResource( 2 )
+script/script = ExtResource( 1 )
 
 [node name="collision" type="CollisionShape2D" parent="."]
 
@@ -99,7 +74,7 @@ _update_shape_index = 0
 
 [node name="sprite" type="Sprite" parent="."]
 
-texture = ExtResource( 1 )
+texture = ExtResource( 2 )
 region = true
 region_rect = Rect2( 0, 112, 16, 16 )
 
