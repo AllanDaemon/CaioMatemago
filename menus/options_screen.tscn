@@ -72,7 +72,7 @@ shortcut = null
 text = "Quit Level"
 flat = false
 
-[node name="volume_control" type="VBoxContainer" parent="screen_panel"]
+[node name="volume_control" type="Container" parent="screen_panel"]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -80,11 +80,21 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 14.0
 margin/top = 93.0
-margin/right = 171.0
-margin/bottom = 180.0
-alignment = 0
+margin/right = 174.0
+margin/bottom = 173.0
 
-[node name="bg_label" type="Label" parent="screen_panel/volume_control"]
+[node name="bg" type="MarginContainer" parent="screen_panel/volume_control"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = false
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 160.0
+margin/bottom = 14.0
+
+[node name="bg_label" type="Label" parent="screen_panel/volume_control/bg"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -92,7 +102,7 @@ size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 0.0
 margin/top = 0.0
-margin/right = 157.0
+margin/right = 152.0
 margin/bottom = 14.0
 text = "Music volume"
 percent_visible = 1.0
@@ -102,6 +112,22 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="bg_volume" type="Label" parent="screen_panel/volume_control/bg"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 110.0
+margin/top = 0.0
+margin/right = 160.0
+margin/bottom = 14.0
+text = "100"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
 [node name="bg_slider" type="HSlider" parent="screen_panel/volume_control"]
 
 focus/ignore_mouse = false
@@ -109,9 +135,9 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 0.0
-margin/top = 18.0
+margin/top = 20.0
 margin/right = 157.0
-margin/bottom = 34.0
+margin/bottom = 36.0
 range/min = 0.0
 range/max = 100.0
 range/step = 1.0
@@ -122,31 +148,28 @@ range/rounded = false
 tick_count = 0
 ticks_on_borders = true
 focus_mode = 2
-__meta__ = {
-"_edit_lock_": true
-}
 
-[node name="spacer" type="Control" parent="screen_panel/volume_control"]
+[node name="fx" type="MarginContainer" parent="screen_panel/volume_control"]
 
 focus/ignore_mouse = false
-focus/stop_mouse = true
+focus/stop_mouse = false
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 38.0
-margin/right = 157.0
-margin/bottom = 38.0
+margin/top = 45.0
+margin/right = 160.0
+margin/bottom = 59.0
 
-[node name="fx_label" type="Label" parent="screen_panel/volume_control"]
+[node name="fx_label" type="Label" parent="screen_panel/volume_control/fx"]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 0.0
-margin/top = 42.0
-margin/right = 157.0
-margin/bottom = 56.0
+margin/top = 0.0
+margin/right = 152.0
+margin/bottom = 14.0
 text = "Effects volume"
 percent_visible = 1.0
 lines_skipped = 0
@@ -155,8 +178,46 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="fx_volume" type="Label" parent="screen_panel/volume_control/fx"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 110.0
+margin/top = 0.0
+margin/right = 160.0
+margin/bottom = 14.0
+text = "100"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="fx_slider" type="HSlider" parent="screen_panel/volume_control"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 60.0
+margin/right = 157.0
+margin/bottom = 76.0
+range/min = 0.0
+range/max = 100.0
+range/step = 1.0
+range/page = 0.0
+range/value = 1.0
+range/exp_edit = false
+range/rounded = false
+tick_count = 0
+ticks_on_borders = true
+focus_mode = 2
+
 [node name="debug_control" type="HBoxContainer" parent="screen_panel"]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -206,7 +267,13 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[connection signal="focus_enter" from="screen_panel" to="." method="_on_screen_panel_focus_enter"]
+
 [connection signal="pressed" from="screen_panel/resume_btn" to="." method="_on_resume"]
+
+[connection signal="value_changed" from="screen_panel/volume_control/bg_slider" to="." method="_on_bg_slider"]
+
+[connection signal="value_changed" from="screen_panel/volume_control/fx_slider" to="." method="_on_fx_slider"]
 
 [connection signal="toggled" from="screen_panel/debug_control/debug_btn" to="." method="_on_debug"]
 

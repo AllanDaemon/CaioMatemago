@@ -6,8 +6,8 @@ var score = 0
 
 ## SETTINGS
 
-var sound_bg = 1.0
-var sound_fx = 1.0
+export (float, 0, 1) var volume_bg = 1.0
+export (float, 0, 1) var volume_fx = 1.0
 export (bool) var DEBUG = false setget _set_debug
 
 ## States
@@ -61,6 +61,7 @@ func _open_options_menu():
 	print("Opening menu")
 	_set_pause_state(true)
 	root.add_child(option_scene)
+	option_scene.update_values()
 
 func _close_options_menu():
 	print("Closing menu")
