@@ -206,6 +206,27 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="debug_btn1" type="CheckButton" parent="screen_panel/debug_control"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 125.0
+margin/top = 0.0
+margin/right = 201.0
+margin/bottom = 24.0
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+flat = false
+align = 0
+__meta__ = {
+"_edit_lock_": true
+}
+
 [connection signal="pressed" from="screen_panel/resume_btn" to="." method="_on_resume"]
+
+[connection signal="toggled" from="screen_panel/debug_control/debug_btn" to="." method="_on_debug"]
 
 

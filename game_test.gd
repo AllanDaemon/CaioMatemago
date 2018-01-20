@@ -14,7 +14,8 @@ export (bool) var DEBUG = true setget set_debug
 
 func _ready():
 	set_process_input(true)
-	set_debug(DEBUG)
+#	set_debug(DEBUG)
+	game.DEBUG = DEBUG
 	print("Boxes: ", boxes)
 	connect("right", self, "right")
 	connect("wrong", self, "wrong")
@@ -25,11 +26,11 @@ func _ready():
 
 func _input(ev):
 	if ev.is_action_pressed("menu") and not ev.is_echo():
-		prints("input from game_test", ev)
+#		prints("input from game_test", ev)
 		game.on_menu = not game.on_menu
-#		game.open_options_menu()
 	if ev.is_action_pressed("debug") and not ev.is_echo():
-		set_debug(not DEBUG)
+		game.DEBUG = not game.DEBUG
+#		set_debug(not DEBUG)
 
 func _on_value_change(value):
 	print("Change: ", value)
