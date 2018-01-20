@@ -27,9 +27,19 @@ onready var option_scene_pkg = preload("res://menus/options_screen.tscn")
 onready var option_scene = option_scene_pkg.instance()
 
 func _ready():
+	set_process_input(true)
 	current_level = tree.get_current_scene()	# it's game test by now
 	current_scene = current_level
+	_init_defaults()
+
+func _init_defaults():
 	_set_debug(DEBUG)
+
+func _input(ev):
+	if ev.is_action_pressed("menu") and not ev.is_echo():
+		_set_menu_state(not on_menu)
+	if ev.is_action_pressed("debug") and not ev.is_echo():
+		_set_debug(not DEBUG)
 
 func _set_pause_state(value):
 #	prints("PAUSE:", value)
@@ -58,6 +68,8 @@ func _close_options_menu():
 	_set_pause_state(false)
 
 func _set_debug(value):
+	var debug_objs = [current_level]
 	DEBUG = value
-	if "DEBUG" in current_level:
-		current_level.DEBUG = value
+	for obj in debug_objs:
+		if obj and "DEBUG" in obj:
+			obj.DEBUG = value

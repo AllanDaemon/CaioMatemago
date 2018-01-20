@@ -13,9 +13,6 @@ var result = 0
 export (bool) var DEBUG = true setget set_debug
 
 func _ready():
-	set_process_input(true)
-#	set_debug(DEBUG)
-	game.DEBUG = DEBUG
 	print("Boxes: ", boxes)
 	connect("right", self, "right")
 	connect("wrong", self, "wrong")
@@ -23,14 +20,6 @@ func _ready():
 		print("box: ", box)
 		box.connect("value_change", self, "_on_value_change")
 	pass
-
-func _input(ev):
-	if ev.is_action_pressed("menu") and not ev.is_echo():
-#		prints("input from game_test", ev)
-		game.on_menu = not game.on_menu
-	if ev.is_action_pressed("debug") and not ev.is_echo():
-		game.DEBUG = not game.DEBUG
-#		set_debug(not DEBUG)
 
 func _on_value_change(value):
 	print("Change: ", value)
@@ -55,7 +44,7 @@ func wrong():
 	
 func set_debug(value):
 	DEBUG = value
-	if player: player.DEBUG = DEBUG
+	if player and "DEBUG" in player: player.DEBUG = DEBUG
 	if has_node("background/background") and \
 	   get_node("background/background"):
 		get_node("background/background").set_hidden(DEBUG)
