@@ -59,4 +59,5 @@ func _close_options_menu():
 
 func _set_debug(value):
 	DEBUG = value
-	current_level.DEBUG = value
+	if "DEBUG" in current_level:
+		current_level.DEBUG = value

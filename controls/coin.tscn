@@ -2,7 +2,7 @@
 
 [ext_resource path="res://controls/coin.gd" type="Script" id=1]
 [ext_resource path="res://tileset/tileset.png" type="Texture" id=2]
-[ext_resource path="res://audio/Moedas.wav" type="Sample" id=3]
+[ext_resource path="res://audio/Moeda.wav" type="Sample" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -26,27 +26,39 @@ tracks/0/keys = {
 "values": [ Rect2( 64, 112, 16, 16 ), Rect2( 80, 112, 16, 16 ), Rect2( 96, 112, 16, 16 ), Rect2( 112, 112, 16, 16 ), Rect2( 0, 0, 0, 0 ) ]
 }
 tracks/1/type = "method"
-tracks/1/path = NodePath(".")
+tracks/1/path = NodePath("fx_sounds")
 tracks/1/interp = 1
 tracks/1/imported = false
 tracks/1/keys = {
-"times": FloatArray( 1 ),
+"times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "values": [ {
-"args": [  ],
-"method": "queue_free"
+"args": [ "coin_taken" ],
+"method": "play"
 } ]
 }
 tracks/2/type = "method"
-tracks/2/path = NodePath("fx_sounds")
+tracks/2/path = NodePath("collision")
 tracks/2/interp = 1
 tracks/2/imported = false
 tracks/2/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "values": [ {
-"args": [ "coin_taken" ],
-"method": "play"
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/imported = false
+tracks/3/keys = {
+"times": FloatArray( 1 ),
+"transitions": FloatArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
 } ]
 }
 
@@ -116,7 +128,7 @@ autoplay = "rotating"
 "fx_sound",
 ]]
 
-config/polyphony = 1
+config/polyphony = 8
 config/samples = SubResource( 5 )
 default/volume_db = 0.0
 default/pitch_scale = 1.0
