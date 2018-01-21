@@ -41,5 +41,4 @@ func update_values():
 	get_node("screen_panel/volume_control/bg_slider").set_value(bg)
 	get_node("screen_panel/volume_control/fx/fx_volume").set_text(str(fx))
 	get_node("screen_panel/volume_control/fx_slider").set_value(fx)
-
-	
+	game.volume_update()
