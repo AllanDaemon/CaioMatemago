@@ -6,8 +6,8 @@ var score = 0
 
 ## SETTINGS
 
-export (float, 0, 1) var volume_bg = 1.0
-export (float, 0, 1) var volume_fx = 1.0
+export (float, 0, 1) var volume_bg = 0.5
+export (float, 0, 1) var volume_fx = 0.5
 export (bool) var DEBUG = false setget _set_debug
 
 ## States
@@ -31,7 +31,6 @@ func _ready():
 	current_level = tree.get_current_scene()	# it's game test by now
 	current_scene = current_level
 	_init_defaults()
-#	get_node("/root/game_test/bg_music").set_volume(.01)
 
 func _init_defaults():
 	_set_debug(DEBUG)
@@ -79,9 +78,7 @@ func _set_debug(value):
 func volume_update():
 	var bgs = tree.get_nodes_in_group("bg_sound")
 	for node in bgs:
-		print("set volume")
 		var vol = volume_bg
 		if "max_volume" in node:
-			prints("MAX VOLUME", node.max_volume)
 			vol *= node.max_volume
 		node.set_volume(vol)

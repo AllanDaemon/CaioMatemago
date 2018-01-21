@@ -18,12 +18,9 @@ func _input(ev):
 func _on_resume():
 	game.on_menu = false
 
-
-
 func _on_debug( pressed ):
 	prints("DEBUG Pressed:", pressed)
 	game.DEBUG = pressed
-
 
 func _on_bg_slider( value ):
 	game.volume_bg = value/100

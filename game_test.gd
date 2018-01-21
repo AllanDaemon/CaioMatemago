@@ -12,6 +12,7 @@ onready var player = get_node("player")
 var result = 0
 export (bool) var DEBUG = true setget set_debug
 
+# For debug
 onready var volume_dbg = get_node("HUD/volume_dbg")
 onready var bg_music = get_node("bg_music")
 var vol
@@ -19,7 +20,6 @@ var vol_db
 
 
 func _ready():
-	set_process(true)
 	print("Boxes: ", boxes)
 	connect("right", self, "right")
 	connect("wrong", self, "wrong")
@@ -27,6 +27,7 @@ func _ready():
 		print("box: ", box)
 		box.connect("value_change", self, "_on_value_change")
 	pass
+	set_process(DEBUG)
 
 func _process(delta):
 	vol = bg_music.get_volume()
@@ -60,3 +61,7 @@ func set_debug(value):
 	if has_node("background/background") and \
 	   get_node("background/background"):
 		get_node("background/background").set_hidden(DEBUG)
+	if has_node("HUD/volume_dbg") and \
+	   get_node("HUD/volume_dbg"):
+		get_node("HUD/volume_dbg").set_hidden(DEBUG)
+	set_process(DEBUG)
