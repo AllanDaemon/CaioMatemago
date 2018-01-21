@@ -15,7 +15,9 @@
 * Screens
 	* Options screen
 		menu btns
-		volume level
+		volume level 
+			BG OK
+			FX @WIP
 		debug option OK
 
 	* Initial screen
