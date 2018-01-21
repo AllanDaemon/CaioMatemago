@@ -1,8 +1,9 @@
 [gd_scene load_steps=11 format=1]
 
-[ext_resource path="res://controls/box.gd" type="Script" id=1]
+[ext_resource path="res://scenario/box.gd" type="Script" id=1]
 [ext_resource path="res://fonts/averia.tres" type="DynamicFont" id=2]
 [ext_resource path="res://images/arcade_platformer.nobg.png" type="Texture" id=3]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 
