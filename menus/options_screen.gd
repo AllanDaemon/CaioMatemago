@@ -31,7 +31,7 @@ func _on_fx_slider( value ):
 	update_values()
 
 func update_values():
-	get_node("screen_panel/debug_control/debug_btn").set_pressed(game.DEBUG)
+	get_node("screen_panel/debug_btn").set_pressed(game.DEBUG)
 	var bg = int(game.volume_bg*100)
 	var fx = int(game.volume_fx*100)
 	get_node("screen_panel/volume_control/bg/bg_volume").set_text(str(bg))
