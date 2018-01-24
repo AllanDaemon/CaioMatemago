@@ -9,23 +9,25 @@
 [ext_resource path="res://scenario/result_box.tscn" type="PackedScene" id=7]
 [ext_resource path="res://levels/common.tscn" type="PackedScene" id=8]
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=1]
 
 atlas = ExtResource( 6 )
 region = Rect2( 16, 0, 16, 16 )
 margin = Rect2( 0, 0, 0, 0 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=2]
 
 atlas = ExtResource( 6 )
 region = Rect2( 128, 0, 16, 16 )
 margin = Rect2( 0, 0, 0, 0 )
 
-[node name="game_test" type="Node2D"]
+[node name="game_test" type="Node2D" groups=[
+"debug",
+]]
 
 transform/pos = Vector2( -10, -30 )
 script/script = ExtResource( 1 )
-DEBUG = false
+debug = true
 
 [node name="coins" type="Node2D" parent="."]
 
@@ -100,6 +102,10 @@ transform/pos = Vector2( 264, 64 )
 
 transform/pos = Vector2( 264, 40 )
 
+[node name="enemies" type="Node2D" parent="."]
+
+transform/pos = Vector2( 10, 30 )
+
 [node name="question" parent="." instance=ExtResource( 3 )]
 
 margin/left = -31.0
@@ -137,13 +143,13 @@ __meta__ = {
 [node name="box+1" parent="boxes" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 90, 78 )
-texture = SubResource( 4 )
+texture = SubResource( 1 )
 
 [node name="box-1" parent="boxes" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 122, 78 )
 increment = -5
-texture = SubResource( 5 )
+texture = SubResource( 2 )
 
 [node name="box" parent="boxes" instance=ExtResource( 5 )]
 
@@ -155,14 +161,6 @@ transform/pos = Vector2( 144, 78 )
 
 [node name="common" parent="." instance=ExtResource( 8 )]
 
-editor/display_folded = true
-
-[node name="HUD" parent="common"]
-
-editor/display_folded = false
-
 [connection signal="result" from="boxes/result_box" to="." method="_on_result"]
 
 
-[editable path="common"]
-[editable path="common/HUD"]

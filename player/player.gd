@@ -3,7 +3,7 @@ extends KinematicBody2D
 # Based on
 # https://github.com/kidscancode/godot_tutorials/blob/master/Godot101/Part%2012/player.gd
 
-export (bool) var DEBUG = true setget set_debug
+export (bool) var debug = true setget set_debug
 
 onready var ground_ray = get_node("ground_ray")
 onready var sprite = get_node("sprite")
@@ -104,7 +104,7 @@ func _fixed_process(delta):
 	
 
 	# DBG
-	if not DEBUG: return
+	if not debug: return
 	var raycast_dbg_color
 	if ground_ray.is_colliding():	raycast_dbg_color = Color(.5,1,.5)
 	else: 							raycast_dbg_color = Color(.5,.5,1)
@@ -143,12 +143,12 @@ func _fixed_process(delta):
 func change_anim(anim):
 	var current = animation.get_current_animation()
 	if anim != current:
-		if DEBUG:
+		if debug:
 			print("Changing anim: ", current, " -> ", anim)
 			print("Vel: ", vel)
 		animation.play(anim)
 
 func set_debug(value):
-	DEBUG = value
+	debug = value
 	if has_node("DBG") and get_node("DBG"):
 		get_node("DBG").set_hidden(not value)

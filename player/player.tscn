@@ -5,17 +5,17 @@
 [ext_resource path="res://controls/plotter.tscn" type="PackedScene" id=3]
 [ext_resource path="res://audio/Jump.wav" type="Sample" id=4]
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=11]
 
 custom_solver_bias = 0.0
 extents = Vector2( 6, 13.5 )
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=12]
 
 custom_solver_bias = 0.0
 extents = Vector2( 8, 4 )
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=13]
 
 length = 1.0
 loop = false
@@ -31,7 +31,7 @@ tracks/0/keys = {
 "values": [ 4 ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=14]
 
 length = 9.88
 loop = true
@@ -101,21 +101,22 @@ samples/jump = {
 }
 
 [node name="player" type="KinematicBody2D" groups=[
+"debug",
 "player",
 ]]
 
 input/pickable = false
-shapes/0/shape = SubResource( 4 )
+shapes/0/shape = SubResource( 11 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
 shapes/0/trigger = false
-shapes/1/shape = SubResource( 5 )
+shapes/1/shape = SubResource( 12 )
 shapes/1/transform = Matrix32( 1, 0, 0, 1, 0, 4 )
 shapes/1/trigger = true
 collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
 script/script = ExtResource( 1 )
-DEBUG = true
+debug = true
 
 [node name="sprite" type="Sprite" parent="."]
 
@@ -126,7 +127,7 @@ frame = 5
 [node name="colision" type="CollisionShape2D" parent="."]
 
 visibility/visible = false
-shape = SubResource( 4 )
+shape = SubResource( 11 )
 trigger = false
 _update_shape_index = 0
 
@@ -134,7 +135,7 @@ _update_shape_index = 0
 
 visibility/visible = false
 transform/pos = Vector2( 0, 4 )
-shape = SubResource( 5 )
+shape = SubResource( 12 )
 trigger = true
 _update_shape_index = 1
 
@@ -152,8 +153,8 @@ type_mask = 15
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/falling = SubResource( 6 )
-anims/idle = SubResource( 7 )
+anims/falling = SubResource( 13 )
+anims/idle = SubResource( 14 )
 anims/jumping = SubResource( 8 )
 anims/walking = SubResource( 9 )
 playback/active = true
