@@ -58,7 +58,6 @@ max_volume = 0.5
 
 [node name="background" type="ParallaxBackground" parent="."]
 
-editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
