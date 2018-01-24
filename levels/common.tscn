@@ -58,6 +58,7 @@ max_volume = 0.5
 
 [node name="background" type="ParallaxBackground" parent="."]
 
+editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -91,7 +92,17 @@ __meta__ = {
 
 [node name="scenario_tilemap" parent="." instance=ExtResource( 5 )]
 
+[node name="coins" type="Node2D" parent="."]
+
+[node name="enemies" type="Node2D" parent="."]
+
+[node name="boxes" type="Node2D" parent="."]
+
+[node name="math" type="Node2D" parent="."]
+
 [node name="action_areas" type="Node2D" parent="."]
+
+editor/display_folded = true
 
 [node name="prev_level" parent="action_areas" instance=ExtResource( 6 )]
 

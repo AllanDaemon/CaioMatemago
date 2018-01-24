@@ -1,23 +1,23 @@
 [gd_scene load_steps=11 format=1]
 
 [ext_resource path="res://game_test.gd" type="Script" id=1]
-[ext_resource path="res://scenario/coin.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenario/question.tscn" type="PackedScene" id=3]
-[ext_resource path="res://fonts/averia.tres" type="DynamicFont" id=4]
-[ext_resource path="res://scenario/box.tscn" type="PackedScene" id=5]
-[ext_resource path="res://images/arcade_platformer.nobg.png" type="Texture" id=6]
-[ext_resource path="res://scenario/result_box.tscn" type="PackedScene" id=7]
-[ext_resource path="res://levels/common.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenario/question.tscn" type="PackedScene" id=2]
+[ext_resource path="res://fonts/averia.tres" type="DynamicFont" id=3]
+[ext_resource path="res://scenario/box.tscn" type="PackedScene" id=4]
+[ext_resource path="res://images/arcade_platformer.nobg.png" type="Texture" id=5]
+[ext_resource path="res://scenario/result_box.tscn" type="PackedScene" id=6]
+[ext_resource path="res://levels/common.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenario/coin.tscn" type="PackedScene" id=8]
 
 [sub_resource type="AtlasTexture" id=1]
 
-atlas = ExtResource( 6 )
+atlas = ExtResource( 5 )
 region = Rect2( 16, 0, 16, 16 )
 margin = Rect2( 0, 0, 0, 0 )
 
 [sub_resource type="AtlasTexture" id=2]
 
-atlas = ExtResource( 6 )
+atlas = ExtResource( 5 )
 region = Rect2( 128, 0, 16, 16 )
 margin = Rect2( 0, 0, 0, 0 )
 
@@ -29,84 +29,11 @@ transform/pos = Vector2( -10, -30 )
 script/script = ExtResource( 1 )
 debug = true
 
-[node name="coins" type="Node2D" parent="."]
-
-editor/display_folded = true
-transform/pos = Vector2( 10, 30 )
-
-[node name="coin" parent="coins" instance=ExtResource( 2 )]
-
-transform/pos = Vector2( 168, 88 )
-
-[node name="coin1" parent="coins" instance=ExtResource( 2 )]
-
-transform/pos = Vector2( 168, 64 )
-
-[node name="coin11 4" parent="coins" instance=ExtResource( 2 )]
-
-transform/pos = Vector2( 168, 40 )
-
-[node name="coin2" parent="coins" instance=ExtResource( 2 )]
-
-transform/pos = Vector2( 192, 88 )
-
-[node name="coin3" parent="coins" instance=ExtResource( 2 )]
-
-transform/pos = Vector2( 192, 64 )
-
-[node name="coin11 6" parent="coins" instance=ExtResource( 2 )]
-
-transform/pos = Vector2( 192, 40 )
-
-[node name="coin4" parent="coins" instance=ExtResource( 2 )]
-
-transform/pos = Vector2( 216, 88 )
-
-[node name="coin5" parent="coins" instance=ExtResource( 2 )]
-
-transform/pos = Vector2( 216, 64 )
-
-[node name="coin11 5" parent="coins" instance=ExtResource( 2 )]
-
-transform/pos = Vector2( 216, 40 )
-
-[node name="coin6" parent="coins" instance=ExtResource( 2 )]
-
-transform/pos = Vector2( 240, 88 )
-
-[node name="coin7" parent="coins" instance=ExtResource( 2 )]
-
-transform/pos = Vector2( 240, 64 )
-
-[node name="coin11" parent="coins" instance=ExtResource( 2 )]
-
-transform/pos = Vector2( 240, 40 )
-
-[node name="coin8" parent="coins" instance=ExtResource( 2 )]
-
-transform/pos = Vector2( 264, 88 )
-
-[node name="coin9" parent="coins" instance=ExtResource( 2 )]
-
-transform/pos = Vector2( 264, 64 )
-
-[node name="coin11 2" parent="coins" instance=ExtResource( 2 )]
-
-transform/pos = Vector2( 264, 40 )
-
-[node name="coin10" parent="coins" instance=ExtResource( 2 )]
-
-transform/pos = Vector2( 264, 64 )
-
-[node name="coin11 3" parent="coins" instance=ExtResource( 2 )]
-
-transform/pos = Vector2( 264, 40 )
-
 [node name="enemies" type="Node2D" parent="."]
 
 transform/pos = Vector2( 10, 30 )
 
-[node name="question" parent="." instance=ExtResource( 3 )]
+[node name="question" parent="." instance=ExtResource( 2 )]
 
 margin/left = -31.0
 margin/top = 10.0
@@ -125,7 +52,7 @@ margin/left = 182.0
 margin/top = 74.0
 margin/right = 302.0
 margin/bottom = 137.0
-custom_fonts/font = ExtResource( 4 )
+custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "42"
 align = 2
@@ -140,27 +67,96 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="box+1" parent="boxes" instance=ExtResource( 5 )]
+[node name="box+1" parent="boxes" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 90, 78 )
 texture = SubResource( 1 )
 
-[node name="box-1" parent="boxes" instance=ExtResource( 5 )]
+[node name="box-1" parent="boxes" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 122, 78 )
 increment = -5
 texture = SubResource( 2 )
 
-[node name="box" parent="boxes" instance=ExtResource( 5 )]
+[node name="box" parent="boxes" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 66, 78 )
 
-[node name="result_box" parent="boxes" instance=ExtResource( 7 )]
+[node name="result_box" parent="boxes" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 144, 78 )
 
-[node name="common" parent="." instance=ExtResource( 8 )]
+[node name="common" parent="." instance=ExtResource( 7 )]
+
+[node name="coin" parent="common/coins" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 178, 118 )
+
+[node name="coin1" parent="common/coins" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 178, 94 )
+
+[node name="coin11 4" parent="common/coins" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 178, 70 )
+
+[node name="coin2" parent="common/coins" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 202, 118 )
+
+[node name="coin3" parent="common/coins" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 202, 94 )
+
+[node name="coin11 6" parent="common/coins" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 202, 70 )
+
+[node name="coin4" parent="common/coins" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 226, 118 )
+
+[node name="coin5" parent="common/coins" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 226, 94 )
+
+[node name="coin11 5" parent="common/coins" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 226, 70 )
+
+[node name="coin6" parent="common/coins" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 250, 118 )
+
+[node name="coin7" parent="common/coins" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 250, 94 )
+
+[node name="coin11" parent="common/coins" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 250, 70 )
+
+[node name="coin8" parent="common/coins" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 274, 118 )
+
+[node name="coin9" parent="common/coins" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 274, 94 )
+
+[node name="coin11 2" parent="common/coins" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 274, 70 )
+
+[node name="coin10" parent="common/coins" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 274, 94 )
+
+[node name="coin11 3" parent="common/coins" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 274, 70 )
 
 [connection signal="result" from="boxes/result_box" to="." method="_on_result"]
 
 
+[editable path="common"]

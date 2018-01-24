@@ -11,45 +11,7 @@ transform/pos = Vector2( -10, -30 )
 script/script = ExtResource( 1 )
 debug = true
 
-[node name="coins" type="Node2D" parent="."]
-
-transform/pos = Vector2( 10, 30 )
-
-[node name="enemies" type="Node2D" parent="."]
-
-transform/pos = Vector2( 10, 30 )
-
-[node name="boxes" type="Node2D" parent="."]
-
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="math" type="Node2D" parent="."]
-
 [node name="common" parent="." instance=ExtResource( 2 )]
-
-[node name="background" parent="common"]
-
-editor/display_folded = true
-
-[node name="background" parent="common/background"]
-
-visibility/visible = false
-
-[node name="info" parent="common/scenario_tilemap"]
-
-editor/display_folded = true
-
-[node name="prev_level" parent="common/action_areas"]
-
-enabled = true
-goto_scene = "intro"
-
-[node name="next_level" parent="common/action_areas"]
-
-enabled = true
-goto_scene = "test"
 
 
 [editable path="common"]
