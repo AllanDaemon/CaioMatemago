@@ -37,30 +37,6 @@ tracks/1/keys = {
 "method": "play"
 } ]
 }
-tracks/2/type = "method"
-tracks/2/path = NodePath("collision")
-tracks/2/interp = 1
-tracks/2/imported = false
-tracks/2/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "queue_free"
-} ]
-}
-tracks/3/type = "method"
-tracks/3/path = NodePath(".")
-tracks/3/interp = 1
-tracks/3/imported = false
-tracks/3/keys = {
-"times": FloatArray( 1 ),
-"transitions": FloatArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "queue_free"
-} ]
-}
 
 [sub_resource type="Animation" id=3]
 
@@ -92,7 +68,7 @@ samples/coin_taken = {
 input/pickable = true
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/0/trigger = false
+shapes/0/trigger = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
@@ -103,7 +79,7 @@ script/script = ExtResource( 1 )
 
 visibility/visible = false
 shape = SubResource( 1 )
-trigger = false
+trigger = true
 _update_shape_index = 0
 
 [node name="sprite" type="Sprite" parent="."]

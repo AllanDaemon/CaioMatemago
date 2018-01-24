@@ -19,5 +19,6 @@ func _on_coin_body_enter( body ):
 		hit()
 
 func hit():
+	get_node("collision").queue_free()
 	get_node("anim").play("disapear")
 	emit_signal("coin", 1)
