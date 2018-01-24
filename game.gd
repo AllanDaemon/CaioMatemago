@@ -43,7 +43,8 @@ var levels_scenes_pack = {
 #	"level_A1":	preload(""),
 #	"level_A2":	preload(""),
 #	"level_A3":	preload(""),
-#	"level_Aboss":	preload(""),
+#	"level_A4":	preload(""),
+#	"level_A5":	preload(""),
 }
 var option_scene = levels_scenes_pack["options"].instance()
 

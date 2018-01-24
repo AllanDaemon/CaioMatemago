@@ -1,0 +1,27 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://tileset/tileset.tres" type="TileSet" id=1]
+
+[node name="ref_marks" type="TileMap"]
+
+visibility/visible = false
+mode = 0
+tile_set = ExtResource( 1 )
+cell/size = Vector2( 16, 16 )
+cell/quadrant_size = 16
+cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+cell/half_offset = 2
+cell/tile_origin = 0
+cell/y_sort = false
+collision/use_kinematic = false
+collision/friction = 1.0
+collision/bounce = 0.0
+collision/layers = 1
+collision/mask = 1
+occluder/light_mask = 1
+tile_data = IntArray( -327680, 18, -327620, 18, -262144, 18, -262134, 18, -262124, 18, -262114, 18, -262104, 18, -262094, 18, -262084, 18, 65528, 41, 131064, 41, 196600, 41, 262136, 41, 327672, 41, 393208, 41, 458744, 41, 524280, 41, 589816, 41, 655352, 41, 655353, 41, 720888, 41, 786424, 41, 851960, 41, 917496, 41, 983032, 41, 1048568, 41 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+
