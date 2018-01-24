@@ -7,17 +7,11 @@ onready var game = get_node("/root/game")
 onready var boxes = get_node("boxes")
 onready var question = get_node("question")
 onready var result_anim = get_node("common/HUD/result_anim")
-onready var player = get_node("common/player")
 onready var common = get_node("common")
 
 var result = 0
-export (bool) var debug = true setget set_debug
 
-# For debug
-onready var volume_dbg = get_node("common/HUD/volume_dbg")
-onready var bg_music = get_node("common/bg_music")
-var vol
-var vol_db
+export (bool) var debug = true setget set_debug
 
 
 func _ready():
@@ -28,12 +22,6 @@ func _ready():
 		print("box: ", box)
 		box.connect("value_change", self, "_on_value_change")
 	pass
-	set_process(debug)
-
-func _process(delta):
-	vol = bg_music.get_volume()
-	vol_db = bg_music.get_volume_db()
-	volume_dbg.set_text(str(vol)+"\n"+str(vol_db)+"db")
 
 func _on_value_change(value):
 	print("Change: ", value)
@@ -59,11 +47,4 @@ func wrong():
 func set_debug(value):
 	debug = value
 	if common and "debug" in common: common.debug = value
-#	if player and "debug" in player: player.debug = debug
-#	if has_node("common/background/background") and \
-#	   get_node("common/background/background"):
-#		get_node("common/background/background").set_hidden(debug)
-#	if has_node("common/HUD/volume_dbg") and \
-#	   get_node("common/HUD/volume_dbg"):
-#		get_node("common/HUD/volume_dbg").set_hidden(not debug)
-	set_process(debug)
+
