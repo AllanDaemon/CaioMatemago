@@ -63,5 +63,5 @@ func set_debug(value):
 		get_node("background/background").set_hidden(DEBUG)
 	if has_node("HUD/volume_dbg") and \
 	   get_node("HUD/volume_dbg"):
-		get_node("HUD/volume_dbg").set_hidden(DEBUG)
+		get_node("HUD/volume_dbg").set_hidden(not DEBUG)
 	set_process(DEBUG)
