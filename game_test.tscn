@@ -1,26 +1,20 @@
-[gd_scene load_steps=24 format=1]
+[gd_scene load_steps=19 format=1]
 
 [ext_resource path="res://game_test.gd" type="Script" id=1]
 [ext_resource path="res://audio/PrimeiraFase(com batida).ogg" type="AudioStream" id=2]
-[ext_resource path="res://tileset/tileset.png" type="Texture" id=3]
-[ext_resource path="res://tileset/tileset.tres" type="TileSet" id=4]
-[ext_resource path="res://scenario/coin.tscn" type="PackedScene" id=5]
-[ext_resource path="res://fonts/averia.tres" type="DynamicFont" id=6]
-[ext_resource path="res://scenario/box.tscn" type="PackedScene" id=7]
-[ext_resource path="res://images/arcade_platformer.nobg.png" type="Texture" id=8]
-[ext_resource path="res://scenario/result_box.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scenario/question.tscn" type="PackedScene" id=10]
-[ext_resource path="res://player/player.tscn" type="PackedScene" id=11]
-[ext_resource path="res://audio/Acerto.ogg" type="AudioStream" id=12]
-[ext_resource path="res://audio/Erro.ogg" type="AudioStream" id=13]
-[ext_resource path="res://controls/mobile_control.tscn" type="PackedScene" id=14]
+[ext_resource path="res://controls/stream_player.gd" type="Script" id=3]
+[ext_resource path="res://tileset/tileset.png" type="Texture" id=4]
+[ext_resource path="res://tileset/tileset.tres" type="TileSet" id=5]
+[ext_resource path="res://scenario/coin.tscn" type="PackedScene" id=6]
+[ext_resource path="res://fonts/averia.tres" type="DynamicFont" id=7]
+[ext_resource path="res://scenario/box.tscn" type="PackedScene" id=8]
+[ext_resource path="res://images/arcade_platformer.nobg.png" type="Texture" id=9]
+[ext_resource path="res://scenario/result_box.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenario/question.tscn" type="PackedScene" id=11]
+[ext_resource path="res://player/player.tscn" type="PackedScene" id=12]
+[ext_resource path="res://controls/HUD.tscn" type="PackedScene" id=13]
 
-[sub_resource type="GDScript" id=1]
-
-script/source = "extends StreamPlayer
-export (float, 0, 1, .05) var max_volume;"
-
-[sub_resource type="CanvasItemShader" id=2]
+[sub_resource type="CanvasItemShader" id=1]
 
 _code = {
 "fragment": "uniform float dark_factor = .5;
@@ -33,97 +27,29 @@ COLOR = COLOR * dark_factor;",
 "vertex_ofs": 0
 }
 
-[sub_resource type="CanvasItemMaterial" id=3]
+[sub_resource type="CanvasItemMaterial" id=2]
 
-shader/shader = SubResource( 2 )
+shader/shader = SubResource( 1 )
 shader/shading_mode = 0
 shader_param/dark_factor = 0.7
 
+[sub_resource type="AtlasTexture" id=3]
+
+atlas = ExtResource( 4 )
+region = Rect2( 0, 176, 320, 144 )
+margin = Rect2( 0, 0, 0, 0 )
+
 [sub_resource type="AtlasTexture" id=4]
 
-atlas = ExtResource( 3 )
-region = Rect2( 0, 176, 320, 144 )
+atlas = ExtResource( 9 )
+region = Rect2( 16, 0, 16, 16 )
 margin = Rect2( 0, 0, 0, 0 )
 
 [sub_resource type="AtlasTexture" id=5]
 
-atlas = ExtResource( 8 )
-region = Rect2( 16, 0, 16, 16 )
-margin = Rect2( 0, 0, 0, 0 )
-
-[sub_resource type="AtlasTexture" id=6]
-
-atlas = ExtResource( 8 )
+atlas = ExtResource( 9 )
 region = Rect2( 128, 0, 16, 16 )
 margin = Rect2( 0, 0, 0, 0 )
-
-[sub_resource type="Animation" id=7]
-
-length = 0.1
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("../result:custom_colors/font_color")
-tracks/0/interp = 1
-tracks/0/imported = false
-tracks/0/keys = {
-"times": FloatArray( 0.1 ),
-"transitions": FloatArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
-}
-
-[sub_resource type="Animation" id=8]
-
-length = 0.5
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("../result:custom_colors/font_color")
-tracks/0/interp = 1
-tracks/0/imported = false
-tracks/0/keys = {
-"times": FloatArray( 0, 0.5 ),
-"transitions": FloatArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 0.752941, 1, 0.752941, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("acertou:stream/play")
-tracks/1/interp = 1
-tracks/1/imported = false
-tracks/1/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-
-[sub_resource type="Animation" id=9]
-
-length = 0.5
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("../result:custom_colors/font_color")
-tracks/0/interp = 1
-tracks/0/imported = false
-tracks/0/keys = {
-"times": FloatArray( 0, 0.5 ),
-"transitions": FloatArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0.752941, 0.752941, 1 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("errou:stream/play")
-tracks/1/interp = 1
-tracks/1/imported = false
-tracks/1/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
 
 [node name="game_test" type="Node2D"]
 
@@ -143,12 +69,11 @@ stream/autoplay = true
 stream/paused = false
 stream/loop_restart_time = 0.0
 stream/buffering_ms = 500
-script/script = SubResource( 1 )
+script/script = ExtResource( 3 )
 max_volume = 0.5
 
 [node name="background" type="ParallaxBackground" parent="."]
 
-editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -171,10 +96,10 @@ __meta__ = {
 
 [node name="bg_sprite" type="Sprite" parent="background/background"]
 
-material/material = SubResource( 3 )
+material/material = SubResource( 2 )
 transform/pos = Vector2( 0, -70 )
 transform/scale = Vector2( 2, 2 )
-texture = SubResource( 4 )
+texture = SubResource( 3 )
 centered = false
 __meta__ = {
 "_edit_lock_": true
@@ -183,7 +108,7 @@ __meta__ = {
 [node name="scenario_tilemap" type="TileMap" parent="."]
 
 mode = 0
-tile_set = ExtResource( 4 )
+tile_set = ExtResource( 5 )
 cell/size = Vector2( 16, 16 )
 cell/quadrant_size = 16
 cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
@@ -203,74 +128,73 @@ __meta__ = {
 
 [node name="coins" type="Node2D" parent="."]
 
-editor/display_folded = true
 transform/pos = Vector2( 10, 30 )
 
-[node name="coin" parent="coins" instance=ExtResource( 5 )]
+[node name="coin" parent="coins" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 168, 88 )
 
-[node name="coin1" parent="coins" instance=ExtResource( 5 )]
+[node name="coin1" parent="coins" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 168, 64 )
 
-[node name="coin11 4" parent="coins" instance=ExtResource( 5 )]
+[node name="coin11 4" parent="coins" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 168, 40 )
 
-[node name="coin2" parent="coins" instance=ExtResource( 5 )]
+[node name="coin2" parent="coins" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 192, 88 )
 
-[node name="coin3" parent="coins" instance=ExtResource( 5 )]
+[node name="coin3" parent="coins" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 192, 64 )
 
-[node name="coin11 6" parent="coins" instance=ExtResource( 5 )]
+[node name="coin11 6" parent="coins" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 192, 40 )
 
-[node name="coin4" parent="coins" instance=ExtResource( 5 )]
+[node name="coin4" parent="coins" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 216, 88 )
 
-[node name="coin5" parent="coins" instance=ExtResource( 5 )]
+[node name="coin5" parent="coins" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 216, 64 )
 
-[node name="coin11 5" parent="coins" instance=ExtResource( 5 )]
+[node name="coin11 5" parent="coins" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 216, 40 )
 
-[node name="coin6" parent="coins" instance=ExtResource( 5 )]
+[node name="coin6" parent="coins" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 240, 88 )
 
-[node name="coin7" parent="coins" instance=ExtResource( 5 )]
+[node name="coin7" parent="coins" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 240, 64 )
 
-[node name="coin11" parent="coins" instance=ExtResource( 5 )]
+[node name="coin11" parent="coins" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 240, 40 )
 
-[node name="coin8" parent="coins" instance=ExtResource( 5 )]
+[node name="coin8" parent="coins" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 264, 88 )
 
-[node name="coin9" parent="coins" instance=ExtResource( 5 )]
+[node name="coin9" parent="coins" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 264, 64 )
 
-[node name="coin11 2" parent="coins" instance=ExtResource( 5 )]
+[node name="coin11 2" parent="coins" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 264, 40 )
 
-[node name="coin10" parent="coins" instance=ExtResource( 5 )]
+[node name="coin10" parent="coins" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 264, 64 )
 
-[node name="coin11 3" parent="coins" instance=ExtResource( 5 )]
+[node name="coin11 3" parent="coins" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 264, 40 )
 
@@ -286,7 +210,7 @@ margin/left = 182.0
 margin/top = 74.0
 margin/right = 302.0
 margin/bottom = 137.0
-custom_fonts/font = ExtResource( 6 )
+custom_fonts/font = ExtResource( 7 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "42"
 align = 2
@@ -300,26 +224,26 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="box+1" parent="boxes" instance=ExtResource( 7 )]
+[node name="box+1" parent="boxes" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 90, 78 )
-texture = SubResource( 5 )
+texture = SubResource( 4 )
 
-[node name="box-1" parent="boxes" instance=ExtResource( 7 )]
+[node name="box-1" parent="boxes" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 122, 78 )
 increment = -5
-texture = SubResource( 6 )
+texture = SubResource( 5 )
 
-[node name="box" parent="boxes" instance=ExtResource( 7 )]
+[node name="box" parent="boxes" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 66, 78 )
 
-[node name="result_box" parent="boxes" instance=ExtResource( 9 )]
+[node name="result_box" parent="boxes" instance=ExtResource( 10 )]
 
 transform/pos = Vector2( 144, 78 )
 
-[node name="question" parent="." instance=ExtResource( 10 )]
+[node name="question" parent="." instance=ExtResource( 11 )]
 
 margin/left = -31.0
 margin/top = 10.0
@@ -328,110 +252,14 @@ margin/bottom = 50.0
 
 [node name="player" parent="." groups=[
 "player",
-] instance=ExtResource( 11 )]
+] instance=ExtResource( 12 )]
 
 transform/pos = Vector2( 50, 70 )
 DEBUG = false
 
-[node name="HUD" type="CanvasLayer" parent="."]
-
-layer = 5
-offset = Vector2( 0, 0 )
-rotation = 0.0
-scale = Vector2( 1, 1 )
-
-[node name="score_label" type="Label" parent="HUD"]
-
-rect/scale = Vector2( 0.2, 0.2 )
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 222.0
-margin/top = 7.0
-margin/right = 419.0
-margin/bottom = 70.0
-custom_fonts/font = ExtResource( 6 )
-text = "SCORE:"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="score" type="Label" parent="HUD"]
-
-rect/scale = Vector2( 0.2, 0.2 )
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 274.0
-margin/top = 7.0
-margin/right = 422.0
-margin/bottom = 70.0
-custom_fonts/font = ExtResource( 6 )
-text = "2300"
-align = 2
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="result_anim" type="AnimationPlayer" parent="HUD"]
-
-playback/process_mode = 1
-playback/default_blend_time = 0.0
-root/root = NodePath("..")
-anims/default = SubResource( 7 )
-anims/right = SubResource( 8 )
-anims/wrong = SubResource( 9 )
-playback/active = true
-playback/speed = 1.0
-blend_times = [  ]
-autoplay = "default"
-
-[node name="acertou" type="StreamPlayer" parent="HUD" groups=[
-"fx_sound",
-]]
-
-stream/stream = ExtResource( 12 )
-stream/play = true
-stream/loop = false
-stream/volume_db = 0.0
-stream/autoplay = false
-stream/paused = false
-stream/loop_restart_time = 0.0
-stream/buffering_ms = 500
-
-[node name="errou" type="StreamPlayer" parent="HUD" groups=[
-"fx_sound",
-]]
-
-stream/stream = ExtResource( 13 )
-stream/play = true
-stream/loop = false
-stream/volume_db = 0.0
-stream/autoplay = false
-stream/paused = false
-stream/loop_restart_time = 0.0
-stream/buffering_ms = 500
-
-[node name="volume_dbg" type="Label" parent="HUD"]
-
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 8.0
-margin/top = 8.0
-margin/right = 48.0
-margin/bottom = 50.0
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="mobile_control" parent="HUD" instance=ExtResource( 14 )]
-
-layer = 6
+[node name="HUD" parent="." instance=ExtResource( 13 )]
 
 [connection signal="result" from="boxes/result_box" to="." method="_on_result"]
 
 
+[editable path="HUD"]
