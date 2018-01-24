@@ -4,7 +4,7 @@
 [ext_resource path="res://audio/PrimeiraFase(com batida).ogg" type="AudioStream" id=2]
 [ext_resource path="res://controls/stream_player.gd" type="Script" id=3]
 [ext_resource path="res://tileset/tileset.png" type="Texture" id=4]
-[ext_resource path="res://tileset/tileset.tres" type="TileSet" id=5]
+[ext_resource path="res://tileset/base_tilemap.tscn" type="PackedScene" id=5]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://controls/HUD.tscn" type="PackedScene" id=7]
 
@@ -88,26 +88,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="scenario_tilemap" type="TileMap" parent="."]
-
-mode = 0
-tile_set = ExtResource( 5 )
-cell/size = Vector2( 16, 16 )
-cell/quadrant_size = 16
-cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-cell/half_offset = 2
-cell/tile_origin = 0
-cell/y_sort = false
-collision/use_kinematic = false
-collision/friction = 1.0
-collision/bounce = 0.0
-collision/layers = 1
-collision/mask = 1
-occluder/light_mask = 1
-tile_data = IntArray( -131045, 19, -65510, 19, 25, 19, 65560, 19, 196607, 34, 131095, 19, 262143, 34, 196654, 31, 327679, 34, 393215, 34, 327722, 30, 327723, 31, 327724, 31, 327725, 32, 458751, 34, 393237, 31, 393238, 31, 393239, 32, 393257, 30, 524287, 34, 458772, 31, 458773, 34, 458774, 34, 458775, 34, 458776, 32, 458792, 30, 589823, 34, 524307, 31, 524308, 34, 524309, 34, 524310, 34, 524311, 34, 524312, 34, 524313, 32, 524327, 30, 655359, 34, 589824, 31, 589825, 31, 589826, 31, 589827, 31, 589828, 31, 589829, 31, 589830, 31, 589831, 31, 589832, 31, 589833, 31, 589834, 31, 589835, 31, 589836, 31, 589837, 31, 589838, 31, 589839, 31, 589840, 31, 589841, 31, 589842, 31, 589843, 34, 589844, 34, 589845, 34, 589846, 34, 589847, 34, 589848, 34, 589849, 34, 589850, 31, 589851, 31, 589852, 31, 589853, 31, 589854, 31, 589855, 31, 589856, 31, 589857, 31, 589858, 31, 589859, 31, 589860, 31, 589861, 31, 589862, 31 )
-__meta__ = {
-"_edit_lock_": true
-}
+[node name="scenario_tilemap" parent="." instance=ExtResource( 5 )]
 
 [node name="player" parent="." instance=ExtResource( 6 )]
 

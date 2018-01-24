@@ -1,10 +1,7 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=3 format=1]
 
 [ext_resource path="res://game_test.gd" type="Script" id=1]
-[ext_resource path="res://scenario/question.tscn" type="PackedScene" id=2]
-[ext_resource path="res://fonts/averia.tres" type="DynamicFont" id=3]
-[ext_resource path="res://levels/common.tscn" type="PackedScene" id=4]
-[ext_resource path="res://levels/common.gd" type="Script" id=5]
+[ext_resource path="res://levels/common.tscn" type="PackedScene" id=2]
 
 [node name="game_test" type="Node2D"]
 
@@ -20,48 +17,23 @@ transform/pos = Vector2( 10, 30 )
 
 transform/pos = Vector2( 10, 30 )
 
-[node name="question" parent="." instance=ExtResource( 2 )]
-
-margin/left = -31.0
-margin/top = 10.0
-margin/right = 9.0
-margin/bottom = 50.0
-
-[node name="result" type="Label" parent="."]
-
-visibility/visible = false
-rect/scale = Vector2( 0.8, 0.8 )
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 182.0
-margin/top = 74.0
-margin/right = 302.0
-margin/bottom = 137.0
-custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "42"
-align = 2
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
 [node name="boxes" type="Node2D" parent="."]
 
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="common" parent="." instance=ExtResource( 4 )]
+[node name="math" type="Node2D" parent="."]
 
-editor/display_folded = true
-script/script = ExtResource( 5 )
-debug = true
+[node name="common" parent="." instance=ExtResource( 2 )]
 
-[node name="HUD" parent="common"]
+[node name="background" parent="common/background"]
 
-editor/display_folded = false
+visibility/visible = false
+
+[node name="player" parent="common"]
+
+visibility/visible = false
 
 
 [editable path="common"]
