@@ -1,15 +1,14 @@
 * Fix box hit animation to be centralized
 
-* Use game singleton as scene and put general (mobile gui) handling there ?
-
 * Game status singleton @WIP
+	* Pause
 
 * Game action button
 
 * Game Level part
 	* Border detection
 	* Level loading mechanics
-		* change level
+		* Change level @WIP
 			* change level smooth
 		* BG Music
 		* Blackout or Rolling left
@@ -17,7 +16,7 @@
 * Screens
 	* Options screen
 		menu btns
-		volume level 
+		volume level
 			BG OK
 			FX @WIP
 		debug option OK
