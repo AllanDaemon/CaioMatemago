@@ -1,12 +1,13 @@
-[gd_scene load_steps=11 format=1]
+[gd_scene load_steps=12 format=1]
 
 [ext_resource path="res://levels/common.gd" type="Script" id=1]
 [ext_resource path="res://audio/PrimeiraFase(com batida).ogg" type="AudioStream" id=2]
 [ext_resource path="res://controls/stream_player.gd" type="Script" id=3]
 [ext_resource path="res://tileset/tileset.png" type="Texture" id=4]
 [ext_resource path="res://tileset/base_tilemap.tscn" type="PackedScene" id=5]
-[ext_resource path="res://player/player.tscn" type="PackedScene" id=6]
-[ext_resource path="res://controls/HUD.tscn" type="PackedScene" id=7]
+[ext_resource path="res://controls/area_level.tscn" type="PackedScene" id=6]
+[ext_resource path="res://player/player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://controls/HUD.tscn" type="PackedScene" id=8]
 
 [sub_resource type="CanvasItemShader" id=1]
 
@@ -70,6 +71,7 @@ scroll/ignore_camera_zoom = false
 
 [node name="background" type="ParallaxLayer" parent="background"]
 
+visibility/visible = false
 motion/scale = Vector2( 0.75, 0.75 )
 motion/offset = Vector2( 0, 0 )
 motion/mirroring = Vector2( 1, 0 )
@@ -90,11 +92,20 @@ __meta__ = {
 
 [node name="scenario_tilemap" parent="." instance=ExtResource( 5 )]
 
-[node name="player" parent="." instance=ExtResource( 6 )]
+[node name="action_areas" type="Node2D" parent="."]
 
+[node name="prev_level" parent="action_areas" instance=ExtResource( 6 )]
+
+[node name="next_level" parent="action_areas" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 960, 120 )
+
+[node name="player" parent="." instance=ExtResource( 7 )]
+
+visibility/visible = false
 transform/pos = Vector2( 48, 112 )
 
-[node name="HUD" parent="." instance=ExtResource( 7 )]
+[node name="HUD" parent="." instance=ExtResource( 8 )]
 
 editor/display_folded = true
 
