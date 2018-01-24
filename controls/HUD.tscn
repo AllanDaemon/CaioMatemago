@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=1]
+[gd_scene load_steps=13 format=1]
 
 [ext_resource path="res://fonts/averia.tres" type="DynamicFont" id=1]
 [ext_resource path="res://audio/Acerto.wav" type="Sample" id=2]
@@ -115,6 +115,18 @@ samples/erro = {
 "sample": ExtResource( 3 )
 }
 
+[sub_resource type="GDScript" id=6]
+
+script/source = "extends Label
+onready var game = get_node(\"/root/game\")
+
+func _ready():
+	game.connect(\"update_level\", self, \"update_level\")
+	update_level()
+
+func update_level():
+	if game.current_scene_name: set_text(game.current_scene_name)"
+
 [node name="HUD" type="CanvasLayer"]
 
 layer = 5
@@ -228,6 +240,24 @@ margin/bottom = 50.0
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+
+[node name="level_dbg" type="Label" parent="." groups=[
+"debug",
+]]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 104.0
+margin/top = 8.0
+margin/right = 152.0
+margin/bottom = 22.0
+text = "level"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script/script = SubResource( 6 )
 
 [node name="mobile_control" parent="." instance=ExtResource( 6 )]
 

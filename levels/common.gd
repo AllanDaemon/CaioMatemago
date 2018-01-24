@@ -33,4 +33,7 @@ func set_debug(value):
 	if has_node("HUD/volume_dbg") and \
 	   get_node("HUD/volume_dbg"):
 		get_node("HUD/volume_dbg").set_hidden(not debug)
+	if has_node("HUD/level_dbg") and \
+	   get_node("HUD/level_dbg"):
+		get_node("HUD/level_dbg").set_hidden(not debug)
 	set_process(debug)
