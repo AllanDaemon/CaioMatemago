@@ -6,7 +6,7 @@ var score = 0
 signal score_changed
 
 ## SETTINGS
-
+export (String) var initial_level = "teste"
 export (float, 0, 1) var volume_bg = 0.5
 export (float, 0, 1) var volume_fx = 0.5
 export (bool) var debug = false setget _set_debug
@@ -31,8 +31,24 @@ var on_menu = false setget _set_menu_state
 var menu_scene
 var game_scene
 
-onready var option_scene_pkg = preload("res://menus/options_screen.tscn")
-onready var option_scene = option_scene_pkg.instance()
+
+export (String) var main_scene_name = "test"
+
+var levels_scenes_pack = {
+	"intro":	preload("res://menus/initial_screen.tscn"),
+	"options":	preload("res://menus/options_screen.tscn"),
+	"splash":	preload("res://menus/splash_screen.tscn"),
+	"credits":	preload("res://menus/credits_screen.tscn"),
+	"test":		preload("res://game_test.tscn"),
+#	"level_A1":	preload(""),
+#	"level_A2":	preload(""),
+#	"level_A3":	preload(""),
+#	"level_Aboss":	preload(""),
+}
+var option_scene = levels_scenes_pack["options"].instance()
+
+
+############## DEFAULT METHODS ##############
 
 func _ready():
 	set_process_input(true)
@@ -41,6 +57,7 @@ func _ready():
 	_init_defaults()
 
 func _init_defaults():
+	levels_scenes_pack["main"] = levels_scenes_pack[main_scene_name]
 	_set_debug(debug)
 
 func _input(ev):
@@ -50,6 +67,9 @@ func _input(ev):
 		_set_debug(not debug)
 	if ev.is_action_pressed("pause") and not ev.is_echo():
 		_set_pause_state(not paused)
+
+
+############## INTERNAL STATES ##############
 
 func _set_pause_state(value):
 	prints("PAUSE:", value)
@@ -96,6 +116,16 @@ func volume_update():
 			vol *= node.max_volume
 		node.set_volume(vol)
 
+func change_level(level):
+	prints("Change level:", level)
+	var new_scene = levels_scenes_pack[level]
+	tree.change_scene_to(new_scene)
+
+func change_level_smooth(level, transition_duration=0.5):
+	prints("Change level smooth:", level)
+	var new_scene = levels_scenes_pack[level]
+	# Implement manual change with opacity transition
+	tree.change_scene_to(new_scene)
 
 ############## GAME LOGIC ##############
 

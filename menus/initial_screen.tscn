@@ -17,7 +17,7 @@ func _on_options():
 	game.on_menu = true
 
 func _on_init():
-	pass # replace with function body
+	game.change_level_smooth(\"splash\")
 "
 
 [node name="initial_screen" type="Control"]

@@ -239,6 +239,8 @@ __meta__ = {
 
 [connection signal="pressed" from="screen_panel/resume_btn" to="." method="_on_resume"]
 
+[connection signal="pressed" from="screen_panel/quit_btn" to="." method="_on_quit_level"]
+
 [connection signal="value_changed" from="screen_panel/volume_control/bg_slider" to="." method="_on_bg_slider"]
 
 [connection signal="value_changed" from="screen_panel/volume_control/fx_slider" to="." method="_on_fx_slider"]

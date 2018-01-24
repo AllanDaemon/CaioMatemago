@@ -15,6 +15,10 @@ func _input(ev):
 		get_tree().set_input_as_handled()
 		_on_resume()
 
+func _on_quit_level():
+	game.on_menu = false
+	game.change_level_smooth("intro")
+
 func _on_resume():
 	game.on_menu = false
 
