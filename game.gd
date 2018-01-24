@@ -65,13 +65,13 @@ func _init_defaults():
 	_set_debug(debug)
 
 func _input(ev):
-	if ev.is_action_pressed("menu") and not ev.is_echo():
+	if ev.is_action_pressed("menu") or ev.is_action_pressed("ui_cancel") \
+		and not ev.is_echo():
 		_set_menu_state(not on_menu)
 	if ev.is_action_pressed("debug") and not ev.is_echo():
 		_set_debug(not debug)
 	if ev.is_action_pressed("pause") and not ev.is_echo():
 		_set_pause_state(not paused)
-
 
 ############## INTERNAL STATES ##############
 
@@ -126,6 +126,7 @@ func change_level(level):
 	current_scene_name = level
 	tree.change_scene_to(current_scene)
 	#current_scene = tree.get_current_scene()
+	set_process_input(level!="intro")
 	emit_signal("update_level", level)
 
 func change_level_smooth(level, transition_duration=0.5):
