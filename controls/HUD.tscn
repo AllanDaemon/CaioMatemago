@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=1]
+[gd_scene load_steps=12 format=1]
 
 [ext_resource path="res://fonts/averia.tres" type="DynamicFont" id=1]
 [ext_resource path="res://audio/Acerto.wav" type="Sample" id=2]
@@ -7,7 +7,20 @@
 [ext_resource path="res://audio/Erro.ogg" type="AudioStream" id=5]
 [ext_resource path="res://controls/mobile_control.tscn" type="PackedScene" id=6]
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Label
+onready var game = get_node(\"/root/game\")
+
+func _ready():
+	game.connect(\"update_score\", self, \"update_score\")
+	update_score()
+
+func update_score():
+	set_text(str(game.score))
+"
+
+[sub_resource type="Animation" id=2]
 
 length = 0.1
 loop = false
@@ -23,7 +36,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=3]
 
 length = 0.5
 loop = false
@@ -61,7 +74,7 @@ tracks/2/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 
 length = 0.5
 loop = false
@@ -87,7 +100,7 @@ tracks/1/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="SampleLibrary" id=4]
+[sub_resource type="SampleLibrary" id=5]
 
 samples/acerto = {
 "db": 0.0,
@@ -116,9 +129,9 @@ focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
-margin/left = 222.0
+margin/left = 240.0
 margin/top = 7.0
-margin/right = 419.0
+margin/right = 406.0
 margin/bottom = 70.0
 custom_fonts/font = ExtResource( 1 )
 text = "SCORE:"
@@ -143,15 +156,16 @@ align = 2
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+script/script = SubResource( 1 )
 
 [node name="result_anim" type="AnimationPlayer" parent="."]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/default = SubResource( 1 )
-anims/right = SubResource( 2 )
-anims/wrong = SubResource( 3 )
+anims/default = SubResource( 2 )
+anims/right = SubResource( 3 )
+anims/wrong = SubResource( 4 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -162,7 +176,7 @@ autoplay = "default"
 ]]
 
 config/polyphony = 4
-config/samples = SubResource( 4 )
+config/samples = SubResource( 5 )
 default/volume_db = 0.0
 default/pitch_scale = 1.0
 default/pan = 0.0

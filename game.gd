@@ -3,7 +3,7 @@ extends Node
 # GAME GLOBAL SINGLETON
 
 var score = 0
-signal score_changed
+signal update_score
 
 ## SETTINGS
 export (String) var initial_level = "teste"
@@ -132,4 +132,4 @@ func change_level_smooth(level, transition_duration=0.5):
 
 func coin_up(value):
 	score += score_value_coin * value
-	emit_signal("score_changed")
+	emit_signal("update_score")

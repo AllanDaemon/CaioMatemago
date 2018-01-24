@@ -63,7 +63,9 @@ samples/coin_taken = {
 "sample": ExtResource( 3 )
 }
 
-[node name="coin" type="Area2D"]
+[node name="coin" type="Area2D" groups=[
+"coin",
+]]
 
 input/pickable = true
 shapes/0/shape = SubResource( 1 )

@@ -10,6 +10,7 @@ func _ready():
 	if testing:
 		get_node("test_camera").make_current()
 		get_node("test_timer").start()
+	self.connect("coin", get_node("/root/game"), "coin_up")
 
 func _get_item_rect():
     return get_node("sprite").get_item_rect()
