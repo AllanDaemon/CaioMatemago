@@ -6,15 +6,15 @@ signal wrong
 onready var game = get_node("/root/game")
 onready var boxes = get_node("boxes")
 onready var question = get_node("question")
-onready var result_anim = get_node("HUD/result_anim")
-onready var player = get_node("player")
+onready var result_anim = get_node("common/HUD/result_anim")
+onready var player = get_node("common/player")
 
 var result = 0
 export (bool) var DEBUG = true setget set_debug
 
 # For debug
-onready var volume_dbg = get_node("HUD/volume_dbg")
-onready var bg_music = get_node("bg_music")
+onready var volume_dbg = get_node("common/HUD/volume_dbg")
+onready var bg_music = get_node("common/bg_music")
 var vol
 var vol_db
 
@@ -58,10 +58,10 @@ func wrong():
 func set_debug(value):
 	DEBUG = value
 	if player and "DEBUG" in player: player.DEBUG = DEBUG
-	if has_node("background/background") and \
-	   get_node("background/background"):
-		get_node("background/background").set_hidden(DEBUG)
-	if has_node("HUD/volume_dbg") and \
-	   get_node("HUD/volume_dbg"):
-		get_node("HUD/volume_dbg").set_hidden(not DEBUG)
+	if has_node("common/background/background") and \
+	   get_node("common/background/background"):
+		get_node("common/background/background").set_hidden(DEBUG)
+	if has_node("common/HUD/volume_dbg") and \
+	   get_node("common/HUD/volume_dbg"):
+		get_node("common/HUD/volume_dbg").set_hidden(not DEBUG)
 	set_process(DEBUG)
