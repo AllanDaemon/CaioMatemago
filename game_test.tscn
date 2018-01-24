@@ -97,8 +97,8 @@ __meta__ = {
 [node name="bg_sprite" type="Sprite" parent="background/background"]
 
 material/material = SubResource( 2 )
-transform/pos = Vector2( 0, -70 )
-transform/scale = Vector2( 2, 2 )
+transform/pos = Vector2( -328, -208 )
+transform/scale = Vector2( 3, 3 )
 texture = SubResource( 3 )
 centered = false
 __meta__ = {
@@ -128,6 +128,7 @@ __meta__ = {
 
 [node name="coins" type="Node2D" parent="."]
 
+editor/display_folded = true
 transform/pos = Vector2( 10, 30 )
 
 [node name="coin" parent="coins" instance=ExtResource( 6 )]
