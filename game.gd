@@ -5,6 +5,8 @@ extends Node
 var score = 0
 signal update_score
 
+signal update_level
+
 ## SETTINGS
 export (String) var initial_level = "teste"
 export (float, 0, 1) var volume_bg = 0.5
@@ -24,6 +26,7 @@ onready var tree = get_tree()
 onready var root = get_tree().get_root()
 var current_level
 var current_scene
+var current_scene_name
 var playing
 var paused = false setget _set_pause_state
 var on_menu = false setget _set_menu_state
@@ -32,7 +35,7 @@ var menu_scene
 var game_scene
 
 
-export (String) var main_scene_name = "test"
+export (String) var main_scene_name = "level_A1"
 
 var levels_scenes_pack = {
 	"intro":	preload("res://menus/initial_screen.tscn"),
@@ -40,11 +43,11 @@ var levels_scenes_pack = {
 	"splash":	preload("res://menus/splash_screen.tscn"),
 	"credits":	preload("res://menus/credits_screen.tscn"),
 	"test":		preload("res://game_test.tscn"),
-#	"level_A1":	preload(""),
-#	"level_A2":	preload(""),
-#	"level_A3":	preload(""),
-#	"level_A4":	preload(""),
-#	"level_A5":	preload(""),
+	"level_A1":	preload("res://levels/level_A1.tscn"),
+	"level_A2":	preload("res://levels/level_A2.tscn"),
+	"level_A3":	preload("res://levels/level_A3.tscn"),
+	"level_A4":	preload("res://levels/level_A4.tscn"),
+	"level_A5":	preload("res://levels/level_A5.tscn"),
 }
 var option_scene = levels_scenes_pack["options"].instance()
 
@@ -120,14 +123,13 @@ func volume_update():
 
 func change_level(level):
 	prints("Change level:", level)
-	var new_scene = levels_scenes_pack[level]
-	tree.change_scene_to(new_scene)
+	current_scene_name = level
+	tree.change_scene_to(current_scene)
+	#current_scene = tree.get_current_scene()
+	emit_signal("update_level", level)
 
 func change_level_smooth(level, transition_duration=0.5):
-	prints("Change level smooth:", level)
-	var new_scene = levels_scenes_pack[level]
-	# Implement manual change with opacity transition
-	tree.change_scene_to(new_scene)
+	change_level(level)
 
 ############## GAME LOGIC ##############
 
