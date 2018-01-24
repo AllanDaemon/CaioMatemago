@@ -50,7 +50,6 @@ max_volume = 0.5
 [node name="intro_image" type="Sprite" parent="."]
 
 transform/pos = Vector2( 160, 90 )
-transform/scale = Vector2( 1, 0.75 )
 texture = ExtResource( 3 )
 
 [node name="buttons" type="Control" parent="."]
