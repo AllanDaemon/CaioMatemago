@@ -3,12 +3,20 @@ extends Node
 # GAME GLOBAL SINGLETON
 
 var score = 0
+signal score_changed
 
 ## SETTINGS
 
 export (float, 0, 1) var volume_bg = 0.5
 export (float, 0, 1) var volume_fx = 0.5
 export (bool) var debug = false setget _set_debug
+
+export (int) var score_value_coin = 10
+export (int) var score_value_right_op = 100
+export (int) var score_value_wrong_op = 10
+export (int) var score_value_enemy = 50
+export (int) var score_value_boss = 1000
+
 
 ## States
 
@@ -82,3 +90,10 @@ func volume_update():
 		if "max_volume" in node:
 			vol *= node.max_volume
 		node.set_volume(vol)
+
+
+############## GAME LOGIC ##############
+
+func coin_up(value):
+	score += score_value_coin * value
+	emit_signal("score_changed")
