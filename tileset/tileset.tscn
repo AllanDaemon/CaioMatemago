@@ -323,6 +323,35 @@ centered = false
 region = true
 region_rect = Rect2( 320, 176, 32, 32 )
 
+[node name="barrier" type="Sprite" parent="scenario"]
+
+editor/display_folded = true
+transform/pos = Vector2( -48, 128 )
+texture = ExtResource( 1 )
+centered = false
+region = true
+region_rect = Rect2( 464, 0, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="scenario/barrier"]
+
+transform/pos = Vector2( 8, 8 )
+input/pickable = true
+shapes/0/shape = ExtResource( 2 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scenario/barrier/StaticBody2D"]
+
+shape = ExtResource( 2 )
+trigger = false
+_update_shape_index = 0
+
 [node name="floor" type="Node" parent="."]
 
 editor/display_folded = true

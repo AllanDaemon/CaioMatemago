@@ -1,0 +1,64 @@
+[gd_scene load_steps=2 format=1]
+
+[ext_resource path="res://tileset/tileset.tres" type="TileSet" id=1]
+
+[node name="scenario_tilemap" type="TileMap"]
+
+mode = 0
+tile_set = ExtResource( 1 )
+cell/size = Vector2( 16, 16 )
+cell/quadrant_size = 16
+cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+cell/half_offset = 2
+cell/tile_origin = 0
+cell/y_sort = false
+collision/use_kinematic = false
+collision/friction = 1.0
+collision/bounce = 0.0
+collision/layers = 1
+collision/mask = 1
+occluder/light_mask = 1
+tile_data = IntArray(  )
+
+[node name="info" type="Control" parent="."]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 40.0
+
+[node name="width" type="Label" parent="info"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 8.0
+margin/top = -24.0
+margin/right = 48.0
+margin/bottom = -10.0
+text = "w: 60"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="height" type="Label" parent="info"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -48.0
+margin/top = 8.0
+margin/right = -8.0
+margin/bottom = 22.0
+text = "h: 15"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+
