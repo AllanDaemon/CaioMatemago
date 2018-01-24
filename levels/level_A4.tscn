@@ -5,7 +5,7 @@
 [ext_resource path="res://tileset/tileset.tres" type="TileSet" id=3]
 [ext_resource path="res://tileset/ref_marks.tscn" type="PackedScene" id=4]
 [ext_resource path="res://documentation/level design/FASE01TELA01.png" type="Texture" id=5]
-[ext_resource path="res://tileset/levels/level_A1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://tileset/levels/level_A4.tscn" type="PackedScene" id=6]
 
 [node name="base" type="Node2D" groups=[
 "debug",
