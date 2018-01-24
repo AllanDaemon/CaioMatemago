@@ -44,7 +44,7 @@ tile_data = IntArray( -327680, 18, -327620, 18, -262144, 18, -262134, 18, -26212
 [node name="prev_level" parent="common/action_areas"]
 
 enabled = true
-goto_scene = "\"intro\""
+goto_scene = "intro"
 
 [node name="next_level" parent="common/action_areas"]
 
