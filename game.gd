@@ -8,7 +8,7 @@ var score = 0
 
 export (float, 0, 1) var volume_bg = 0.5
 export (float, 0, 1) var volume_fx = 0.5
-export (bool) var DEBUG = false setget _set_debug
+export (bool) var debug = false setget _set_debug
 
 ## States
 
@@ -33,13 +33,13 @@ func _ready():
 	_init_defaults()
 
 func _init_defaults():
-	_set_debug(DEBUG)
+	_set_debug(debug)
 
 func _input(ev):
 	if ev.is_action_pressed("menu") and not ev.is_echo():
 		_set_menu_state(not on_menu)
 	if ev.is_action_pressed("debug") and not ev.is_echo():
-		_set_debug(not DEBUG)
+		_set_debug(not debug)
 
 func _set_pause_state(value):
 #	prints("PAUSE:", value)
@@ -70,10 +70,10 @@ func _close_options_menu():
 
 func _set_debug(value):
 	var debug_objs = [current_level]
-	DEBUG = value
+	debug = value
 	for obj in debug_objs:
-		if obj and "DEBUG" in obj:
-			obj.DEBUG = value
+		if obj and "debug" in obj:
+			obj.debug = value
 
 func volume_update():
 	var bgs = tree.get_nodes_in_group("bg_sound")
