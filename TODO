@@ -9,6 +9,8 @@
 * Game Level part
 	* Border detection
 	* Level loading mechanics
+		* change level
+			* change level smooth
 		* BG Music
 		* Blackout or Rolling left
 
@@ -21,12 +23,13 @@
 		debug option OK
 
 	* Initial screen
-		* Art (banner)
-		* Level
-	* Splash screen
+		* Art (banner) OK
+		* level OK
+	* Splash screen OK
 	* Final credits screen
 
 * Score
+	* update score on screen
 
 #* Coins OK
 #	* Scene OK
