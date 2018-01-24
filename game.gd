@@ -58,7 +58,6 @@ func _ready():
 	levels_scenes_pack["main"] = levels_scenes_pack[main_scene_name]
 	current_level = tree.get_current_scene()	# it's game test by now
 	current_scene = current_level
-	set_process_input(true)
 	_init_defaults()
 
 func _init_defaults():
@@ -124,8 +123,8 @@ func volume_update():
 func change_level(level):
 	prints("Change level:", level)
 	current_scene_name = level
-	tree.change_scene_to(current_scene)
-	#current_scene = tree.get_current_scene()
+	tree.change_scene_to(levels_scenes_pack[current_scene_name])
+#	#current_scene = tree.get_current_scene()
 	set_process_input(level!="intro")
 	emit_signal("update_level", level)
 
