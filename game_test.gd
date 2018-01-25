@@ -13,9 +13,6 @@ onready var result_label = get_node("common/math/result")
 
 var result = 0
 
-export (bool) var debug = true setget set_debug
-
-
 func _ready():
 	question.connect("right", result_label, "right")
 	question.connect("wrong", result_label, "wrong")
@@ -40,8 +37,3 @@ func _on_result():
 		emit_signal("right")
 	else:
 		emit_signal("wrong")
-	
-func set_debug(value):
-	debug = value
-	if common and "debug" in common: common.debug = value
-
