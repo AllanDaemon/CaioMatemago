@@ -110,9 +110,9 @@ func _set_pause_state(value):
 	prints("PAUSE:", value)
 	paused = value
 	tree.set_pause(paused)
-	if current_level.has_node("HUD/pause_overlay"):
-		current_level.get_node("HUD/pause_overlay").set_hidden(
-			paused and not debug and not on_menu)
+#	if current_level.has_node("HUD/pause_overlay"):
+#		current_level.get_node("HUD/pause_overlay").set_hidden(
+#			paused and not debug and not on_menu)
 
 func _set_menu_state(value):
 	if value != on_menu:
