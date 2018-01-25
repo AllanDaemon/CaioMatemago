@@ -24,6 +24,8 @@ export (int) var score_value_boss = 1000
 
 onready var tree = get_tree()
 onready var root = get_tree().get_root()
+
+
 var current_level
 var current_scene
 var current_scene_name
@@ -124,7 +126,8 @@ func change_level(level):
 	prints("Change level:", level)
 	current_scene_name = level
 	tree.change_scene_to(levels_scenes_pack[current_scene_name])
-#	#current_scene = tree.get_current_scene()
+	current_scene = tree.get_current_scene()
+	current_level = current_scene
 	set_process_input(level!="intro")
 	emit_signal("update_level", level)
 
