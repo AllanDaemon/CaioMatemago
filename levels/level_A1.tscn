@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://levels/base.gd" type="Script" id=1]
 [ext_resource path="res://levels/common.tscn" type="PackedScene" id=2]
 [ext_resource path="res://tileset/levels/level_A1.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenario/coin.tscn" type="PackedScene" id=4]
-[ext_resource path="res://player/candango.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenario/question_group.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenario/coin.tscn" type="PackedScene" id=5]
+[ext_resource path="res://player/candango.tscn" type="PackedScene" id=6]
 
 [node name="level_A1" type="Node2D" groups=[
 "debug",
@@ -14,11 +15,14 @@ script/script = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
-debug = true
 
 [node name="common" parent="." instance=ExtResource( 2 )]
 
 [node name="background" parent="common/background"]
+
+editor/display_folded = true
+
+[node name="tilemap" parent="common"]
 
 editor/display_folded = true
 
@@ -30,15 +34,31 @@ editor/display_folded = true
 
 visibility/visible = false
 
-[node name="coin1" parent="common/coins" instance=ExtResource( 4 )]
+[node name="question_group" parent="common/questions" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 192, -16 )
+
+[node name="question_group 2" parent="common/questions" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 456, -16 )
+a = 3
+
+[node name="question_group 3" parent="common/questions" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 720, -16 )
+a = 8
+b = 3
+operator = "-"
+
+[node name="coin1" parent="common/coins" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 504, 152 )
 
-[node name="coin2" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin2" parent="common/coins" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 520, 152 )
 
-[node name="candango" parent="common/math" instance=ExtResource( 5 )]
+[node name="candango" parent="common/math" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 208, 144 )
 
