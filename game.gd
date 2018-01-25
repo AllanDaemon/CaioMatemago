@@ -89,7 +89,6 @@ func _input(ev):
 		_set_pause_state(not paused)
 	
 	if ev.type == InputEvent.KEY:
-		printt("KEY:", ev.scancode)
 		var key2level = {
 			KEY_QUOTELEFT: "intro",
 			KEY_1: "level_A1",
