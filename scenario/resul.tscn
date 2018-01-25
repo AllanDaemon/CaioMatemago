@@ -4,7 +4,7 @@
 [ext_resource path="res://audio/Acerto.wav" type="Sample" id=2]
 [ext_resource path="res://audio/Erro.wav" type="Sample" id=3]
 
-[sub_resource type="GDScript" id=6]
+[sub_resource type="GDScript" id=1]
 
 script/source = "extends Label
 
@@ -23,9 +23,8 @@ func _on_test_btn_toggled( pressed ):
 	else: wrong()
 "
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=2]
 
-resource/name = "default"
 length = 0.1
 loop = false
 step = 0.1
@@ -40,9 +39,8 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=3]
 
-resource/name = "right"
 length = 0.5
 loop = false
 step = 0.1
@@ -69,7 +67,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=4]
 
 resource/name = "wrong"
 length = 0.5
@@ -98,7 +96,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="SampleLibrary" id=4]
+[sub_resource type="SampleLibrary" id=5]
 
 samples/right = {
 "db": 0.0,
@@ -126,21 +124,22 @@ margin/right = 120.0
 margin/bottom = 63.0
 custom_fonts/font = ExtResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "42"
 align = 2
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script/script = SubResource( 6 )
+script/script = SubResource( 1 )
 
 [node name="anim" type="AnimationPlayer" parent="."]
 
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/default = SubResource( 1 )
-anims/right = SubResource( 2 )
-anims/wrong = SubResource( 5 )
+anims/default = SubResource( 2 )
+anims/right = SubResource( 3 )
+anims/wrong = SubResource( 4 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -151,7 +150,7 @@ autoplay = "default"
 ]]
 
 config/polyphony = 4
-config/samples = SubResource( 4 )
+config/samples = SubResource( 5 )
 default/volume_db = 0.0
 default/pitch_scale = 1.0
 default/pan = 0.0
