@@ -6,7 +6,7 @@ signal wrong
 onready var game = get_node("/root/game")
 onready var boxes = get_node("boxes")
 onready var question = get_node("question")
-onready var result_anim = get_node("common/HUD/result_anim")
+onready var result_label = get_node("result")
 onready var common = get_node("common")
 
 var result = 0
@@ -15,9 +15,9 @@ export (bool) var debug = true setget set_debug
 
 
 func _ready():
+	connect("right", result_label, "right")
+	connect("wrong", result_label, "wrong")
 	print("Boxes: ", boxes)
-	connect("right", self, "right")
-	connect("wrong", self, "wrong")
 	for box in boxes.get_children():
 		print("box: ", box)
 		box.connect("value_change", self, "_on_value_change")
@@ -37,12 +37,6 @@ func _on_result():
 		emit_signal("right")
 	else:
 		emit_signal("wrong")
-
-func right():
-	result_anim.play("right")
-	
-func wrong():
-	result_anim.play("wrong")
 	
 func set_debug(value):
 	debug = value

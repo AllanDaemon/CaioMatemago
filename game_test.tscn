@@ -2,7 +2,7 @@
 
 [ext_resource path="res://game_test.gd" type="Script" id=1]
 [ext_resource path="res://scenario/question.tscn" type="PackedScene" id=2]
-[ext_resource path="res://fonts/averia.tres" type="DynamicFont" id=3]
+[ext_resource path="res://scenario/resul.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenario/box.tscn" type="PackedScene" id=4]
 [ext_resource path="res://images/arcade_platformer.nobg.png" type="Texture" id=5]
 [ext_resource path="res://scenario/result_box.tscn" type="PackedScene" id=6]
@@ -40,25 +40,13 @@ margin/top = 10.0
 margin/right = 9.0
 margin/bottom = 50.0
 
-[node name="result" type="Label" parent="."]
+[node name="result" parent="." instance=ExtResource( 3 )]
 
-visibility/visible = false
-rect/scale = Vector2( 0.8, 0.8 )
-focus/ignore_mouse = true
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 0
-margin/left = 182.0
-margin/top = 74.0
-margin/right = 302.0
-margin/bottom = 137.0
-custom_fonts/font = ExtResource( 3 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "42"
-align = 2
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
+editor/display_folded = true
+margin/left = 180.0
+margin/top = 75.0
+margin/right = 300.0
+margin/bottom = 138.0
 
 [node name="boxes" type="Node2D" parent="."]
 
@@ -87,6 +75,12 @@ transform/pos = Vector2( 66, 78 )
 transform/pos = Vector2( 144, 78 )
 
 [node name="common" parent="." instance=ExtResource( 7 )]
+
+editor/display_folded = true
+
+[node name="coins" parent="common"]
+
+visibility/visible = false
 
 [node name="coin" parent="common/coins" instance=ExtResource( 8 )]
 
