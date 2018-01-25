@@ -3,14 +3,13 @@
 [ext_resource path="res://player/candango.gd" type="Script" id=1]
 [ext_resource path="res://player/professor_candango.png" type="Texture" id=2]
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 40.0
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=2]
 
-resource/name = "default"
 length = 0.1
 loop = false
 step = 0.1
@@ -25,9 +24,8 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=2]
+[sub_resource type="Animation" id=3]
 
-resource/name = "happy"
 length = 1.0
 loop = false
 step = 0.1
@@ -37,8 +35,8 @@ step = 0.1
 ]]
 
 input/pickable = false
-shapes/0/shape = SubResource( 3 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, -13 )
 shapes/0/trigger = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -48,12 +46,14 @@ script/script = ExtResource( 1 )
 
 [node name="collision" type="CollisionShape2D" parent="."]
 
-shape = SubResource( 3 )
+transform/pos = Vector2( 0, -13 )
+shape = SubResource( 1 )
 trigger = true
 _update_shape_index = 0
 
 [node name="sprite" type="Sprite" parent="."]
 
+transform/pos = Vector2( 0, -13 )
 texture = ExtResource( 2 )
 vframes = 2
 hframes = 3
@@ -63,8 +63,8 @@ hframes = 3
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/default = SubResource( 1 )
-anims/happy = SubResource( 2 )
+anims/default = SubResource( 2 )
+anims/happy = SubResource( 3 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]

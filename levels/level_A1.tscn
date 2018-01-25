@@ -22,10 +22,6 @@ debug = true
 
 editor/display_folded = true
 
-[node name="tilemap" parent="common"]
-
-editor/display_folded = true
-
 [node name="scenario_tilemap" parent="common/tilemap" instance=ExtResource( 3 )]
 
 editor/display_folded = true
@@ -43,6 +39,8 @@ transform/pos = Vector2( 504, 152 )
 transform/pos = Vector2( 520, 152 )
 
 [node name="candango" parent="common/math" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 208, 144 )
 
 [node name="next_level" parent="common/action_areas"]
 
