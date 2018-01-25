@@ -9,13 +9,13 @@ onready var common = get_node("common")
 onready var boxes = get_node("boxes")
 
 onready var question = get_node("question")
-onready var result_label = get_node("result")
+onready var display = get_node("value_display")
 
 var current_result = 0
 
 func _ready():
-	question.connect("right", result_label, "right")
-	question.connect("wrong", result_label, "wrong")
+	question.connect("right", display, "right")
+	question.connect("wrong", display, "wrong")
 
 	print("Boxes: ", boxes)
 	for box in boxes.get_children():
@@ -29,7 +29,7 @@ func _on_value_change(value):
 	_update_label()
 	
 func _update_label():
-	result_label.update_value(current_result)
+	display.update_value(current_result)
 	
 func _on_result():
 	print("Calculating result")

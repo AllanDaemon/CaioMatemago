@@ -9,7 +9,7 @@
 [ext_resource path="res://scenario/coin.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenario/result_box.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenario/question.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scenario/result.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenario/value_display.tscn" type="PackedScene" id=10]
 
 [sub_resource type="AtlasTexture" id=1]
 

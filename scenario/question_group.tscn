@@ -2,8 +2,9 @@
 
 [ext_resource path="res://scenario/question_group.gd" type="Script" id=1]
 [ext_resource path="res://scenario/question.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenario/result.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenario/value_display.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenario/result_box.tscn" type="PackedScene" id=4]
+
 
 [node name="question_group" type="Node2D"]
 
@@ -16,7 +17,7 @@ margin/top = 20.0
 margin/right = 235.0
 margin/bottom = 60.0
 
-[node name="result" parent="." instance=ExtResource( 3 )]
+[node name="value_display" parent="." instance=ExtResource( 3 )]
 
 margin/left = 184.0
 margin/top = 56.0

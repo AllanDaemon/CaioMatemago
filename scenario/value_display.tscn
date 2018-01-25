@@ -93,7 +93,7 @@ samples/wrong = {
 "sample": ExtResource( 4 )
 }
 
-[node name="result" type="Label"]
+[node name="value_display" type="Label"]
 
 rect/scale = Vector2( 0.8, 0.8 )
 focus/ignore_mouse = true
