@@ -4,10 +4,10 @@ signal right
 signal wrong
 
 onready var game = get_node("/root/game")
-onready var boxes = get_node("boxes")
-onready var question = get_node("question")
-onready var result_label = get_node("result")
 onready var common = get_node("common")
+onready var boxes = get_node("common/boxes")
+onready var question = get_node("common/math/question")
+onready var result_label = get_node("common/math/result")
 
 var result = 0
 
