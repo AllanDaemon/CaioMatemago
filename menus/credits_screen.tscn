@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=1]
+[gd_scene load_steps=12 format=1]
 
 [ext_resource path="res://documentation/Splash Screens/Outro.png" type="Texture" id=1]
 [ext_resource path="res://fonts/averia/AveriaSansLibre-Regular.ttf" type="DynamicFontData" id=2]
@@ -6,35 +6,49 @@
 [ext_resource path="res://fonts/averia/AveriaSansLibre-LightItalic.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://fonts/averia/AveriaSansLibre-Bold.ttf" type="DynamicFontData" id=5]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Control
+
+func _ready():
+	set_process_input(true)
+
+func _input(ev):
+	if ev.is_action_pressed(\"ui_cancel\") or \\
+	   ev.is_action_pressed(\"ui_accept\") or \\
+	   ev.is_action_pressed(\"ui_select\"):
+			get_node(\"/root/game\").change_level_smooth(\"intro\")
+"
+
+[sub_resource type="DynamicFont" id=2]
 
 font/size = 15
 font/use_mipmaps = false
 font/use_filter = false
 font/font = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 
 font/size = 15
 font/use_mipmaps = false
 font/use_filter = true
 font/font = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=4]
 
 font/size = 15
 font/use_mipmaps = false
 font/use_filter = true
 font/font = ExtResource( 4 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=5]
 
 font/size = 20
 font/use_mipmaps = false
 font/use_filter = true
 font/font = ExtResource( 5 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=6]
 
 font/size = 15
 font/use_mipmaps = false
@@ -51,6 +65,7 @@ margin/left = 0.0
 margin/top = 0.0
 margin/right = 40.0
 margin/bottom = 40.0
+script/script = SubResource( 1 )
 
 [node name="credits_image" type="Sprite" parent="."]
 
@@ -89,11 +104,11 @@ margin/left = 0.0
 margin/top = 10.0
 margin/right = 320.0
 margin/bottom = 160.0
-custom_fonts/mono_font = SubResource( 1 )
-custom_fonts/bold_italics_font = SubResource( 2 )
-custom_fonts/italics_font = SubResource( 3 )
-custom_fonts/bold_font = SubResource( 4 )
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/mono_font = SubResource( 2 )
+custom_fonts/bold_italics_font = SubResource( 3 )
+custom_fonts/italics_font = SubResource( 4 )
+custom_fonts/bold_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 6 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode/enabled = true
 bbcode/bbcode = "[center][b]CAIO, O MATEMAGO[/b]
