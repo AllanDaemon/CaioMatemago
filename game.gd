@@ -4,18 +4,19 @@ extends Node
 
 var score = 0
 signal update_score
-
 signal update_level
 
 ## SETTINGS
 export (String) var initial_level = "teste"
 export (float, 0, 1) var volume_bg = 0.5
 export (float, 0, 1) var volume_fx = 0.5
+#export (float, 0, 1) var volume_bg = 0.05
+#export (float, 0, 1) var volume_fx = 0.05
 export (bool) var debug = false setget _set_debug
 
 export (int) var score_value_coin = 10
 export (int) var score_value_right_op = 100
-export (int) var score_value_wrong_op = 10
+export (int) var score_value_wrong_op = -10
 export (int) var score_value_enemy = 50
 export (int) var score_value_boss = 1000
 
@@ -171,6 +172,15 @@ func quit():
 
 ############## GAME LOGIC ##############
 
-func coin_up(value):
+func coin_up(value=1):
 	score += score_value_coin * value
 	emit_signal("update_score")
+
+func operation_right(value=1):
+	score += score_value_right_op * value
+	emit_signal("update_score")
+
+func operation_wrong(value=1):
+	score += score_value_wrong_op * value
+	emit_signal("update_score")
+
