@@ -159,8 +159,6 @@ margin/bottom = 143.0
 
 [node name="player" parent="common"]
 
-editor/display_folded = true
-transform/pos = Vector2( 80, 112 )
 debug = false
 
 [connection signal="result" from="common/boxes/result_box" to="." method="_on_result"]
@@ -168,4 +166,5 @@ debug = false
 
 [editable path="common"]
 [editable path="common/tilemap/scenario_tilemap"]
+[editable path="common/questions/question_group"]
 [editable path="common/player"]

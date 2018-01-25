@@ -109,7 +109,7 @@ transform/pos = Vector2( 960, 120 )
 
 [node name="player" parent="." instance=ExtResource( 6 )]
 
-transform/pos = Vector2( 48, 112 )
+transform/pos = Vector2( 104, 120 )
 
 [node name="HUD" parent="." instance=ExtResource( 7 )]
 
