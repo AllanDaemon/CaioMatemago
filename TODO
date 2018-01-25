@@ -3,7 +3,9 @@
 * Game status singleton @WIP
 	* Pause
 
-* Game action button
+* Parallax fix
+
+* Game action button @LP
 
 * Game Level part
 	* Border detection

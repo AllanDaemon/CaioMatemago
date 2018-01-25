@@ -1,9 +1,9 @@
-[gd_scene load_steps=12 format=1]
+[gd_scene load_steps=11 format=1]
 
 [ext_resource path="res://levels/common.gd" type="Script" id=1]
 [ext_resource path="res://audio/PrimeiraFase(com batida).ogg" type="AudioStream" id=2]
 [ext_resource path="res://controls/stream_player.gd" type="Script" id=3]
-[ext_resource path="res://tileset/tileset.png" type="Texture" id=4]
+[ext_resource path="res://images/back.png" type="Texture" id=4]
 [ext_resource path="res://tileset/base_tilemap.tscn" type="PackedScene" id=5]
 [ext_resource path="res://controls/area_level.tscn" type="PackedScene" id=6]
 [ext_resource path="res://player/player.tscn" type="PackedScene" id=7]
@@ -26,13 +26,7 @@ COLOR = COLOR * dark_factor;",
 
 shader/shader = SubResource( 1 )
 shader/shading_mode = 0
-shader_param/dark_factor = 0.7
-
-[sub_resource type="AtlasTexture" id=3]
-
-atlas = ExtResource( 4 )
-region = Rect2( 0, 176, 320, 144 )
-margin = Rect2( 0, 0, 0, 0 )
+shader_param/dark_factor = 1.0
 
 [node name="common" type="Node2D" groups=[
 "debug",
@@ -81,13 +75,10 @@ __meta__ = {
 [node name="bg_sprite" type="Sprite" parent="background/background"]
 
 material/material = SubResource( 2 )
-transform/pos = Vector2( -328, -208 )
-transform/scale = Vector2( 3, 3 )
-texture = SubResource( 3 )
+transform/pos = Vector2( -120, -48 )
+transform/scale = Vector2( 1.5, 1.5 )
+texture = ExtResource( 4 )
 centered = false
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="scenario_tilemap" parent="." instance=ExtResource( 5 )]
 
@@ -118,3 +109,4 @@ transform/pos = Vector2( 48, 112 )
 editor/display_folded = true
 
 
+[editable path="scenario_tilemap"]
