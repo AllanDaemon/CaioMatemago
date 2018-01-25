@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://scenario/question_group.gd" type="Script" id=1]
 [ext_resource path="res://scenario/question.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenario/value_display.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenario/result_box.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenario/box.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenario/box-1.tres" type="Texture" id=6]
 
 [node name="question_group" type="Node2D"]
 
@@ -32,7 +34,17 @@ value = 42
 
 [node name="result_box" parent="boxes" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 176, 72 )
+transform/pos = Vector2( 192, 72 )
+
+[node name="box+1" parent="boxes" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 96, 72 )
+
+[node name="box-1" parent="boxes" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 136, 72 )
+increment = -1
+texture = ExtResource( 6 )
 
 [connection signal="result" from="boxes/result_box" to="." method="_on_result"]
 
