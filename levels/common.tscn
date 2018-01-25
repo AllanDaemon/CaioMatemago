@@ -86,6 +86,8 @@ __meta__ = {
 
 [node name="tilemap" type="Node2D" parent="."]
 
+[node name="questions" type="Node2D" parent="."]
+
 [node name="coins" type="Node2D" parent="."]
 
 [node name="enemies" type="Node2D" parent="."]

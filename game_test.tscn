@@ -1,24 +1,25 @@
-[gd_scene load_steps=12 format=1]
+[gd_scene load_steps=13 format=1]
 
 [ext_resource path="res://game_test.gd" type="Script" id=1]
 [ext_resource path="res://levels/common.tscn" type="PackedScene" id=2]
 [ext_resource path="res://tileset/test_tilemap.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenario/coin.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenario/box.tscn" type="PackedScene" id=5]
-[ext_resource path="res://images/arcade_platformer.nobg.png" type="Texture" id=6]
-[ext_resource path="res://scenario/result_box.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenario/question.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenario/result.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenario/question_group.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenario/coin.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenario/box.tscn" type="PackedScene" id=6]
+[ext_resource path="res://images/arcade_platformer.nobg.png" type="Texture" id=7]
+[ext_resource path="res://scenario/result_box.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenario/question.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenario/result.tscn" type="PackedScene" id=10]
 
 [sub_resource type="AtlasTexture" id=1]
 
-atlas = ExtResource( 6 )
+atlas = ExtResource( 7 )
 region = Rect2( 16, 0, 16, 16 )
 margin = Rect2( 0, 0, 0, 0 )
 
 [sub_resource type="AtlasTexture" id=2]
 
-atlas = ExtResource( 6 )
+atlas = ExtResource( 7 )
 region = Rect2( 128, 0, 16, 16 )
 margin = Rect2( 0, 0, 0, 0 )
 
@@ -46,118 +47,119 @@ tile_data = IntArray( -262097, 20, -196566, 20, -196565, 20, -196564, 20, -19656
 
 editor/display_folded = true
 
+[node name="question_group" parent="common/questions" instance=ExtResource( 4 )]
+
 [node name="coins" parent="common"]
 
 editor/display_folded = true
 
-[node name="coin" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin" parent="common/coins" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 306, 110 )
 
-[node name="coin1" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin1" parent="common/coins" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 306, 86 )
 
-[node name="coin11 4" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin11 4" parent="common/coins" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 306, 62 )
 
-[node name="coin2" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin2" parent="common/coins" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 330, 110 )
 
-[node name="coin3" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin3" parent="common/coins" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 330, 86 )
 
-[node name="coin11 6" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin11 6" parent="common/coins" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 330, 62 )
 
-[node name="coin4" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin4" parent="common/coins" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 354, 110 )
 
-[node name="coin5" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin5" parent="common/coins" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 354, 86 )
 
-[node name="coin11 5" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin11 5" parent="common/coins" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 354, 62 )
 
-[node name="coin6" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin6" parent="common/coins" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 378, 110 )
 
-[node name="coin7" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin7" parent="common/coins" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 378, 86 )
 
-[node name="coin11" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin11" parent="common/coins" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 378, 62 )
 
-[node name="coin8" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin8" parent="common/coins" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 402, 110 )
 
-[node name="coin9" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin9" parent="common/coins" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 402, 86 )
 
-[node name="coin11 2" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin11 2" parent="common/coins" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 402, 62 )
 
-[node name="coin10" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin10" parent="common/coins" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 402, 86 )
 
-[node name="coin11 3" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin11 3" parent="common/coins" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 402, 62 )
 
-[node name="box+1" parent="common/boxes" instance=ExtResource( 5 )]
+[node name="box+1" parent="common/boxes" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 90, 78 )
 texture = SubResource( 1 )
 
-[node name="box-1" parent="common/boxes" instance=ExtResource( 5 )]
+[node name="box-1" parent="common/boxes" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 122, 78 )
 increment = -5
 texture = SubResource( 2 )
 
-[node name="box" parent="common/boxes" instance=ExtResource( 5 )]
+[node name="box" parent="common/boxes" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 66, 78 )
 
-[node name="result_box" parent="common/boxes" instance=ExtResource( 7 )]
+[node name="result_box" parent="common/boxes" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 144, 78 )
 
-[node name="question" parent="common/math" instance=ExtResource( 8 )]
+[node name="question" parent="common/math" instance=ExtResource( 9 )]
 
+visibility/visible = false
 margin/left = -31.0
 margin/top = 10.0
 margin/right = 9.0
 margin/bottom = 50.0
 
-[node name="result" parent="common/math" instance=ExtResource( 9 )]
+[node name="result" parent="common/math" instance=ExtResource( 10 )]
 
 editor/display_folded = true
+visibility/visible = false
 margin/left = 112.0
 margin/top = 80.0
 margin/right = 232.0
 margin/bottom = 143.0
 
-[node name="action_areas" parent="common"]
-
-editor/display_folded = false
-
 [node name="player" parent="common"]
 
+editor/display_folded = true
 transform/pos = Vector2( 80, 112 )
 debug = false
 
