@@ -10,7 +10,9 @@ func _ready():
 	_init_scene_ctl()
 
 func _input(ev):
-	if ev.is_action_pressed("menu") and not ev.is_echo():
+	if  ev.is_action_pressed("menu") or \
+		ev.is_action_pressed("ui_cancel") and \
+		not ev.is_echo():
 		get_tree().set_input_as_handled()
 		_on_resume()
 

@@ -1,0 +1,6 @@
+[gd_resource type="ShortCut" format=1]
+
+[resource]
+
+shortcut = InputEvent(KEY,76)
+
