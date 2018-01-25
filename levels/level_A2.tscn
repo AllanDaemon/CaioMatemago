@@ -17,8 +17,6 @@ debug = true
 
 editor/display_folded = true
 
-[node name="scenario_tilemap" parent="common" instance=ExtResource( 3 )]
-
 [node name="action_areas" parent="common"]
 
 visibility/visible = false
@@ -32,6 +30,8 @@ goto_scene = "level_A1"
 
 enabled = true
 goto_scene = "level_A3"
+
+[node name="scenario_tilemap" parent="common" instance=ExtResource( 3 )]
 
 
 [editable path="common"]
