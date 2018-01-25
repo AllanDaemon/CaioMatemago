@@ -1,3 +1,4 @@
+tool
 extends "res://scenario/box.gd";
 #################################### N O T E S ###################################
 # Change this template under /addons/net.kivano.smartextender/SCRIPT_TEMPLATE

@@ -9,6 +9,9 @@ signal value_change
 export (int) var increment = 1
 export (Texture) var texture
 
+func _get_item_rect():
+    return get_node("sprite").get_item_rect()
+
 func _ready():
 	get_node("hit_value").set_text(str(increment))
 
