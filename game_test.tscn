@@ -1,25 +1,24 @@
-[gd_scene load_steps=13 format=1]
+[gd_scene load_steps=12 format=1]
 
 [ext_resource path="res://game_test.gd" type="Script" id=1]
 [ext_resource path="res://levels/common.tscn" type="PackedScene" id=2]
 [ext_resource path="res://tileset/test_tilemap.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenario/coin.tscn" type="PackedScene" id=4]
-[ext_resource path="res://player/enemy.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenario/box.tscn" type="PackedScene" id=6]
-[ext_resource path="res://images/arcade_platformer.nobg.png" type="Texture" id=7]
-[ext_resource path="res://scenario/result_box.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenario/question.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scenario/resul.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenario/box.tscn" type="PackedScene" id=5]
+[ext_resource path="res://images/arcade_platformer.nobg.png" type="Texture" id=6]
+[ext_resource path="res://scenario/result_box.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenario/question.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenario/result.tscn" type="PackedScene" id=9]
 
 [sub_resource type="AtlasTexture" id=1]
 
-atlas = ExtResource( 7 )
+atlas = ExtResource( 6 )
 region = Rect2( 16, 0, 16, 16 )
 margin = Rect2( 0, 0, 0, 0 )
 
 [sub_resource type="AtlasTexture" id=2]
 
-atlas = ExtResource( 7 )
+atlas = ExtResource( 6 )
 region = Rect2( 128, 0, 16, 16 )
 margin = Rect2( 0, 0, 0, 0 )
 
@@ -120,66 +119,47 @@ transform/pos = Vector2( 402, 86 )
 
 transform/pos = Vector2( 402, 62 )
 
-[node name="enemy1" parent="common/enemies" instance=ExtResource( 5 )]
-
-transform/pos = Vector2( 704, 80 )
-
-[node name="Camera2D" type="Camera2D" parent="common/enemies/enemy1"]
-
-anchor_mode = 1
-rotating = false
-current = false
-zoom = Vector2( 1, 1 )
-limit/left = -10000000
-limit/top = -10000000
-limit/right = 10000000
-limit/bottom = 10000000
-drag_margin/h_enabled = true
-drag_margin/v_enabled = true
-smoothing/enable = false
-smoothing/speed = 5.0
-drag_margin/left = 0.2
-drag_margin/top = 0.2
-drag_margin/right = 0.2
-drag_margin/bottom = 0.2
-
-[node name="box+1" parent="common/boxes" instance=ExtResource( 6 )]
+[node name="box+1" parent="common/boxes" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 90, 78 )
 texture = SubResource( 1 )
 
-[node name="box-1" parent="common/boxes" instance=ExtResource( 6 )]
+[node name="box-1" parent="common/boxes" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 122, 78 )
 increment = -5
 texture = SubResource( 2 )
 
-[node name="box" parent="common/boxes" instance=ExtResource( 6 )]
+[node name="box" parent="common/boxes" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 66, 78 )
 
-[node name="result_box" parent="common/boxes" instance=ExtResource( 8 )]
+[node name="result_box" parent="common/boxes" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 144, 78 )
 
-[node name="question" parent="common/math" instance=ExtResource( 9 )]
+[node name="question" parent="common/math" instance=ExtResource( 8 )]
 
 margin/left = -31.0
 margin/top = 10.0
 margin/right = 9.0
 margin/bottom = 50.0
 
-[node name="result" parent="common/math" instance=ExtResource( 10 )]
+[node name="result" parent="common/math" instance=ExtResource( 9 )]
 
 editor/display_folded = true
-margin/left = 180.0
-margin/top = 75.0
-margin/right = 300.0
-margin/bottom = 138.0
+margin/left = 112.0
+margin/top = 80.0
+margin/right = 232.0
+margin/bottom = 143.0
+
+[node name="action_areas" parent="common"]
+
+editor/display_folded = false
 
 [node name="player" parent="common"]
 
-editor/display_folded = true
+transform/pos = Vector2( 80, 112 )
 debug = false
 
 [connection signal="result" from="common/boxes/result_box" to="." method="_on_result"]
