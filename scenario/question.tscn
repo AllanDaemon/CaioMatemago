@@ -4,7 +4,7 @@
 [ext_resource path="res://tileset/tileset.png" type="Texture" id=2]
 [ext_resource path="res://fonts/averia.tres" type="DynamicFont" id=3]
 
-[node name="Question" type="Control"]
+[node name="question" type="Control"]
 
 focus/ignore_mouse = false
 focus/stop_mouse = true
@@ -12,13 +12,13 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
 margin/top = 0.0
-margin/right = 40.0
+margin/right = 150.0
 margin/bottom = 40.0
 script/script = ExtResource( 1 )
 question = "1 + 2"
 result = 3
 
-[node name="Patch9Frame" type="Patch9Frame" parent="."]
+[node name="frame" type="Patch9Frame" parent="."]
 
 focus/ignore_mouse = true
 focus/stop_mouse = true
@@ -36,7 +36,7 @@ patch_margin/top = 14
 patch_margin/right = 22
 patch_margin/bottom = 14
 
-[node name="Label" type="Label" parent="Patch9Frame"]
+[node name="result_label" type="Label" parent="frame"]
 
 rect/scale = Vector2( 0.4, 0.4 )
 focus/ignore_mouse = true
@@ -50,7 +50,7 @@ margin/bottom = 70.0
 custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_as_outline = 3
-text = "001 - 100"
+text = "1 + 2"
 align = 1
 valign = 1
 percent_visible = 1.0
