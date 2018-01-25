@@ -73,6 +73,7 @@ func _ready():
 	levels_scenes_pack["main"] = levels_scenes_pack[main_scene_name]
 	current_level = tree.get_current_scene()	# it's game test by now
 	current_scene = current_level
+	set_process_input(true)
 	_init_defaults()
 
 func _init_defaults():
@@ -87,6 +88,8 @@ func _input(ev):
 		_set_debug(not debug)
 	if ev.is_action_pressed("pause") and not ev.is_echo():
 		_set_pause_state(not paused)
+	if ev.is_action_pressed("quit") and not ev.is_echo():
+		quit()
 	
 	if ev.type == InputEvent.KEY:
 		var key2level = {
@@ -137,7 +140,6 @@ func _close_options_menu():
 	_set_pause_state(false)
 
 func _set_debug(value):
-	var debug_objs = [current_level]
 	var debug_objs = tree.get_nodes_in_group("debug")
 	debug = value
 	for obj in debug_objs:
@@ -163,6 +165,9 @@ func change_level(level):
 
 func change_level_smooth(level, transition_duration=0.5):
 	change_level(level)
+
+func quit():
+	tree.quit()
 
 ############## GAME LOGIC ##############
 

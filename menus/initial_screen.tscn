@@ -25,7 +25,7 @@ func _input(ev):
 		_on_quit()
 
 func _on_quit():
-	get_tree().quit()
+	game.quit()
 
 func _on_options():
 	game.on_menu = true
