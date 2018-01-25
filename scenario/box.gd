@@ -15,9 +15,8 @@ func _get_item_rect():
 func _ready():
 	get_node("hit_value").set_text(str(increment))
 
-	print("Box ", self.get_name())
-	print("\ttexture: ", texture)
-
+#	print("Box ", self.get_name())
+#	print("\ttexture: ", texture)
 	if texture and texture != null:
 		_set_default_texture(texture)
 
