@@ -2,6 +2,8 @@
 
 * Game status singleton @WIP
 	* Pause
+	* resolve scene/level naming
+
 
 * Parallax fix
 
@@ -39,6 +41,7 @@
 #	* code OK
 #	* Game interation OK
 #		* Hit interaction OK
+	* rename boxes as block
 
 * Coins as +1
 	* Scene
