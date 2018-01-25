@@ -35,6 +35,7 @@ var dbg_max = -MAX_JUMP * 10
 
 func _ready():
 	ground_ray.add_exception(self)	# Avoid raycast to collide with player
+	set_debug(game.debug)
 	set_fixed_process(true)
 	set_process_input(true)
 
