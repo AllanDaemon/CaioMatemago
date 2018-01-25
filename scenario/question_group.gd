@@ -2,8 +2,9 @@ extends Node2D
 
 #signal right
 #signal wrong
+signal update_score
 
-export (bool) var disable_on_result = false
+export (bool) var disable_on_result = true
 export (int) var a = 1
 export (int) var b = 2
 export (String, "+", "-", "x") var operator = "+"
@@ -42,10 +43,12 @@ func _on_result():
 func right():
 #	emit_signal("right")
 	display.right()
+	game.operation_right()
 
 func wrong():
 #	emit_signal("wrong")
 	display.wrong()
+	game.operation_wrong()
 	
 
 func update_question(reset_display=true):
