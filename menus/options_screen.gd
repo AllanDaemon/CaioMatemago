@@ -7,13 +7,25 @@ func _enter_tree():
 
 func _ready():
 	set_process_input(true)
+	_init_scene_ctl()
 
 func _input(ev):
-#	print ("action")
 	if ev.is_action_pressed("menu") and not ev.is_echo():
-#		prints("MENUUUUU", ev)
 		get_tree().set_input_as_handled()
 		_on_resume()
+
+func _init_scene_ctl(div=5):
+	var scene_ctl = get_node("screen_panel/scene_ctl")
+	var level_ctl = get_node("screen_panel/level_ctl")
+	for n in range(game.scenes_name.size()):
+		if n < div:
+			scene_ctl.add_item(game.scenes_name[n], n)
+		else:
+			level_ctl.add_item(game.scenes_name[n], n)
+
+func _on_scene_select(value, offset=0):
+	printt("Debug scene selection:", value, offset, offset+value)
+	game.change_level(game.scenes_name[offset+value])
 
 func _on_quit_level():
 	game.on_menu = false

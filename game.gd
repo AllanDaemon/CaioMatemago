@@ -37,6 +37,19 @@ var menu_scene
 var game_scene
 
 
+const scenes_name = [
+	"intro",
+	"options",
+	"splash",
+	"credits",
+	"test",
+	"level_A1",
+	"level_A2",
+	"level_A3",
+	"level_A4",
+	"level_A5"
+]
+
 export (String) var main_scene_name = "level_A1"
 
 var levels_scenes_pack = {

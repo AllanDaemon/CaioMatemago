@@ -85,6 +85,7 @@ margin/bottom = 173.0
 
 [node name="bg" type="MarginContainer" parent="screen_panel/volume_control"]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -151,6 +152,7 @@ focus_mode = 2
 
 [node name="fx" type="MarginContainer" parent="screen_panel/volume_control"]
 
+editor/display_folded = true
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -235,6 +237,46 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="scene_ctl" type="OptionButton" parent="screen_panel"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 200.0
+margin/top = 120.0
+margin/right = 310.0
+margin/bottom = 140.0
+toggle_mode = false
+click_on_press = true
+enabled_focus_mode = 0
+shortcut = null
+text = "Scene"
+flat = true
+align = 0
+selected = -1
+items = [  ]
+
+[node name="level_ctl" type="OptionButton" parent="screen_panel"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 200.0
+margin/top = 150.0
+margin/right = 310.0
+margin/bottom = 170.0
+toggle_mode = false
+click_on_press = true
+enabled_focus_mode = 0
+shortcut = null
+text = "Level"
+flat = true
+align = 0
+selected = -1
+items = [  ]
+
 [connection signal="focus_enter" from="screen_panel" to="." method="_on_screen_panel_focus_enter"]
 
 [connection signal="pressed" from="screen_panel/resume_btn" to="." method="_on_resume"]
@@ -246,5 +288,9 @@ __meta__ = {
 [connection signal="value_changed" from="screen_panel/volume_control/fx_slider" to="." method="_on_fx_slider"]
 
 [connection signal="toggled" from="screen_panel/debug_btn" to="." method="_on_debug"]
+
+[connection signal="item_selected" from="screen_panel/scene_ctl" to="." method="_on_scene_select" binds= [ 0 ]]
+
+[connection signal="item_selected" from="screen_panel/level_ctl" to="." method="_on_scene_select" binds= [ 5 ]]
 
 
