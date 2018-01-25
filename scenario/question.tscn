@@ -4,7 +4,6 @@
 [ext_resource path="res://tileset/tileset.png" type="Texture" id=2]
 [ext_resource path="res://fonts/averia.tres" type="DynamicFont" id=3]
 
-
 [node name="Question" type="Control"]
 
 focus/ignore_mouse = false
@@ -49,6 +48,8 @@ margin/top = 7.0
 margin/right = 295.0
 margin/bottom = 70.0
 custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 3
 text = "001 - 100"
 align = 1
 valign = 1

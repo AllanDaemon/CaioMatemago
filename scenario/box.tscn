@@ -4,7 +4,6 @@
 [ext_resource path="res://fonts/averia.tres" type="DynamicFont" id=2]
 [ext_resource path="res://images/arcade_platformer.nobg.png" type="Texture" id=3]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
@@ -152,6 +151,8 @@ margin/top = -10.0
 margin/right = 136.0
 margin/bottom = 53.0
 custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 3
 text = "1"
 align = 1
 percent_visible = 1.0

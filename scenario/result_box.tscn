@@ -4,8 +4,6 @@
 [ext_resource path="res://scenario/result_box.gd" type="Script" id=2]
 [ext_resource path="res://tileset/tileset.png" type="Texture" id=3]
 
-
-
 [sub_resource type="AtlasTexture" id=1]
 
 atlas = ExtResource( 3 )
@@ -24,6 +22,8 @@ margin/left = -0.5
 margin/top = -32.0
 margin/right = 159.5
 margin/bottom = 31.0
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_as_outline = 3
 
 [node name="sprite" parent="."]
 
