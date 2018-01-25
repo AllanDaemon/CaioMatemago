@@ -44,7 +44,8 @@ collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
 script/script = ExtResource( 1 )
-movement = Vector2( 1, 0 )
+speed = 100
+movement = Vector2( 1, 1 )
 enable_on_tool = false
 
 [node name="collision1" type="CollisionShape2D" parent="."]
@@ -74,6 +75,7 @@ __meta__ = {
 editor/display_folded = true
 frames = SubResource( 3 )
 animation = "default"
+frame = 1
 playing = true
 __meta__ = {
 "_edit_lock_": true
