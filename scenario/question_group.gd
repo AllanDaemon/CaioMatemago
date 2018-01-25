@@ -29,7 +29,7 @@ func _on_value_change(value):
 	_update_label()
 	
 func _update_label():
-	result_label.set_text(str(current_result))
+	result_label.update_value(current_result)
 	
 func _on_result():
 	print("Calculating result")

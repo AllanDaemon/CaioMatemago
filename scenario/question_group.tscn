@@ -11,20 +11,24 @@ script/script = ExtResource( 1 )
 
 [node name="question" parent="." instance=ExtResource( 2 )]
 
-margin/left = 80.0
-margin/right = 120.0
+margin/left = 85.0
+margin/top = 20.0
+margin/right = 235.0
+margin/bottom = 60.0
 
 [node name="result" parent="." instance=ExtResource( 3 )]
 
-margin/left = 208.0
-margin/top = 72.0
-margin/right = 328.0
-margin/bottom = 135.0
+margin/left = 184.0
+margin/top = 56.0
+margin/right = 304.0
+margin/bottom = 119.0
 
 [node name="boxes" type="Node2D" parent="."]
 
 [node name="result_box" parent="boxes" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 224, 96 )
+transform/pos = Vector2( 176, 72 )
+
+[connection signal="result" from="boxes/result_box" to="." method="_on_result"]
 
 
