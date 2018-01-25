@@ -1,5 +1,8 @@
 extends Control
 
+signal right
+signal wrong
+
 export (String) var question = "1 + 2" setget _set_question
 export (int) var result = 3
 
