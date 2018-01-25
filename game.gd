@@ -73,6 +73,23 @@ func _input(ev):
 		_set_debug(not debug)
 	if ev.is_action_pressed("pause") and not ev.is_echo():
 		_set_pause_state(not paused)
+	
+	if ev.type == InputEvent.KEY:
+		printt("KEY:", ev.scancode)
+		var key2level = {
+			KEY_QUOTELEFT: "intro",
+			KEY_1: "level_A1",
+			KEY_2: "level_A2",
+			KEY_3: "level_A3",
+			KEY_4: "level_A4",
+			KEY_5: "level_A5",
+			KEY_6: "credits",
+			KEY_7: "options",
+			KEY_8: "splash",
+			KEY_0: "test" }
+		if ev.scancode in key2level:
+			prints("Debug level changing to", key2level[ev.scancode], ":", ev.scancode)
+			change_level(key2level[ev.scancode])
 
 ############## INTERNAL STATES ##############
 
