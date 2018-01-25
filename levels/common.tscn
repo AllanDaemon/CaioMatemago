@@ -51,6 +51,7 @@ max_volume = 0.5
 
 [node name="background" type="ParallaxBackground" parent="."]
 
+editor/display_folded = true
 layer = -1
 offset = Vector2( 0, 0 )
 rotation = 0.0
@@ -83,6 +84,8 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="tilemap" type="Node2D" parent="."]
+
 [node name="coins" type="Node2D" parent="."]
 
 [node name="enemies" type="Node2D" parent="."]
@@ -94,6 +97,7 @@ __meta__ = {
 [node name="action_areas" type="Node2D" parent="."]
 
 editor/display_folded = true
+visibility/visible = false
 
 [node name="prev_level" parent="action_areas" instance=ExtResource( 5 )]
 

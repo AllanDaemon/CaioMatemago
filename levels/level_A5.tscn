@@ -9,17 +9,20 @@
 ]]
 
 script/script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 debug = true
 
 [node name="common" parent="." instance=ExtResource( 2 )]
 
-[node name="background" parent="common"]
+[node name="tilemap" parent="common"]
 
 editor/display_folded = true
 
-[node name="action_areas" parent="common"]
+[node name="scenario_tilemap" parent="common/tilemap" instance=ExtResource( 3 )]
 
-visibility/visible = false
+editor/display_folded = true
 
 [node name="prev_level" parent="common/action_areas"]
 
@@ -31,10 +34,7 @@ goto_scene = "level_A4"
 enabled = true
 goto_scene = "credits"
 
-[node name="scenario_tilemap" parent="common" instance=ExtResource( 3 )]
-
-editor/display_folded = true
-
 
 [editable path="common"]
+[editable path="common/tilemap/scenario_tilemap"]
 [editable path="common/HUD"]

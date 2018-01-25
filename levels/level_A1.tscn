@@ -2,8 +2,8 @@
 
 [ext_resource path="res://levels/base.gd" type="Script" id=1]
 [ext_resource path="res://levels/common.tscn" type="PackedScene" id=2]
-[ext_resource path="res://scenario/coin.tscn" type="PackedScene" id=3]
-[ext_resource path="res://tileset/levels/level_A1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://tileset/levels/level_A1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenario/coin.tscn" type="PackedScene" id=4]
 [ext_resource path="res://player/candango.tscn" type="PackedScene" id=5]
 
 [node name="level_A1" type="Node2D" groups=[
@@ -11,39 +11,38 @@
 ]]
 
 script/script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 debug = true
 
 [node name="common" parent="." instance=ExtResource( 2 )]
-
-[node name="background" parent="common"]
-
-editor/display_folded = true
 
 [node name="background" parent="common/background"]
 
 editor/display_folded = true
 
-[node name="coin1" parent="common/coins" instance=ExtResource( 3 )]
-
-transform/pos = Vector2( 504, 152 )
-
-[node name="coin2" parent="common/coins" instance=ExtResource( 3 )]
-
-transform/pos = Vector2( 520, 152 )
-
-[node name="scenario_tilemap" parent="common" instance=ExtResource( 4 )]
+[node name="tilemap" parent="common"]
 
 editor/display_folded = true
 
-[node name="info" parent="common/scenario_tilemap"]
+[node name="scenario_tilemap" parent="common/tilemap" instance=ExtResource( 3 )]
+
+editor/display_folded = true
+
+[node name="info" parent="common/tilemap/scenario_tilemap"]
 
 visibility/visible = false
+
+[node name="coin1" parent="common/coins" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 504, 152 )
+
+[node name="coin2" parent="common/coins" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 520, 152 )
 
 [node name="candango" parent="common/math" instance=ExtResource( 5 )]
-
-[node name="action_areas" parent="common"]
-
-visibility/visible = false
 
 [node name="next_level" parent="common/action_areas"]
 
@@ -52,5 +51,5 @@ goto_scene = "level_A2"
 
 
 [editable path="common"]
-[editable path="common/scenario_tilemap"]
+[editable path="common/tilemap/scenario_tilemap"]
 [editable path="common/HUD"]
