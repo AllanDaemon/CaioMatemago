@@ -6,12 +6,12 @@ signal wrong
 onready var game = get_node("/root/game")
 onready var common = get_node("common")
 
-onready var boxes = get_node("common/boxes")
+onready var boxes = get_node("boxes")
 
-onready var question = get_node("common/math/question")
-onready var result_label = get_node("common/math/result")
+onready var question = get_node("question")
+onready var result_label = get_node("result")
 
-var result = 0
+var current_result = 0
 
 func _ready():
 	question.connect("right", result_label, "right")
@@ -25,15 +25,15 @@ func _ready():
 
 func _on_value_change(value):
 	print("Change: ", value)
-	result += value
+	current_result += value
 	_update_label()
 	
 func _update_label():
-	result_label.set_text(str(result))
+	result_label.set_text(str(current_result))
 	
 func _on_result():
 	print("Calculating result")
-	if result == question.result:
+	if current_result == question.result:
 		emit_signal("right")
 	else:
 		emit_signal("wrong")

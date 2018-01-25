@@ -9,7 +9,7 @@
 
 script/script = ExtResource( 1 )
 
-[node name="Question" parent="." instance=ExtResource( 2 )]
+[node name="question" parent="." instance=ExtResource( 2 )]
 
 margin/left = 80.0
 margin/right = 120.0
@@ -21,7 +21,9 @@ margin/top = 72.0
 margin/right = 328.0
 margin/bottom = 135.0
 
-[node name="result_box" parent="." instance=ExtResource( 4 )]
+[node name="boxes" type="Node2D" parent="."]
+
+[node name="result_box" parent="boxes" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( 224, 96 )
 
