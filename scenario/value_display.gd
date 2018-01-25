@@ -1,5 +1,7 @@
 extends Label
 
+export (int) var value = 42
+
 onready var anim = get_node("anim")
 # signal_emiter.connect("right", this_obj, "right)
 

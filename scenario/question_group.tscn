@@ -8,6 +8,10 @@
 [node name="question_group" type="Node2D"]
 
 script/script = ExtResource( 1 )
+disable_on_result = false
+a = 1
+b = 2
+operator = "+"
 
 [node name="question" parent="." instance=ExtResource( 2 )]
 
@@ -22,6 +26,7 @@ margin/left = 184.0
 margin/top = 56.0
 margin/right = 304.0
 margin/bottom = 119.0
+value = 42
 
 [node name="boxes" type="Node2D" parent="."]
 

@@ -46,6 +46,10 @@ editor/display_folded = true
 
 [node name="question_group" parent="common/questions" instance=ExtResource( 4 )]
 
+a = 2
+b = -2
+operator = "x"
+
 [node name="box+1" parent="common/questions/question_group/boxes" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 88, 72 )
