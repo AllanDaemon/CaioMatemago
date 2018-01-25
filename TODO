@@ -49,12 +49,14 @@
 
 
 * Prof Candango
-	* Scene
-		* Sprite
+	* Scene OK
+		* Sprite OK
 	* Anim
+		* default
+		* happy
 	* Code
 	* Dialog box integration
-	* Area2D
+	* Area2D OK
 
 
 * Dialog box
