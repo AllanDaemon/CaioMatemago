@@ -15,6 +15,7 @@ var vol_db
 
 func _ready():
 	set_process(debug)
+	game.update_volume()
 
 func _process(delta):
 	_update_dbg_info()

@@ -77,7 +77,7 @@ func _ready():
 
 func _init_defaults():
 	_set_debug(debug)
-	volume_update()
+	update_volume()
 
 func _input(ev):
 	if ev.is_action_pressed("menu") or ev.is_action_pressed("ui_cancel") \
@@ -144,7 +144,7 @@ func _set_debug(value):
 		if obj and "debug" in obj:
 			obj.debug = value
 
-func volume_update():
+func update_volume():
 	var bgs = tree.get_nodes_in_group("bg_sound")
 	for node in bgs:
 		var vol = volume_bg
