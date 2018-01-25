@@ -1,27 +1,9 @@
 [gd_scene load_steps=9 format=1]
 
 [ext_resource path="res://fonts/averia.tres" type="DynamicFont" id=1]
-[ext_resource path="res://audio/Acerto.wav" type="Sample" id=2]
-[ext_resource path="res://audio/Erro.wav" type="Sample" id=3]
-
-[sub_resource type="GDScript" id=1]
-
-script/source = "extends Label
-
-onready var anim = get_node(\"anim\")
-# signal_emiter.connect(\"right\", this_obj, \"right)
-
-func right():
-	anim.play(\"right\")
-
-func wrong():
-	anim.play(\"wrong\")
-
-# debug, test
-func _on_test_btn_toggled( pressed ):
-	if pressed: right()
-	else: wrong()
-"
+[ext_resource path="res://scenario/result.gd" type="Script" id=2]
+[ext_resource path="res://audio/Acerto.wav" type="Sample" id=3]
+[ext_resource path="res://audio/Erro.wav" type="Sample" id=4]
 
 [sub_resource type="Animation" id=2]
 
@@ -102,13 +84,13 @@ samples/right = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
-"sample": ExtResource( 2 )
+"sample": ExtResource( 3 )
 }
 samples/wrong = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
-"sample": ExtResource( 3 )
+"sample": ExtResource( 4 )
 }
 
 [node name="result" type="Label"]
@@ -131,7 +113,7 @@ align = 2
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script/script = SubResource( 1 )
+script/script = ExtResource( 2 )
 
 [node name="anim" type="AnimationPlayer" parent="."]
 
