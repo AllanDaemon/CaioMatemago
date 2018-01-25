@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=1]
+[gd_scene load_steps=10 format=1]
 
 [ext_resource path="res://game_test.gd" type="Script" id=1]
 [ext_resource path="res://levels/common.tscn" type="PackedScene" id=2]
@@ -7,9 +7,6 @@
 [ext_resource path="res://scenario/box.tscn" type="PackedScene" id=5]
 [ext_resource path="res://images/arcade_platformer.nobg.png" type="Texture" id=6]
 [ext_resource path="res://scenario/coin.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenario/result_box.tscn" type="PackedScene" id=8]
-[ext_resource path="res://scenario/question.tscn" type="PackedScene" id=9]
-[ext_resource path="res://scenario/value_display.tscn" type="PackedScene" id=10]
 
 [sub_resource type="AtlasTexture" id=1]
 
@@ -132,36 +129,10 @@ transform/pos = Vector2( 402, 86 )
 
 transform/pos = Vector2( 402, 62 )
 
-[node name="boxes" parent="common"]
-
-visibility/visible = false
-
-[node name="result_box" parent="common/boxes" instance=ExtResource( 8 )]
-
-transform/pos = Vector2( 144, 78 )
-
-[node name="question" parent="common/math" instance=ExtResource( 9 )]
-
-visibility/visible = false
-margin/left = -31.0
-margin/top = 10.0
-margin/right = 9.0
-margin/bottom = 50.0
-
-[node name="result" parent="common/math" instance=ExtResource( 10 )]
-
-editor/display_folded = true
-visibility/visible = false
-margin/left = 112.0
-margin/top = 80.0
-margin/right = 232.0
-margin/bottom = 143.0
-
 [node name="player" parent="common"]
 
+editor/display_folded = true
 debug = false
-
-[connection signal="result" from="common/boxes/result_box" to="." method="_on_result"]
 
 
 [editable path="common"]
