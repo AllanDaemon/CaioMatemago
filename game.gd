@@ -77,6 +77,7 @@ func _ready():
 
 func _init_defaults():
 	_set_debug(debug)
+	volume_update()
 
 func _input(ev):
 	if ev.is_action_pressed("menu") or ev.is_action_pressed("ui_cancel") \
