@@ -7,31 +7,31 @@
 
 * Game action button @LP
 
-* Game Level part
-	* Border detection
+* Game Level part ~OK
+#	* Border detection OK
 	* Level loading mechanics
-		* Change level @WIP
+#		* BG Music OK
+#		* Change level OK
 			* change level smooth
-		* BG Music
-		* Blackout or Rolling left
-	* Mobile buttons fix
+			* Blackout or Rolling left
+#	* Mobile buttons fix OK
 
 * Screens
 	* Options screen
-		menu btns
+#		menu btns OK
 		volume level
-			BG OK
+#			BG OK
 			FX @WIP
-		debug option OK
+#		debug option OK
 
-	* Initial screen
-		* Art (banner) OK
-		* level OK
-	* Splash screen OK
-	* Final credits screen
+#	* Initial screen
+#		* Art (banner) OK
+#		* level OK
+#	* Splash screen OK
+#	* Final credits screen OK
 
-* Score
-	* update score on screen
+#* Score
+#	* update score on screen OK
 
 #* Coins OK
 #	* Scene OK
