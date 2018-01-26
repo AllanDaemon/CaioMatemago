@@ -36,6 +36,10 @@ a = 2
 b = -2
 operator = "x"
 
+[node name="question" parent="common/questions/question_group"]
+
+question = "2 x -2"
+
 [node name="coins" parent="common"]
 
 editor/display_folded = true
