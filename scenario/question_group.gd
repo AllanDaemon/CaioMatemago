@@ -1,3 +1,4 @@
+tool
 extends Node2D
 
 #signal right
@@ -10,7 +11,7 @@ export (int) var b = 2
 export (String, "+", "-", "x") var operator = "+"
 
 var result = -1
-var current_result = 0
+#var current_result = 0
 var enabled = true
 
 onready var game = get_node("/root/game")
@@ -27,15 +28,16 @@ func _ready():
 func _on_value_change(value):
 	print("Change: ", value)
 	if not enabled: return
-	current_result += value
-	display.update_value(current_result)
+	display.value += value
+#	current_result += value
+#	display.update_value(current_result)
 
 func _on_result():
 	print("Calculating result")
 	if not enabled: return
 	if disable_on_result: enabled = false
 #	if current_result == question.result:
-	if current_result == result:
+	if display.value == result:
 		right()
 	else:
 		wrong()
@@ -56,8 +58,9 @@ func update_question(reset_display=true):
 	result = calc_result()
 	enabled = true
 	if reset_display:
-		current_result = 0
-		display.update_value(current_result)
+		display.value = 0
+#		current_result = 0
+#		display.update_value(current_result)
 
 
 func calc_result():

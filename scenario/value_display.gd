@@ -1,12 +1,16 @@
 extends Label
 
-export (int) var value = 42
+export (int) var value = 42 setget set_value
 
 onready var anim = get_node("anim")
 # signal_emiter.connect("right", this_obj, "right)
 
-func update_value(value):
+func set_value(_value):
+	value = _value
 	set_text(str(value))
+#
+#func update_value(value):
+#	set_text(str(value))
 
 func right():
 	anim.play("right")
