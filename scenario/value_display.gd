@@ -8,9 +8,6 @@ onready var anim = get_node("anim")
 func set_value(_value):
 	value = _value
 	set_text(str(value))
-#
-#func update_value(value):
-#	set_text(str(value))
 
 func right():
 	anim.play("right")
