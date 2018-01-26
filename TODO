@@ -1,49 +1,49 @@
-* question group: save result on display on a property
+#* question group: save result on display on a property OK
 
-* Fix box hit animation to be centralized
+- Fix box hit animation to be centralized
 
-* Game status singleton @WIP
-	* Pause
-	* resolve scene/level naming
+- Game status singleton @WIP
+	- Pause
+	- resolve scene/level naming
 
 
-* Parallax fix
++ Parallax fix
 
-* Game action button @LP
+- Game action button @LP
 
 * Game Level part ~OK
-#	* Border detection OK
-	* Level loading mechanics
-#		* BG Music OK
-#		* Change level OK
-			* change level smooth
-			* Blackout or Rolling left
-#	* Mobile buttons fix OK
+#	 Border detection OK
+	- Level loading mechanics
+#		BG Music OK
+#		Change level OK
+			- change level smooth
+			- Blackout or Rolling left
+#	Mobile buttons fix OK
 
-* Screens
-	* Options screen
++ Screens
+	+ Options screen
 #		menu btns OK
 		volume level
 #			BG OK
 			FX @WIP
 #		debug option OK
 
-#	* Initial screen
-#		* Art (banner) OK
-#		* level OK
-#	* Splash screen OK
-#	* Final credits screen OK
+#	Initial screen
+#		Art (banner) OK
+#		level OK
+#	Splash screen OK
+#	Final credits screen OK
 
-#* Score
-#	* update score on screen OK
+# Score OK
+#	update score on screen OK
 
-#* Coins OK
-#	* Scene OK
-#	* Animation OK
-#	* code OK
-#	* Game interation OK
-#		* Hit interaction OK
-	* rename boxes as block
+- Coins ~OK
+#	Scene OK
+#	Animation OK
+#	code OK
+#	Game interation OK
+#	Hit interaction OK
+	- rename boxes as block
 
 * Coins as +1
 	* Scene
@@ -53,18 +53,18 @@
 		* Hit interaction
 
 
-* Prof Candango
+@ Prof Candango
 	* Scene OK
-		* Sprite OK
+		Sprite OK
 	* Anim
 		* default
 		* happy
 	* Code
 	* Dialog box integration
-	* Area2D OK
+	@ Area2D OK
 
 
-* Dialog box
+@ Dialog box
 	* Scene
 		* Sprite
 	* Anim
@@ -138,3 +138,6 @@
 		* Dialogs
 		* Last door control
 	* Mutiples operations
+
+- Question group
+	- rename to better names
