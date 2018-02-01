@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://game_test.gd" type="Script" id=1]
 [ext_resource path="res://levels/common.tscn" type="PackedScene" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://scenario/question_group.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenario/coin.tscn" type="PackedScene" id=5]
 [ext_resource path="res://player/candango.tscn" type="PackedScene" id=6]
-[ext_resource path="res://controls/dialog.tscn" type="PackedScene" id=7]
 
 [node name="game_test" type="Node2D" groups=[
 "debug",
@@ -124,25 +123,11 @@ transform/pos = Vector2( 656, 144 )
 lines_id = "candangoA1a"
 char_name = "Prof. Candango"
 
-[node name="dialog" parent="common/math/candango" instance=ExtResource( 7 )]
-
-visibility/visible = false
-margin/top = -80.0
-margin/right = 88.0
-margin/bottom = -40.0
-
 [node name="candango1" parent="common/math" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 704, -48 )
 lines_id = "candangoA1b"
 char_name = "Prof. Candango"
-
-[node name="dialog" parent="common/math/candango1" instance=ExtResource( 7 )]
-
-visibility/visible = false
-margin/top = -80.0
-margin/right = 88.0
-margin/bottom = -40.0
 
 [node name="player" parent="common"]
 

@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://player/candango.gd" type="Script" id=1]
 [ext_resource path="res://player/professor_candango.png" type="Texture" id=2]
+[ext_resource path="res://controls/dialog.tscn" type="PackedScene" id=3]
 
-[sub_resource type="CapsuleShape2D" id=4]
+[sub_resource type="CapsuleShape2D" id=1]
 
 custom_solver_bias = 0.0
 radius = 60.0
@@ -36,7 +37,7 @@ step = 0.1
 ]]
 
 input/pickable = false
-shapes/0/shape = SubResource( 4 )
+shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, -13 )
 shapes/0/trigger = true
 gravity_vec = Vector2( 0, 1 )
@@ -47,11 +48,12 @@ collision/layers = 2
 collision/mask = 2
 script/script = ExtResource( 1 )
 lines_id = ""
+char_name = "Prof. Candango"
 
 [node name="collision" type="CollisionShape2D" parent="."]
 
 transform/pos = Vector2( 0, -13 )
-shape = SubResource( 4 )
+shape = SubResource( 1 )
 trigger = true
 _update_shape_index = 0
 
@@ -73,6 +75,14 @@ playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = "default"
+
+[node name="dialog" parent="." instance=ExtResource( 3 )]
+
+visibility/visible = false
+margin/left = -8.0
+margin/top = -80.0
+margin/right = 137.0
+margin/bottom = -29.0
 
 [connection signal="body_enter" from="." to="." method="_on_player_near"]
 
