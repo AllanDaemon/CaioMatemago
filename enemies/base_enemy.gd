@@ -1,4 +1,7 @@
+tool
 extends RigidBody2D
+
+export (String, "green", "berigelante") var enemy_type = "green" setget _set_enemy_type
 
 export (bool) var can_fall = false
 enum states {IDLE, WALKING, FALLING, DYING}
@@ -19,17 +22,33 @@ const direction_flipped_h = {LEFT: true, RIGHT: false}
 
 onready var raycasts_floor = get_node("raycasts_floor")
 onready var raycasts_wall = get_node("raycasts_wall")
-onready var sprite = get_node("sprite_anim")
 onready var anim = get_node("anim")
 onready var fx_sounds = get_node("fx_sounds")
+#onready var sprite = get_node("sprite_anim_"+enemy_type)
+onready var sprite
 
 const cooldown_value = 10
 var cooldown = 0
 
 func _ready():
+	_setup_enemy_type()
 	set_direction(opposite[default_direction])
 	set_state()
 	set_fixed_process(true)
+
+func _enter_tree():
+	_setup_enemy_type()
+
+func _set_enemy_type(value):
+	enemy_type = value
+	_setup_enemy_type()
+
+func _setup_enemy_type():
+#	get_node("sprite_anim_green").hide()
+#	get_node("sprite_anim_berigelante").hide()
+	if has_node("sprite_anim_" + enemy_type):
+		sprite = get_node("sprite_anim_" + enemy_type)
+		if sprite: sprite.show()
 
 func _integrate_forces(s):
 	pass

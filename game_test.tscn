@@ -13,9 +13,6 @@
 ]]
 
 script/script = ExtResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="common" parent="." instance=ExtResource( 2 )]
 
@@ -126,6 +123,7 @@ can_fall = true
 [node name="base_enemy1" parent="common/enemies" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 552, 72 )
+enemy_type = "berigelante"
 
 [node name="math" parent="common"]
 
