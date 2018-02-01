@@ -120,7 +120,7 @@ transform/pos = Vector2( 402, 62 )
 
 [node name="base_enemy" parent="common/enemies" instance=ExtResource( 6 )]
 
-transform/pos = Vector2( 656, 64 )
+transform/pos = Vector2( 695, -57 )
 can_fall = true
 
 [node name="base_enemy1" parent="common/enemies" instance=ExtResource( 6 )]
@@ -144,7 +144,7 @@ lines_id = "candangoA1b"
 [node name="player" parent="common"]
 
 editor/display_folded = true
-transform/pos = Vector2( 600, 96 )
+transform/pos = Vector2( 603, 2 )
 debug = false
 
 [node name="HUD" parent="common"]

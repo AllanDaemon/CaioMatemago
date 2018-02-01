@@ -120,6 +120,7 @@ func _fixed_process(delta):
 	get_node(\"up2_label\").set_text(\"cool \" + str(char.cooldown))
 	get_node(\"up3_label\").set_text(\"vel.x \\t\" + str(vel.x))
 	get_node(\"up4_label\").set_text(\"vel.y \\t\" + str(vel.y))
+	get_node(\"up5_label\").set_text(char.state_name)
 	
 	get_node(\"graph\").add(char.cooldown)
 #	get_node(\"graph\").add(vel.x)
@@ -136,8 +137,8 @@ input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, -7 )
 shapes/0/trigger = false
-collision/layers = 4
-collision/mask = 1
+collision/layers = 7
+collision/mask = 7
 mode = 2
 mass = 1.0
 friction = 0.0
@@ -170,7 +171,7 @@ editor/display_folded = true
 transform/pos = Vector2( 0, -8 )
 frames = SubResource( 2 )
 animation = "walking"
-frame = 1
+frame = 2
 playing = true
 
 [node name="sprite1" type="Sprite" parent="sprite_anim"]
@@ -195,21 +196,19 @@ texture = SubResource( 4 )
 
 [node name="raycasts_floor" type="Node2D" parent="."]
 
-visibility/visible = false
-
 [node name="raycast_left" type="RayCast2D" parent="raycasts_floor"]
 
-transform/pos = Vector2( -6, -14 )
+transform/pos = Vector2( -6, -1 )
 enabled = true
-cast_to = Vector2( 0, 15 )
+cast_to = Vector2( 0, 3 )
 layer_mask = 1
 type_mask = 15
 
 [node name="raycast_right" type="RayCast2D" parent="raycasts_floor"]
 
-transform/pos = Vector2( 6, -14 )
+transform/pos = Vector2( 6, -1 )
 enabled = true
-cast_to = Vector2( 0, 15 )
+cast_to = Vector2( 0, 3 )
 layer_mask = 1
 type_mask = 15
 
@@ -259,10 +258,6 @@ margin/top = -10.0
 margin/bottom = 30.0
 script/script = SubResource( 7 )
 debug = true
-
-[node name="up5_label" parent="DBG"]
-
-visibility/visible = false
 
 
 [editable path="DBG"]
