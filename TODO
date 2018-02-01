@@ -53,7 +53,7 @@
 		* Hit interaction
 
 
-@ Prof Candango
+* Prof Candango
 #	Scene OK
 #		Sprite OK
 #	Area2D OK
@@ -111,7 +111,7 @@
 	* Code
 
 
-* Enemy
+@ Enemy
 	* Scene
 		* Sprites
 	* Animation
