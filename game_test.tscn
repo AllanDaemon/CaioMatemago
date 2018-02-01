@@ -124,6 +124,7 @@ transform/pos = Vector2( 688, 144 )
 
 [node name="dialog" parent="common/math" instance=ExtResource( 7 )]
 
+visibility/visible = false
 margin/left = 688.0
 margin/top = 64.0
 margin/right = 776.0
