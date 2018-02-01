@@ -39,11 +39,11 @@ func _ready():
 	set_fixed_process(true)
 	set_process_unhandled_input(true)
 
-func _unhandled_input(event):
-	if event.is_action_pressed("jump") and on_floor:
+func _unhandled_input(ev):
+	if ev.is_action_pressed("jump") and on_floor:
 		vel.y = JUMP_SPEED
 		state = JUMPING
-	if event.is_action_released("jump"):
+	if ev.is_action_released("jump"):
 		vel.y = clamp(vel.y, MIN_JUMP, MAX_JUMP)
 		state = FALLING
 
