@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=1]
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://fonts/averia80pt.tres" type="DynamicFont" id=1]
 
 [sub_resource type="GDScript" id=1]
 
@@ -26,7 +28,7 @@ func goto_next_scene(scene_name=next_scene):
 
 length = 2.0
 loop = false
-step = 0.1
+step = 0.01
 tracks/0/type = "value"
 tracks/0/path = NodePath("level_name:visibility/opacity")
 tracks/0/interp = 1
@@ -61,6 +63,9 @@ margin/top = 0.0
 margin/right = 40.0
 margin/bottom = 40.0
 script/script = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 next_scene = "main"
 
 [node name="bg" type="Panel" parent="."]
@@ -73,19 +78,54 @@ margin/left = 0.0
 margin/top = 0.0
 margin/right = 320.0
 margin/bottom = 180.0
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="level_name" type="Label" parent="."]
+[node name="level_name" type="Control" parent="."]
 
-visibility/opacity = 0.0
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 0.0
+margin/top = 0.0
+margin/right = 40.0
+margin/bottom = 40.0
+
+[node name="label_level" type="Label" parent="level_name"]
+
+rect/scale = Vector2( 0.2, 0.2 )
 focus/ignore_mouse = true
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 0.0
 margin/top = 0.0
-margin/right = 320.0
-margin/bottom = 180.0
+margin/right = 1600.0
+margin/bottom = 750.0
+custom_fonts/font = ExtResource( 1 )
 text = "Fase 1"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="label_name" type="Label" parent="level_name"]
+
+visibility/opacity = 0.5
+rect/scale = Vector2( 0.2, 0.2 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = 30.0
+margin/right = 1600.0
+margin/bottom = 780.0
+custom_fonts/font = ExtResource( 1 )
+text = "O Vale Das Somas"
 align = 1
 valign = 1
 percent_visible = 1.0
