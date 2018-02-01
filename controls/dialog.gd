@@ -1,10 +1,11 @@
 tool
 extends Control
 
-var character = "Prof. Candango"
+var character = "NPC"
 var lines = [
-	"Ei, garoto! Cuidado com o buraco.\nO vale da soma é um lugar perigoso,",
-	"não se esqueça de saltar obstáculos\ne inimigos se quiser sobreviver.",
+	"Line1.1 \nLine1.2",
+	"Line2.1 \nLine2.2",
+	"Line3",
 ]
 var curr_line = "Unitialized"
 
@@ -12,12 +13,6 @@ onready var char_label = get_node("char_label")
 onready var text_label = get_node("frame/text_label")
 onready var anim = get_node("anim")
 
-
-func _ready():
-#	_update()
-#	show_text(lines)
-#	set_process_input(true)
-	pass
 
 func _input(ev):
 	if ev.is_action_pressed("jump") and not ev.is_echo():
@@ -47,9 +42,6 @@ func show_text(_lines, char=null):
 	lines = _lines
 	set_process_input(true)
 	next_line(char)
-#	for line in lines:
-#		show_line(line, char)
-#		yield(anim, "finished")
 
 func next_line(char=null):
 	print("Next line")
@@ -61,4 +53,3 @@ func next_line(char=null):
 	var line = lines[0]
 	lines.pop_front()
 	show_line(line, char)
-	
