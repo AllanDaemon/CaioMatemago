@@ -120,15 +120,27 @@ transform/pos = Vector2( 402, 62 )
 
 [node name="candango" parent="common/math" instance=ExtResource( 6 )]
 
-transform/pos = Vector2( 688, 144 )
+transform/pos = Vector2( 656, 144 )
+lines_id = "candangoA1a"
 
-[node name="dialog" parent="common/math" instance=ExtResource( 7 )]
+[node name="dialog" parent="common/math/candango" instance=ExtResource( 7 )]
 
 visibility/visible = false
-margin/left = 688.0
-margin/top = 64.0
-margin/right = 776.0
-margin/bottom = 104.0
+margin/top = -80.0
+margin/right = 88.0
+margin/bottom = -40.0
+
+[node name="candango1" parent="common/math" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 704, -48 )
+lines_id = "candangoA1b"
+
+[node name="dialog" parent="common/math/candango1" instance=ExtResource( 7 )]
+
+visibility/visible = false
+margin/top = -80.0
+margin/right = 88.0
+margin/bottom = -40.0
 
 [node name="player" parent="common"]
 
