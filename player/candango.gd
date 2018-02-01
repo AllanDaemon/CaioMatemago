@@ -3,6 +3,7 @@ extends Area2D
 signal npc_action
 
 export (String) var lines_id = ""
+export (String) var char_name = "Prof. Candango"
 
 onready var dialog = get_node("dialog")
 onready var lines_load = get_node("/root/lines")
@@ -21,4 +22,4 @@ func _on_player_out(body):
 	
 func _on_npc_action():
 	dialog.show()
-	dialog.show_text(lines)
+	dialog.show_text(lines, char_name)

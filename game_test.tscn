@@ -122,6 +122,7 @@ transform/pos = Vector2( 402, 62 )
 
 transform/pos = Vector2( 656, 144 )
 lines_id = "candangoA1a"
+char_name = "Prof. Candango"
 
 [node name="dialog" parent="common/math/candango" instance=ExtResource( 7 )]
 
@@ -134,6 +135,7 @@ margin/bottom = -40.0
 
 transform/pos = Vector2( 704, -48 )
 lines_id = "candangoA1b"
+char_name = "Prof. Candango"
 
 [node name="dialog" parent="common/math/candango1" instance=ExtResource( 7 )]
 
