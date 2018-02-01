@@ -54,7 +54,7 @@ X vidas (onde X corresponde ao número de vezes que o jogador morreu, ou
 
 #
 
-# TELA 3 / FASE 1-1
+# TELA 3 / FASE 1-1 [A1]
 
 ♪ PrimeiraFase(com batida).mp3 ♪
 
@@ -88,7 +88,7 @@ tela 4]
 
 #
 
-# TELA 4 / FASE 1-1
+# TELA 4 / FASE 1-1 [A2]
 
 ♪ PrimeiraFase(com batida).mp3 ♪
 
@@ -111,7 +111,7 @@ animação do Professor candango muda para ALEGRIA ]
 
 #
 
-# TELA 5 / FASE 1-1
+# TELA 5 / FASE 1-1 [A3]
 
 ♪ PrimeiraFase(com batida).mp3 ♪
 
@@ -128,7 +128,7 @@ uma ponte nesse estágio dando acesso ao fim da tela.]
 
 #
 
-# TELA 6 / FASE 1-1
+# TELA 6 / FASE 1-1 [A2]
 
 ♪ PrimeiraFase(com batida).mp3 ♪
 
@@ -164,7 +164,7 @@ então desaparecendo à direita da tela.]
 
 #
 
-# TELA 7 / FASE 1-1
+# TELA 7 / FASE 1-1 [A5]
 
 ♪ Boss Battle (Big Sensation).mp3 ♪
 
