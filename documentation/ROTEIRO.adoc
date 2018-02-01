@@ -128,7 +128,7 @@ uma ponte nesse estágio dando acesso ao fim da tela.]
 
 #
 
-# TELA 6 / FASE 1-1 [A2]
+# TELA 6 / FASE 1-1 [A4]
 
 ♪ PrimeiraFase(com batida).mp3 ♪
 
