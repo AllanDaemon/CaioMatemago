@@ -1,6 +1,5 @@
 extends RigidBody2D
 
-export (bool) var debug = true setget set_debug
 enum states {IDLE, WALKING, FALLING, DYING}
 export (int, "IDLE", "WALKING", "FALLING", "DYING") \
 				var default_state = WALKING
@@ -8,7 +7,7 @@ var state = default_state
 export (bool) var can_fall = false
 enum directions {LEFT, RIGHT}
 const opposite= {LEFT: RIGHT, RIGHT: LEFT}
-var direction = LEFT
+var direction = LEFT setget set_direction
 var default_velocity = Vector2(-50, 0)
 onready var raycasts_floor = get_node("raycasts_floor")
 onready var raycasts_wall = get_node("raycasts_wall")
@@ -17,11 +16,6 @@ onready var sprite = get_node("sprite_anim")
 func _ready():
 	set_linear_velocity(default_velocity)
 	set_fixed_process(true)
-
-func set_debug(value):
-	debug = value
-	if has_node("DBG") and get_node("DBG"):
-		get_node("DBG").set_hidden(not value)
 
 func _integrate_forces(s):
 	pass

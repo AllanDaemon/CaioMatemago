@@ -147,7 +147,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
-[node name="left_square" type="Polygon2D" parent="."]
+[node name="left_top_square" type="Polygon2D" parent="."]
 
 transform/pos = Vector2( -12, -8.99999 )
 polygon = Vector2Array( -3, -3, -3, 2, 2, 2, 2, -3 )
@@ -162,7 +162,7 @@ texture/rotation = 0.0
 invert/enable = false
 invert/border = 100.0
 
-[node name="right_square" type="Polygon2D" parent="."]
+[node name="right_top_square" type="Polygon2D" parent="."]
 
 transform/pos = Vector2( 10, -8.99999 )
 polygon = Vector2Array( 0, -3, 0, 2, 5, 2, 5, -3 )
@@ -194,7 +194,6 @@ invert/border = 100.0
 
 [node name="left_middle_square" type="Polygon2D" parent="."]
 
-visibility/visible = false
 transform/pos = Vector2( -15, 3 )
 polygon = Vector2Array( 0, -3, 0, 2, 5, 2, 5, -3 )
 uv = Vector2Array(  )

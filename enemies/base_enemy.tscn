@@ -73,12 +73,51 @@ tracks/0/keys = {
 
 script/source = "extends Control
 
+export (bool) var debug = true setget set_debug
+
+onready var char = get_node(\"..\")
+
 func _ready():
-	set_fixed_process(true)
+	pass
+#	set_debug(debug)
+
+func set_debug(value):
+	debug = value
+	set_hidden(not value)
+	set_fixed_process(value)
+
 
 func _fixed_process(delta):
+	get_node(\"left_middle_square\").set_color(
+		Color(0,0,0,0)
+		if not get_node(\"../raycasts_wall/raycast_left\").is_colliding()
+		else Color(1,0,0,1) )
+	get_node(\"right_middle_square\").set_color(
+		Color(0,0,0,0)
+		if not get_node(\"../raycasts_wall/raycast_right\").is_colliding()
+		else Color(1,0,0,1) )
+
+	get_node(\"left_bottom_square\").set_color(
+		Color(0,0,0,0)
+		if not get_node(\"../raycasts_floor/raycast_left\").is_colliding()
+		else Color(1,0,0,1) )
+	get_node(\"right_bottom_square\").set_color(
+		Color(0,0,0,0)
+		if not get_node(\"../raycasts_floor/raycast_right\").is_colliding()
+		else Color(1,0,0,1) )
+
+	get_node(\"left_top_square\").set_color(
+		Color(0,0,0,0)
+		if char.direction == char.LEFT
+		else Color(0,0,1,1) )
+	get_node(\"right_top_square\").set_color(
+		Color(0,0,0,0)
+		if char.direction == char.RIGHT
+		else Color(0,0,1,1) )
+
+	get_node(\"up1_label\").set_text(\"left\" if char.direction == char.LEFT else \"right\")
 	
-"
+	"
 
 [node name="base_enemy" type="RigidBody2D" groups=[
 "enemy",
@@ -106,7 +145,6 @@ velocity/angular = 0.0
 damp_override/linear = -1.0
 damp_override/angular = -1.0
 script/script = ExtResource( 1 )
-debug = true
 default_state = null
 can_fall = false
 
@@ -211,5 +249,23 @@ autoplay = ""
 margin/top = -10.0
 margin/bottom = 30.0
 script/script = SubResource( 7 )
+debug = true
+
+[node name="up5_label" parent="DBG"]
+
+visibility/visible = false
+
+[node name="up4_label" parent="DBG"]
+
+visibility/visible = false
+
+[node name="up3_label" parent="DBG"]
+
+visibility/visible = false
+
+[node name="up2_label" parent="DBG"]
+
+visibility/visible = false
 
 
+[editable path="DBG"]
