@@ -5,6 +5,8 @@
 [ext_resource path="res://tileset/test_tilemap.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenario/question_group.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenario/coin.tscn" type="PackedScene" id=5]
+[ext_resource path="res://player/candango.tscn" type="PackedScene" id=6]
+[ext_resource path="res://controls/dialog.tscn" type="PackedScene" id=7]
 
 [node name="game_test" type="Node2D" groups=[
 "debug",
@@ -39,6 +41,10 @@ operator = "x"
 [node name="question" parent="common/questions/question_group"]
 
 question = "2 x -2"
+
+[node name="value_display" parent="common/questions/question_group"]
+
+value = 0
 
 [node name="coins" parent="common"]
 
@@ -112,9 +118,14 @@ transform/pos = Vector2( 402, 86 )
 
 transform/pos = Vector2( 402, 62 )
 
+[node name="candango" parent="common/math" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 688, 128 )
+
 [node name="player" parent="common"]
 
 editor/display_folded = true
+transform/pos = Vector2( 552, 64 )
 debug = false
 
 
