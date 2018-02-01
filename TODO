@@ -111,13 +111,27 @@
 	* Code
 
 
-@ Enemy
-	* Scene
-		* Sprites
-	* Animation
-	* IA interaction code (walking)
-	* Code for interaction
-	* (...)
+# * Enemy
+#	Scene OK
+#		Sprites OK
+#	Animation ~OK
+#		* Falling
+#		* IDLE
+#		* Walking OK
+#		* Daying OK
+#	IA interaction code (walking) OK
+#	Code for interaction OK
+
+@ Enemy 2
+	+ Scene
+		Sprites
+	Animation
+		* Falling
+		* IDLE
+		* Walking
+		* Daying
+	IA interaction code (walking)
+	Code for interaction
 
 * Boss
 	* Scene
