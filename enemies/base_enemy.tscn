@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=1]
+[gd_scene load_steps=14 format=1]
 
 [ext_resource path="res://enemies/base_enemy.gd" type="Script" id=1]
 [ext_resource path="res://enemies/sprites/green_enemy_sprite1.tres" type="Texture" id=2]
 [ext_resource path="res://enemies/sprites/green_enemy_sprite4.tres" type="Texture" id=3]
 [ext_resource path="res://enemies/sprites/green_enemy_sprite2.tres" type="Texture" id=4]
 [ext_resource path="res://enemies/sprites/green_enemy_sprite3.tres" type="Texture" id=5]
+[ext_resource path="res://controls/DBG.tscn" type="PackedScene" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -48,16 +49,6 @@ resource/name = "walking"
 length = 20.0
 loop = true
 step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:damp_override/linear")
-tracks/0/interp = 1
-tracks/0/imported = false
-tracks/0/keys = {
-"times": FloatArray( 0, 5 ),
-"transitions": FloatArray( 1, 1 ),
-"update": 0,
-"values": [ -1.0, 0.0 ]
-}
 
 [sub_resource type="Animation" id=6]
 
@@ -65,29 +56,44 @@ resource/name = "walking"
 length = 5.0
 loop = true
 step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:velocity/linear")
+tracks/0/type = "method"
+tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
-"times": FloatArray( 0, 2.5, 5 ),
-"transitions": FloatArray( 1, 1, 1 ),
-"update": 1,
-"values": [ Vector2( 50, 0 ), Vector2( -50, 0 ), Vector2( 0, 0 ) ]
+"times": FloatArray( 5 ),
+"transitions": FloatArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "change_direction"
+} ]
 }
 
-[node name="base_enemy" type="RigidBody2D"]
+[sub_resource type="GDScript" id=7]
+
+script/source = "extends Control
+
+func _ready():
+	set_fixed_process(true)
+
+func _fixed_process(delta):
+	
+"
+
+[node name="base_enemy" type="RigidBody2D" groups=[
+"enemy",
+]]
 
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, -7 )
 shapes/0/trigger = false
-collision/layers = 1
+collision/layers = 4
 collision/mask = 1
 mode = 2
 mass = 1.0
 friction = 0.0
-bounce = 0.5
+bounce = 0.0
 gravity_scale = 1.0
 custom_integrator = false
 continuous_cd = 0
@@ -95,11 +101,14 @@ contacts_reported = 0
 contact_monitor = false
 sleeping = false
 can_sleep = true
-velocity/linear = Vector2( 50, 0 )
+velocity/linear = Vector2( 0, 0 )
 velocity/angular = 0.0
 damp_override/linear = -1.0
 damp_override/angular = -1.0
 script/script = ExtResource( 1 )
+debug = true
+default_state = null
+can_fall = false
 
 [node name="collision" type="CollisionShape2D" parent="."]
 
@@ -139,13 +148,12 @@ texture = SubResource( 4 )
 
 [node name="raycasts_floor" type="Node2D" parent="."]
 
-editor/display_folded = true
 visibility/visible = false
 
 [node name="raycast_left" type="RayCast2D" parent="raycasts_floor"]
 
 transform/pos = Vector2( -6, -14 )
-enabled = false
+enabled = true
 cast_to = Vector2( 0, 15 )
 layer_mask = 1
 type_mask = 15
@@ -153,14 +161,28 @@ type_mask = 15
 [node name="raycast_right" type="RayCast2D" parent="raycasts_floor"]
 
 transform/pos = Vector2( 6, -14 )
-enabled = false
+enabled = true
 cast_to = Vector2( 0, 15 )
 layer_mask = 1
 type_mask = 15
 
 [node name="raycasts_wall" type="Node2D" parent="."]
 
-visibility/visible = false
+[node name="raycast_left" type="RayCast2D" parent="raycasts_wall"]
+
+transform/pos = Vector2( -8, -7 )
+enabled = true
+cast_to = Vector2( -1, 0 )
+layer_mask = 1
+type_mask = 15
+
+[node name="raycast_right" type="RayCast2D" parent="raycasts_wall"]
+
+transform/pos = Vector2( 8, -7 )
+enabled = true
+cast_to = Vector2( 1, 0 )
+layer_mask = 1
+type_mask = 15
 
 [node name="anim" type="AnimationPlayer" parent="."]
 
@@ -182,6 +204,12 @@ anims/walking = SubResource( 6 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
-autoplay = "walking"
+autoplay = ""
+
+[node name="DBG" parent="." instance=ExtResource( 6 )]
+
+margin/top = -10.0
+margin/bottom = 30.0
+script/script = SubResource( 7 )
 
 

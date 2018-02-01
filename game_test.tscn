@@ -121,6 +121,8 @@ transform/pos = Vector2( 402, 62 )
 [node name="base_enemy" parent="common/enemies" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 656, 64 )
+default_state = null
+can_fall = true
 
 [node name="math" parent="common"]
 
