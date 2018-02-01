@@ -39,7 +39,7 @@ const candangoA5a = [
 const lines_map = {
 	"candangoA1a": candangoA1a,
 	"candangoA1b": candangoA1b,
-	#"candangoA1c": candangoA1c,
+	"candangoA1c": candangoA1c,
 	#"candangoA2a": candangoA2a,
 	#"candangoA4a": candangoA4a,
 	#"bossA5a": bossA5a,

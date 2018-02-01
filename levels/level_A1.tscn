@@ -58,10 +58,20 @@ transform/pos = Vector2( 504, 152 )
 
 transform/pos = Vector2( 520, 152 )
 
-[node name="candango" parent="common/math" instance=ExtResource( 6 )]
+[node name="candango1" parent="common/math" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 208, 144 )
-char_name = "Prof. Candango"
+lines_id = "candangoA1a"
+
+[node name="candango2" parent="common/math" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 440, 112 )
+lines_id = "candangoA1b"
+
+[node name="candango3" parent="common/math" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 840, 144 )
+lines_id = "candangoA1c"
 
 [node name="next_level" parent="common/action_areas"]
 
