@@ -115,4 +115,5 @@ func on_hit(body=null):
 func die():
 	self.state = DYING
 	clear_shapes()
+	get_node("hit_area").clear_shapes()
 	set_linear_damp(10)
