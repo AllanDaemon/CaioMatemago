@@ -37,9 +37,9 @@ func _ready():
 	ground_ray.add_exception(self)	# Avoid raycast to collide with player
 	set_debug(game.debug)
 	set_fixed_process(true)
-	set_process_input(true)
+	set_process_unhandled_input(true)
 
-func _input(event):
+func _unhandled_input(event):
 	if event.is_action_pressed("jump") and on_floor:
 		vel.y = JUMP_SPEED
 		state = JUMPING

@@ -74,4 +74,6 @@ autoplay = "default"
 
 [connection signal="body_enter" from="." to="." method="_on_player_near"]
 
+[connection signal="body_exit" from="." to="." method="_on_player_out"]
+
 

@@ -14,7 +14,7 @@ var lines_alt = [
 	"e inimigos se quiser sobreviver."],
 ]
 
-var curr_line = lines[1]
+var curr_line = "Unitialized"
 
 onready var char_label = get_node("char_label")
 onready var text_label = get_node("frame/text_label")
@@ -24,7 +24,13 @@ onready var anim = get_node("anim")
 func _ready():
 #	_update()
 #	show_text(lines)
+#	set_process_input(true)
 	pass
+
+func _input(ev):
+	if ev.is_action_pressed("jump") and not ev.is_echo():
+		get_tree().set_input_as_handled()
+		next_line()
 
 func _update():
 	_update_char()
@@ -47,6 +53,20 @@ func show_line(line, char=null):
 
 func show_text(_lines, char=null):
 	lines = _lines
-	for line in lines:
-		show_line(line, char)
-		yield(anim, "finished")
+	set_process_input(true)
+	next_line(char)
+#	for line in lines:
+#		show_line(line, char)
+#		yield(anim, "finished")
+
+func next_line(char=null):
+	print("Next line")
+	if lines.size()==0:
+		set_process_input(false)
+		print("Text finished")
+		return
+	print("goto next line")
+	var line = lines[0]
+	lines.pop_front()
+	show_line(line, char)
+	
