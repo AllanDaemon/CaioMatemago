@@ -21,6 +21,8 @@ func _init_scene_ctl(div=5):
 	var level_ctl = get_node("screen_panel/level_ctl")
 	scene_ctl.clear()
 	level_ctl.clear()
+	scene_ctl.add_item("Scene", -1)
+	level_ctl.add_item("Level", -1)
 	for n in range(game.scenes_name.size()):
 		if n < div:
 			scene_ctl.add_item(game.scenes_name[n], n)
@@ -28,6 +30,7 @@ func _init_scene_ctl(div=5):
 			level_ctl.add_item(game.scenes_name[n], n)
 
 func _on_scene_select(value, offset=0):
+	offset -= 1		# Don't count the placeholder option
 	printt("Debug scene selection:", value, offset, offset+value)
 	game.change_level(game.scenes_name[offset+value])
 	game.on_menu = false
