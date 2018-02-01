@@ -61,6 +61,7 @@ transform/pos = Vector2( 520, 152 )
 [node name="candango" parent="common/math" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 208, 144 )
+char_name = "Prof. Candango"
 
 [node name="next_level" parent="common/action_areas"]
 

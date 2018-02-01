@@ -44,4 +44,5 @@ const lines_map = {
 	#"candangoA4a": candangoA4a,
 	#"bossA5a": bossA5a,
 	#"candangoA5a": candangoA5a,
+	"": ["Missing an line ID!", "¯\\_(ツ)_/¯"]
 }
