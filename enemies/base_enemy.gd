@@ -24,7 +24,6 @@ onready var raycasts_floor = get_node("raycasts_floor")
 onready var raycasts_wall = get_node("raycasts_wall")
 onready var anim = get_node("anim")
 onready var fx_sounds = get_node("fx_sounds")
-#onready var sprite = get_node("sprite_anim_"+enemy_type)
 onready var sprite
 
 const cooldown_value = 10
@@ -34,15 +33,12 @@ func _ready():
 	_setup_enemy_type()
 	set_direction(opposite[default_direction])
 	set_state()
-	set_fixed_process(true)
-
-func _enter_tree():
-	_setup_enemy_type()
+	if not get_tree().is_editor_hint():
+		set_fixed_process(true)
 
 func _set_enemy_type(value):
 	enemy_type = value
 	_setup_enemy_type()
-	update()
 
 func _setup_enemy_type():
 	if has_node("sprite_anim_" + enemy_type):
@@ -50,6 +46,7 @@ func _setup_enemy_type():
 		get_node("sprite_anim_berigelante").hide()
 		sprite = get_node("sprite_anim_" + enemy_type)
 		if sprite: sprite.show()
+		update()
 
 func _integrate_forces(s):
 	pass
