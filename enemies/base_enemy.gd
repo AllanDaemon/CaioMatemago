@@ -42,11 +42,12 @@ func _enter_tree():
 func _set_enemy_type(value):
 	enemy_type = value
 	_setup_enemy_type()
+	update()
 
 func _setup_enemy_type():
-#	get_node("sprite_anim_green").hide()
-#	get_node("sprite_anim_berigelante").hide()
 	if has_node("sprite_anim_" + enemy_type):
+		get_node("sprite_anim_green").hide()
+		get_node("sprite_anim_berigelante").hide()
 		sprite = get_node("sprite_anim_" + enemy_type)
 		if sprite: sprite.show()
 
