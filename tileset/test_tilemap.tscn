@@ -80,6 +80,9 @@ __meta__ = {
 
 [node name="ref_marks" parent="info" instance=ExtResource( 2 )]
 
+collision/layers = 0
+collision/mask = 0
+
 [node name="reference" type="Sprite" parent="info"]
 
 visibility/visible = false
