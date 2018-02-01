@@ -5,7 +5,7 @@
 [ext_resource path="res://tileset/test_tilemap.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenario/question_group.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenario/coin.tscn" type="PackedScene" id=5]
-[ext_resource path="res://player/enemy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://enemies/old_enemy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://player/candango.tscn" type="PackedScene" id=7]
 
 [node name="game_test" type="Node2D" groups=[
@@ -118,7 +118,7 @@ transform/pos = Vector2( 402, 86 )
 
 transform/pos = Vector2( 402, 62 )
 
-[node name="enemy" parent="common/enemies" instance=ExtResource( 6 )]
+[node name="old_enemy" parent="common/enemies" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 688, 80 )
 

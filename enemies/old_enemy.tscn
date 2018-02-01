@@ -1,9 +1,9 @@
 [gd_scene load_steps=12 format=1]
 
-[ext_resource path="res://player/enemy.gd" type="Script" id=1]
-[ext_resource path="res://player/enemy_sprite1.tres" type="Texture" id=2]
-[ext_resource path="res://player/enemy_sprite2.tres" type="Texture" id=3]
-[ext_resource path="res://player/enemy_sprite3.tres" type="Texture" id=4]
+[ext_resource path="res://enemies/old_enemy.gd" type="Script" id=1]
+[ext_resource path="res://enemies/sprites/beringelante_sprite1.tres" type="Texture" id=2]
+[ext_resource path="res://enemies/sprites/beringelante_sprite2.tres" type="Texture" id=3]
+[ext_resource path="res://enemies/sprites/beringelante_sprite3.tres" type="Texture" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -105,6 +105,7 @@ __meta__ = {
 editor/display_folded = true
 frames = SubResource( 3 )
 animation = "walk"
+frame = 1
 playing = true
 __meta__ = {
 "_edit_lock_": true
@@ -113,7 +114,7 @@ __meta__ = {
 [node name="sprite1" type="Sprite" parent="sprite_anim"]
 
 visibility/visible = false
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
 region_rect = Rect2( 8, 32, 32, 16 )
 
 [node name="sprite2" type="Sprite" parent="sprite_anim"]
@@ -125,7 +126,7 @@ region_rect = Rect2( 8, 32, 32, 16 )
 [node name="sprite3" type="Sprite" parent="sprite_anim"]
 
 visibility/visible = false
-texture = ExtResource( 4 )
+texture = ExtResource( 2 )
 region_rect = Rect2( 8, 32, 32, 16 )
 
 [node name="anim" type="AnimationPlayer" parent="."]
