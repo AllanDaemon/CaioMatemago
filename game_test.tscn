@@ -123,6 +123,10 @@ transform/pos = Vector2( 402, 62 )
 transform/pos = Vector2( 656, 64 )
 can_fall = true
 
+[node name="base_enemy1" parent="common/enemies" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 552, 72 )
+
 [node name="math" parent="common"]
 
 editor/display_folded = true

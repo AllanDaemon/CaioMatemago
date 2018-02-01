@@ -115,7 +115,16 @@ func _fixed_process(delta):
 		if char.direction == char.RIGHT
 		else Color(0,0,1,1) )
 
+	var vel = char.get_linear_velocity()
 	get_node(\"up1_label\").set_text(\"left\" if char.direction == char.LEFT else \"right\")
+	get_node(\"up2_label\").set_text(\"cool \" + str(char.cooldown))
+	get_node(\"up3_label\").set_text(\"vel.x \\t\" + str(vel.x))
+	get_node(\"up4_label\").set_text(\"vel.y \\t\" + str(vel.y))
+	
+	get_node(\"graph\").add(char.cooldown)
+#	get_node(\"graph\").add(vel.x)
+#	get_node(\"graph2\").add(vel.y)
+	
 	
 	"
 
@@ -142,11 +151,11 @@ sleeping = false
 can_sleep = true
 velocity/linear = Vector2( 0, 0 )
 velocity/angular = 0.0
-damp_override/linear = -1.0
+damp_override/linear = 0.0
 damp_override/angular = -1.0
 script/script = ExtResource( 1 )
-default_state = null
 can_fall = false
+default_state = 1
 
 [node name="collision" type="CollisionShape2D" parent="."]
 
@@ -252,18 +261,6 @@ script/script = SubResource( 7 )
 debug = true
 
 [node name="up5_label" parent="DBG"]
-
-visibility/visible = false
-
-[node name="up4_label" parent="DBG"]
-
-visibility/visible = false
-
-[node name="up3_label" parent="DBG"]
-
-visibility/visible = false
-
-[node name="up2_label" parent="DBG"]
 
 visibility/visible = false
 
