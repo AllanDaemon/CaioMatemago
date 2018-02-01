@@ -21,6 +21,7 @@ onready var raycasts_floor = get_node("raycasts_floor")
 onready var raycasts_wall = get_node("raycasts_wall")
 onready var sprite = get_node("sprite_anim")
 onready var anim = get_node("anim")
+onready var fx_sounds = get_node("fx_sounds")
 
 const cooldown_value = 10
 var cooldown = 0
@@ -47,11 +48,9 @@ func _should_change_direction():
 				none_hit = false
 		if none_hit:
 			self.state = FALLING
-#			set_state(FALLING)
 			return false
 		if some_hit or state==FALLING:
 			self.state = default_state
-#			set_state(default_state)
 			return true
 	for ray in raycasts_wall.get_children():
 		if ray.is_colliding():
@@ -84,11 +83,19 @@ func set_state(value=default_state):
 	state = value
 	state_name = state_names[state]
 	prints("Enemy", self, "\tState:", state_name)
+	if fx_sounds.get_sample_library().has_sample(state_name):
+		fx_sounds.play(state_name)
 	if sprite.get_sprite_frames().has_animation(state_name):
 		sprite.play(state_name)
 	if anim.has_animation(state_name):
 		anim.play(state_name)
 
-func hit():
-	#self.state = DYING
-	set_state(DYING)
+func on_hit(body=null):
+	print("Enemy hit", body)
+	if body and body.is_in_group("player"):
+		die()
+
+func die():
+	self.state = DYING
+	clear_shapes()
+	set_linear_damp(10)
