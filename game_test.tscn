@@ -120,7 +120,14 @@ transform/pos = Vector2( 402, 62 )
 
 [node name="candango" parent="common/math" instance=ExtResource( 6 )]
 
-transform/pos = Vector2( 688, 128 )
+transform/pos = Vector2( 688, 144 )
+
+[node name="dialog" parent="common/math" instance=ExtResource( 7 )]
+
+margin/left = 688.0
+margin/top = 64.0
+margin/right = 776.0
+margin/bottom = 104.0
 
 [node name="player" parent="common"]
 
@@ -131,8 +138,6 @@ debug = false
 [node name="HUD" parent="common"]
 
 editor/display_folded = false
-
-[node name="dialog" parent="common/HUD" instance=ExtResource( 7 )]
 
 
 [editable path="common"]
