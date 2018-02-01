@@ -139,5 +139,11 @@
 		* Last door control
 	* Mutiples operations
 
+
+
+### Refactor
+
 - Question group
 	- rename to better names
+
+- s/player/personagens-characters/
