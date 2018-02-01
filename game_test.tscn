@@ -128,6 +128,10 @@ editor/display_folded = true
 transform/pos = Vector2( 552, 64 )
 debug = false
 
+[node name="HUD" parent="common"]
+
+editor/display_folded = false
+
 [node name="dialog" parent="common/HUD" instance=ExtResource( 7 )]
 
 
