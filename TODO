@@ -54,24 +54,26 @@
 
 
 @ Prof Candango
-	* Scene OK
-		Sprite OK
+#	Scene OK
+#		Sprite OK
+#	Area2D OK
 	* Anim
 		* default
 		* happy
-	* Code
-	* Dialog box integration
-	@ Area2D OK
+#	Code OK
+#	Dialog box integration OK
 
 
-@ Dialog box
-	* Scene
-		* Sprite
-	* Anim
-	* Code
-		* Activate
-		* Show line
-		* Interact next line
++ Dialog box
+#	Scene OK
+#		Sprite OK
+	* Anim ~OK
+	* Code ~OK
+#		Activate OK
+#		Show line OK
+#		Interact next line OK
+	* Improve speed
+	* Put visual ... indication
 
 * Bubble Block
 	* Scene
