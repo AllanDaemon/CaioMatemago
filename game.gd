@@ -99,8 +99,7 @@ func _input(ev):
 	elif ev.is_action_pressed("quit") and not ev.is_echo():
 		quit()
 	elif ev.is_action_pressed("reload") and not ev.is_echo():
-		if not current_scene_name: current_scene_name = initial_level
-		change_level(current_scene_name)
+		reload()
 	
 	elif ev.type == InputEvent.KEY:
 		var key2level = {
@@ -176,6 +175,10 @@ func change_level(level):
 
 func change_level_smooth(level, transition_duration=0.5):
 	change_level(level)
+
+func reload():
+	if not current_scene_name: current_scene_name = initial_level
+		change_level(current_scene_name)
 
 func quit():
 	tree.quit()
