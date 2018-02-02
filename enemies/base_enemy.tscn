@@ -182,8 +182,6 @@ shape = SubResource( 1 )
 trigger = false
 _update_shape_index = 0
 
-[node name="green" type="Node2D" parent="."]
-
 [node name="sprite_anim_green" type="AnimatedSprite" parent="."]
 
 editor/display_folded = true
@@ -281,6 +279,20 @@ shape = SubResource( 4 )
 trigger = true
 _update_shape_index = 2
 
+[node name="attack_area" type="Area2D" parent="."]
+
+editor/display_folded = true
+input/pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+
+[node name="hitbox" type="CollisionShape2D" parent="attack_area"]
+
+trigger = false
+_update_shape_index = -1
+
 [node name="raycasts_floor" type="Node2D" parent="."]
 
 [node name="raycast_left" type="RayCast2D" parent="raycasts_floor"]
@@ -299,7 +311,7 @@ cast_to = Vector2( 0, 3 )
 layer_mask = 1
 type_mask = 15
 
-[node name="raycasts_wall" type="Node2D" parent="."]
+[node name="raycasts_wall" type="Area2D" parent="."]
 
 editor/display_folded = true
 
