@@ -25,6 +25,7 @@ export (int) var score_value_boss = 1000
 
 onready var tree = get_tree()
 onready var root = get_tree().get_root()
+onready var player = root.find_node("player")
 
 
 var current_level

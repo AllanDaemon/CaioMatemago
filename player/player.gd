@@ -5,10 +5,8 @@ extends KinematicBody2D
 
 export (bool) var debug = true setget set_debug
 
-onready var ground_ray = get_node("ground_ray")
-onready var sprite = get_node("sprite")
-onready var animation = get_node("anim")
 
+# Movement
 const ACCEL = 1200
 const MAX_SPEED = 100
 const FRICTION = -500
@@ -22,8 +20,8 @@ const FLOOR_NORMAL = Vector2(0,-1)
 const SLOPE_SLIDE_STOP = 25.0
 const FALLING_ANIM_THRESHOLD = 200
 
-enum states {JUMPING, FALLING, IDLE, WALKING}
-const states_name = ["jumping", "falling", "idle", "walking"]
+enum states {JUMPING, FALLING, IDLE, WALKING, DYING}
+const states_name = ["jumping", "falling", "idle", "walking", "dying"]
 
 var acc = Vector2()
 var vel = Vector2()
@@ -31,7 +29,23 @@ var anim = "idle"
 var on_floor = false
 var state = FALLING
 
+export (int, 0, 500) var max_health = 100
+export (int, 0 ,500) var health = max_health
+var reincarnation_number = 0
+var enemies_a = 0
+var enemies_b = 0
+
 var dbg_max = -MAX_JUMP * 10
+
+onready var ground_ray = get_node("ground_ray")
+onready var sprite = get_node("sprite")
+onready var animation = get_node("anim")
+
+
+func set_debug(value):
+	debug = value
+	if has_node("DBG") and get_node("DBG"):
+		get_node("DBG").set_hidden(not value)
 
 func _ready():
 	ground_ray.add_exception(self)	# Avoid raycast to collide with player
@@ -149,7 +163,5 @@ func change_anim(anim):
 			print("Vel: ", vel)
 		animation.play(anim)
 
-func set_debug(value):
-	debug = value
-	if has_node("DBG") and get_node("DBG"):
-		get_node("DBG").set_hidden(not value)
+func _on_hit(body):
+	prints("Player hitted")
