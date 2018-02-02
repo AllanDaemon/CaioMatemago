@@ -118,6 +118,7 @@ func _fixed_process(delta):
 			anim = "walking"
 		if get_pos().y > DEAD_ZONE_THRESHOLD:
 			die()
+			return
 	change_anim(anim)
 	
 
