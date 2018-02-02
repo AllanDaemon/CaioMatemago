@@ -245,12 +245,12 @@ texture = SubResource( 3 )
 
 [node name="hit_area" type="Area2D" parent="."]
 
-input/pickable = true
+input/pickable = false
 shapes/0/shape = SubResource( 4 )
-shapes/0/transform = Matrix32( 1, 0, 0, 1, -3, -14 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, -4, -14 )
 shapes/0/trigger = true
 shapes/1/shape = SubResource( 4 )
-shapes/1/transform = Matrix32( 1, 0, 0, 1, 2, -14 )
+shapes/1/transform = Matrix32( 1, 0, 0, 1, 4, -14 )
 shapes/1/trigger = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -259,21 +259,19 @@ angular_damp = 1.0
 
 [node name="hit_box1" type="CollisionShape2D" parent="hit_area"]
 
-transform/pos = Vector2( -3, -14 )
+transform/pos = Vector2( -4, -14 )
 shape = SubResource( 4 )
 trigger = true
 _update_shape_index = 0
 
 [node name="hit_box2" type="CollisionShape2D" parent="hit_area"]
 
-transform/pos = Vector2( 2, -14 )
+transform/pos = Vector2( 4, -14 )
 shape = SubResource( 4 )
 trigger = true
 _update_shape_index = 1
 
 [node name="raycasts_floor" type="Node2D" parent="."]
-
-editor/display_folded = true
 
 [node name="raycast_left" type="RayCast2D" parent="raycasts_floor"]
 
@@ -345,6 +343,7 @@ default/chorus_send = 0.0
 [node name="DBG" parent="." instance=ExtResource( 8 )]
 
 editor/display_folded = true
+visibility/visible = false
 margin/top = -10.0
 margin/bottom = 30.0
 script/script = SubResource( 8 )
