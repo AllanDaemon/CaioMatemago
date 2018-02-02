@@ -112,6 +112,11 @@ func set_state(value=default_state):
 	if anim.has_animation(state_name):
 		anim.play(state_name)
 
+func _on_body_hit(body):
+	prints("Player hit test", body)
+	if body and body.is_in_group("player"):
+		prints("Player hitted")
+
 func on_hit(body=null):
 	print("Enemy hit", body)
 	if body and body.is_in_group("player"):
