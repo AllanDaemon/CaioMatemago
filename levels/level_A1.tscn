@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://levels/base.gd" type="Script" id=1]
 [ext_resource path="res://levels/common.tscn" type="PackedScene" id=2]
 [ext_resource path="res://tileset/levels/level_A1.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenario/question_group.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenario/coin.tscn" type="PackedScene" id=5]
-[ext_resource path="res://player/candango.tscn" type="PackedScene" id=6]
+[ext_resource path="res://enemies/base_enemy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://player/candango.tscn" type="PackedScene" id=7]
 
 [node name="level_A1" type="Node2D" groups=[
 "debug",
@@ -22,17 +23,11 @@ __meta__ = {
 
 editor/display_folded = true
 
-[node name="tilemap" parent="common"]
-
-editor/display_folded = true
-
 [node name="scenario_tilemap" parent="common/tilemap" instance=ExtResource( 3 )]
 
+[node name="questions" parent="common"]
+
 editor/display_folded = true
-
-[node name="info" parent="common/tilemap/scenario_tilemap"]
-
-visibility/visible = false
 
 [node name="question_group" parent="common/questions" instance=ExtResource( 4 )]
 
@@ -58,17 +53,21 @@ transform/pos = Vector2( 504, 152 )
 
 transform/pos = Vector2( 520, 152 )
 
-[node name="candango1" parent="common/math" instance=ExtResource( 6 )]
+[node name="base_enemy" parent="common/enemies" instance=ExtResource( 6 )]
 
-transform/pos = Vector2( 208, 144 )
+transform/pos = Vector2( 416, 112 )
+
+[node name="candango1" parent="common/math" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 200, 144 )
 lines_id = "candangoA1a"
 
-[node name="candango2" parent="common/math" instance=ExtResource( 6 )]
+[node name="candango2" parent="common/math" instance=ExtResource( 7 )]
 
-transform/pos = Vector2( 440, 112 )
+transform/pos = Vector2( 480, 112 )
 lines_id = "candangoA1b"
 
-[node name="candango3" parent="common/math" instance=ExtResource( 6 )]
+[node name="candango3" parent="common/math" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 840, 144 )
 lines_id = "candangoA1c"
@@ -77,6 +76,10 @@ lines_id = "candangoA1c"
 
 enabled = true
 goto_scene = "level_A2"
+
+[node name="player" parent="common"]
+
+transform/pos = Vector2( 56, 128 )
 
 
 [editable path="common"]
