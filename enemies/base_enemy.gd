@@ -12,16 +12,17 @@ const state_names = ["IDLE", "WALKING", "FALLING", "DYING"]
 var state = -1 setget _set_state
 var state_name
 
-enum directions {LEFT, RIGHT}
-const opposite = {LEFT: RIGHT, RIGHT: LEFT}
-const directions_name = {LEFT: "LEFT", RIGHT: "RIGHT"}
-var default_direction = RIGHT # Exportig fails... 
+enum directions {RIGHT, LEFT}
+const opposite = {RIGHT: LEFT, LEFT: RIGHT}
+const directions_name = {RIGHT: "RIGHT", LEFT: "LEFT"}
+var default_direction = LEFT # Exportig fails...
+#export (int, "RIGHT", "LEFT") var default_direction = LEFT
 var direction = -1 setget _set_direction
 const default_velocity = Vector2(50, 0)
 const direction_x_vel = {
-	LEFT: default_velocity.x *  1,
-	RIGHT: default_velocity.x * -1}
-const direction_flipped_h = {LEFT: true, RIGHT: false}
+	RIGHT: default_velocity.x *  1,
+	LEFT: default_velocity.x * -1}
+const direction_flipped_h = {RIGHT: true, LEFT: false}
 
 onready var game = get_node("/root/game")
 onready var raycasts_floor = get_node("raycasts_floor")
@@ -98,10 +99,10 @@ func _fixed_process(delta):
 			vel.x = direction_x_vel[direction]
 			set_linear_velocity(vel)
 
-func change_direction(to=LEFT):
+func change_direction(to=default_direction):
 	self.direction = (opposite[direction])
 
-func _set_direction(to=LEFT):
+func _set_direction(to=default_direction):
 	if not _post_ready: return
 	if to == direction: return
 	direction = to
@@ -110,7 +111,7 @@ func _set_direction(to=LEFT):
 	set_linear_velocity(vel)
 	var direction_name_lower = directions_name[direction].to_lower()
 	for ray in raycasts_wall.get_children():
-		ray.set_enabled(not ray.get_name().ends_with(direction_name_lower))
+		ray.set_enabled(ray.get_name().ends_with(direction_name_lower))
 
 
 func _set_state(value=default_state):
