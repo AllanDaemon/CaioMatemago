@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=1]
+[gd_scene load_steps=15 format=1]
 
 [ext_resource path="res://player/player.gd" type="Script" id=1]
 [ext_resource path="res://player/Caio.png" type="Texture" id=2]
 [ext_resource path="res://player/caio_gameover.png" type="Texture" id=3]
 [ext_resource path="res://controls/plotter.tscn" type="PackedScene" id=4]
-[ext_resource path="res://audio/Jump.wav" type="Sample" id=5]
+[ext_resource path="res://audio/MorteJogador.wav" type="Sample" id=5]
+[ext_resource path="res://audio/Jump.wav" type="Sample" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -52,6 +53,18 @@ tracks/2/keys = {
 "values": [ {
 "args": [  ],
 "method": "reload"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("fx_sounds")
+tracks/3/interp = 1
+tracks/3/imported = false
+tracks/3/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"values": [ {
+"args": [ "dying" ],
+"method": "play"
 } ]
 }
 
@@ -133,11 +146,17 @@ tracks/0/keys = {
 
 [sub_resource type="SampleLibrary" id=8]
 
-samples/jump = {
+samples/dying = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
 "sample": ExtResource( 5 )
+}
+samples/jump = {
+"db": 0.0,
+"pitch": 1.0,
+"priority": 0,
+"sample": ExtResource( 6 )
 }
 
 [node name="player" type="KinematicBody2D" groups=[
