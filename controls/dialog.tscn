@@ -88,17 +88,14 @@ focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 8.0
-margin/top = 8.0
+margin/top = 4.0
 margin/right = 1288.0
-margin/bottom = 568.0
+margin/bottom = 564.0
 custom_fonts/normal_font = ExtResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode/enabled = true
 bbcode/bbcode = "Ei, garoto! Cuidado com o buraco.
-O vale da soma é um lugar perigoso,
-
-não se esqueça de saltar obstáculos
-e inimigos se quiser sobreviver."
+O vale da soma é um lugar perigoso..."
 visible_characters = -1
 percent_visible = 1.0
 
