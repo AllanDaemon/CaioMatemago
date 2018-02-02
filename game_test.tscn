@@ -16,6 +16,10 @@ script/script = ExtResource( 1 )
 
 [node name="common" parent="." instance=ExtResource( 2 )]
 
+[node name="tilemap" parent="common"]
+
+editor/display_folded = true
+
 [node name="scenario_tilemap" parent="common/tilemap" instance=ExtResource( 3 )]
 
 editor/display_folded = true
@@ -126,6 +130,7 @@ enemy_type = "berigelante"
 
 [node name="base_enemy2" parent="common/enemies" instance=ExtResource( 6 )]
 
+editor/display_folded = true
 transform/pos = Vector2( 695, 141 )
 default_direction = 0
 
@@ -136,7 +141,11 @@ autostart = true
 
 [node name="sprite_anim_green" parent="common/enemies/base_enemy2"]
 
-frame = 1
+frame = 0
+
+[node name="sprite_anim_berigelante" parent="common/enemies/base_enemy2"]
+
+frame = 0
 
 [node name="math" parent="common"]
 
@@ -155,7 +164,8 @@ lines_id = "candangoA1b"
 [node name="player" parent="common"]
 
 editor/display_folded = true
-transform/pos = Vector2( 617, 116 )
+transform/pos = Vector2( 601, 97 )
+max_health = 1
 
 [node name="HUD" parent="common"]
 
