@@ -31,14 +31,13 @@ margin = Rect2( 0, 0, 0, 0 )
 custom_solver_bias = 0.0
 length = -1.0
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=5]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 8 )
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=6]
 
-resource/name = "DYING"
 length = 1.0
 loop = false
 step = 0.1
@@ -65,7 +64,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=7]
 
 length = 0.1
 loop = false
@@ -81,7 +80,7 @@ tracks/0/keys = {
 "values": [ "WALKING" ]
 }
 
-[sub_resource type="SampleLibrary" id=7]
+[sub_resource type="SampleLibrary" id=8]
 
 samples/DYING = {
 "db": 0.0,
@@ -90,7 +89,7 @@ samples/DYING = {
 "sample": ExtResource( 7 )
 }
 
-[sub_resource type="GDScript" id=8]
+[sub_resource type="GDScript" id=9]
 
 script/source = "extends Control
 
@@ -179,6 +178,14 @@ script/script = ExtResource( 1 )
 enemy_type = "green"
 can_fall = false
 default_state = 1
+default_direction = 1
+
+[node name="auto_turn" type="Timer" parent="."]
+
+process_mode = 1
+wait_time = 2.0
+one_shot = false
+autostart = false
 
 [node name="collision" type="CollisionShape2D" parent="."]
 
@@ -193,6 +200,7 @@ editor/display_folded = true
 transform/pos = Vector2( 0, -8 )
 frames = ExtResource( 2 )
 animation = "WALKING"
+frame = 2
 playing = true
 flip_h = true
 
@@ -223,6 +231,7 @@ visibility/visible = false
 transform/pos = Vector2( 0, -8 )
 frames = ExtResource( 6 )
 animation = "WALKING"
+frame = 1
 playing = true
 
 [node name="sprite1" type="Sprite" parent="sprite_anim_berigelante"]
@@ -247,6 +256,7 @@ texture = SubResource( 3 )
 
 [node name="hit_area" type="Area2D" parent="."]
 
+editor/display_folded = true
 input/pickable = false
 shapes/0/shape = SubResource( 4 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, -4, -14 )
@@ -285,8 +295,9 @@ _update_shape_index = 2
 
 [node name="attack_area" type="Area2D" parent="."]
 
+editor/display_folded = true
 input/pickable = true
-shapes/0/shape = SubResource( 9 )
+shapes/0/shape = SubResource( 5 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, -7 )
 shapes/0/trigger = true
 gravity_vec = Vector2( 0, 1 )
@@ -297,11 +308,13 @@ angular_damp = 1.0
 [node name="hitbox" type="CollisionShape2D" parent="attack_area"]
 
 transform/pos = Vector2( 0, -7 )
-shape = SubResource( 9 )
+shape = SubResource( 5 )
 trigger = true
 _update_shape_index = 0
 
 [node name="raycasts_floor" type="Node2D" parent="."]
+
+editor/display_folded = true
 
 [node name="raycast_left" type="RayCast2D" parent="raycasts_floor"]
 
@@ -321,6 +334,7 @@ type_mask = 15
 
 [node name="raycasts_wall" type="Area2D" parent="."]
 
+editor/display_folded = true
 input/pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -348,8 +362,8 @@ type_mask = 15
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/DYING = SubResource( 5 )
-anims/WALKING = SubResource( 6 )
+anims/DYING = SubResource( 6 )
+anims/WALKING = SubResource( 7 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -360,7 +374,7 @@ autoplay = "WALKING"
 ]]
 
 config/polyphony = 4
-config/samples = SubResource( 7 )
+config/samples = SubResource( 8 )
 default/volume_db = 0.0
 default/pitch_scale = 1.0
 default/pan = 0.0
@@ -380,10 +394,12 @@ editor/display_folded = true
 visibility/visible = false
 margin/top = -10.0
 margin/bottom = 30.0
-script/script = SubResource( 8 )
+script/script = SubResource( 9 )
 debug = true
 
 [connection signal="body_enter" from="." to="." method="_on_body_hit"]
+
+[connection signal="timeout" from="auto_turn" to="." method="change_direction"]
 
 [connection signal="body_enter" from="hit_area" to="." method="on_hit"]
 
