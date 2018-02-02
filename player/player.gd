@@ -29,8 +29,8 @@ var anim = "idle"
 var on_floor = false
 var state = FALLING
 
-export (int, 0, 500) var max_health = 5
-onready var health = max_health
+export (int, 0, 500) var max_health = 2
+onready var health = max_health setget _set_health
 var reincarnation_number = 0
 var enemies_a = 0
 var enemies_b = 0
@@ -164,5 +164,16 @@ func change_anim(anim):
 			print("Vel: ", vel)
 		animation.play(anim)
 
-func _on_hit(body):
-	prints("Player hitted")
+func _set_health(value):
+	health = value
+	if health <= 0:
+		die()
+
+func die():
+	prints("Player dying")
+	self.state = DYING
+	reincarnation_number += 1
+	change_anim("dying")
+	clear_shapes()
+	set_fixed_process(false)
+	#game.reload()

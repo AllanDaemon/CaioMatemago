@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=1]
+[gd_scene load_steps=14 format=1]
 
 [ext_resource path="res://player/player.gd" type="Script" id=1]
 [ext_resource path="res://player/Caio.png" type="Texture" id=2]
@@ -15,6 +15,45 @@ extents = Vector2( 6, 13.5 )
 
 custom_solver_bias = 0.0
 extents = Vector2( 8, 4 )
+
+[sub_resource type="Animation" id=8]
+
+resource/name = "dying"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("sprite:visibility/visible")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0.1 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("sprite_dead:visibility/visible")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 0.1 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("/root/game")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = {
+"times": FloatArray( 1 ),
+"transitions": FloatArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "reload"
+} ]
+}
 
 [sub_resource type="Animation" id=3]
 
@@ -118,7 +157,8 @@ collision/mask = 1
 collision/margin = 0.08
 script/script = ExtResource( 1 )
 debug = true
-max_health = 5
+DEAD_ZONE_THRESHOLD = 50
+max_health = 2
 
 [node name="colision" type="CollisionShape2D" parent="."]
 
@@ -162,6 +202,7 @@ type_mask = 15
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
+anims/dying = SubResource( 8 )
 anims/falling = SubResource( 3 )
 anims/idle = SubResource( 4 )
 anims/jumping = SubResource( 5 )
