@@ -15,6 +15,7 @@ onready var anim = get_node("anim")
 
 
 func _input(ev):
+	return
 	if ev.is_action_pressed("jump") and not ev.is_echo():
 		get_tree().set_input_as_handled()
 		next_line()
