@@ -20,6 +20,12 @@ export (int) var score_value_wrong_op = -10
 export (int) var score_value_enemy = 50
 export (int) var score_value_boss = 1000
 
+const enemy_type_damage = {
+	'green': 1,
+	'berigelante': 2,
+	'boss': 5,
+}
+
 
 ## States
 
@@ -188,3 +194,7 @@ func operation_wrong(value=1):
 	score += score_value_wrong_op * value
 	emit_signal("update_score")
 
+
+func player_hit(enemy_type):
+	player.health -= enemy_type_damage[enemy_type]
+	prints("Player hit:", player.health)
