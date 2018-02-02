@@ -5,6 +5,7 @@ export (bool) var debug = true setget set_debug
 
 onready var game = get_node("/root/game")
 onready var player = get_node("player")
+onready var _post_ready = true
 
 
 # For debug
@@ -14,6 +15,7 @@ var vol
 var vol_db
 
 func _ready():
+	self.debug = game.debug
 	set_process(debug)
 	game.update_volume()
 
@@ -26,6 +28,7 @@ func _update_dbg_info():
 	volume_dbg.set_text(str(vol)+"\n"+str(vol_db)+"db")
 
 func set_debug(value):
+	if not _post_ready: return
 	debug = value
 	if player and "debug" in player: player.debug = debug
 	if has_node("background/background") and \

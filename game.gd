@@ -171,14 +171,15 @@ func change_level(level):
 	current_scene = tree.get_current_scene()
 	current_level = current_scene
 	set_process_input(level!="intro")
+	self.debug = debug
 	emit_signal("update_level", level)
 
 func change_level_smooth(level, transition_duration=0.5):
 	change_level(level)
 
 func reload():
-	if not current_scene_name: current_scene_name = initial_level
-		change_level(current_scene_name)
+	tree.reload_current_scene()
+	self.debug = not debug; self.debug = not debug
 
 func quit():
 	tree.quit()
