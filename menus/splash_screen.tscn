@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=1]
+[gd_scene load_steps=5 format=1]
 
 [ext_resource path="res://fonts/averia80pt.tres" type="DynamicFont" id=1]
+[ext_resource path="res://audio/Stage load screen.ogg" type="AudioStream" id=2]
 
 [sub_resource type="GDScript" id=1]
 
@@ -142,5 +143,18 @@ playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = "level_load"
+
+[node name="bg_fx_sound" type="StreamPlayer" parent="." groups=[
+"bg_sound",
+]]
+
+stream/stream = ExtResource( 2 )
+stream/play = false
+stream/loop = false
+stream/volume_db = 0.0
+stream/autoplay = true
+stream/paused = false
+stream/loop_restart_time = 0.0
+stream/buffering_ms = 500
 
 
