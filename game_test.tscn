@@ -118,12 +118,18 @@ transform/pos = Vector2( 402, 62 )
 [node name="base_enemy" parent="common/enemies" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 695, -57 )
-can_fall = true
+default_direction = 1
 
 [node name="base_enemy1" parent="common/enemies" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 552, 72 )
 enemy_type = "berigelante"
+default_direction = 1
+
+[node name="base_enemy2" parent="common/enemies" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 695, 141 )
+default_direction = 1
 
 [node name="math" parent="common"]
 
@@ -142,7 +148,7 @@ lines_id = "candangoA1b"
 [node name="player" parent="common"]
 
 editor/display_folded = true
-transform/pos = Vector2( 603, 2 )
+transform/pos = Vector2( 617, 116 )
 
 [node name="HUD" parent="common"]
 
