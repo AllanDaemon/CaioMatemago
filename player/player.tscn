@@ -118,6 +118,7 @@ collision/mask = 1
 collision/margin = 0.08
 script/script = ExtResource( 1 )
 debug = true
+max_health = 5
 
 [node name="colision" type="CollisionShape2D" parent="."]
 
@@ -174,8 +175,6 @@ autoplay = "idle"
 "debug",
 ]]
 
-editor/display_folded = true
-visibility/visible = false
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -184,6 +183,23 @@ margin/left = 0.0
 margin/top = 0.0
 margin/right = 40.0
 margin/bottom = 40.0
+
+[node name="up6_label" type="Label" parent="DBG"]
+
+rect/scale = Vector2( 0.5, 0.5 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = -57.0
+margin/top = -53.0
+margin/right = 171.0
+margin/bottom = -39.0
+text = "diff"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 [node name="up5_label" type="Label" parent="DBG"]
 

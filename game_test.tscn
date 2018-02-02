@@ -143,9 +143,6 @@ lines_id = "candangoA1b"
 
 editor/display_folded = true
 transform/pos = Vector2( 603, 2 )
-debug = false
-max_health = 100
-health = null
 
 [node name="HUD" parent="common"]
 

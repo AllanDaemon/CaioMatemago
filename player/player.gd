@@ -29,8 +29,8 @@ var anim = "idle"
 var on_floor = false
 var state = FALLING
 
-export (int, 0, 500) var max_health = 100
-export (int, 0 ,500) var health = max_health
+export (int, 0, 500) var max_health = 5
+onready var health = max_health
 var reincarnation_number = 0
 var enemies_a = 0
 var enemies_b = 0
@@ -147,6 +147,7 @@ func _fixed_process(delta):
 	get_node("DBG/up3_label").set_text("V "+str(vel))
 	get_node("DBG/up4_label").set_text("R "+str(remain))
 	get_node("DBG/up5_label").set_text("D "+str(rdiff))
+	get_node("DBG/up6_label").set_text("❤️ "+str(health))
 	get_node("DBG/graph").add(vel.y)
 	get_node("DBG/graph2").add(rdiff.y)
 	if vel.y > dbg_max:
