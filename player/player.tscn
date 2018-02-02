@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=1]
+[gd_scene load_steps=13 format=1]
 
 [ext_resource path="res://player/player.gd" type="Script" id=1]
 [ext_resource path="res://player/Caio.png" type="Texture" id=2]
-[ext_resource path="res://controls/plotter.tscn" type="PackedScene" id=3]
-[ext_resource path="res://audio/Jump.wav" type="Sample" id=4]
+[ext_resource path="res://player/caio_gameover.png" type="Texture" id=3]
+[ext_resource path="res://controls/plotter.tscn" type="PackedScene" id=4]
+[ext_resource path="res://audio/Jump.wav" type="Sample" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -97,7 +98,7 @@ samples/jump = {
 "db": 0.0,
 "pitch": 1.0,
 "priority": 0,
-"sample": ExtResource( 4 )
+"sample": ExtResource( 5 )
 }
 
 [node name="player" type="KinematicBody2D" groups=[
@@ -118,12 +119,6 @@ collision/margin = 0.08
 script/script = ExtResource( 1 )
 debug = true
 
-[node name="sprite" type="Sprite" parent="."]
-
-texture = ExtResource( 2 )
-hframes = 9
-frame = 5
-
 [node name="colision" type="CollisionShape2D" parent="."]
 
 visibility/visible = false
@@ -139,8 +134,21 @@ shape = SubResource( 2 )
 trigger = true
 _update_shape_index = 1
 
+[node name="sprite" type="Sprite" parent="."]
+
+texture = ExtResource( 2 )
+hframes = 9
+frame = 5
+
+[node name="sprite_dead" type="Sprite" parent="."]
+
+visibility/visible = false
+transform/pos = Vector2( 0, 2 )
+texture = ExtResource( 3 )
+
 [node name="ground_ray" type="RayCast2D" parent="."]
 
+visibility/visible = false
 transform/pos = Vector2( 0, 13 )
 transform/scale = Vector2( 1, 2 )
 enabled = true
@@ -353,7 +361,7 @@ texture/rotation = 0.0
 invert/enable = false
 invert/border = 100.0
 
-[node name="graph" parent="DBG" instance=ExtResource( 3 )]
+[node name="graph" parent="DBG" instance=ExtResource( 4 )]
 
 margin/left = 15.0
 margin/top = -60.0
@@ -363,7 +371,7 @@ height = 30
 number_of_points = 100
 decrease_maximum = false
 
-[node name="graph2" parent="DBG" instance=ExtResource( 3 )]
+[node name="graph2" parent="DBG" instance=ExtResource( 4 )]
 
 margin/left = 15.0
 margin/right = 55.0
