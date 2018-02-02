@@ -97,6 +97,7 @@ func set_direction(to=LEFT):
 
 func set_state(value=default_state):
 	if state == value: return
+	if state == DYING: return
 	state = value
 	state_name = state_names[state]
 	prints("Enemy", self, "\tState:", state_name)
