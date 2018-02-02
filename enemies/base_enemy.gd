@@ -4,17 +4,19 @@ extends RigidBody2D
 export (String, "green", "berigelante") var enemy_type = "green" setget _set_enemy_type
 
 export (bool) var can_fall = false
+
 enum states {IDLE, WALKING, FALLING, DYING}
 export (int, "IDLE", "WALKING", "FALLING", "DYING") \
 		var default_state = WALKING
 const state_names = ["IDLE", "WALKING", "FALLING", "DYING"]
-var state = -1 setget set_state
+var state = -1 setget _set_state
 var state_name
+
 enum directions {LEFT, RIGHT}
 const opposite = {LEFT: RIGHT, RIGHT: LEFT}
 const directions_name = {LEFT: "LEFT", RIGHT: "RIGHT"}
 var default_direction = RIGHT # Exportig fails... 
-var direction = -1 setget set_direction
+var direction = -1 setget _set_direction
 const default_velocity = Vector2(50, 0)
 const direction_x_vel = {
 	LEFT: default_velocity.x *  1,
@@ -26,19 +28,24 @@ onready var raycasts_wall = get_node("raycasts_wall")
 onready var anim = get_node("anim")
 onready var fx_sounds = get_node("fx_sounds")
 onready var sprite
+onready var _post_ready = true
 
 const cooldown_value = 10
 var cooldown = 0
 
 func _ready():
-	_setup_enemy_type()
-	set_direction(opposite[default_direction])
-	set_state()
+	_init_defaults()	
 	if not get_tree().is_editor_hint():
 		set_fixed_process(true)
 
+func _init_defaults():
+	_setup_enemy_type()
+	_set_direction(opposite[default_direction])
+	_set_state(default_state)
+
 func _set_enemy_type(value):
 	enemy_type = value
+	if not _post_ready: return
 	_setup_enemy_type()
 
 func _setup_enemy_type():
@@ -48,9 +55,6 @@ func _setup_enemy_type():
 		sprite = get_node("sprite_anim_" + enemy_type)
 		if sprite: sprite.show()
 		update()
-
-func _integrate_forces(s):
-	pass
 
 func _should_change_direction():
 	if cooldown:
@@ -86,9 +90,10 @@ func _fixed_process(delta):
 			set_linear_velocity(vel)
 
 func change_direction(to=LEFT):
-	set_direction(opposite[direction])
+	self.direction = (opposite[direction])
 
-func set_direction(to=LEFT):
+func _set_direction(to=LEFT):
+	if not _post_ready: return
 	if to == direction: return
 	direction = to
 	sprite.set_flip_h(direction_flipped_h[to])
@@ -99,7 +104,8 @@ func set_direction(to=LEFT):
 		ray.set_enabled(not ray.get_name().ends_with(direction_name_lower))
 
 
-func set_state(value=default_state):
+func _set_state(value=default_state):
+	if not _post_ready: return
 	if state == value: return
 	if state == DYING: return
 	state = value
