@@ -31,7 +31,7 @@ const enemy_type_damage = {
 
 onready var tree = get_tree()
 onready var root = get_tree().get_root()
-onready var player = root.find_node("player")
+#onready var player = root.find_node("player")
 
 
 var current_level
@@ -195,6 +195,6 @@ func operation_wrong(value=1):
 	emit_signal("update_score")
 
 
-func player_hit(enemy_type):
+func player_hit(enemy_type, player):
 	player.health -= enemy_type_damage[enemy_type]
 	prints("Player hit:", player.health)

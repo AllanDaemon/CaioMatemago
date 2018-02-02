@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=1]
+[gd_scene load_steps=18 format=1]
 
 [ext_resource path="res://enemies/base_enemy.gd" type="Script" id=1]
 [ext_resource path="res://enemies/sprites/green_enemy_frames.tres" type="SpriteFrames" id=2]
@@ -30,6 +30,11 @@ margin = Rect2( 0, 0, 0, 0 )
 
 custom_solver_bias = 0.0
 length = -1.0
+
+[sub_resource type="RectangleShape2D" id=9]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 8 )
 
 [sub_resource type="Animation" id=5]
 
@@ -188,7 +193,6 @@ editor/display_folded = true
 transform/pos = Vector2( 0, -8 )
 frames = ExtResource( 2 )
 animation = "WALKING"
-frame = 1
 playing = true
 flip_h = true
 
@@ -281,8 +285,10 @@ _update_shape_index = 2
 
 [node name="attack_area" type="Area2D" parent="."]
 
-editor/display_folded = true
 input/pickable = true
+shapes/0/shape = SubResource( 9 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, -7 )
+shapes/0/trigger = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
@@ -290,8 +296,10 @@ angular_damp = 1.0
 
 [node name="hitbox" type="CollisionShape2D" parent="attack_area"]
 
-trigger = false
-_update_shape_index = -1
+transform/pos = Vector2( 0, -7 )
+shape = SubResource( 9 )
+trigger = true
+_update_shape_index = 0
 
 [node name="raycasts_floor" type="Node2D" parent="."]
 
@@ -313,7 +321,11 @@ type_mask = 15
 
 [node name="raycasts_wall" type="Area2D" parent="."]
 
-editor/display_folded = true
+input/pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
 
 [node name="raycast_left" type="RayCast2D" parent="raycasts_wall"]
 
@@ -325,7 +337,7 @@ type_mask = 15
 
 [node name="raycast_right" type="RayCast2D" parent="raycasts_wall"]
 
-transform/pos = Vector2( 8, -7 )
+transform/pos = Vector2( 6, -7 )
 enabled = true
 cast_to = Vector2( 1, 0 )
 layer_mask = 1
@@ -371,7 +383,13 @@ margin/bottom = 30.0
 script/script = SubResource( 8 )
 debug = true
 
+[connection signal="body_enter" from="." to="." method="_on_body_hit"]
+
 [connection signal="body_enter" from="hit_area" to="." method="on_hit"]
+
+[connection signal="body_enter" from="attack_area" to="." method="_on_body_hit"]
+
+[connection signal="body_enter" from="raycasts_wall" to="." method="_on_body_hit"]
 
 
 [editable path="DBG"]

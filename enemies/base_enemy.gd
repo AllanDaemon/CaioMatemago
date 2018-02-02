@@ -132,7 +132,7 @@ func _on_body_hit(body):
 	prints("Player hit test", body)
 	if body and body.is_in_group("player"):
 		prints("Player hitted")
-		game.player_hit(enemy_type)
+		game.player_hit(enemy_type, body)
 
 func on_hit(body=null):
 	prints("Enemy hit:", body)
