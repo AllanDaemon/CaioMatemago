@@ -129,7 +129,7 @@ default_direction = 1
 [node name="base_enemy2" parent="common/enemies" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 695, 141 )
-default_direction = 1
+default_direction = 0
 
 [node name="math" parent="common"]
 
