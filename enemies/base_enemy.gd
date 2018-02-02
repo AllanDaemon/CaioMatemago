@@ -15,8 +15,8 @@ var state_name
 enum directions {RIGHT, LEFT}
 const opposite = {RIGHT: LEFT, LEFT: RIGHT}
 const directions_name = {RIGHT: "RIGHT", LEFT: "LEFT"}
-var default_direction = LEFT # Exportig fails...
-#export (int, "RIGHT", "LEFT") var default_direction = LEFT
+#var default_direction = LEFT # Exportig fails...
+export (int, "RIGHT", "LEFT") var default_direction = LEFT
 var direction = -1 setget _set_direction
 const default_velocity = Vector2(50, 0)
 const direction_x_vel = {
