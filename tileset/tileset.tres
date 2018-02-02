@@ -1,12 +1,7 @@
-[gd_resource type="TileSet" load_steps=4 format=1]
+[gd_resource type="TileSet" load_steps=3 format=1]
 
 [ext_resource path="res://tileset/block_shape.tres" type="Shape2D" id=1]
 [ext_resource path="res://tileset/tileset.png" type="Texture" id=2]
-
-[sub_resource type="RectangleShape2D" id=1]
-
-custom_solver_bias = 0.0
-extents = Vector2( 8, 4 )
 
 [resource]
 
@@ -455,10 +450,10 @@ extents = Vector2( 8, 4 )
 40/tex_offset = Vector2( 0, 0 )
 40/modulate = Color( 1, 1, 1, 1 )
 40/region = Rect2( 336, 288, 16, 16 )
-40/occluder_offset = Vector2( 8, 8 )
-40/navigation_offset = Vector2( 8, 8 )
-40/shape_offset = Vector2( 8, 8 )
-40/shapes = [ ExtResource( 1 ) ]
+40/occluder_offset = Vector2( 0, 0 )
+40/navigation_offset = Vector2( 0, 0 )
+40/shape_offset = Vector2( 0, 0 )
+40/shapes = [  ]
 40/one_way_collision_direction = Vector2( 0, 0 )
 40/one_way_collision_max_depth = 0.0
 41/name = "floor_darker_half"
@@ -466,10 +461,10 @@ extents = Vector2( 8, 4 )
 41/tex_offset = Vector2( 0, 0 )
 41/modulate = Color( 1, 1, 1, 1 )
 41/region = Rect2( 320, 304, 16, 16 )
-41/occluder_offset = Vector2( 8, 12 )
-41/navigation_offset = Vector2( 8, 12 )
-41/shape_offset = Vector2( 8, 12 )
-41/shapes = [ SubResource( 1 ) ]
+41/occluder_offset = Vector2( 0, 0 )
+41/navigation_offset = Vector2( 0, 0 )
+41/shape_offset = Vector2( 0, 0 )
+41/shapes = [  ]
 41/one_way_collision_direction = Vector2( 0, 0 )
 41/one_way_collision_max_depth = 0.0
 42/name = "gray_brick_A1"
