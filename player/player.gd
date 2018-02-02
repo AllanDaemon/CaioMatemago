@@ -19,6 +19,7 @@ const VEL_Y_EPSILON = 0.001
 const FLOOR_NORMAL = Vector2(0,-1)
 const SLOPE_SLIDE_STOP = 25.0
 const FALLING_ANIM_THRESHOLD = 200
+export (int) var DEAD_ZONE_THRESHOLD = 300
 
 enum states {JUMPING, FALLING, IDLE, WALKING, DYING}
 const states_name = ["jumping", "falling", "idle", "walking", "dying"]
@@ -115,6 +116,8 @@ func _fixed_process(delta):
 			anim = "falling"
 		elif vel.x != 0:
 			anim = "walking"
+		if get_pos().y > DEAD_ZONE_THRESHOLD:
+			die()
 	change_anim(anim)
 	
 

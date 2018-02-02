@@ -143,6 +143,7 @@ lines_id = "candangoA1b"
 
 editor/display_folded = true
 transform/pos = Vector2( 603, 2 )
+DEAD_ZONE_THRESHOLD = 300
 
 [node name="HUD" parent="common"]
 

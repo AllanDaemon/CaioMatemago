@@ -16,7 +16,7 @@ extents = Vector2( 6, 13.5 )
 custom_solver_bias = 0.0
 extents = Vector2( 8, 4 )
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=3]
 
 resource/name = "dying"
 length = 1.0
@@ -55,7 +55,7 @@ tracks/2/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 
 length = 1.0
 loop = false
@@ -71,7 +71,7 @@ tracks/0/keys = {
 "values": [ 4 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=5]
 
 length = 9.88
 loop = true
@@ -87,7 +87,7 @@ tracks/0/keys = {
 "values": [ 5, 6, 5, 6, 5 ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=6]
 
 length = 1.0
 loop = false
@@ -115,7 +115,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=7]
 
 length = 0.6
 loop = true
@@ -131,7 +131,7 @@ tracks/0/keys = {
 "values": [ 1, 0, 2 ]
 }
 
-[sub_resource type="SampleLibrary" id=7]
+[sub_resource type="SampleLibrary" id=8]
 
 samples/jump = {
 "db": 0.0,
@@ -157,7 +157,7 @@ collision/mask = 1
 collision/margin = 0.08
 script/script = ExtResource( 1 )
 debug = true
-DEAD_ZONE_THRESHOLD = 50
+DEAD_ZONE_THRESHOLD = 300
 max_health = 2
 
 [node name="colision" type="CollisionShape2D" parent="."]
@@ -202,11 +202,11 @@ type_mask = 15
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/dying = SubResource( 8 )
-anims/falling = SubResource( 3 )
-anims/idle = SubResource( 4 )
-anims/jumping = SubResource( 5 )
-anims/walking = SubResource( 6 )
+anims/dying = SubResource( 3 )
+anims/falling = SubResource( 4 )
+anims/idle = SubResource( 5 )
+anims/jumping = SubResource( 6 )
+anims/walking = SubResource( 7 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
@@ -463,7 +463,7 @@ drag_margin/bottom = 0.2
 ]]
 
 config/polyphony = 1
-config/samples = SubResource( 7 )
+config/samples = SubResource( 8 )
 default/volume_db = 0.0
 default/pitch_scale = 1.0
 default/pan = 0.0
