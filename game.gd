@@ -7,7 +7,7 @@ signal update_score
 signal update_level
 
 ## SETTINGS
-export (String) var initial_level = "teste"
+export (String) var initial_level = "test"
 export (float, 0, 1) var volume_bg = 0.5
 export (float, 0, 1) var volume_fx = 0.5
 #export (float, 0, 1) var volume_bg = 0.05
@@ -83,17 +83,20 @@ func _init_defaults():
 	update_volume()
 
 func _input(ev):
-	if ev.is_action_pressed("menu") or ev.is_action_pressed("ui_cancel") \
-		and not ev.is_echo():
+	if   ev.is_action_pressed("menu") or ev.is_action_pressed("ui_cancel") \
+		 and not ev.is_echo():
 		_set_menu_state(not on_menu)
-	if ev.is_action_pressed("debug") and not ev.is_echo():
+	elif ev.is_action_pressed("debug") and not ev.is_echo():
 		_set_debug(not debug)
-	if ev.is_action_pressed("pause") and not ev.is_echo():
+	elif ev.is_action_pressed("pause") and not ev.is_echo():
 		_set_pause_state(not paused)
-	if ev.is_action_pressed("quit") and not ev.is_echo():
+	elif ev.is_action_pressed("quit") and not ev.is_echo():
 		quit()
+	elif ev.is_action_pressed("reload") and not ev.is_echo():
+		if not current_scene_name: current_scene_name = initial_level
+		change_level(current_scene_name)
 	
-	if ev.type == InputEvent.KEY:
+	elif ev.type == InputEvent.KEY:
 		var key2level = {
 			KEY_QUOTELEFT: "intro",
 			KEY_1: "level_A1",
