@@ -99,7 +99,7 @@ onready var char = get_node(\"..\")
 
 func _ready():
 	pass
-#	set_debug(debug)
+	set_debug(get_node(\"/root/game\").debug)
 
 func set_debug(value):
 	debug = value

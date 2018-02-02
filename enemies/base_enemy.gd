@@ -42,8 +42,6 @@ func _ready():
 		return
 	_init_defaults()
 	set_fixed_process(true)
-#	if not get_tree().is_editor_hint():
-#	else:
 
 func _init_defaults():
 	_setup_enemy_type()
