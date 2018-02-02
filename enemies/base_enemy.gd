@@ -23,6 +23,7 @@ const direction_x_vel = {
 	RIGHT: default_velocity.x * -1}
 const direction_flipped_h = {LEFT: true, RIGHT: false}
 
+onready var game = get_node("/root/game")
 onready var raycasts_floor = get_node("raycasts_floor")
 onready var raycasts_wall = get_node("raycasts_wall")
 onready var anim = get_node("anim")
@@ -34,9 +35,14 @@ const cooldown_value = 10
 var cooldown = 0
 
 func _ready():
-	_init_defaults()	
-	if not get_tree().is_editor_hint():
-		set_fixed_process(true)
+	if get_tree().is_editor_hint():
+		print("Hello from script")
+		_setup_enemy_type()
+		return
+	_init_defaults()
+	set_fixed_process(true)
+#	if not get_tree().is_editor_hint():
+#	else:
 
 func _init_defaults():
 	_setup_enemy_type()
@@ -80,6 +86,9 @@ func _should_change_direction():
 	return false
 
 func _fixed_process(delta):
+	if get_tree().is_editor_hint():
+		breakpoint
+		return
 	if _should_change_direction():
 		cooldown = cooldown_value
 		change_direction()
@@ -119,12 +128,14 @@ func _set_state(value=default_state):
 		anim.play(state_name)
 
 func _on_body_hit(body):
+	prints("enemy_type:", enemy_type)
 	prints("Player hit test", body)
 	if body and body.is_in_group("player"):
 		prints("Player hitted")
+		game.player_hit(enemy_type)
 
 func on_hit(body=null):
-	print("Enemy hit", body)
+	prints("Enemy hit:", body)
 	if body and body.is_in_group("player"):
 		die()
 
