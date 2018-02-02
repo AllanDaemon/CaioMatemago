@@ -12,6 +12,7 @@ var state = -1 setget set_state
 var state_name
 enum directions {LEFT, RIGHT}
 const opposite = {LEFT: RIGHT, RIGHT: LEFT}
+const directions_name = {LEFT: "LEFT", RIGHT: "RIGHT"}
 var default_direction = RIGHT # Exportig fails... 
 var direction = -1 setget set_direction
 const default_velocity = Vector2(50, 0)
@@ -88,12 +89,15 @@ func change_direction(to=LEFT):
 	set_direction(opposite[direction])
 
 func set_direction(to=LEFT):
-	if to == direction:
-		return
+	if to == direction: return
 	direction = to
 	sprite.set_flip_h(direction_flipped_h[to])
 	var vel = Vector2(direction_x_vel[to], get_linear_velocity().y)
 	set_linear_velocity(vel)
+	var direction_name_lower = directions_name[direction].to_lower()
+	for ray in raycasts_wall.get_children():
+		ray.set_enabled(not ray.get_name().ends_with(direction_name_lower))
+
 
 func set_state(value=default_state):
 	if state == value: return
