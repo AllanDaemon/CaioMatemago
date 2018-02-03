@@ -1,6 +1,14 @@
 #* question group: save result on display on a property OK
 
-- Fix box hit animation to be centralized
+
+@ Player
+	Anim
+		@ Hit animation
+		@ Death animation
+		* health indicator
+		- Fix box hit animation to be centralized
+
+
 
 - Game status singleton @WIP
 	- Pause
