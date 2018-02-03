@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=1]
+[gd_scene load_steps=16 format=1]
 
 [ext_resource path="res://player/player.gd" type="Script" id=1]
 [ext_resource path="res://player/Caio.png" type="Texture" id=2]
@@ -82,6 +82,23 @@ tracks/0/keys = {
 "transitions": FloatArray( 1 ),
 "update": 1,
 "values": [ 4 ]
+}
+
+[sub_resource type="Animation" id=9]
+
+resource/name = "hit"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visibility/visible")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.3, 0.6, 0.9 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false, true ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -177,7 +194,7 @@ collision/margin = 0.08
 script/script = ExtResource( 1 )
 debug = true
 DEAD_ZONE_THRESHOLD = 300
-max_health = 2
+max_health = 5
 
 [node name="colision" type="CollisionShape2D" parent="."]
 
@@ -223,6 +240,7 @@ playback/default_blend_time = 0.0
 root/root = NodePath("..")
 anims/dying = SubResource( 3 )
 anims/falling = SubResource( 4 )
+anims/hit = SubResource( 9 )
 anims/idle = SubResource( 5 )
 anims/jumping = SubResource( 6 )
 anims/walking = SubResource( 7 )
