@@ -1,7 +1,7 @@
 tool
 extends Node2D
 
-signal update_score
+signal right_operation
 
 export (bool) var disable_on_any_result = false
 export (bool) var disable_on_wrong_result = false
@@ -10,8 +10,11 @@ export (int) var a = 1
 export (int) var b = 2
 export (String, "+", "-", "x") var operator = "+"
 
-var result = -1
+enum stati {UNTOUCHED, UNANSWERED, WRONG, RIGHT}
+var status = UNTOUCHED
 var enabled = true setget _set_enabled
+var result = -1
+
 
 onready var game = get_node("/root/game")
 onready var boxes = get_node("boxes")
@@ -34,6 +37,7 @@ func _on_value_change(value):
 	print("Change: ", value)
 	if not enabled: return
 	display.value += value
+	if status == UNTOUCHED: status = UNANSWERED
 
 func _on_result():
 	print("Calculating result")
@@ -46,11 +50,14 @@ func _on_result():
 
 func right():
 	if disable_on_right_result: self.enabled = false
+	status = RIGHT
 	display.right()
 	game.operation_right()
+	emit_signal("right_operation")
 
 func wrong():
 	if disable_on_wrong_result: self.enabled = false
+	status = WRONG
 	display.wrong()
 	game.operation_wrong()
 	
