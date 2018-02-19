@@ -111,8 +111,18 @@ transform/pos = Vector2( 960, 120 )
 
 transform/pos = Vector2( 104, 120 )
 
+[node name="DBG" parent="player"]
+
+editor/display_folded = true
+
+[node name="camera" parent="player"]
+
+limit/left = 0
+limit/right = 960
+
 [node name="HUD" parent="." instance=ExtResource( 7 )]
 
 editor/display_folded = true
 
 
+[editable path="player"]
