@@ -1,64 +1,28 @@
-extends "res://scenario/box.gd";
-#################################### N O T E S ###################################
-# Change this template under /addons/net.kivano.smartextender/SCRIPT_TEMPLATE
-# 
-# 
-# 
+tool
+extends KinematicBody2D
 
-##################################################################################
-#########                     Imported classes/scenes                    #########
-##################################################################################
+export (Texture) var texture
+export (bool) var enabled = false setget _set_enabled
 
-##################################################################################
-#########                       Signals definitions                      #########
-##################################################################################
+onready var sprite_on = get_node("sprite_enabled")
+onready var sprite_off = get_node("sprite_disabled")
+onready var anim = get_node("anim")
+onready var _post_ready = true
 
-##################################################################################
-#####  Variables (Constants, Export Variables, Node Vars, Normal variables)  #####
-######################### var myvar setget myvar_set,myvar_get ###################
+func _get_item_rect():
+    return get_node("sprite_enabled").get_item_rect()
 
-##################################################################################
-#########                          Init code                             #########
-##################################################################################
-func _notification(what):
-	if (what == NOTIFICATION_INSTANCED):
-		pass #all internal initialization
-	elif(what == NOTIFICATION_READY):
-		get_node("hit_value").set_text("=")
-		pass #only parts that are dependent on outside world (on theparents etc/also called when reparented) 
-##################################################################################
-#########                       Getters and Setters                      #########
-##################################################################################
+func _ready():
+	if texture and texture != null:
+		_set_default_texture(texture)
 
-##################################################################################
-#########              Should be implemented in inheritanced             #########
-##################################################################################
+func _set_default_texture(texture):
+	sprite.set_texture(texture)
+	print("\ttexture setted")
 
-##################################################################################
-#########                    Implemented from ancestor                   #########
-##################################################################################
-
-##################################################################################
-#########                       Connected Signals                        #########
-##################################################################################
-
-##################################################################################
-#########     Methods fired because of events (usually via Groups interface)  ####
-##################################################################################
-
-##################################################################################
-#########                         Public Methods                         #########
-##################################################################################
-
-func hit(body):
-	pass
-
-##################################################################################
-#########                         Inner Methods                          #########
-##################################################################################
-
-##################################################################################
-#########                         Inner Classes                          #########
-##################################################################################
+func _set_enabled(value):
+	enabled = value
+	if not _post_ready: return
+	anim.play("enabled" if enabled else "disabled")
 
 
