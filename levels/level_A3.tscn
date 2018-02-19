@@ -12,7 +12,6 @@ script/script = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
-debug = true
 
 [node name="common" parent="." instance=ExtResource( 2 )]
 

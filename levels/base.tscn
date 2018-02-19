@@ -9,11 +9,9 @@
 
 transform/pos = Vector2( -10, -30 )
 script/script = ExtResource( 1 )
-debug = true
 
 [node name="common" parent="." instance=ExtResource( 2 )]
 
 
 [editable path="common"]
-[editable path="common/scenario_tilemap"]
 [editable path="common/HUD"]
