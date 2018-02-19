@@ -22,7 +22,6 @@ tile_data = IntArray( 65535, 16, 20, 42, 21, 43, 22, 43, 23, 43, 24, 44, 60, 16,
 
 [node name="prev_level" parent="common/action_areas"]
 
-enabled = true
 goto_scene = "level_A3"
 
 [node name="next_level" parent="common/action_areas"]

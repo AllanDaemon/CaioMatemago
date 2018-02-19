@@ -27,7 +27,6 @@ transform/pos = Vector2( 8, 144 )
 
 [node name="prev_level" parent="common/action_areas"]
 
-enabled = true
 goto_scene = "level_A2"
 
 [node name="next_level" parent="common/action_areas"]

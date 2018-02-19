@@ -30,7 +30,6 @@ editor/display_folded = false
 
 [node name="prev_level" parent="common/action_areas"]
 
-enabled = true
 goto_scene = "level_A1"
 
 [node name="next_level" parent="common/action_areas"]
