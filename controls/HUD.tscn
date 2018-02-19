@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://fonts/averia.tres" type="DynamicFont" id=1]
-[ext_resource path="res://controls/mobile_control.tscn" type="PackedScene" id=2]
+[ext_resource path="res://tileset/tileset.png" type="Texture" id=2]
+[ext_resource path="res://controls/mobile_control.tscn" type="PackedScene" id=3]
 
 [sub_resource type="GDScript" id=1]
 
@@ -16,7 +17,13 @@ func update_score():
 	set_text(str(game.score))
 "
 
-[sub_resource type="GDScript" id=2]
+[sub_resource type="AtlasTexture" id=2]
+
+atlas = ExtResource( 2 )
+region = Rect2( 48, 152, 8, 8 )
+margin = Rect2( 0, 0, 0, 0 )
+
+[sub_resource type="GDScript" id=3]
 
 script/source = "extends Label
 onready var game = get_node(\"/root/game\")
@@ -75,6 +82,23 @@ lines_skipped = 0
 max_lines_visible = -1
 script/script = SubResource( 1 )
 
+[node name="lifes" type="Control" parent="."]
+
+editor/display_folded = true
+visibility/visible = false
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 16.0
+margin/top = 8.0
+margin/right = 56.0
+margin/bottom = 48.0
+
+[node name="life_sprite" type="Sprite" parent="lifes"]
+
+texture = SubResource( 2 )
+
 [node name="volume_dbg" type="Label" parent="." groups=[
 "debug",
 ]]
@@ -112,9 +136,9 @@ text = "level"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script/script = SubResource( 2 )
+script/script = SubResource( 3 )
 
-[node name="mobile_control" parent="." instance=ExtResource( 2 )]
+[node name="mobile_control" parent="." instance=ExtResource( 3 )]
 
 layer = 6
 
