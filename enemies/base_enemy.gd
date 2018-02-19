@@ -61,6 +61,11 @@ func _setup_enemy_type():
 		if sprite: sprite.show()
 		update()
 
+func is_hitting_player():
+	for ray in raycasts_wall.get_children():
+		if ray.is_colliding():
+		   _on_body_hit(ray.get_collider())
+
 func _should_change_direction():
 	if cooldown:
 		cooldown -= 1
@@ -90,6 +95,7 @@ func _fixed_process(delta):
 		return
 	if _should_change_direction():
 		cooldown = cooldown_value
+		#is_hitting_player()
 		change_direction()
 	if not cooldown:
 		var vel = self.get_linear_velocity()

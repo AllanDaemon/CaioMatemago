@@ -348,7 +348,7 @@ angular_damp = 1.0
 
 [node name="raycast_left" type="RayCast2D" parent="raycasts_wall"]
 
-transform/pos = Vector2( -8, -7 )
+transform/pos = Vector2( -6, -7 )
 enabled = true
 cast_to = Vector2( -1, 0 )
 layer_mask = 1
