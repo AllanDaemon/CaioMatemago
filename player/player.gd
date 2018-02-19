@@ -173,8 +173,7 @@ func _set_health(value):
 	if health <= 0:
 		die()
 	else:
-		animation.play(anim)
-#		change_anim("hit")
+		get_node("anim_hit").play("hit")
 
 func die():
 	prints("Player dying")
