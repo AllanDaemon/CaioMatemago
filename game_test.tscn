@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=9 format=1]
 
 [ext_resource path="res://game_test.gd" type="Script" id=1]
 [ext_resource path="res://levels/common.tscn" type="PackedScene" id=2]
@@ -6,7 +6,8 @@
 [ext_resource path="res://scenario/question_group.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenario/coin.tscn" type="PackedScene" id=5]
 [ext_resource path="res://enemies/base_enemy.tscn" type="PackedScene" id=6]
-[ext_resource path="res://player/candango.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenario/door.tscn" type="PackedScene" id=7]
+[ext_resource path="res://player/candango.tscn" type="PackedScene" id=8]
 
 [node name="game_test" type="Node2D" groups=[
 "debug",
@@ -139,16 +140,27 @@ default_direction = 0
 wait_time = 1.0
 autostart = true
 
+[node name="door" parent="common/boxes" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 784, 104 )
+
+[node name="Timer" type="Timer" parent="common/boxes"]
+
+process_mode = 1
+wait_time = 3.0
+one_shot = true
+autostart = true
+
 [node name="math" parent="common"]
 
 editor/display_folded = true
 
-[node name="candango" parent="common/math" instance=ExtResource( 7 )]
+[node name="candango" parent="common/math" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 200, 144 )
 lines_id = "candangoA1a"
 
-[node name="candango1" parent="common/math" instance=ExtResource( 7 )]
+[node name="candango1" parent="common/math" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 912, 144 )
 lines_id = "candangoA1b"
@@ -157,11 +169,12 @@ lines_id = "candangoA1b"
 
 editor/display_folded = true
 transform/pos = Vector2( 601, 97 )
-max_health = 1
 
 [node name="HUD" parent="common"]
 
 editor/display_folded = false
+
+[connection signal="timeout" from="common/boxes/Timer" to="common/boxes/door" method="toogle"]
 
 
 [editable path="common"]
