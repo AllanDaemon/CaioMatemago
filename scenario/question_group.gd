@@ -3,24 +3,32 @@ extends Node2D
 
 signal update_score
 
-export (bool) var disable_on_result = true
+export (bool) var disable_on_any_result = false
+export (bool) var disable_on_wrong_result = false
+export (bool) var disable_on_right_result = true
 export (int) var a = 1
 export (int) var b = 2
 export (String, "+", "-", "x") var operator = "+"
 
 var result = -1
-var enabled = true
+var enabled = true setget _set_enabled
 
 onready var game = get_node("/root/game")
 onready var boxes = get_node("boxes")
 onready var question = get_node("question")
 onready var display = get_node("value_display")
+onready var _pos_ready = true
 
 func _ready():
 	print("Boxes: ", boxes)
 	for box in boxes.get_children():
 		box.connect("value_change", self, "_on_value_change")
 	update_question()
+
+func _set_enabled(value):
+	enabled = value
+	var boxes = get_node("boxes")
+	boxes.set_opacity( 1 if enabled else 0.5 )
 
 func _on_value_change(value):
 	print("Change: ", value)
@@ -30,24 +38,26 @@ func _on_value_change(value):
 func _on_result():
 	print("Calculating result")
 	if not enabled: return
-	if disable_on_result: enabled = false
+	if disable_on_any_result: self.enabled = false
 	if display.value == result:
 		right()
 	else:
 		wrong()
 
 func right():
+	if disable_on_right_result: self.enabled = false
 	display.right()
 	game.operation_right()
 
 func wrong():
+	if disable_on_wrong_result: self.enabled = false
 	display.wrong()
 	game.operation_wrong()
 	
 func update_question(reset_display=true):
 	question.question = str(a)+" "+operator+" "+str(b)
 	result = calc_result()
-	enabled = true
+	self.enabled = true
 	if reset_display:
 		display.value = 0
 

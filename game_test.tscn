@@ -36,6 +36,9 @@ editor/display_folded = true
 
 [node name="question_group" parent="common/questions" instance=ExtResource( 4 )]
 
+disable_on_any_result = false
+disable_on_wrong_result = false
+disable_on_right_result = true
 a = 2
 b = -2
 operator = "x"

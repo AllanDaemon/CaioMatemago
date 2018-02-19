@@ -10,7 +10,9 @@
 [node name="question_group" type="Node2D"]
 
 script/script = ExtResource( 1 )
-disable_on_result = true
+disable_on_any_result = false
+disable_on_wrong_result = false
+disable_on_right_result = true
 a = 1
 b = 2
 operator = "+"
