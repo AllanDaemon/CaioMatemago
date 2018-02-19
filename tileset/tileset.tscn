@@ -354,6 +354,7 @@ _update_shape_index = 0
 
 [node name="1w_plataform" type="Sprite" parent="scenario"]
 
+editor/display_folded = true
 transform/pos = Vector2( -48, 160 )
 texture = ExtResource( 1 )
 centered = false
@@ -377,6 +378,36 @@ friction = 1.0
 bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scenario/1w_plataform/StaticBody2D"]
+
+shape = SubResource( 1 )
+trigger = false
+_update_shape_index = 0
+
+[node name="1w_plataform_red" type="Sprite" parent="scenario"]
+
+transform/pos = Vector2( -48, 176 )
+texture = ExtResource( 1 )
+centered = false
+region = true
+region_rect = Rect2( 320, 16, 16, 4 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="scenario/1w_plataform_red"]
+
+transform/pos = Vector2( 8, 2 )
+input/pickable = true
+shapes/0/shape = SubResource( 1 )
+shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+shapes/0/trigger = false
+collision/layers = 1
+collision/mask = 1
+one_way_collision/direction = Vector2( 0, 1 )
+one_way_collision/max_depth = 1.0
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scenario/1w_plataform_red/StaticBody2D"]
 
 shape = SubResource( 1 )
 trigger = false

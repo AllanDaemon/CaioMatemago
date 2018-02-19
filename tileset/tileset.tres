@@ -549,4 +549,15 @@ extents = Vector2( 8, 2 )
 48/shapes = [ SubResource( 1 ) ]
 48/one_way_collision_direction = Vector2( 0, 1 )
 48/one_way_collision_max_depth = 1.0
+49/name = "1w_plataform_red"
+49/texture = ExtResource( 2 )
+49/tex_offset = Vector2( 0, 0 )
+49/modulate = Color( 1, 1, 1, 1 )
+49/region = Rect2( 320, 16, 16, 4 )
+49/occluder_offset = Vector2( 8, 2 )
+49/navigation_offset = Vector2( 8, 2 )
+49/shape_offset = Vector2( 8, 2 )
+49/shapes = [ SubResource( 1 ) ]
+49/one_way_collision_direction = Vector2( 0, 1 )
+49/one_way_collision_max_depth = 1.0
 
