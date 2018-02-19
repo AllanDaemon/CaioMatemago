@@ -133,14 +133,14 @@ func _set_state(value=default_state):
 		anim.play(state_name)
 
 func _on_body_hit(body):
-	prints("enemy_type:", enemy_type)
-	prints("Player hit test", body)
+	#prints("enemy_type:", enemy_type)
+	#prints("Player hit test", body)
 	if body and body.is_in_group("player"):
 		prints("Player hitted")
 		game.player_hit(enemy_type, body)
 
 func on_hit(body=null):
-	prints("Enemy hit:", body)
+	#prints("Enemy hit:", body)
 	if body and body.is_in_group("player"):
 		die()
 
