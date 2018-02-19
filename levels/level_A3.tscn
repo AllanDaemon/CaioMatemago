@@ -16,6 +16,10 @@ __meta__ = {
 
 [node name="common" parent="." instance=ExtResource( 2 )]
 
+[node name="tilemap" parent="common"]
+
+editor/display_folded = true
+
 [node name="scenario_tilemap" parent="common/tilemap" instance=ExtResource( 3 )]
 
 editor/display_folded = true
@@ -23,7 +27,7 @@ tile_data = IntArray( 65535, 16, 60, 16, 131071, 16, 65596, 16, 196607, 16, 1311
 
 [node name="base_enemy" parent="common/enemies" instance=ExtResource( 4 )]
 
-transform/pos = Vector2( 8, 144 )
+transform/pos = Vector2( 16, 136 )
 
 [node name="prev_level" parent="common/action_areas"]
 
