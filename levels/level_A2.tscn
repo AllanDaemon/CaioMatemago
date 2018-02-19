@@ -50,6 +50,8 @@ transform/pos = Vector2( 112, 144 )
 visibility/visible = false
 transform/pos = Vector2( 672, 144 )
 
+[node name="bubble_blocks" type="Node2D" parent="common/math"]
+
 [node name="prev_level" parent="common/action_areas"]
 
 goto_scene = "level_A1"
