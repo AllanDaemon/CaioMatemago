@@ -1,13 +1,14 @@
-#* question group: save result on display on a property OK
+#question group: save result on display on a property OK
 
 
-@ Player
-	Anim
-		@ Hit animation
-		@ Death animation
+- Player
+	- Anim
+#		  Hit animation
+#		  Death animation
 		* health indicator
 		- Fix box hit animation to be centralized
 
+#Show visually when a question group is disabled
 
 
 - Game status singleton @WIP
@@ -106,17 +107,16 @@
 	* Code
 	* Game play interaction
 
-* Door
-	* Scene
-		* Sprite
-
-	* FSM
-		* Open
-		* Closed
-	* Anim
-		* FMS States
-
-	* Code
+ Door
+#	Scene
+#		Sprite
+#	FSM
+#		Open
+#		Closed
+#	Anim
+#		FMS States
+	Code
+		* Integrate into game logic
 
 
 # * Enemy
