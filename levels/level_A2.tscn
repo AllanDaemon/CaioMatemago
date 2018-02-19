@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=8 format=1]
 
-[ext_resource path="res://levels/base.gd" type="Script" id=1]
+[ext_resource path="res://levels/A2.gd" type="Script" id=1]
 [ext_resource path="res://levels/common.tscn" type="PackedScene" id=2]
 [ext_resource path="res://tileset/levels/level_A2.tscn" type="PackedScene" id=3]
 [ext_resource path="res://enemies/base_enemy.tscn" type="PackedScene" id=4]
-[ext_resource path="res://player/candango.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenario/box.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenario/box-1.tres" type="Texture" id=6]
+[ext_resource path="res://player/candango.tscn" type="PackedScene" id=7]
 
 [node name="level_A2" type="Node2D" groups=[
 "debug",
@@ -29,16 +31,23 @@ editor/display_folded = true
 
 transform/pos = Vector2( 488, 112 )
 
-[node name="math" parent="common"]
+[node name="box+1" parent="common/boxes" instance=ExtResource( 5 )]
 
-editor/display_folded = true
+transform/pos = Vector2( 648, 104 )
 
-[node name="candango" parent="common/math" instance=ExtResource( 5 )]
+[node name="box-1" parent="common/boxes" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 680, 104 )
+increment = -1
+texture = ExtResource( 6 )
+
+[node name="candango" parent="common/math" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 112, 144 )
 
-[node name="candango1" parent="common/math" instance=ExtResource( 5 )]
+[node name="candango1" parent="common/math" instance=ExtResource( 7 )]
 
+visibility/visible = false
 transform/pos = Vector2( 672, 144 )
 
 [node name="prev_level" parent="common/action_areas"]
