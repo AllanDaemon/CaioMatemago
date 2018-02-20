@@ -1,7 +1,6 @@
 tool
 extends KinematicBody2D
 
-export (Texture) var texture
 export (bool) var enabled = false setget _set_enabled
 
 onready var sprite_on = get_node("sprite_enabled")
@@ -13,12 +12,7 @@ func _get_item_rect():
     return get_node("sprite_enabled").get_item_rect()
 
 func _ready():
-	if texture and texture != null:
-		_set_default_texture(texture)
-
-func _set_default_texture(texture):
-	sprite.set_texture(texture)
-	print("\ttexture setted")
+	_set_enabled(enabled)
 
 func _set_enabled(value):
 	enabled = value
