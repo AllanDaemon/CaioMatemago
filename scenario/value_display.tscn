@@ -114,6 +114,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 script/script = ExtResource( 2 )
+value = 42
 
 [node name="anim" type="AnimationPlayer" parent="."]
 
