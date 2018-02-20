@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=8 format=1]
 
 [ext_resource path="res://levels/A3.gd" type="Script" id=1]
 [ext_resource path="res://levels/common.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://scenario/question_group.tscn" type="PackedScene" id=4]
 [ext_resource path="res://enemies/base_enemy.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenario/brick_block.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenario/bubble_box.tscn" type="PackedScene" id=7]
 
 [node name="level_A3" type="Node2D" groups=[
 "debug",
@@ -21,6 +22,7 @@ editor/display_folded = true
 
 [node name="question_group1" parent="common/questions" instance=ExtResource( 4 )]
 
+editor/display_folded = true
 transform/pos = Vector2( -8, -16 )
 a = 5
 b = 6
@@ -36,6 +38,12 @@ transform/pos = Vector2( 168, 72 )
 [node name="box-1" parent="common/questions/question_group1/boxes"]
 
 transform/pos = Vector2( 128, 72 )
+
+[node name="question_group2" parent="common/questions" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 368, 0 )
+a = 8
+b = 12
 
 [node name="base_enemy" parent="common/enemies" instance=ExtResource( 5 )]
 
@@ -100,6 +108,118 @@ transform/pos = Vector2( 24, -40 )
 [node name="brick_block11" parent="common/blocks/first_wall" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 24, -24 )
+
+[node name="bridge" type="Position2D" parent="common/blocks"]
+
+editor/display_folded = true
+transform/pos = Vector2( 584, 136 )
+
+[node name="bubble_block1" parent="common/blocks/bridge" instance=ExtResource( 7 )]
+
+enabled = true
+
+[node name="bubble_block14 11" parent="common/blocks/bridge" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 0, 16 )
+enabled = true
+
+[node name="bubble_block2" parent="common/blocks/bridge" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 16, 0 )
+
+[node name="bubble_block14 10" parent="common/blocks/bridge" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 16, 16 )
+
+[node name="bubble_block3" parent="common/blocks/bridge" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 32, 0 )
+
+[node name="bubble_block14 3" parent="common/blocks/bridge" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 32, 16 )
+
+[node name="bubble_block4" parent="common/blocks/bridge" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 48, 0 )
+
+[node name="bubble_block14 2" parent="common/blocks/bridge" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 48, 16 )
+
+[node name="bubble_block5" parent="common/blocks/bridge" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 64, 0 )
+
+[node name="bubble_block14" parent="common/blocks/bridge" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 64, 16 )
+
+[node name="bubble_block6" parent="common/blocks/bridge" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 80, 0 )
+
+[node name="bubble_block14 8" parent="common/blocks/bridge" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 80, 16 )
+
+[node name="bubble_block7" parent="common/blocks/bridge" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 96, 0 )
+
+[node name="bubble_block14 7" parent="common/blocks/bridge" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 96, 16 )
+
+[node name="bubble_block8" parent="common/blocks/bridge" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 112, 0 )
+
+[node name="bubble_block14 5" parent="common/blocks/bridge" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 112, 16 )
+
+[node name="bubble_block9" parent="common/blocks/bridge" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 128, 0 )
+
+[node name="bubble_block14 4" parent="common/blocks/bridge" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 128, 16 )
+
+[node name="bubble_block10" parent="common/blocks/bridge" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 144, 0 )
+
+[node name="bubble_block14 9" parent="common/blocks/bridge" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 144, 16 )
+
+[node name="bubble_block11" parent="common/blocks/bridge" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 160, 0 )
+
+[node name="bubble_block14 6" parent="common/blocks/bridge" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 160, 16 )
+
+[node name="bubble_block12" parent="common/blocks/bridge" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 160, 0 )
+
+[node name="bubble_block14 12" parent="common/blocks/bridge" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 160, 16 )
+
+[node name="bubble_block13" parent="common/blocks/bridge" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 176, 0 )
+enabled = true
+
+[node name="bubble_block14 13" parent="common/blocks/bridge" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 176, 16 )
+enabled = true
 
 [node name="prev_level" parent="common/action_areas"]
 
