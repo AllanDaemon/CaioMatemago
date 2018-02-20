@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=1]
+[gd_scene load_steps=12 format=1]
 
 [ext_resource path="res://levels/A5.gd" type="Script" id=1]
 [ext_resource path="res://levels/common.tscn" type="PackedScene" id=2]
@@ -9,6 +9,144 @@
 [ext_resource path="res://enemies/boss.tscn" type="PackedScene" id=7]
 [ext_resource path="res://player/candango.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenario/door.tscn" type="PackedScene" id=9]
+
+[sub_resource type="Animation" id=1]
+
+resource/name = "begin_operations"
+length = 3.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("common/enemies/boss/dialog:visibility/opacity")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 1, 1.1 ),
+"transitions": FloatArray( 1, 0.25, 1 ),
+"update": 0,
+"values": [ 1.0, 0.0, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("common/enemies/boss/dialog:visibility/visible")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("common/questions:visibility/visible")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = {
+"times": FloatArray( 0, 1 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("common/questions:visibility/opacity")
+tracks/3/interp = 1
+tracks/3/imported = false
+tracks/3/keys = {
+"times": FloatArray( 0, 1, 2 ),
+"transitions": FloatArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 1.0 ]
+}
+
+[sub_resource type="Animation" id=2]
+
+resource/name = "boss_defeated"
+length = 3.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("common/questions:visibility/opacity")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 0,
+"values": [ 1.0, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("common/questions:visibility/visible")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 0, 0.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 1,
+"values": [ true, false ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("common/questions")
+tracks/2/interp = 1
+tracks/2/imported = false
+tracks/2/keys = {
+"times": FloatArray( 0.6 ),
+"transitions": FloatArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("common/enemies/boss:visibility/visible")
+tracks/3/interp = 1
+tracks/3/imported = false
+tracks/3/keys = {
+"times": FloatArray( 0, 0.5, 3 ),
+"transitions": FloatArray( 1, 1, 1 ),
+"update": 1,
+"values": [ true, true, false ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("common/enemies/boss:transform/scale")
+tracks/4/interp = 1
+tracks/4/imported = false
+tracks/4/keys = {
+"times": FloatArray( 0, 0.5, 1, 3 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1, 1 ), Vector2( 2, 2 ), Vector2( 0, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("common/enemies/boss:transform/rot")
+tracks/5/interp = 1
+tracks/5/imported = false
+tracks/5/keys = {
+"times": FloatArray( 0, 0.5, 1, 3 ),
+"transitions": FloatArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 720.0, 0.0 ]
+}
+tracks/6/type = "method"
+tracks/6/path = NodePath("common/enemies/boss")
+tracks/6/interp = 1
+tracks/6/imported = false
+tracks/6/keys = {
+"times": FloatArray( 3 ),
+"transitions": FloatArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "queue_free"
+} ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("common/math/door:open")
+tracks/7/interp = 1
+tracks/7/imported = false
+tracks/7/keys = {
+"times": FloatArray( 0, 3.5 ),
+"transitions": FloatArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
 
 [node name="level_A5" type="Node2D" groups=[
 "debug",
@@ -142,7 +280,18 @@ transform/pos = Vector2( 216, 176 )
 
 [node name="boss" parent="common/enemies" instance=ExtResource( 7 )]
 
+editor/display_folded = true
 transform/pos = Vector2( 344, 40 )
+transform/rot = 144.0
+transform/scale = Vector2( 1.2, 1.2 )
+
+[node name="sprites" parent="common/enemies/boss"]
+
+frame = 1
+
+[node name="dialog" parent="common/enemies/boss"]
+
+visibility/visible = false
 
 [node name="candango" parent="common/math" instance=ExtResource( 8 )]
 
@@ -167,10 +316,27 @@ goto_scene = "level_A4"
 enabled = true
 goto_scene = "credits"
 
+[node name="player" parent="common"]
+
+transform/pos = Vector2( 136, 80 )
+
+[node name="anim" type="AnimationPlayer" parent="."]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/begin_operations = SubResource( 1 )
+anims/boss_defeated = SubResource( 2 )
+playback/active = true
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = ""
+
 [connection signal="right_operation" from="common/questions/question_group" to="." method="_on_right_operation"]
 
 
 [editable path="common"]
 [editable path="common/tilemap/scenario_tilemap"]
 [editable path="common/questions/question_group"]
+[editable path="common/enemies/boss"]
 [editable path="common/HUD"]
