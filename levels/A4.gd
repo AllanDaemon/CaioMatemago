@@ -31,9 +31,9 @@ func coin_up(up=1):
 	if display.value == coins_total:
 		question1_right()
 	var brick = wall.get_children()[-1]
-	printt("Brick:", brick)
+	#printt("Brick:", brick)
 	wall.remove_child(brick)
-	brick.queue_free()
+	#brick.queue_free()
 
 func question1_right():
 	display.right()
