@@ -56,6 +56,30 @@ tracks/3/keys = {
 "update": 0,
 "values": [ 0.0, 0.0, 1.0 ]
 }
+tracks/4/type = "method"
+tracks/4/path = NodePath("common/enemies/enemy_spawner1/timer")
+tracks/4/interp = 1
+tracks/4/imported = false
+tracks/4/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "start"
+} ]
+}
+tracks/5/type = "method"
+tracks/5/path = NodePath("common/enemies/enemy_spawner2/timer")
+tracks/5/interp = 1
+tracks/5/imported = false
+tracks/5/keys = {
+"times": FloatArray( 1.5 ),
+"transitions": FloatArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "start"
+} ]
+}
 
 [sub_resource type="Animation" id=2]
 
@@ -220,9 +244,6 @@ tracks/5/keys = {
 ]]
 
 script/script = ExtResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="common" parent="." instance=ExtResource( 2 )]
 
@@ -343,6 +364,8 @@ transform/pos = Vector2( 776, 104 )
 
 transform/pos = Vector2( 16, 48 )
 enemy_type = "berigelante"
+can_fall = true
+default_direction = 0
 
 [node name="base_enemy1" parent="common/enemies" instance=ExtResource( 6 )]
 
@@ -353,9 +376,37 @@ transform/pos = Vector2( 216, 176 )
 editor/display_folded = true
 transform/pos = Vector2( 344, 40 )
 
+[node name="sprites" parent="common/enemies/boss"]
+
+frame = 1
+
 [node name="dialog" parent="common/enemies/boss"]
 
 visibility/visible = false
+
+[node name="enemy_spawner1" type="Position2D" parent="common/enemies"]
+
+editor/display_folded = true
+transform/pos = Vector2( 24, 16 )
+
+[node name="timer" type="Timer" parent="common/enemies/enemy_spawner1"]
+
+process_mode = 1
+wait_time = 10.0
+one_shot = false
+autostart = false
+
+[node name="enemy_spawner2" type="Position2D" parent="common/enemies"]
+
+editor/display_folded = true
+transform/pos = Vector2( 248, 24 )
+
+[node name="timer" type="Timer" parent="common/enemies/enemy_spawner2"]
+
+process_mode = 1
+wait_time = 10.0
+one_shot = false
+autostart = false
 
 [node name="candango" parent="common/math" instance=ExtResource( 8 )]
 
@@ -398,6 +449,10 @@ blend_times = [  ]
 autoplay = "start"
 
 [connection signal="right_operation" from="common/questions/question_group" to="." method="_on_right_operation"]
+
+[connection signal="timeout" from="common/enemies/enemy_spawner1/timer" to="." method="spawn_enemy1"]
+
+[connection signal="timeout" from="common/enemies/enemy_spawner2/timer" to="." method="spawn_enemy2"]
 
 
 [editable path="common"]

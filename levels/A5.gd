@@ -21,7 +21,11 @@ onready var common = get_node("common")
 onready var anim = get_node("anim")
 onready var question = common.get_node("questions/question_group")
 onready var question_timer = question.get_node("timer")
+onready var enemies = common.get_node("enemies")
 onready var boss = common.get_node("enemies/boss")
+onready var spawner1 = common.get_node("enemies/enemy_spawner1")
+onready var spawner2 = common.get_node("enemies/enemy_spawner2")
+var enemy_fab = preload("res://enemies/base_enemy.tscn")
 
 func _ready():
 	boss.first_interaction()
@@ -52,3 +56,17 @@ func _boss_defeat():
 	printt("Boss defeated!", operations_done)
 	boss_defeated = true
 	anim.play("boss_defeated")
+
+func spawn_enemy1():
+	var new_enemy = enemy_fab.instance()
+	new_enemy.set_pos(spawner1.get_pos())
+	new_enemy.enemy_type = "berigelante"
+	new_enemy.can_fall = true
+	enemies.add_child(new_enemy)
+
+func spawn_enemy2():
+	var new_enemy = enemy_fab.instance()
+	new_enemy.set_pos(spawner2.get_pos())
+	new_enemy.can_fall = true
+	new_enemy.default_direction = new_enemy.LEFT
+	enemies.add_child(new_enemy)
