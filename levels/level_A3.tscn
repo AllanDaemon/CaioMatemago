@@ -27,6 +27,18 @@ editor/display_folded = true
 
 [node name="question_group" parent="common/questions" instance=ExtResource( 4 )]
 
+transform/pos = Vector2( -8, -16 )
+a = 5
+b = 6
+
+[node name="question" parent="common/questions/question_group"]
+
+question = "5 + 6"
+
+[node name="result_box" parent="common/questions/question_group/boxes"]
+
+transform/pos = Vector2( 176, 72 )
+
 [node name="base_enemy" parent="common/enemies" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 16, 136 )
@@ -43,4 +55,5 @@ goto_scene = "level_A4"
 
 [editable path="common"]
 [editable path="common/tilemap/scenario_tilemap"]
+[editable path="common/questions/question_group"]
 [editable path="common/HUD"]
