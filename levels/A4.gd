@@ -29,4 +29,8 @@ func _setup_coins():
 func coin_up(up=1):
 	display.value += up
 	if display.value == coins_total:
-		display.right()
+		question1_right()
+
+func question1_right():
+	display.right()
+	wall.queue_free()
