@@ -4,7 +4,21 @@ extends Node2D
 var operations_done = 0
 var boss_defeated = false
 
+
 const questions = [
+	[1, 0],		# 01
+	[0, 2],		# 02
+	[1, 2],		# 03
+	[4, 3],		# 04
+	[9, 4],		# 05
+	[0, 0],		# 06
+	[2, 2],		# 07
+	[5, 1],		# 08
+	[2, 4],		# 09
+	[3, 2],		# 10
+]
+
+const questions_test = [
 	[1, 0],		# 01
 	[1, 1],		# 02
 #	[1, 2],		# 03
