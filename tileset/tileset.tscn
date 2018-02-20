@@ -259,6 +259,8 @@ _update_shape_index = 0
 
 [node name="scenario" type="Node" parent="."]
 
+editor/display_folded = true
+
 [node name="gray_bg" type="Sprite" parent="scenario"]
 
 transform/pos = Vector2( -48, 64 )
@@ -1282,6 +1284,7 @@ _update_shape_index = 0
 
 [node name="gray_brick_B3" type="Sprite" parent="bricks"]
 
+editor/display_folded = true
 transform/pos = Vector2( 368, 16 )
 texture = ExtResource( 1 )
 centered = false
@@ -1307,5 +1310,57 @@ bounce = 0.0
 shape = ExtResource( 2 )
 trigger = false
 _update_shape_index = 0
+
+[node name="bricks_decoration" type="Node" parent="."]
+
+editor/display_folded = true
+
+[node name="gray_brick_deco_A1" type="Sprite" parent="bricks_decoration"]
+
+transform/pos = Vector2( 336, 48 )
+texture = ExtResource( 1 )
+centered = false
+region = true
+region_rect = Rect2( 48, 16, 16, 16 )
+
+[node name="gray_brick_deco_A2" type="Sprite" parent="bricks_decoration"]
+
+transform/pos = Vector2( 352, 48 )
+texture = ExtResource( 1 )
+centered = false
+region = true
+region_rect = Rect2( 64, 16, 16, 16 )
+
+[node name="gray_brick_deco_A3" type="Sprite" parent="bricks_decoration"]
+
+transform/pos = Vector2( 368, 48 )
+texture = ExtResource( 1 )
+centered = false
+region = true
+region_rect = Rect2( 80, 16, 16, 16 )
+
+[node name="gray_brick_deco_B1" type="Sprite" parent="bricks_decoration"]
+
+transform/pos = Vector2( 336, 64 )
+texture = ExtResource( 1 )
+centered = false
+region = true
+region_rect = Rect2( 96, 16, 16, 16 )
+
+[node name="gray_brick_deco_B2" type="Sprite" parent="bricks_decoration"]
+
+transform/pos = Vector2( 352, 64 )
+texture = ExtResource( 1 )
+centered = false
+region = true
+region_rect = Rect2( 112, 16, 16, 16 )
+
+[node name="gray_brick_deco_B3" type="Sprite" parent="bricks_decoration"]
+
+transform/pos = Vector2( 368, 64 )
+texture = ExtResource( 1 )
+centered = false
+region = true
+region_rect = Rect2( 128, 16, 16, 16 )
 
 
