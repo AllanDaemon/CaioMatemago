@@ -24,6 +24,10 @@ __meta__ = {
 
 editor/display_folded = true
 
+[node name="tilemap" parent="common"]
+
+editor/display_folded = true
+
 [node name="scenario_tilemap" parent="common/tilemap" instance=ExtResource( 3 )]
 
 editor/display_folded = true
@@ -32,6 +36,10 @@ tile_data = IntArray( 65535, 16, 59, 16, 60, 16, 131071, 16, 65595, 16, 65596, 1
 [node name="info" parent="common/tilemap/scenario_tilemap"]
 
 editor/display_folded = true
+visibility/visible = false
+
+[node name="reference" parent="common/tilemap/scenario_tilemap/info"]
+
 visibility/visible = false
 
 [node name="question_group" parent="common/questions" instance=ExtResource( 4 )]

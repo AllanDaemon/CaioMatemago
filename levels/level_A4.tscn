@@ -39,6 +39,14 @@ editor/display_folded = true
 
 editor/display_folded = true
 
+[node name="info" parent="common/tilemap/scenario_tilemap"]
+
+editor/display_folded = true
+
+[node name="reference" parent="common/tilemap/scenario_tilemap/info"]
+
+visibility/visible = false
+
 [node name="question1_display" parent="common/questions" instance=ExtResource( 4 )]
 
 margin/left = 144.0

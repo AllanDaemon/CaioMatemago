@@ -15,9 +15,17 @@ script/script = ExtResource( 1 )
 
 [node name="common" parent="." instance=ExtResource( 2 )]
 
+[node name="tilemap" parent="common"]
+
+editor/display_folded = true
+
 [node name="scenario_tilemap" parent="common/tilemap" instance=ExtResource( 3 )]
 
 editor/display_folded = true
+
+[node name="reference" parent="common/tilemap/scenario_tilemap/info"]
+
+visibility/visible = false
 
 [node name="question_group1" parent="common/questions" instance=ExtResource( 4 )]
 

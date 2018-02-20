@@ -232,7 +232,9 @@ editor/display_folded = true
 
 [node name="scenario_tilemap" parent="common/tilemap" instance=ExtResource( 3 )]
 
-editor/display_folded = true
+[node name="reference" parent="common/tilemap/scenario_tilemap/info"]
+
+visibility/visible = false
 
 [node name="questions" parent="common"]
 
@@ -350,10 +352,6 @@ transform/pos = Vector2( 216, 176 )
 
 editor/display_folded = true
 transform/pos = Vector2( 344, 40 )
-
-[node name="sprites" parent="common/enemies/boss"]
-
-frame = 1
 
 [node name="dialog" parent="common/enemies/boss"]
 
