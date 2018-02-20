@@ -28,7 +28,11 @@ const candangoA4a = [
 
 
 const bossA5a = [
-	"Você resolveu 5 contas para chegar ao meu castelo? Dúvido que seja verdade! Eu sou o rei do vale da soma e só eu sou capaz de controlar a matemática! Eu te desafio a resolver ... [delay] 10 contas!!!"
+	"Você resolveu 5 contas \npara chegar ao meu castelo?",
+	"Dúvido que seja verdade!",
+	"Eu sou o rei do vale da soma \ne só eu sou capaz de controlar a matemática!",
+	"Eu te desafio a resolver ... ",
+	"10 contas!!!"
 ]
 
 const candangoA5a = [
@@ -42,7 +46,7 @@ const lines_map = {
 	"candangoA1c": candangoA1c,
 	#"candangoA2a": candangoA2a,
 	#"candangoA4a": candangoA4a,
-	#"bossA5a": bossA5a,
+	"bossA5a": bossA5a,
 	#"candangoA5a": candangoA5a,
 	"": ["Missing an line ID!", "¯\\_(ツ)_/¯"]
 }
