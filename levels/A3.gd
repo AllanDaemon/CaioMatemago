@@ -23,5 +23,5 @@ func activate_bridge():
 func spawn_enemy():
 	var new_enemy = enemy_fab.instance()
 	new_enemy.set_pos(spawner.get_pos())
-	#new_enemy.can_fall = true
+	new_enemy.can_fall = true
 	enemies.add_child(new_enemy)
