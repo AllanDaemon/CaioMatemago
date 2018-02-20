@@ -5,8 +5,8 @@
 [ext_resource path="res://tileset/levels/level_A2.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenario/question_group.tscn" type="PackedScene" id=4]
 [ext_resource path="res://enemies/base_enemy.tscn" type="PackedScene" id=5]
-[ext_resource path="res://player/candango.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenario/bubble_box.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenario/bubble_box.tscn" type="PackedScene" id=6]
+[ext_resource path="res://player/candango.tscn" type="PackedScene" id=7]
 
 [node name="level_A2" type="Node2D" groups=[
 "debug",
@@ -18,6 +18,10 @@ __meta__ = {
 }
 
 [node name="common" parent="." instance=ExtResource( 2 )]
+
+[node name="tilemap" parent="common"]
+
+editor/display_folded = true
 
 [node name="scenario_tilemap" parent="common/tilemap" instance=ExtResource( 3 )]
 
@@ -53,52 +57,60 @@ editor/display_folded = true
 
 transform/pos = Vector2( 488, 112 )
 
-[node name="candango" parent="common/math" instance=ExtResource( 6 )]
+[node name="blocks" parent="common"]
 
-transform/pos = Vector2( 112, 144 )
+editor/display_folded = true
 
-[node name="candango1" parent="common/math" instance=ExtResource( 6 )]
-
-transform/pos = Vector2( 672, 144 )
-
-[node name="bubble_blocks" type="Position2D" parent="common/math"]
+[node name="bubble_blocks" type="Position2D" parent="common/blocks"]
 
 editor/display_folded = true
 transform/pos = Vector2( 712, 168 )
 
-[node name="box1" parent="common/math/bubble_blocks" instance=ExtResource( 7 )]
+[node name="box1" parent="common/blocks/bubble_blocks" instance=ExtResource( 6 )]
 
-[node name="box2" parent="common/math/bubble_blocks" instance=ExtResource( 7 )]
+[node name="box2" parent="common/blocks/bubble_blocks" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 16, 0 )
 
-[node name="box3" parent="common/math/bubble_blocks" instance=ExtResource( 7 )]
+[node name="box3" parent="common/blocks/bubble_blocks" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 32, 0 )
 
-[node name="box4" parent="common/math/bubble_blocks" instance=ExtResource( 7 )]
+[node name="box4" parent="common/blocks/bubble_blocks" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 48, 0 )
 
-[node name="box5" parent="common/math/bubble_blocks" instance=ExtResource( 7 )]
+[node name="box5" parent="common/blocks/bubble_blocks" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 64, 0 )
 
-[node name="box6" parent="common/math/bubble_blocks" instance=ExtResource( 7 )]
+[node name="box6" parent="common/blocks/bubble_blocks" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 80, 0 )
 
-[node name="box7" parent="common/math/bubble_blocks" instance=ExtResource( 7 )]
+[node name="box7" parent="common/blocks/bubble_blocks" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 96, 0 )
 
-[node name="box8" parent="common/math/bubble_blocks" instance=ExtResource( 7 )]
+[node name="box8" parent="common/blocks/bubble_blocks" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 112, 0 )
 
-[node name="box9" parent="common/math/bubble_blocks" instance=ExtResource( 7 )]
+[node name="box9" parent="common/blocks/bubble_blocks" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 128, 0 )
+
+[node name="math" parent="common"]
+
+editor/display_folded = true
+
+[node name="candango" parent="common/math" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 112, 144 )
+
+[node name="candango1" parent="common/math" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 672, 144 )
 
 [node name="prev_level" parent="common/action_areas"]
 

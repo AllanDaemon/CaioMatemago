@@ -92,7 +92,7 @@ __meta__ = {
 
 [node name="enemies" type="Node2D" parent="."]
 
-[node name="boxes" type="Node2D" parent="."]
+[node name="blocks" type="Node2D" parent="."]
 
 [node name="math" type="Node2D" parent="."]
 

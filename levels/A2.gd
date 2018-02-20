@@ -1,7 +1,7 @@
 extends Node2D
 
 onready var common = get_node("common")
-onready var bblocks = common.get_node("math/bubble_blocks")
+onready var bblocks = common.get_node("blocks/bubble_blocks")
 onready var question1 = common.get_node("questions/question_group")
 
 func _ready():
