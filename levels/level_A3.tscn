@@ -41,6 +41,17 @@ transform/pos = Vector2( 128, 72 )
 
 transform/pos = Vector2( 16, 136 )
 
+[node name="spawner_enemy" type="Position2D" parent="common/enemies"]
+
+transform/pos = Vector2( 24, 16 )
+
+[node name="spawn_timer" type="Timer" parent="common/enemies/spawner_enemy"]
+
+process_mode = 1
+wait_time = 5.0
+one_shot = false
+autostart = true
+
 [node name="first_wall" type="Position2D" parent="common/blocks"]
 
 editor/display_folded = true
