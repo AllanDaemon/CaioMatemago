@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=1]
+[gd_scene load_steps=10 format=1]
 
 [ext_resource path="res://levels/A5.gd" type="Script" id=1]
 [ext_resource path="res://levels/common.tscn" type="PackedScene" id=2]
@@ -6,8 +6,9 @@
 [ext_resource path="res://scenario/question_group.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenario/coin.tscn" type="PackedScene" id=5]
 [ext_resource path="res://enemies/base_enemy.tscn" type="PackedScene" id=6]
-[ext_resource path="res://player/candango.tscn" type="PackedScene" id=7]
-[ext_resource path="res://scenario/door.tscn" type="PackedScene" id=8]
+[ext_resource path="res://enemies/boss.tscn" type="PackedScene" id=7]
+[ext_resource path="res://player/candango.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenario/door.tscn" type="PackedScene" id=9]
 
 [node name="level_A5" type="Node2D" groups=[
 "debug",
@@ -27,6 +28,10 @@ editor/display_folded = true
 [node name="scenario_tilemap" parent="common/tilemap" instance=ExtResource( 3 )]
 
 editor/display_folded = true
+
+[node name="questions" parent="common"]
+
+visibility/visible = false
 
 [node name="question_group" parent="common/questions" instance=ExtResource( 4 )]
 
@@ -126,10 +131,6 @@ transform/pos = Vector2( 760, 104 )
 
 transform/pos = Vector2( 776, 104 )
 
-[node name="enemies" parent="common"]
-
-editor/display_folded = true
-
 [node name="base_enemy" parent="common/enemies" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 16, 48 )
@@ -139,17 +140,21 @@ enemy_type = "berigelante"
 
 transform/pos = Vector2( 216, 176 )
 
-[node name="candango" parent="common/math" instance=ExtResource( 7 )]
+[node name="boss" parent="common/enemies" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 344, 40 )
+
+[node name="candango" parent="common/math" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 880, 112 )
 
-[node name="door_deco" parent="common/math" instance=ExtResource( 8 )]
+[node name="door_deco" parent="common/math" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 0, 88 )
 transform/scale = Vector2( -1, 1 )
 open = true
 
-[node name="door" parent="common/math" instance=ExtResource( 8 )]
+[node name="door" parent="common/math" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 320, 88 )
 
