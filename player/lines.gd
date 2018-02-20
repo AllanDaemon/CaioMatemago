@@ -17,15 +17,14 @@ const candangoA1c = [
 ]
 
 const candangoA2a = [
-	"Estes blocos devem servir para mais \ncoisas do que só afugentar nossos inimigos.",
-	"A ponte está desativada, será que ela \npode ser reativada se resolvermos essa conta?"
+	"Estes blocos devem servir para \nmais coisas do que só \nafugentar nossos inimigos.",
+	"A ponte está desativada, será que \nela pode ser reativada se \nresolvermos essa conta?"
 ]
 
 const candangoA4a = [
 	"Moedas! Muitas moedas! Você pode me \najudar a juntar esses trocados?",
 	"Quantas moedas foram deixadas aqui?"
 ]
-
 
 const bossA5a = [
 	"Você resolveu 5 contas \npara chegar ao meu castelo?",
@@ -36,17 +35,22 @@ const bossA5a = [
 ]
 
 const candangoA5a = [
-	"Parabéns! Você derrotou o Rei Belingerante. Agora o vale da soma não está mais na mão desses monstros horríveis. O próximo passo da sua jornada é a montanha da subtração. Ouvi falar que as contas de lá são mais difíceis, mas acho que é só um boato para assustar crianças. Tenho certeza que você triunfará mais uma vez! Boa sorte."
+	"Parabéns! \nVocê derrotou o Rei Belingerante.",
+	"Agora o vale da soma não está \nmais na mão desses monstros horríveis.",
+	"O próximo passo da sua jornada \né a montanha da subtração.",
+	"Ouvi falar que as contas \nde lá são mais difíceis,",
+	"mas acho que é só um \nboato para assustar crianças.",
+	"Tenho certeza que você \ntriunfará mais uma vez!",
+	"Boa sorte."
 ]
 
-# Uncomment if the line has been tested and adjusted
 const lines_map = {
 	"candangoA1a": candangoA1a,
 	"candangoA1b": candangoA1b,
 	"candangoA1c": candangoA1c,
-	#"candangoA2a": candangoA2a,
-	#"candangoA4a": candangoA4a,
+	"candangoA2a": candangoA2a,
+	"candangoA4a": candangoA4a,
 	"bossA5a": bossA5a,
-	#"candangoA5a": candangoA5a,
+	"candangoA5a": candangoA5a,
 	"": ["Missing an line ID!", "¯\\_(ツ)_/¯"]
 }

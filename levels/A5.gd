@@ -42,6 +42,7 @@ onready var spawner2 = common.get_node("enemies/enemy_spawner2")
 var enemy_fab = preload("res://enemies/base_enemy.tscn")
 
 func _ready():
+	common.get_node("math/candango/dialog").connect("lines_end", self, "goto_credits")
 	boss.first_interaction()
 	print("waiting boss interaction")
 	yield(boss, "interaction_end")
@@ -84,3 +85,6 @@ func spawn_enemy2():
 	new_enemy.can_fall = true
 	new_enemy.default_direction = new_enemy.LEFT
 	enemies.add_child(new_enemy)
+
+func goto_credits():
+	game.change_level_smooth("credits")

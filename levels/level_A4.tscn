@@ -597,7 +597,15 @@ transform/pos = Vector2( 272, 16 )
 
 [node name="candango" parent="common/math" instance=ExtResource( 12 )]
 
-transform/pos = Vector2( 128, 144 )
+transform/pos = Vector2( 168, 144 )
+lines_id = "candangoA4a"
+
+[node name="dialog" parent="common/math/candango"]
+
+margin/left = -120.0
+margin/top = -120.0
+margin/right = 25.0
+margin/bottom = -69.0
 
 [node name="door" parent="common/math" instance=ExtResource( 13 )]
 
@@ -624,4 +632,5 @@ goto_scene = "level_A5"
 [editable path="common"]
 [editable path="common/tilemap/scenario_tilemap"]
 [editable path="common/questions/question_group2"]
+[editable path="common/math/candango"]
 [editable path="common/HUD"]

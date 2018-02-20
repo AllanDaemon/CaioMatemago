@@ -396,6 +396,10 @@ transform/pos = Vector2( 216, 176 )
 
 transform/pos = Vector2( 344, 40 )
 
+[node name="sprites" parent="common/enemies/boss"]
+
+frame = 1
+
 [node name="dialog" parent="common/enemies/boss"]
 
 visibility/visible = false
@@ -426,7 +430,9 @@ autostart = false
 
 [node name="candango" parent="common/math" instance=ExtResource( 8 )]
 
-transform/pos = Vector2( 840, 112 )
+editor/display_folded = true
+transform/pos = Vector2( 800, 112 )
+lines_id = "candangoA5a"
 
 [node name="door_deco" parent="common/math" instance=ExtResource( 9 )]
 
@@ -475,4 +481,5 @@ autoplay = "start"
 [editable path="common/tilemap/scenario_tilemap"]
 [editable path="common/questions/question_group"]
 [editable path="common/enemies/boss"]
+[editable path="common/math/candango"]
 [editable path="common/HUD"]

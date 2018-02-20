@@ -132,10 +132,6 @@ default_direction = 0
 wait_time = 1.0
 autostart = true
 
-[node name="sprite_anim_green" parent="common/enemies/base_enemy2"]
-
-frame = 1
-
 [node name="sprite_anim_berigelante" parent="common/enemies/base_enemy2"]
 
 frame = 0
