@@ -433,6 +433,8 @@ goto_scene = "level_A3"
 
 [node name="next_level" parent="common/action_areas"]
 
+transform/pos = Vector2( 932, 80 )
+transform/scale = Vector2( 0.874999, 1 )
 enabled = true
 goto_scene = "level_A5"
 
