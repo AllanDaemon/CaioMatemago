@@ -30,10 +30,6 @@ tile_data = IntArray( -262097, 20, -196566, 20, -196565, 20, -196564, 20, -19656
 
 editor/display_folded = true
 
-[node name="questions" parent="common"]
-
-editor/display_folded = true
-
 [node name="question_group" parent="common/questions" instance=ExtResource( 4 )]
 
 a = 2
@@ -43,10 +39,6 @@ operator = "x"
 [node name="question" parent="common/questions/question_group"]
 
 question = "2 x -2"
-
-[node name="value_display" parent="common/questions/question_group"]
-
-value = 0
 
 [node name="coins" parent="common"]
 
@@ -142,7 +134,7 @@ autostart = true
 
 [node name="sprite_anim_green" parent="common/enemies/base_enemy2"]
 
-frame = 0
+frame = 1
 
 [node name="door" parent="common/boxes" instance=ExtResource( 7 )]
 
