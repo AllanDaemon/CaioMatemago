@@ -67,6 +67,7 @@ func update_question(reset_display=true):
 	self.enabled = true
 	if reset_display:
 		display.value = 0
+		display.default()
 
 func calc_result():
 	if operator == "+":

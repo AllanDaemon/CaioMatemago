@@ -14,6 +14,9 @@ func right():
 
 func wrong():
 	anim.play("wrong")
+	
+func default():
+	anim.play("default")
 
 # debug, test
 func _on_test_btn_toggled( pressed ):
