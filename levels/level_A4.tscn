@@ -68,6 +68,10 @@ transform/pos = Vector2( 128, 72 )
 increment = 10
 texture = SubResource( 1 )
 
+[node name="coins" parent="common"]
+
+editor/display_folded = true
+
 [node name="coin17" parent="common/coins" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 88, 88 )

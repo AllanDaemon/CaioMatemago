@@ -1,6 +1,6 @@
 extends Node2D
 
-const coins_total = 40
+const coins_total = 41
 
 onready var common = get_node("common")
 onready var coins = common.get_node("coins")
@@ -30,6 +30,10 @@ func coin_up(up=1):
 	display.value += up
 	if display.value == coins_total:
 		question1_right()
+	var brick = wall.get_children()[-1]
+	printt("Brick:", brick)
+	wall.remove_child(brick)
+	brick.queue_free()
 
 func question1_right():
 	display.right()
