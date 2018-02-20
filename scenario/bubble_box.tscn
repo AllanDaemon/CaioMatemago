@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=10 format=1]
 
 [ext_resource path="res://scenario/bubble_box.gd" type="Script" id=1]
 [ext_resource path="res://tileset/tileset.png" type="Texture" id=2]
@@ -14,20 +14,14 @@ atlas = ExtResource( 2 )
 region = Rect2( 144, 16, 16, 16 )
 margin = Rect2( 0, 0, 0, 0 )
 
-[sub_resource type="AtlasTexture" id=3]
-
-atlas = ExtResource( 2 )
-region = Rect2( 32, 16, 16, 16 )
-margin = Rect2( 0, 0, 0, 0 )
-
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=7]
 
 resource/name = "disabled"
 length = 0.1
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("sprite_disabled:visibility/visible")
+tracks/0/path = NodePath("collision:trigger")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
@@ -37,7 +31,7 @@ tracks/0/keys = {
 "values": [ true ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("sprite_enabled:visibility/visible")
+tracks/1/path = NodePath(".:visibility/visible")
 tracks/1/interp = 1
 tracks/1/imported = false
 tracks/1/keys = {
@@ -46,15 +40,59 @@ tracks/1/keys = {
 "update": 1,
 "values": [ false ]
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath("colison:trigger")
-tracks/2/interp = 1
-tracks/2/imported = false
-tracks/2/keys = {
+
+[sub_resource type="Animation" id=6]
+
+resource/name = "enabled"
+length = 0.1
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("collision:trigger")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:visibility/visible")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
 "values": [ true ]
+}
+
+[sub_resource type="Animation" id=4]
+
+resource/name = "disabled"
+length = 0.1
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("collision:trigger")
+tracks/0/interp = 1
+tracks/0/imported = false
+tracks/0/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("sprite:visibility/visible")
+tracks/1/interp = 1
+tracks/1/imported = false
+tracks/1/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 1,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -64,63 +102,53 @@ length = 0.1
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("sprite_enabled:visibility/visible")
+tracks/0/path = NodePath("collision:trigger")
 tracks/0/interp = 1
 tracks/0/imported = false
 tracks/0/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ true ]
+"values": [ false ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("sprite_disabled:visibility/visible")
+tracks/1/path = NodePath("sprite:visibility/visible")
 tracks/1/interp = 1
 tracks/1/imported = false
 tracks/1/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "update": 1,
-"values": [ false ]
+"values": [ true ]
 }
-tracks/2/type = "value"
-tracks/2/path = NodePath("colison:trigger")
-tracks/2/interp = 1
-tracks/2/imported = false
-tracks/2/keys = {
-"times": FloatArray( 0 ),
-"transitions": FloatArray( 1 ),
-"update": 1,
-"values": [ false ]
-}
+
+[sub_resource type="AtlasTexture" id=3]
+
+atlas = ExtResource( 2 )
+region = Rect2( 32, 16, 16, 16 )
+margin = Rect2( 0, 0, 0, 0 )
 
 [node name="box" type="KinematicBody2D"]
 
 input/pickable = false
 shapes/0/shape = SubResource( 1 )
 shapes/0/transform = Matrix32( 1, 0, 0, 1, 0, 0 )
-shapes/0/trigger = true
+shapes/0/trigger = false
 collision/layers = 1
 collision/mask = 1
 collision/margin = 0.08
 script/script = ExtResource( 1 )
 enabled = false
 
-[node name="sprite_enabled" type="Sprite" parent="."]
+[node name="sprite" type="Sprite" parent="."]
 
-visibility/visible = false
 texture = SubResource( 2 )
 region_rect = Rect2( 0, 0, 16, 16 )
 
-[node name="sprite_disabled" type="Sprite" parent="."]
-
-texture = SubResource( 3 )
-region_rect = Rect2( 0, 0, 16, 16 )
-
-[node name="colison" type="CollisionShape2D" parent="."]
+[node name="collision" type="CollisionShape2D" parent="."]
 
 shape = SubResource( 1 )
-trigger = true
+trigger = false
 _update_shape_index = 0
 
 [node name="anim" type="AnimationPlayer" parent="."]
@@ -128,11 +156,39 @@ _update_shape_index = 0
 playback/process_mode = 1
 playback/default_blend_time = 0.0
 root/root = NodePath("..")
-anims/disabled = SubResource( 4 )
-anims/enabled = SubResource( 5 )
+anims/disabled = SubResource( 7 )
+anims/enabled = SubResource( 6 )
 playback/active = true
 playback/speed = 1.0
 blend_times = [  ]
 autoplay = "enabled"
+
+[node name="alt" type="Node2D" parent="."]
+
+editor/display_folded = true
+visibility/visible = false
+
+[node name="anim" type="AnimationPlayer" parent="alt"]
+
+playback/process_mode = 1
+playback/default_blend_time = 0.0
+root/root = NodePath("..")
+anims/disabled = SubResource( 4 )
+anims/enabled = SubResource( 5 )
+playback/active = false
+playback/speed = 1.0
+blend_times = [  ]
+autoplay = "enabled"
+
+[node name="sprite_enabled" type="Sprite" parent="alt"]
+
+texture = SubResource( 2 )
+region_rect = Rect2( 0, 0, 16, 16 )
+
+[node name="sprite_disabled" type="Sprite" parent="alt"]
+
+visibility/visible = false
+texture = SubResource( 3 )
+region_rect = Rect2( 0, 0, 16, 16 )
 
 
