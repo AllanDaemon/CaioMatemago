@@ -23,6 +23,8 @@ margin = Rect2( 0, 0, 0, 0 )
 
 [node name="brick_block" instance=ExtResource( 1 )]
 
+enabled = true
+
 [node name="sprite" parent="."]
 
 texture = SubResource( 1 )

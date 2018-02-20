@@ -16,9 +16,9 @@ func _ready():
 	_set_enabled(enabled)
 
 func _set_enabled(value):
-	if not _post_ready: return
-	if get_tree().is_editor_hint(): return
 	enabled = value
+	if not _post_ready: return
+	if get_tree() and get_tree().is_editor_hint(): return
 	anim.play("enabled" if enabled else "disabled")
 
 
