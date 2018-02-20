@@ -1,6 +1,12 @@
 #question group: save result on display on a property OK
 
 
+Next:
+	Finish A4 draft
+	Finish A5 draft
+	Fix enemy wall detection
+
+
 - Player
 	- Anim
 #		  Hit animation
@@ -160,7 +166,7 @@ A2
 	Bubble block enable animation
 
 A3
-	
+
 
 ### Refactor
 
