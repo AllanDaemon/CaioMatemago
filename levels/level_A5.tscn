@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=8 format=1]
 
-[ext_resource path="res://levels/base.gd" type="Script" id=1]
+[ext_resource path="res://levels/A5.gd" type="Script" id=1]
 [ext_resource path="res://levels/common.tscn" type="PackedScene" id=2]
 [ext_resource path="res://tileset/levels/level_A5.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenario/coin.tscn" type="PackedScene" id=4]
 [ext_resource path="res://enemies/base_enemy.tscn" type="PackedScene" id=5]
 [ext_resource path="res://player/candango.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenario/door.tscn" type="PackedScene" id=7]
 
 [node name="level_A5" type="Node2D" groups=[
 "debug",
@@ -17,6 +18,10 @@ __meta__ = {
 }
 
 [node name="common" parent="." instance=ExtResource( 2 )]
+
+[node name="tilemap" parent="common"]
+
+editor/display_folded = true
 
 [node name="scenario_tilemap" parent="common/tilemap" instance=ExtResource( 3 )]
 
@@ -102,6 +107,12 @@ transform/pos = Vector2( 216, 176 )
 [node name="candango" parent="common/math" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 880, 112 )
+
+[node name="door" parent="common/math" instance=ExtResource( 7 )]
+
+transform/pos = Vector2( 0, 88 )
+transform/scale = Vector2( -1, 1 )
+open = true
 
 [node name="prev_level" parent="common/action_areas"]
 
