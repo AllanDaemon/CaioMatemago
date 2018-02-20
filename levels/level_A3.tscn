@@ -1,47 +1,94 @@
-[gd_scene load_steps=6 format=1]
+[gd_scene load_steps=7 format=1]
 
 [ext_resource path="res://levels/A3.gd" type="Script" id=1]
 [ext_resource path="res://levels/common.tscn" type="PackedScene" id=2]
 [ext_resource path="res://tileset/levels/level_A3.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenario/question_group.tscn" type="PackedScene" id=4]
 [ext_resource path="res://enemies/base_enemy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenario/brick_block.tscn" type="PackedScene" id=6]
 
 [node name="level_A3" type="Node2D" groups=[
 "debug",
 ]]
 
 script/script = ExtResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="common" parent="." instance=ExtResource( 2 )]
-
-[node name="tilemap" parent="common"]
-
-editor/display_folded = true
 
 [node name="scenario_tilemap" parent="common/tilemap" instance=ExtResource( 3 )]
 
 editor/display_folded = true
 
-[node name="question_group" parent="common/questions" instance=ExtResource( 4 )]
+[node name="question_group1" parent="common/questions" instance=ExtResource( 4 )]
 
 transform/pos = Vector2( -8, -16 )
 a = 5
 b = 6
 
-[node name="question" parent="common/questions/question_group"]
+[node name="question" parent="common/questions/question_group1"]
 
 question = "5 + 6"
 
-[node name="result_box" parent="common/questions/question_group/boxes"]
+[node name="result_box" parent="common/questions/question_group1/boxes"]
 
-transform/pos = Vector2( 176, 72 )
+transform/pos = Vector2( 168, 72 )
+
+[node name="box-1" parent="common/questions/question_group1/boxes"]
+
+transform/pos = Vector2( 128, 72 )
 
 [node name="base_enemy" parent="common/enemies" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 16, 136 )
+
+[node name="first_wall" type="Position2D" parent="common/blocks"]
+
+editor/display_folded = true
+transform/pos = Vector2( 320, 160 )
+
+[node name="brick_block1" parent="common/blocks/first_wall" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 8, -8 )
+
+[node name="brick_block2" parent="common/blocks/first_wall" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 8, -24 )
+
+[node name="brick_block3" parent="common/blocks/first_wall" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 8, -40 )
+
+[node name="brick_block4" parent="common/blocks/first_wall" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 8, -56 )
+
+[node name="brick_block5" parent="common/blocks/first_wall" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 8, -72 )
+
+[node name="brick_block6" parent="common/blocks/first_wall" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 8, -88 )
+
+[node name="brick_block7" parent="common/blocks/first_wall" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 24, -88 )
+
+[node name="brick_block8" parent="common/blocks/first_wall" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 24, -72 )
+
+[node name="brick_block9" parent="common/blocks/first_wall" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 24, -56 )
+
+[node name="brick_block10" parent="common/blocks/first_wall" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 24, -40 )
+
+[node name="brick_block11" parent="common/blocks/first_wall" instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 24, -24 )
 
 [node name="prev_level" parent="common/action_areas"]
 
@@ -55,5 +102,5 @@ goto_scene = "level_A4"
 
 [editable path="common"]
 [editable path="common/tilemap/scenario_tilemap"]
-[editable path="common/questions/question_group"]
+[editable path="common/questions/question_group1"]
 [editable path="common/HUD"]
