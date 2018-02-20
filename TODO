@@ -84,16 +84,16 @@
 	* Improve speed
 	* Put visual ... indication
 
-* Bubble Block
-	* Scene
-		* Sprite
-	* FSM
-		* Active
-		* Inactive
-	* Animation
-		* FMS states
-	* Code
-	* Game play interaction
+# Bubble Block
+#	Scene
+#		Sprite
+#	FSM
+#		Active
+#		Inactive
+#	Animation
+#		FMS states
+#	Code
+#	Game play interaction
 
 
 * Brick Block
@@ -153,7 +153,14 @@
 		* Last door control
 	* Mutiples operations
 
+A1
 
+A2
+	Count
+	Bubble block enable animation
+
+A3
+	
 
 ### Refactor
 
