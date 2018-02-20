@@ -37,30 +37,40 @@ tracks/1/keys = {
 "values": [ true, false ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("common/questions:visibility/visible")
+tracks/2/path = NodePath("common/questions:transform/pos")
 tracks/2/interp = 1
 tracks/2/imported = false
 tracks/2/keys = {
+"times": FloatArray( 1 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("common/questions:visibility/visible")
+tracks/3/interp = 1
+tracks/3/imported = false
+tracks/3/keys = {
 "times": FloatArray( 0, 1 ),
 "transitions": FloatArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
 }
-tracks/3/type = "value"
-tracks/3/path = NodePath("common/questions:visibility/opacity")
-tracks/3/interp = 1
-tracks/3/imported = false
-tracks/3/keys = {
+tracks/4/type = "value"
+tracks/4/path = NodePath("common/questions:visibility/opacity")
+tracks/4/interp = 1
+tracks/4/imported = false
+tracks/4/keys = {
 "times": FloatArray( 0, 1, 2 ),
 "transitions": FloatArray( 1, 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0, 1.0 ]
 }
-tracks/4/type = "method"
-tracks/4/path = NodePath("common/enemies/enemy_spawner1/timer")
-tracks/4/interp = 1
-tracks/4/imported = false
-tracks/4/keys = {
+tracks/5/type = "method"
+tracks/5/path = NodePath("common/enemies/enemy_spawner1/timer")
+tracks/5/interp = 1
+tracks/5/imported = false
+tracks/5/keys = {
 "times": FloatArray( 0 ),
 "transitions": FloatArray( 1 ),
 "values": [ {
@@ -68,11 +78,11 @@ tracks/4/keys = {
 "method": "start"
 } ]
 }
-tracks/5/type = "method"
-tracks/5/path = NodePath("common/enemies/enemy_spawner2/timer")
-tracks/5/interp = 1
-tracks/5/imported = false
-tracks/5/keys = {
+tracks/6/type = "method"
+tracks/6/path = NodePath("common/enemies/enemy_spawner2/timer")
+tracks/6/interp = 1
+tracks/6/imported = false
+tracks/6/keys = {
 "times": FloatArray( 1.5 ),
 "transitions": FloatArray( 1 ),
 "values": [ {
@@ -238,6 +248,16 @@ tracks/5/keys = {
 "update": 0,
 "values": [ 0.0 ]
 }
+tracks/6/type = "value"
+tracks/6/path = NodePath("common/questions:transform/pos")
+tracks/6/interp = 1
+tracks/6/imported = false
+tracks/6/keys = {
+"times": FloatArray( 0 ),
+"transitions": FloatArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -1000 ) ]
+}
 
 [node name="level_A5" type="Node2D" groups=[
 "debug",
@@ -259,6 +279,7 @@ visibility/visible = false
 
 [node name="questions" parent="common"]
 
+editor/display_folded = true
 visibility/visible = false
 visibility/opacity = 0.0
 
@@ -373,12 +394,7 @@ transform/pos = Vector2( 216, 176 )
 
 [node name="boss" parent="common/enemies" instance=ExtResource( 7 )]
 
-editor/display_folded = true
 transform/pos = Vector2( 344, 40 )
-
-[node name="sprites" parent="common/enemies/boss"]
-
-frame = 1
 
 [node name="dialog" parent="common/enemies/boss"]
 
@@ -410,7 +426,7 @@ autostart = false
 
 [node name="candango" parent="common/math" instance=ExtResource( 8 )]
 
-transform/pos = Vector2( 880, 112 )
+transform/pos = Vector2( 840, 112 )
 
 [node name="door_deco" parent="common/math" instance=ExtResource( 9 )]
 
