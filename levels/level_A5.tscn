@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=1]
+[gd_scene load_steps=9 format=1]
 
 [ext_resource path="res://levels/A5.gd" type="Script" id=1]
 [ext_resource path="res://levels/common.tscn" type="PackedScene" id=2]
 [ext_resource path="res://tileset/levels/level_A5.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenario/coin.tscn" type="PackedScene" id=4]
-[ext_resource path="res://enemies/base_enemy.tscn" type="PackedScene" id=5]
-[ext_resource path="res://player/candango.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scenario/door.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenario/question_group.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenario/coin.tscn" type="PackedScene" id=5]
+[ext_resource path="res://enemies/base_enemy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://player/candango.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenario/door.tscn" type="PackedScene" id=8]
 
 [node name="level_A5" type="Node2D" groups=[
 "debug",
@@ -27,67 +28,101 @@ editor/display_folded = true
 
 editor/display_folded = true
 
+[node name="question_group" parent="common/questions" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( -16, 16 )
+
+[node name="value_display" parent="common/questions/question_group"]
+
+margin/left = 200.0
+margin/top = 16.0
+margin/right = 320.0
+margin/bottom = 79.0
+
+[node name="boxes" parent="common/questions/question_group"]
+
+editor/display_folded = true
+
+[node name="result_box" parent="common/questions/question_group/boxes"]
+
+transform/pos = Vector2( 216, 120 )
+
+[node name="box+1" parent="common/questions/question_group/boxes"]
+
+transform/pos = Vector2( 120, 120 )
+
+[node name="box-1" parent="common/questions/question_group/boxes"]
+
+transform/pos = Vector2( 160, 120 )
+
+[node name="timer" type="Timer" parent="common/questions/question_group"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
 [node name="coins" parent="common"]
 
 editor/display_folded = true
 
-[node name="coin" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin" parent="common/coins" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 392, 104 )
 
-[node name="coin1" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin1" parent="common/coins" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 424, 104 )
 
-[node name="coin2" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin2" parent="common/coins" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 440, 104 )
 
-[node name="coin3" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin3" parent="common/coins" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 488, 104 )
 
-[node name="coin4" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin4" parent="common/coins" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 504, 104 )
 
-[node name="coin5" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin5" parent="common/coins" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 520, 104 )
 
-[node name="coin6" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin6" parent="common/coins" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 584, 104 )
 
-[node name="coin7" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin7" parent="common/coins" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 600, 104 )
 
-[node name="coin8" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin8" parent="common/coins" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 616, 104 )
 
-[node name="coin9" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin9" parent="common/coins" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 632, 104 )
 
-[node name="coin10" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin10" parent="common/coins" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 712, 104 )
 
-[node name="coin11" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin11" parent="common/coins" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 728, 104 )
 
-[node name="coin12" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin12" parent="common/coins" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 744, 104 )
 
-[node name="coin13" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin13" parent="common/coins" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 760, 104 )
 
-[node name="coin14" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin14" parent="common/coins" instance=ExtResource( 5 )]
 
 transform/pos = Vector2( 776, 104 )
 
@@ -95,24 +130,28 @@ transform/pos = Vector2( 776, 104 )
 
 editor/display_folded = true
 
-[node name="base_enemy" parent="common/enemies" instance=ExtResource( 5 )]
+[node name="base_enemy" parent="common/enemies" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 16, 48 )
 enemy_type = "berigelante"
 
-[node name="base_enemy1" parent="common/enemies" instance=ExtResource( 5 )]
+[node name="base_enemy1" parent="common/enemies" instance=ExtResource( 6 )]
 
 transform/pos = Vector2( 216, 176 )
 
-[node name="candango" parent="common/math" instance=ExtResource( 6 )]
+[node name="candango" parent="common/math" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 880, 112 )
 
-[node name="door" parent="common/math" instance=ExtResource( 7 )]
+[node name="door_deco" parent="common/math" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 0, 88 )
 transform/scale = Vector2( -1, 1 )
 open = true
+
+[node name="door" parent="common/math" instance=ExtResource( 8 )]
+
+transform/pos = Vector2( 320, 88 )
 
 [node name="prev_level" parent="common/action_areas"]
 
@@ -123,7 +162,10 @@ goto_scene = "level_A4"
 enabled = true
 goto_scene = "credits"
 
+[connection signal="right_operation" from="common/questions/question_group" to="." method="_on_right_operation"]
+
 
 [editable path="common"]
 [editable path="common/tilemap/scenario_tilemap"]
+[editable path="common/questions/question_group"]
 [editable path="common/HUD"]
