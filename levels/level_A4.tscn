@@ -1,11 +1,20 @@
-[gd_scene load_steps=7 format=1]
+[gd_scene load_steps=11 format=1]
 
-[ext_resource path="res://levels/base.gd" type="Script" id=1]
+[ext_resource path="res://levels/A4.gd" type="Script" id=1]
 [ext_resource path="res://levels/common.tscn" type="PackedScene" id=2]
 [ext_resource path="res://tileset/levels/level_A4.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenario/coin.tscn" type="PackedScene" id=4]
-[ext_resource path="res://enemies/base_enemy.tscn" type="PackedScene" id=5]
-[ext_resource path="res://player/candango.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenario/question_group.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenario/box.tscn" type="PackedScene" id=5]
+[ext_resource path="res://tileset/tileset.png" type="Texture" id=6]
+[ext_resource path="res://scenario/coin.tscn" type="PackedScene" id=7]
+[ext_resource path="res://enemies/base_enemy.tscn" type="PackedScene" id=8]
+[ext_resource path="res://player/candango.tscn" type="PackedScene" id=9]
+
+[sub_resource type="AtlasTexture" id=1]
+
+atlas = ExtResource( 6 )
+region = Rect2( 32, 0, 24, 16 )
+margin = Rect2( 0, 0, 0, 0 )
 
 [node name="level_A4" type="Node2D" groups=[
 "debug",
@@ -18,201 +27,219 @@ __meta__ = {
 
 [node name="common" parent="." instance=ExtResource( 2 )]
 
-[node name="tilemap" parent="common"]
-
-editor/display_folded = true
-
 [node name="scenario_tilemap" parent="common/tilemap" instance=ExtResource( 3 )]
 
 editor/display_folded = true
+
+[node name="question_group1" parent="common/questions" instance=ExtResource( 4 )]
+
+visibility/visible = false
+
+[node name="question_group2" parent="common/questions" instance=ExtResource( 4 )]
+
+transform/pos = Vector2( 360, -16 )
+a = 9
+b = 14
+
+[node name="box+10" parent="common/questions/question_group2/boxes" instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 128, 72 )
+increment = 10
+texture = SubResource( 1 )
+
+[node name="box-1" parent="common/questions/question_group2/boxes"]
+
+transform/pos = Vector2( 160, 72 )
 
 [node name="coins" parent="common"]
 
 editor/display_folded = true
 
-[node name="coin" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin" parent="common/coins" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 88, 88 )
 
-[node name="coin1" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin1" parent="common/coins" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 104, 88 )
 
-[node name="coin2" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin2" parent="common/coins" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 120, 88 )
 
-[node name="coin3" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin3" parent="common/coins" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 136, 88 )
 
-[node name="coin4" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin4" parent="common/coins" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 152, 88 )
 
-[node name="coin5" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin5" parent="common/coins" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 168, 88 )
 
-[node name="coin6" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin6" parent="common/coins" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 200, 104 )
 
-[node name="coin11 4" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin11 4" parent="common/coins" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 216, 104 )
 
-[node name="coin115" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin115" parent="common/coins" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 232, 104 )
 
-[node name="coin117 4" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin117 4" parent="common/coins" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 248, 104 )
 
-[node name="coin1175" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin1175" parent="common/coins" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 264, 104 )
 
-[node name="coin1176 2" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin1176 2" parent="common/coins" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 280, 104 )
 
-[node name="coin11763" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin11763" parent="common/coins" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 296, 104 )
 
-[node name="coin7" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin7" parent="common/coins" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 200, 120 )
 
-[node name="coin11" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin11" parent="common/coins" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 216, 120 )
 
-[node name="coin12" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin12" parent="common/coins" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 232, 120 )
 
-[node name="coin13" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin13" parent="common/coins" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 248, 120 )
 
-[node name="coin14" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin14" parent="common/coins" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 264, 120 )
 
-[node name="coin15" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin15" parent="common/coins" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 280, 120 )
 
-[node name="coin16" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin16" parent="common/coins" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 296, 120 )
 
-[node name="coin8" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin8" parent="common/coins" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 200, 136 )
 
-[node name="coin11 2" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin11 2" parent="common/coins" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 216, 136 )
 
-[node name="coin113" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin113" parent="common/coins" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 232, 136 )
 
-[node name="coin117 3" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin117 3" parent="common/coins" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 248, 136 )
 
-[node name="coin1174" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin1174" parent="common/coins" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 264, 136 )
 
-[node name="coin1176 3" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin1176 3" parent="common/coins" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 280, 136 )
 
-[node name="coin11764" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin11764" parent="common/coins" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 296, 136 )
 
-[node name="coin9" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin9" parent="common/coins" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 200, 152 )
 
-[node name="coin11 3" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin11 3" parent="common/coins" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 216, 152 )
 
-[node name="coin114" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin114" parent="common/coins" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 232, 152 )
 
-[node name="coin117" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin117" parent="common/coins" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 248, 152 )
 
-[node name="coin118" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin118" parent="common/coins" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 264, 152 )
 
-[node name="coin119" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin119" parent="common/coins" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 280, 152 )
 
-[node name="coin120" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin120" parent="common/coins" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 296, 152 )
 
-[node name="coin10" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin10" parent="common/coins" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 200, 168 )
 
-[node name="coin11 5" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin11 5" parent="common/coins" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 216, 168 )
 
-[node name="coin116" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin116" parent="common/coins" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 232, 168 )
 
-[node name="coin117 2" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin117 2" parent="common/coins" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 248, 168 )
 
-[node name="coin1173" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin1173" parent="common/coins" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 264, 168 )
 
-[node name="coin1176" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin1176" parent="common/coins" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 280, 168 )
 
-[node name="coin1177" parent="common/coins" instance=ExtResource( 4 )]
+[node name="coin1177" parent="common/coins" instance=ExtResource( 7 )]
 
 transform/pos = Vector2( 296, 168 )
 
-[node name="base_enemy" parent="common/enemies" instance=ExtResource( 5 )]
+[node name="base_enemy" parent="common/enemies" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 584, 112 )
 
-[node name="base_enemy 2" parent="common/enemies" instance=ExtResource( 5 )]
+[node name="base_enemy 2" parent="common/enemies" instance=ExtResource( 8 )]
 
 transform/pos = Vector2( 16, 136 )
 enemy_type = "berigelante"
 
-[node name="math" parent="common"]
-
-editor/display_folded = true
-
-[node name="candango" parent="common/math" instance=ExtResource( 6 )]
+[node name="candango" parent="common/math" instance=ExtResource( 9 )]
 
 transform/pos = Vector2( 128, 144 )
 
+[node name="action_areas" parent="common"]
+
+editor/display_folded = false
+visibility/visible = true
+
 [node name="prev_level" parent="common/action_areas"]
 
+visibility/visible = false
 goto_scene = "level_A3"
 
 [node name="next_level" parent="common/action_areas"]
@@ -223,4 +250,5 @@ goto_scene = "level_A5"
 
 [editable path="common"]
 [editable path="common/tilemap/scenario_tilemap"]
+[editable path="common/questions/question_group2"]
 [editable path="common/HUD"]
