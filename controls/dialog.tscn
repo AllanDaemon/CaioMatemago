@@ -54,7 +54,7 @@ size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
 margin/top = 0.0
-margin/right = 560.0
+margin/right = 1420.0
 margin/bottom = 110.0
 custom_fonts/normal_font = ExtResource( 2 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
@@ -96,8 +96,8 @@ custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode/enabled = true
 bbcode/bbcode = "Ei, garoto! Cuidado com o buraco.
 O vale da soma é um lugar perigoso..."
-visible_characters = -1
-percent_visible = 1.0
+visible_characters = 60
+percent_visible = 0.866667
 
 [node name="anim" type="AnimationPlayer" parent="."]
 

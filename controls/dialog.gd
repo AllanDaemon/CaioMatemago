@@ -1,6 +1,8 @@
 tool
 extends Control
 
+signal lines_end
+
 var character = "NPC"
 var lines = [
 	"Line1.1 \nLine1.2",
@@ -49,6 +51,7 @@ func next_line(char=null):
 	if lines.size()==0:
 		set_process_input(false)
 		print("Text finished")
+		emit_signal("lines_end")
 		return
 	print("goto next line")
 	var line = lines[0]
