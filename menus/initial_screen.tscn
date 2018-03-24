@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=1]
+[gd_scene load_steps=6 format=1]
 
 [ext_resource path="res://audio/JOGO.ogg" type="AudioStream" id=1]
 [ext_resource path="res://controls/stream_player.gd" type="Script" id=2]
 [ext_resource path="res://documentation/Splash Screens/Intro.png" type="Texture" id=3]
+[ext_resource path="res://fonts/averia80pt.tres" type="DynamicFont" id=4]
 
 [sub_resource type="GDScript" id=1]
 
@@ -124,6 +125,25 @@ enabled_focus_mode = 2
 shortcut = null
 text = "Sair"
 flat = false
+
+[node name="version_label" type="Label" parent="."]
+
+rect/scale = Vector2( 0.2, 0.2 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 230.0
+margin/top = 30.0
+margin/right = 630.0
+margin/bottom = 233.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Versão
+Alpha 0.1"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 [connection signal="pressed" from="buttons/init_btn" to="." method="_on_init"]
 
