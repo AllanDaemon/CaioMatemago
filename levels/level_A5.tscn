@@ -380,15 +380,15 @@ editor/display_folded = true
 
 [node name="result_box" parent="common/questions/question_group/boxes"]
 
-transform/pos = Vector2( 216, 120 )
+transform/pos = Vector2( 216, 104 )
 
 [node name="box+1" parent="common/questions/question_group/boxes"]
 
-transform/pos = Vector2( 120, 120 )
+transform/pos = Vector2( 120, 104 )
 
 [node name="box-1" parent="common/questions/question_group/boxes"]
 
-transform/pos = Vector2( 160, 120 )
+transform/pos = Vector2( 160, 104 )
 
 [node name="timer" type="Timer" parent="common/questions/question_group"]
 
@@ -474,7 +474,7 @@ transform/pos = Vector2( 216, 176 )
 
 [node name="boss" parent="common/enemies" instance=ExtResource( 10 )]
 
-visibility/visible = false
+editor/display_folded = true
 transform/pos = Vector2( 344, 40 )
 transform/scale = Vector2( 1e-05, 1e-05 )
 
