@@ -14,6 +14,7 @@ func _ready():
 	question1.connect("right_operation", first_wall, "queue_free")
 	question2.connect("right_operation", self, "activate_bridge")
 	spawn_timer.connect("timeout", self, "spawn_enemy")
+	spawn_enemy()
 	
 func activate_bridge():
 	printt("Activating bridge")

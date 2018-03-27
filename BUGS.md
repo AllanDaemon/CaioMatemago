@@ -4,8 +4,6 @@
 - Os dois últimos profs. Candango estão muito próximos e com as falas bugadas. Pode retirar um deles. Ou ambos, caso não der certo de arrumar a fala deles.
 * Em A2
 - O Sol estático no meio da tela não acompanha a movimentação das nuvens. Pode tirar. Acho que não fará tanta diferença.
-* Em A3
-- Não é um problema e eu mesmo tinha definido dessa forma, mas analisando a dinâmica do estágio, acho que fica melhor o inimigo que cai do céu no começo surgir andando vindo da esquerda para a direita da tela e com uma frequência menor (A cada 10 segundos). Dessa forma ele não fica bugado grudado do lado esquerdo da tela.
 * Em A4
 - O belingerante que surge do lado esquerdo está ficando preso do lado esquerdo da tela. Podemos retirar da esquerda da tela e deixa-lo no buraco onde estão as moedas.
 - O sol está estático dentro da caixa da conta. Pode retirar tb.
