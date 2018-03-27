@@ -2,7 +2,6 @@
 - Aumentar o tempo de exposição do splash screen para que tenha a mesma duração do arquivo de audio
 * Em A1
 - Os dois últimos profs. Candango estão muito próximos e com as falas bugadas. Pode retirar um deles. Ou ambos, caso não der certo de arrumar a fala deles.
-- Monstros não morrem quando ativam-se os blocos. Se não for possível corrigir, pode retirar os monstros que estão no buraco.
 * Em A2
 - O Sol estático no meio da tela não acompanha a movimentação das nuvens. Pode tirar. Acho que não fará tanta diferença.
 * Em A3
