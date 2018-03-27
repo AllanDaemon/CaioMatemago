@@ -24,10 +24,9 @@ __meta__ = {
 
 editor/display_folded = true
 
-[node name="info" parent="common/tilemap/scenario_tilemap"]
+[node name="scenario_tilemap" parent="common/tilemap" instance=ExtResource( 3 )]
 
-editor/display_folded = true
-visibility/visible = false
+transform/pos = Vector2( 2, 0 )
 
 [node name="reference" parent="common/tilemap/scenario_tilemap/info"]
 
