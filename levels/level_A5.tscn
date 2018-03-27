@@ -524,7 +524,6 @@ open = true
 [node name="door" parent="common/math" instance=ExtResource( 12 )]
 
 transform/pos = Vector2( 320, 88 )
-open = true
 
 [node name="prev_level" parent="common/action_areas"]
 
