@@ -1,5 +1,4 @@
 * No Splash Screen antes da fase começar:
-- Arrumar o texto. Onde se lê "O Vale das Somas" deveria ser "O Vale da Soma"
 - Aumentar o tempo de exposição do splash screen para que tenha a mesma duração do arquivo de audio
 * Em A1
 - Os dois últimos profs. Candango estão muito próximos e com as falas bugadas. Pode retirar um deles. Ou ambos, caso não der certo de arrumar a fala deles.
