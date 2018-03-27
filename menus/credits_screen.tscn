@@ -23,35 +23,35 @@ func _input(ev):
 
 [sub_resource type="DynamicFont" id=2]
 
-font/size = 15
+font/size = 150
 font/use_mipmaps = false
 font/use_filter = false
 font/font = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=3]
 
-font/size = 15
+font/size = 150
 font/use_mipmaps = false
 font/use_filter = true
 font/font = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=4]
 
-font/size = 15
+font/size = 150
 font/use_mipmaps = false
 font/use_filter = true
 font/font = ExtResource( 4 )
 
 [sub_resource type="DynamicFont" id=5]
 
-font/size = 20
+font/size = 200
 font/use_mipmaps = false
 font/use_filter = true
 font/font = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=6]
 
-font/size = 15
+font/size = 150
 font/use_mipmaps = false
 font/use_filter = true
 font/font = ExtResource( 2 )
@@ -75,36 +75,15 @@ centered = false
 
 [node name="credits" type="RichTextLabel" parent="."]
 
-visibility/visible = false
+rect/scale = Vector2( 0.1, 0.1 )
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
 size_flags/vertical = 2
 margin/left = 0.0
-margin/top = 15.0
-margin/right = 320.0
-margin/bottom = 165.0
-bbcode/enabled = true
-bbcode/bbcode = "[center][b]CAIO, O MATEMAGO[/b]
-
-[i]Músicas, arte e game design por[/i]
-Lucas de Aquino Melo
-
-[i]Programação por[/i]
-[code]Reynaldo Allan Fulin[/code][/center]"
-visible_characters = -1
-percent_visible = 1.0
-
-[node name="credits_" type="RichTextLabel" parent="."]
-
-focus/ignore_mouse = false
-focus/stop_mouse = true
-size_flags/horizontal = 2
-size_flags/vertical = 2
-margin/left = 0.0
-margin/top = 10.0
-margin/right = 320.0
-margin/bottom = 160.0
+margin/top = 6.0
+margin/right = 3200.0
+margin/bottom = 1446.0
 custom_fonts/mono_font = SubResource( 2 )
 custom_fonts/bold_italics_font = SubResource( 3 )
 custom_fonts/italics_font = SubResource( 4 )
@@ -119,6 +98,24 @@ Lucas de Aquino Melo
 
 [i]Programação por[/i]
 Reynaldo Allan Fulin[/center]"
+visible_characters = -1
+percent_visible = 1.0
+
+[node name="credits_assets" type="RichTextLabel" parent="."]
+
+rect/scale = Vector2( 0.5, 0.5 )
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 24.0
+margin/top = 160.0
+margin/right = 584.0
+margin/bottom = 200.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+bbcode/enabled = true
+bbcode/bbcode = "Arte de fundo por Ansimuz [url]opengameart.org/content/sunny-land-2d-pixel-art-pack[/url]
+Arte por GrafxKid [url]opengameart.org/content/arcade-platformer-assets[/url]"
 visible_characters = -1
 percent_visible = 1.0
 
