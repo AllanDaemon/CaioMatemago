@@ -494,7 +494,7 @@ transform/pos = Vector2( 24, 16 )
 [node name="timer" type="Timer" parent="common/enemies/enemy_spawner1"]
 
 process_mode = 1
-wait_time = 10.0
+wait_time = 20.0
 one_shot = false
 autostart = false
 
@@ -506,7 +506,7 @@ transform/pos = Vector2( 248, 24 )
 [node name="timer" type="Timer" parent="common/enemies/enemy_spawner2"]
 
 process_mode = 1
-wait_time = 10.0
+wait_time = 16.0
 one_shot = false
 autostart = false
 
