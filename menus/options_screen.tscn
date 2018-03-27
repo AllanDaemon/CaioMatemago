@@ -155,7 +155,7 @@ focus_mode = 2
 
 [node name="fx" type="MarginContainer" parent="screen_panel/volume_control"]
 
-editor/display_folded = true
+visibility/opacity = 0.2
 focus/ignore_mouse = false
 focus/stop_mouse = false
 size_flags/horizontal = 2
@@ -201,6 +201,7 @@ max_lines_visible = -1
 
 [node name="fx_slider" type="HSlider" parent="screen_panel/volume_control"]
 
+visibility/opacity = 0.2
 focus/ignore_mouse = false
 focus/stop_mouse = true
 size_flags/horizontal = 2
@@ -287,10 +288,10 @@ size_flags/horizontal = 2
 size_flags/vertical = 0
 margin/left = 100.0
 margin/top = 30.0
-margin/right = 685.0
+margin/right = 694.0
 margin/bottom = 130.0
 custom_fonts/font = ExtResource( 2 )
-text = "Versão Alpha 0.1"
+text = "Versão Alpha 0.3"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
