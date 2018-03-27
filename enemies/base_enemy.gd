@@ -1,5 +1,6 @@
 tool
 extends RigidBody2D
+signal enemy_died
 
 export (String, "green", "berigelante") var enemy_type = "green" setget _set_enemy_type
 
@@ -150,3 +151,4 @@ func die():
 	get_node("hit_area").clear_shapes()
 	get_node("attack_area").clear_shapes()
 	set_linear_damp(10)
+	emit_signal("enemy_died")
