@@ -37,7 +37,7 @@ const bossA5a = [
 const candangoA5a = [
 	"Parabéns! \nVocê derrotou o Rei Belingerante.",
 	"Agora o vale da soma não está \nmais na mão desses monstros horríveis.",
-	"O próximo passo da sua jornada \né a montanha da subtração.",
+	"O próximo passo da sua jornada \né a Floresta da Subtração.",
 	"Ouvi falar que as contas \nde lá são mais difíceis,",
 	"mas acho que é só um \nboato para assustar crianças.",
 	"Tenho certeza que você \ntriunfará mais uma vez!",

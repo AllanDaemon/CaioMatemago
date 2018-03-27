@@ -10,7 +10,6 @@
 * Em A5
 - O posicionamento que você mudou para as contas ficou bom, porque daí a mensagem do chefe pode aparecer com mais clareza. Mas dificulta para derrotar os inimigos. Eu havia projetado essa parte contando que os inimigos seriam mortos quando se tocasse nos blocos, sem isso o jogador fica sobrecarregado tentando matar os inimigos e fazendo as contas ao mesmo tempo.
 - Podemos diminuir a frequência de spawn dos inimigos. Após um tempo eles se tornam overwhelming para o jogador, atrapalhando demais as contas. Será que podemos colocar uma limitação, tipo, Máximo de 4 inimigos na tela? Enquanto tiver 4 inimigos não vai ter mais spawn deles.
-- Eu escrevi errado no roteiro. Na fala do professor Candango no final da fase, onde se lê "Montanha da Subtração" deveria ser "Floresta da Subtração"
 
 * Questões mais gerais:
 - Quando caio pula em blocos muito próximos da cabeça dele, o som de pular não é ativado.
