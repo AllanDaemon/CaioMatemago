@@ -307,6 +307,7 @@ tracks/8/keys = {
 ]]
 
 script/script = ExtResource( 1 )
+enemy_max = 4
 
 [node name="boss_bg_music" type="StreamPlayer" parent="." groups=[
 "bg_sound",
@@ -552,6 +553,10 @@ blend_times = [  ]
 autoplay = "start"
 
 [connection signal="right_operation" from="common/questions/question_group" to="." method="_on_right_operation"]
+
+[connection signal="enemy_died" from="common/enemies/base_enemy" to="." method="enemy_die"]
+
+[connection signal="enemy_died" from="common/enemies/base_enemy1" to="." method="enemy_die"]
 
 [connection signal="timeout" from="common/enemies/enemy_spawner1/timer" to="." method="spawn_enemy1"]
 

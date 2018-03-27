@@ -4,8 +4,7 @@ extends Node2D
 var operations_done = 0
 var boss_defeated = false
 
-
-const questions = [
+const questions_all = [
 	[1, 0],		# 01
 	[0, 2],		# 02
 	[1, 2],		# 03
@@ -18,7 +17,7 @@ const questions = [
 	[3, 2],		# 10
 ]
 
-const questions_test = [
+const questions = [
 	[1, 0],		# 01
 	[1, 1],		# 02
 #	[1, 2],		# 03
@@ -30,6 +29,9 @@ const questions_test = [
 #	[0, 3],		# 09
 #	[0, 4],		# 10
 ]
+
+var enemy_count = 2
+export (int) var enemy_max = 4
 
 onready var common = get_node("common")
 onready var anim = get_node("anim")
@@ -73,18 +75,28 @@ func _boss_defeat():
 	anim.play("boss_defeated")
 
 func spawn_enemy1():
+	if enemy_count >= enemy_max: return
 	var new_enemy = enemy_fab.instance()
 	new_enemy.set_pos(spawner1.get_pos())
 	new_enemy.enemy_type = "berigelante"
 	new_enemy.can_fall = true
+	new_enemy.connect("enemy_died", self, "enemy_die")
 	enemies.add_child(new_enemy)
+	enemy_count += 1
 
 func spawn_enemy2():
+	if enemy_count >= enemy_max: return
 	var new_enemy = enemy_fab.instance()
 	new_enemy.set_pos(spawner2.get_pos())
 	new_enemy.can_fall = true
 	new_enemy.default_direction = new_enemy.LEFT
+	new_enemy.connect("enemy_died", self, "enemy_die")
 	enemies.add_child(new_enemy)
+	enemy_count += 1
+
+func enemy_die():
+	printt("Enemy died:", enemy_count)
+	enemy_count -= 1
 
 func goto_credits():
 	game.change_level_smooth("credits")
