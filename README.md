@@ -1,7 +1,7 @@
 # Caio O Matemago
 
-Educational game developed for master thesys in the area by @AcriusTheFirst. It's a Mario alike game to teach math.
-* Game Design and Asserts by AcriusTheFirst.
+Educational game developed for master thesys in the area by @AcriusTheFirst. It's a 2D platform side scroller game to teach basic math operations.
+* Game Design and Assets by AcriusTheFirst.
 * Development and engineering by AllanDaemon.
 * Powered by [Godot Engine (version 2)](https://godotengine.org/)
 
